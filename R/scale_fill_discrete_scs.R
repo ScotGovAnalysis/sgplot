@@ -4,8 +4,6 @@
 #' sequential, focus.
 #' @param reverse Boolean value to indicate whether the palette should be
 #' reversed
-#' @param colour_names Boolean value to indicate whether colour names should be
-#' included
 #' @param ... Additional arguments passed to scale type
 #'
 #' @examples
@@ -21,14 +19,12 @@
 
 scale_fill_discrete_scs <- function(palette = "main",
                                     reverse = FALSE,
-                                    colour_names = FALSE,
                                     ...) {
 
   ggplot2::discrete_scale("fill",
                           paste0("scs_", palette),
                           palette = scs_palette(palette,
-                                                reverse,
-                                                colour_names),
+                                                reverse),
                           ...)
 
 }

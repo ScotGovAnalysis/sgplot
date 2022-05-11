@@ -4,12 +4,7 @@
 \alias{scale_colour_discrete_scs}
 \title{Discrete colour scales for SCS}
 \usage{
-scale_colour_discrete_scs(
-  palette = "main",
-  reverse = FALSE,
-  colour_names = FALSE,
-  ...
-)
+scale_colour_discrete_scs(palette = "main", reverse = FALSE, ...)
 }
 \arguments{
 \item{palette}{Name of palette to use from `scs_colour_palettes`; e.g. main,
@@ -17,9 +12,6 @@ sequential, focus.}
 
 \item{reverse}{Boolean value to indicate whether the palette should be
 reversed}
-
-\item{colour_names}{Boolean value to indicate whether colour names should be
-included}
 
 \item{...}{Additional arguments passed to scale type}
 }
