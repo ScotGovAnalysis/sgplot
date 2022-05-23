@@ -39,16 +39,18 @@ The following colour palettes are available: main, sequential and focus.
 To install `scsplot`, the package `remotes` is required. The package can be installed directly from GitHub with:
 
 ```{r gh-installation, eval = FALSE}
-remotes::install_github("DataScienceScotland/scsplot",
-                        upgrade = "never"
+remotes::install_github(
+  "DataScienceScotland/scsplot",
+  upgrade = "never"
 )
 ```
 
 Network security settings may prevent `remotes::install_github()` from working. If this is the case, `scsplot` can be installed by downloading the [zip of the repository](https://github.com/DataScienceScotland/scsplot/archive/main.zip) and running the following code (replacing the section marked `<>`, including the arrows themselves):
 
 ```{r source-installation, eval = FALSE}
-remotes::install_local("<FILEPATH OF ZIPPED FILE>/scsplot-main.zip",
-                       upgrade = "never"
+remotes::install_local(
+  "<FILEPATH OF ZIPPED FILE>/scsplot-main.zip",
+  upgrade = "never"
 )
 ```
 

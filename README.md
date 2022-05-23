@@ -46,8 +46,9 @@ To install `scsplot`, the package `remotes` is required. The package can
 be installed directly from GitHub with:
 
 ``` r
-remotes::install_github("DataScienceScotland/scsplot",
-                        upgrade = "never"
+remotes::install_github(
+  "DataScienceScotland/scsplot",
+  upgrade = "never"
 )
 ```
 
@@ -59,8 +60,9 @@ and running the following code (replacing the section marked `<>`,
 including the arrows themselves):
 
 ``` r
-remotes::install_local("<FILEPATH OF ZIPPED FILE>/scsplot-main.zip",
-                       upgrade = "never"
+remotes::install_local(
+  "<FILEPATH OF ZIPPED FILE>/scsplot-main.zip",
+  upgrade = "never"
 )
 ```
 
