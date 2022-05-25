@@ -17,3 +17,5 @@ Imports:
   ggplot2,
   dplyr,
   scales
+Suggests: 
+    testthat (>= 2.1.0)
