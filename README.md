@@ -5,6 +5,8 @@
 
 [![GitHub release (latest by
 date)](https://img.shields.io/github/v/release/DataScienceScotland/scsplot)](https://github.com/DataScienceScotland/scsplot/releases/latest)
+[![R build
+status](https://github.com/DataScienceScotland/scsplot/workflows/R-CMD-check/badge.svg)](https://github.com/DataScienceScotland/scsplot/actions)
 
 `scsplot` contains functions for creating graphics in reporting of the
 Scottish Government Covid-19 Scottish Contact Survey (SCS).
