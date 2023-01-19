@@ -4,12 +4,12 @@ output: github_document
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# scsplot
+# sgplot
 
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/DataScienceScotland/scsplot)](https://github.com/DataScienceScotland/scsplot/releases/latest)
-[![R build status](https://github.com/DataScienceScotland/scsplot/workflows/R-CMD-check/badge.svg)](https://github.com/DataScienceScotland/scsplot/actions)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/DataScienceScotland/sgplot)](https://github.com/DataScienceScotland/sgplot/releases/latest)
+[![R build status](https://github.com/DataScienceScotland/sgplot/workflows/R-CMD-check/badge.svg)](https://github.com/DataScienceScotland/sgplot/actions)
 
-`scsplot` contains functions for creating graphics in reporting of the Scottish Government Covid-19 Scottish Contact Survey (SCS). 
+`sgplot` contains functions for creating graphics in the Scottish Government. 
 
 The following functions are available:
 
@@ -37,38 +37,38 @@ The following colour palettes are available: main, sequential and focus.
 
 ## Installation
 
-To install `scsplot`, the package `remotes` is required. The package can be installed directly from GitHub with:
+To install `sgplot`, the package `remotes` is required. The package can be installed directly from GitHub with:
 
 ```{r gh-installation, eval = FALSE}
 remotes::install_github(
-  "DataScienceScotland/scsplot",
+  "DataScienceScotland/sgplot",
   upgrade = "never"
 )
 ```
 
-Network security settings may prevent `remotes::install_github()` from working. If this is the case, `scsplot` can be installed by downloading the [zip of the repository](https://github.com/DataScienceScotland/scsplot/archive/main.zip) and running the following code (replacing the section marked `<>`, including the arrows themselves):
+Network security settings may prevent `remotes::install_github()` from working. If this is the case, `sgplot` can be installed by downloading the [zip of the repository](https://github.com/DataScienceScotland/sgplot/archive/main.zip) and running the following code (replacing the section marked `<>`, including the arrows themselves):
 
 ```{r source-installation, eval = FALSE}
 remotes::install_local(
-  "<FILEPATH OF ZIPPED FILE>/scsplot-main.zip",
+  "<FILEPATH OF ZIPPED FILE>/sgplot-main.zip",
   upgrade = "never"
 )
 ```
 
-The `scsplot` package can then be loaded using the `library()` function:
+The `sgplot` package can then be loaded using the `library()` function:
 
 ```{r library, eval = FALSE}
-library(scsplot)
+library(sgplot)
 ```
 
-To access the help file associated with a function within the `scsplot` package, type `?function_name` into the RStudio console, for example:
+To access the help file associated with a function within the `sgplot` package, type `?function_name` into the RStudio console, for example:
 
 ```{r help-file, eval = FALSE}
 ?scs_theme
 ```
 
 
-## Using and Contributing to scsplot
+## Using and Contributing to sgplot
 
 At present, this package is maintained by [Alice Byers](https://github.com/alicebyers5).
 

@@ -24,11 +24,11 @@ scale_fill_continuous_scs <- function(palette = "main",
                                         ...) {
 
   # Error if palette doesn't exist
-  if(!palette %in% names(scsplot::scs_colour_palettes)) {
+  if(!palette %in% names(sgplot::scs_colour_palettes)) {
     stop(palette, " is not a valid palette name.")
   }
 
-  colours <- as.vector(scsplot::scs_colour_palettes[[palette]])
+  colours <- as.vector(sgplot::scs_colour_palettes[[palette]])
 
   ggplot2::continuous_scale(
     aesthetics = "fill",

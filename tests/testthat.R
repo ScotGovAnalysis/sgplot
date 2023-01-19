@@ -1,4 +1,4 @@
 library(testthat)
-library(scsplot)
+library(sgplot)
 
-test_check("scsplot")
+test_check("sgplot")
