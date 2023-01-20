@@ -24,7 +24,7 @@ scale_fill_continuous_sg <- function(palette = "main",
                                      ...) {
 
   # Error if palette doesn't exist
-  if(!palette %in% names(sgplot::sg_colour_palettes)) {
+  if (!palette %in% names(sgplot::sg_colour_palettes)) {
     stop(palette, " is not a valid palette name.")
   }
 

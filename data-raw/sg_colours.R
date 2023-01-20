@@ -1,8 +1,9 @@
 # This script defines the colours and colour palettes for use in Scottish
 # Government plots.
 #
-# Colours are taken from Government Statistical Service (GSS) guidance:
-# https://gss.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/
+# Colours are taken from Government Analysis Function guidance:
+# https://analysisfunction.civilservice.gov.uk/policy-store/
+#   data-visualisation-colours-in-charts/
 
 sg_colour_values <- c(
 

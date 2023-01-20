@@ -11,7 +11,7 @@ sg_palette <- function(palette = "main",
                        colour_names = FALSE) {
 
   # check for valid palette name
-  if(!palette %in% names(sgplot::sg_colour_palettes)) {
+  if (!palette %in% names(sgplot::sg_colour_palettes)) {
     stop(palette, " is not a valid palette name.")
   }
 
@@ -19,16 +19,20 @@ sg_palette <- function(palette = "main",
 
     # Error if more colours requested than exist in palette
     n_available <- length(sgplot::sg_colour_palettes[[palette]])
-    if(n > n_available) {
+    if (n > n_available) {
       stop("n too large. Maximum of ", n_available, " colours available in `",
            palette, "` palette.")
     }
 
     pal <- sgplot::sg_colour_palettes[[palette]][seq_len(n)]
 
-    if(reverse) pal <- rev(pal)
+    if (reverse) pal <- rev(pal)
 
-    if(colour_names) {pal} else {as.vector(pal)}
+    if (colour_names) {
+      pal
+    } else {
+      as.vector(pal)
+    }
 
   }
 

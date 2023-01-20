@@ -37,9 +37,9 @@ sg_theme <- function() {
       axis.text.x = ggplot2::element_text(angle = 40, hjust = 1),
 
       # Legend:
-      # Set legend key size and background to be transparant
+      # Set legend key size and background to be transparent
       legend.key = ggplot2::element_rect(fill = NA),
-      legend.key.size = ggplot2::unit(1.5, 'cm'),
+      legend.key.size = ggplot2::unit(1.5, "cm"),
 
       # Facet:
       # Set header text formatting
