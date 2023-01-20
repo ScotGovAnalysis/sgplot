@@ -1,6 +1,6 @@
-#' @title Continuous colour fill scales for SCS
+#' @title Continuous colour fill scales for Scottish Government plots
 #'
-#' @param palette Name of palette to use from `scs_colour_palettes`; e.g. main,
+#' @param palette Name of palette to use from `sg_colour_palettes`; e.g. main,
 #' sequential, focus.
 #' @param reverse Boolean value to indicate whether the palette should be
 #' reversed.
@@ -12,27 +12,27 @@
 #' library(ggplot2)
 #' ggplot(faithfuld, aes(waiting, eruptions)) +
 #'  geom_raster(aes(fill = density)) +
-#'  scale_fill_continuous_scs(palette = "sequential") +
-#'  scs_theme()
+#'  scale_fill_continuous_sg(palette = "sequential") +
+#'  sg_theme()
 #'
 #' @export
 
-scale_fill_continuous_scs <- function(palette = "main",
-                                        reverse = FALSE,
-                                        na_colour = "grey50",
-                                        guide = "colourbar",
-                                        ...) {
+scale_fill_continuous_sg <- function(palette = "main",
+                                     reverse = FALSE,
+                                     na_colour = "grey50",
+                                     guide = "colourbar",
+                                     ...) {
 
   # Error if palette doesn't exist
-  if(!palette %in% names(sgplot::scs_colour_palettes)) {
+  if(!palette %in% names(sgplot::sg_colour_palettes)) {
     stop(palette, " is not a valid palette name.")
   }
 
-  colours <- as.vector(sgplot::scs_colour_palettes[[palette]])
+  colours <- as.vector(sgplot::sg_colour_palettes[[palette]])
 
   ggplot2::continuous_scale(
     aesthetics = "fill",
-    scale_name = "scs_continuous",
+    scale_name = "sg_continuous",
     palette    = scales::gradient_n_pal(colours, values = NULL, "Lab"),
     na.value   = na_colour,
     guide      = guide,

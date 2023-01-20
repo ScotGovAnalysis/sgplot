@@ -1,18 +1,19 @@
-#' @title SCS colour names and hex codes.
+#' @title Scottish Government colour names and hex codes
 #'
-#' @description A vector containing SCS colour names and their corresponding
+#' @description A vector containing colour names and their corresponding
 #' hex code.
 #'
 #' @format A character vector
-#' @source https://gss.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/
+#' @source \href{https://gss.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/}{Government Analysis Function Colours Guidance}
 
-"scs_colour_values"
+"sg_colour_values"
 
 
-#' @title SCS colour names and hex codes.
+#' @title Scottish Government colour palettes
 #'
-#' @description A list grouping SCS colours into palettes.
+#' @description A list grouping colours into palettes.
 #'
 #' @format A character list
+#' @source \href{https://gss.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/}{Government Analysis Function Colours Guidance}
 
-"scs_colour_palettes"
+"sg_colour_palettes"

@@ -1,18 +1,17 @@
-#' @title Scottish Contact Survey theme for ggplot2 charts.
+#' @title Scottish Government theme for ggplot2 charts.
 #'
-#' @description ggplot2 theme for reporting of Scottish Government Covid-19
-#' Scottish Contact Survey (SCS) analysis.
+#' @description ggplot2 theme for Scottish Government plots.
 #'
 #' @examples
 #' library(ggplot2)
 #' ggplot(mpg, aes(x = manufacturer, y = cty)) +
 #'    geom_col() +
-#'    scs_theme()
+#'    sg_theme()
 #'
 #' @export
 
 
-scs_theme <- function() {
+sg_theme <- function() {
 
   # Use theme_grey as base theme
   ggplot2::theme_grey() +

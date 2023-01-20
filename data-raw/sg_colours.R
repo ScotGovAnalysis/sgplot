@@ -1,10 +1,10 @@
 # This script defines the colours and colour palettes for use in Scottish
-# Government Covid-19 Scottish Contact Survey (SCS) reporting.
+# Government plots.
 #
 # Colours are taken from Government Statistical Service (GSS) guidance:
 # https://gss.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/
 
-scs_colour_values <- c(
+sg_colour_values <- c(
 
   `dark-blue`  = "#12436D",
   `orange`     = "#F46A25",
@@ -18,17 +18,17 @@ scs_colour_values <- c(
 
 )
 
-scs_colour_palettes <- list(
+sg_colour_palettes <- list(
 
-  `main` = scs_colour_values[c("dark-blue", "orange", "dark-pink", "turquoise")],
+  `main` = sg_colour_values[c("dark-blue", "orange", "dark-pink", "turquoise")],
 
-  `sequential` = scs_colour_values[c("dark-blue", "mid-blue", "light-blue")],
+  `sequential` = sg_colour_values[c("dark-blue", "mid-blue", "light-blue")],
 
-  `focus` = scs_colour_values[c("dark-blue", "grey")]
+  `focus` = sg_colour_values[c("dark-blue", "grey")]
 
 )
 
-usethis::use_data(scs_colour_values, scs_colour_palettes, overwrite = TRUE)
+usethis::use_data(sg_colour_values, sg_colour_palettes, overwrite = TRUE)
 
 
 ### END OF SCRIPT ###
