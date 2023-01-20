@@ -19,8 +19,8 @@ scale_colour_discrete_sg <- function(palette = "main",
 
   ggplot2::discrete_scale("colour",
                           paste0("sg_", palette),
-                          palette = sg_palette(palette,
-                                               reverse),
+                          palette = sgplot::sg_palette(palette,
+                                                       reverse),
                           ...)
 
 
