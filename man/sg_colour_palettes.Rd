@@ -8,7 +8,7 @@
 A character list
 }
 \source{
-\href{https://gss.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/}{Government Analysis Function Colours Guidance}
+\href{https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/}{Government Analysis Function Colours Guidance}
 }
 \usage{
 sg_colour_palettes
