@@ -4,9 +4,7 @@
 #' hex code.
 #'
 #' @format A character vector
-#' @source \href{https://analysisfunction.civilservice.gov.uk/policy-store/
-#' data-visualisation-colours-in-charts/}{Government Analysis Function Colours
-#' Guidance}
+#' @source \href{https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/}{Government Analysis Function Colours Guidance} # nolint
 
 "sg_colour_values"
 
@@ -16,8 +14,6 @@
 #' @description A list grouping colours into palettes.
 #'
 #' @format A character list
-#' @source \href{https://analysisfunction.civilservice.gov.uk/policy-store/
-#' data-visualisation-colours-in-charts/}{Government Analysis Function Colours
-#' Guidance}
+#' @source \href{https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/}{Government Analysis Function Colours Guidance} # nolint
 
 "sg_colour_palettes"
