@@ -9,27 +9,27 @@ output: github_document
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/DataScienceScotland/sgplot)](https://github.com/DataScienceScotland/sgplot/releases/latest)
 [![R build status](https://github.com/DataScienceScotland/sgplot/workflows/R-CMD-check/badge.svg)](https://github.com/DataScienceScotland/sgplot/actions)
 
-`sgplot` contains functions for creating graphics in the Scottish Government. 
+`sgplot` contains functions for creating plots in the Scottish Government. 
 
 The following functions are available:
 
-- `scs_theme()` to apply a consistent theme to ggplot charts
-- `scale_colour_discrete_scs()` to apply discrete colour scales for charts
-- `scale_colour_continuouse_scs()` to apply continuous colour scales for charts
-- `scale_fill_discrete_scs()` to apply discrete colour filling scales for charts
-- `scale_fill_continuous_scs()` to apply continuous colour filling scales for charts
+- `sg_theme()` to apply a consistent theme to ggplot charts
+- `scale_colour_discrete_sg()` to apply discrete colour scales for charts
+- `scale_colour_continuouse_sg()` to apply continuous colour scales for charts
+- `scale_fill_discrete_sg()` to apply discrete colour filling scales for charts
+- `scale_fill_continuous_sg()` to apply continuous colour filling scales for charts
 
-The available colours have been selected using the [Government Statistical Service (GSS) Data visualisation: colours guidance](https://gss.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/). Names and hex codes for available colours and palettes can be viewed by running the following code:
+The available colours have been selected using the [Government Analysis Function Data visualisation: colours guidance](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/). Names and hex codes for available colours and palettes can be viewed by running the following code:
 
 ```{r view-colours, eval = FALSE}
 # View names and hex codes for all colours
-scs_colour_values
+sg_colour_values
 
 # View names and hex codes for all colour palettes
-scs_colour_palettes
+sg_colour_palettes
 
 # View names and hex codes for `main` colour palette
-scs_colour_palettes[["main"]]
+sg_colour_palettes[["main"]]
 ```
 
 The following colour palettes are available: main, sequential and focus.
@@ -64,7 +64,7 @@ library(sgplot)
 To access the help file associated with a function within the `sgplot` package, type `?function_name` into the RStudio console, for example:
 
 ```{r help-file, eval = FALSE}
-?scs_theme
+?sg_theme
 ```
 
 
@@ -72,4 +72,3 @@ To access the help file associated with a function within the `sgplot` package, 
 
 At present, this package is maintained by [Alice Byers](https://github.com/alicebyers5).
 
-This package has primarily been developed for use by the Scottish Government Scottish Contact Survey team. However, its contents may be useful more widely. As such, suggestions and contributions are welcome.
