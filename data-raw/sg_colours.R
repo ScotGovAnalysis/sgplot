@@ -7,21 +7,28 @@
 
 sg_colour_values <- c(
 
-  `dark-blue`  = "#12436D",
-  `orange`     = "#F46A25",
-  `dark-pink`  = "#801650",
-  `turquoise`  = "#28A197",
+  `dark-blue`    = "#12436D",
+  `turquoise`    = "#28A197",
+  `dark-pink`    = "#801650",
+  `orange`       = "#F46A25",
+  `dark-grey`    = "#3D3D3D",
+  `light-purple` = "#A285D1",
 
-  `mid-blue`   = "#2073BC",
-  `light-blue` = "#6BACE6",
+  `mid-blue`     = "#2073BC",
+  `light-blue`   = "#6BACE6",
 
-  `grey`       = "#BFBFBF"
+  `grey`         = "#BFBFBF"
 
 )
 
 sg_colour_palettes <- list(
 
-  `main` = sg_colour_values[c("dark-blue", "orange", "dark-pink", "turquoise")],
+  `main` = sg_colour_values[c("dark-blue", "turquoise", "dark-pink", "orange")],
+
+  `main2` = sg_colour_values[c("dark-blue", "orange")],
+
+  `main6` = sg_colour_values[c("dark-blue", "turquoise", "dark-pink",
+                               "orange", "dark-grey", "light-purple")],
 
   `sequential` = sg_colour_values[c("dark-blue", "mid-blue", "light-blue")],
 
