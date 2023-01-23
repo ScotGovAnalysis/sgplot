@@ -15,7 +15,8 @@ Depends:
   R (>= 2.10)
 Imports:
   ggplot2,
-  scales
+  scales,
+  cli
 Suggests: 
     dplyr,
     testthat (>= 2.1.0)
