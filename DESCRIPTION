@@ -16,7 +16,9 @@ Depends:
 Imports:
   ggplot2,
   scales,
-  cli
+  cli,
+  sysfonts,
+  showtext
 Suggests: 
     dplyr,
     testthat (>= 2.1.0)

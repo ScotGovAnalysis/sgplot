@@ -13,6 +13,10 @@
 
 sg_theme <- function() {
 
+  # Add SG standard font
+  sysfonts::font_add_google(name = "Roboto", family = "sg-font")
+  showtext::showtext_auto()
+
   # Use theme_grey as base theme
   ggplot2::theme_grey() +
 
@@ -33,7 +37,7 @@ sg_theme <- function() {
       # Text:
       # Sets all text to size 25
       # Sets x-axis text to be angled
-      text = ggplot2::element_text(size = 25),
+      text = ggplot2::element_text(family = "sg-font", size = 25),
       axis.text.x = ggplot2::element_text(angle = 40, hjust = 1),
 
       # Legend:
