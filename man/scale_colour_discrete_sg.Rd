@@ -20,7 +20,9 @@ Discrete colour scales for Scottish Government plots
 }
 \examples{
 library(ggplot2)
-qplot(mpg, wt, data = mtcars, colour = as.factor(cyl)) +
- scale_colour_discrete_sg()
+ggplot(mtcars, aes(x = mpg, y = wt, colour = as.factor(cyl))) +
+ geom_point() +
+ scale_colour_discrete_sg() +
+ theme_sg()
 
 }

@@ -33,6 +33,6 @@ library(ggplot2)
 ggplot(faithfuld, aes(waiting, eruptions)) +
  geom_raster(aes(fill = density)) +
  scale_fill_continuous_sg(palette = "sequential") +
- sg_theme()
+ theme_sg()
 
 }

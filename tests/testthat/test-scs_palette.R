@@ -1,13 +1,21 @@
 test_that("Correct value returned", {
-  expect_equal(sg_palette()(4),
-               unname(sg_colour_palettes$main))
+  expect_equal(
+    sg_palette()(4),
+    unname(sg_colour_palettes$main)
+  )
   expect_equal(sg_palette("main2")(2), unname(sg_colour_palettes$main2))
-  expect_equal(sg_palette("main6", colour_names = TRUE)(5),
-               sg_colour_palettes$main6[1:5])
-  expect_equal(sg_palette("sequential", colour_names = TRUE)(3),
-               sg_colour_palettes$sequential)
-  expect_equal(sg_palette("focus", reverse = TRUE)(2),
-               unname(rev(sg_colour_palettes$focus)))
+  expect_equal(
+    sg_palette("main6", colour_names = TRUE)(5),
+    sg_colour_palettes$main6[1:5]
+  )
+  expect_equal(
+    sg_palette("sequential", colour_names = TRUE)(3),
+    sg_colour_palettes$sequential
+  )
+  expect_equal(
+    sg_palette("focus", reverse = TRUE)(2),
+    unname(rev(sg_colour_palettes$focus))
+  )
 })
 
 test_that("Error if too many colours requested", {

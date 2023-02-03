@@ -10,20 +10,20 @@
 #' library(ggplot2)
 #' library(dplyr)
 #' mpg %>%
-#'  filter(substr(manufacturer, 1, 1) %in% c("a", "c", "f")) %>%
-#'  ggplot(aes(x = manufacturer, y = cty, fill = manufacturer)) +
-#'  geom_col() +
-#'  scale_fill_discrete_sg()
+#'   filter(substr(manufacturer, 1, 1) %in% c("a", "c", "f")) %>%
+#'   ggplot(aes(x = manufacturer, y = cty, fill = manufacturer)) +
+#'   geom_col() +
+#'   scale_fill_discrete_sg() +
+#'   theme_sg()
 #'
 #' @export
 
 scale_fill_discrete_sg <- function(palette = "main",
                                    reverse = FALSE,
                                    ...) {
-
   ggplot2::discrete_scale("fill",
-                          paste0("sg_", palette),
-                          palette = sg_palette(palette, reverse),
-                          ...)
-
+    paste0("sg_", palette),
+    palette = sg_palette(palette, reverse),
+    ...
+  )
 }

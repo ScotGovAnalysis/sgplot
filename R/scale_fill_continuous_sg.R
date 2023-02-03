@@ -11,9 +11,9 @@
 #' @examples
 #' library(ggplot2)
 #' ggplot(faithfuld, aes(waiting, eruptions)) +
-#'  geom_raster(aes(fill = density)) +
-#'  scale_fill_continuous_sg(palette = "sequential") +
-#'  sg_theme()
+#'   geom_raster(aes(fill = density)) +
+#'   scale_fill_continuous_sg(palette = "sequential") +
+#'   theme_sg()
 #'
 #' @export
 
@@ -22,7 +22,6 @@ scale_fill_continuous_sg <- function(palette = "main",
                                      na_colour = "grey50",
                                      guide = "colourbar",
                                      ...) {
-
   # Error if palette doesn't exist
   if (!palette %in% names(sgplot::sg_colour_palettes)) {
     stop(palette, " is not a valid palette name.")
@@ -38,5 +37,4 @@ scale_fill_continuous_sg <- function(palette = "main",
     guide      = guide,
     ...
   )
-
 }

@@ -30,8 +30,9 @@ Continuous colour scales for Scottish Government plots
 }
 \examples{
 library(ggplot2)
-qplot(mpg, wt, data = mtcars, colour = cyl) +
+ggplot(mtcars, aes(x = mpg, y = wt, colour = cyl)) +
+ geom_point() +
  scale_colour_continuous_sg(palette = "sequential") +
- sg_theme()
+ theme_sg()
 
 }

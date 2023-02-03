@@ -25,6 +25,7 @@ mpg \%>\%
  filter(substr(manufacturer, 1, 1) \%in\% c("a", "c", "f")) \%>\%
  ggplot(aes(x = manufacturer, y = cty, fill = manufacturer)) +
  geom_col() +
- scale_fill_discrete_sg()
+ scale_fill_discrete_sg() +
+ theme_sg()
 
 }

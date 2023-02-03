@@ -8,19 +8,19 @@
 #'
 #' @examples
 #' library(ggplot2)
-#' qplot(mpg, wt, data = mtcars, colour = as.factor(cyl)) +
-#'  scale_colour_discrete_sg()
+#' ggplot(mtcars, aes(x = mpg, y = wt, colour = as.factor(cyl))) +
+#'   geom_point() +
+#'   scale_colour_discrete_sg() +
+#'   theme_sg()
 #'
 #' @export
 
 scale_colour_discrete_sg <- function(palette = "main",
                                      reverse = FALSE,
                                      ...) {
-
   ggplot2::discrete_scale("colour",
-                          paste0("sg_", palette),
-                          palette = sg_palette(palette, reverse),
-                          ...)
-
-
+    paste0("sg_", palette),
+    palette = sg_palette(palette, reverse),
+    ...
+  )
 }
