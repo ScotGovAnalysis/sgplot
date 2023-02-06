@@ -17,7 +17,7 @@
 #'
 #' @export
 
-scale_colour_continuous_sg <- function(palette = "main",
+scale_colour_continuous_sg <- function(palette = "sequential",
                                        reverse = FALSE,
                                        na_colour = "grey50",
                                        guide = "colourbar",
