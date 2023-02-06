@@ -2,13 +2,13 @@
 % Please edit documentation in R/use_sgplot.R
 \name{use_sgplot}
 \alias{use_sgplot}
-\title{Use \code{sgplot} as default.}
+\title{Use \code{sgplot} defaults.}
 \usage{
-use_sgplot(default_col = sg_colour_values["dark-blue"])
+use_sgplot(default_col = sgplot::sg_colour_values["dark-blue"])
 }
 \arguments{
-\item{default_col}{Default colour for geoms. Default value is 'dark-blue'
-from \code{sgplot::sg_colour_values}.}
+\item{default_col}{Default colour/fill for geoms. Default value is
+'dark-blue' from \code{sgplot::sg_colour_values}.}
 }
 \description{
 Set \code{sgplot} theme and geom aesthetics as default for

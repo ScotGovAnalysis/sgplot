@@ -21,6 +21,7 @@ theme_sg <- function(base_size = 12,
                      base_line_size = base_size / 22,
                      base_rect_size = base_size / 22,
                      grid = c("y", "x", "xy", "none")) {
+
   grid <- match.arg(grid)
 
   # Set colours
@@ -40,7 +41,13 @@ theme_sg <- function(base_size = 12,
   # instead.
   half_line <- base_size / 2
 
-  t <- ggplot2::theme(
+  # Set grid lines dependent on grid arg
+  grid_line  <- ggplot2::element_line(colour = light_grey)
+  grid_blank <- ggplot2::element_blank()
+  grid_x <- if(grid %in% c("x", "xy")) grid_line else grid_blank
+  grid_y <- if(grid %in% c("y", "xy")) grid_line else grid_blank
+
+  ggplot2::theme(
 
     # Set parent characteristics
     line = ggplot2::element_line(
@@ -133,7 +140,8 @@ theme_sg <- function(base_size = 12,
     # Panel:
     panel.background = ggplot2::element_blank(),
     panel.border = ggplot2::element_blank(),
-    panel.grid = ggplot2::element_line(colour = light_grey),
+    panel.grid.major.x = grid_x,
+    panel.grid.major.y = grid_y,
     panel.grid.minor = ggplot2::element_blank(),
     panel.spacing = ggplot2::unit(half_line, "pt"),
     panel.ontop = FALSE,
@@ -181,15 +189,5 @@ theme_sg <- function(base_size = 12,
     complete = TRUE
   )
 
-  # Remove grid lines based on grid arg
-  if (grid %in% c("x", "none")) {
-    t <- t + ggplot2::theme(panel.grid.major.y = ggplot2::element_blank())
-  }
-  if (grid %in% c("y", "none")) {
-    t <- t + ggplot2::theme(panel.grid.major.x = ggplot2::element_blank())
-  }
-
-  # Return theme
-  t
 
 }
