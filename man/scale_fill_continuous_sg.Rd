@@ -31,8 +31,8 @@ Continuous colour fill scales for Scottish Government plots
 \examples{
 library(ggplot2)
 ggplot(faithfuld, aes(waiting, eruptions)) +
- geom_raster(aes(fill = density)) +
- scale_fill_continuous_sg(palette = "sequential") +
- theme_sg()
+  geom_raster(aes(fill = density)) +
+  scale_fill_continuous_sg(palette = "sequential") +
+  theme_sg()
 
 }

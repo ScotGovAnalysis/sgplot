@@ -22,10 +22,10 @@ Discrete colour fill scales for Scottish Government plots
 library(ggplot2)
 library(dplyr)
 mpg \%>\%
- filter(substr(manufacturer, 1, 1) \%in\% c("a", "c", "f")) \%>\%
- ggplot(aes(x = manufacturer, y = cty, fill = manufacturer)) +
- geom_col() +
- scale_fill_discrete_sg() +
- theme_sg()
+  filter(substr(manufacturer, 1, 1) \%in\% c("a", "c", "f")) \%>\%
+  ggplot(aes(x = manufacturer, y = cty, fill = manufacturer)) +
+  geom_col() +
+  scale_fill_discrete_sg() +
+  theme_sg()
 
 }
