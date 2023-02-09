@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# sgplot
+# sgplot <img src="man/figures/logo.svg" alt="sgplot logo" align="right" height="150" />
 
 [![GitHub release (latest by
 date)](https://img.shields.io/github/v/release/DataScienceScotland/sgplot)](https://github.com/DataScienceScotland/sgplot/releases/latest)
