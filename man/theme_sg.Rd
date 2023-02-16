@@ -26,8 +26,10 @@ ggplot2 theme for Scottish Government plots.
 }
 \examples{
 library(ggplot2)
-ggplot(mpg, aes(x = manufacturer, y = cty)) +
-  geom_col() +
-  theme_sg()
+
+p <- ggplot(mpg, aes(x = class)) + geom_bar()
+
+p
+p + theme_sg()
 
 }

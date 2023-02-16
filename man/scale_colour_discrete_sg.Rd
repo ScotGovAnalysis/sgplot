@@ -8,21 +8,21 @@ scale_colour_discrete_sg(palette = "main", reverse = FALSE, ...)
 }
 \arguments{
 \item{palette}{Name of palette to use from `sg_colour_palettes`; e.g. main,
-sequential, focus.}
+sequential, focus. Default value is 'main'.}
 
 \item{reverse}{Boolean value to indicate whether the palette should be
-reversed}
+reversed.}
 
-\item{...}{Additional arguments passed to scale type}
+\item{...}{Additional arguments passed to scale type.}
 }
 \description{
 Discrete colour scales for Scottish Government plots
 }
 \examples{
 library(ggplot2)
+
 ggplot(mtcars, aes(x = mpg, y = wt, colour = as.factor(cyl))) +
   geom_point() +
-  scale_colour_discrete_sg() +
-  theme_sg()
+  scale_colour_discrete_sg()
 
 }

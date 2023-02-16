@@ -5,7 +5,7 @@
 \title{Continuous colour fill scales for Scottish Government plots}
 \usage{
 scale_fill_continuous_sg(
-  palette = "main",
+  palette = "sequential",
   reverse = FALSE,
   na_colour = "grey50",
   guide = "colourbar",
@@ -14,7 +14,7 @@ scale_fill_continuous_sg(
 }
 \arguments{
 \item{palette}{Name of palette to use from `sg_colour_palettes`; e.g. main,
-sequential, focus.}
+sequential, focus. Default value is 'sequential'.}
 
 \item{reverse}{Boolean value to indicate whether the palette should be
 reversed.}
@@ -23,16 +23,16 @@ reversed.}
 
 \item{guide}{A name or function used to create guide. Default is "colourbar".}
 
-\item{...}{Additional arguments passed to scale type}
+\item{...}{Additional arguments passed to scale type.}
 }
 \description{
 Continuous colour fill scales for Scottish Government plots
 }
 \examples{
 library(ggplot2)
-ggplot(faithfuld, aes(waiting, eruptions)) +
-  geom_raster(aes(fill = density)) +
-  scale_fill_continuous_sg(palette = "sequential") +
-  theme_sg()
+
+ggplot(faithfuld, aes(x = waiting, y = eruptions, fill = density)) +
+  geom_raster() +
+  scale_fill_continuous_sg()
 
 }

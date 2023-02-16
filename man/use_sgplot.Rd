@@ -4,17 +4,33 @@
 \alias{use_sgplot}
 \title{Use \code{sgplot} defaults.}
 \usage{
-use_sgplot(default_col = sgplot::sg_colour_values["dark-blue"])
+use_sgplot(
+  default_grid = c("y", "x", "xy", "none"),
+  default_colour = sgplot::sg_colour_values["dark-blue"]
+)
 }
 \arguments{
-\item{default_col}{Default colour/fill for geoms. Default value is
+\item{default_grid}{'x', 'y', 'xy' or 'none' to determine which grid lines
+should be drawn. Defaults to 'y'.}
+
+\item{default_colour}{Default colour/fill for geoms. Default value is
 'dark-blue' from \code{sgplot::sg_colour_values}.}
 }
 \description{
-Set \code{sgplot} theme and geom aesthetics as default for
-ggplot2 charts.
+Set \code{sgplot} theme, colour palette and geom aesthetic
+defaults for ggplot2 charts.
 }
 \examples{
+library(ggplot2)
+
+d <- subset(mpg, manufacturer == "ford")
+
+ggplot(d, aes(x = model)) + geom_bar()
+ggplot(d, aes(x = model, fill = class)) + geom_bar()
+
 use_sgplot()
+
+ggplot(d, aes(x = model)) + geom_bar()
+ggplot(d, aes(x = model, fill = class)) + geom_bar()
 
 }

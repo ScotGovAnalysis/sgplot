@@ -8,24 +8,23 @@ scale_fill_discrete_sg(palette = "main", reverse = FALSE, ...)
 }
 \arguments{
 \item{palette}{Name of palette to use from `sg_colour_palettes`; e.g. main,
-sequential, focus.}
+sequential, focus. Default value is 'main'.}
 
 \item{reverse}{Boolean value to indicate whether the palette should be
-reversed}
+reversed.}
 
-\item{...}{Additional arguments passed to scale type}
+\item{...}{Additional arguments passed to scale type.}
 }
 \description{
 Discrete colour fill scales for Scottish Government plots
 }
 \examples{
 library(ggplot2)
-library(dplyr)
-mpg \%>\%
-  filter(substr(manufacturer, 1, 1) \%in\% c("a", "c", "f")) \%>\%
-  ggplot(aes(x = manufacturer, y = cty, fill = manufacturer)) +
-  geom_col() +
-  scale_fill_discrete_sg() +
-  theme_sg()
+
+d <- subset(mpg, manufacturer == "ford")
+
+ggplot(d, aes(x = model, fill = class)) +
+  geom_bar() +
+  scale_fill_discrete_sg()
 
 }

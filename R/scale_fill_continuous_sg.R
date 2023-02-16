@@ -1,19 +1,19 @@
 #' @title Continuous colour fill scales for Scottish Government plots
 #'
 #' @param palette Name of palette to use from `sg_colour_palettes`; e.g. main,
-#' sequential, focus.
+#' sequential, focus. Default value is 'sequential'.
 #' @param reverse Boolean value to indicate whether the palette should be
 #' reversed.
 #' @param na_colour Colour to set for missing values.
 #' @param guide A name or function used to create guide. Default is "colourbar".
-#' @param ... Additional arguments passed to scale type
+#' @param ... Additional arguments passed to scale type.
 #'
 #' @examples
 #' library(ggplot2)
-#' ggplot(faithfuld, aes(waiting, eruptions)) +
-#'   geom_raster(aes(fill = density)) +
-#'   scale_fill_continuous_sg(palette = "sequential") +
-#'   theme_sg()
+#'
+#' ggplot(faithfuld, aes(x = waiting, y = eruptions, fill = density)) +
+#'   geom_raster() +
+#'   scale_fill_continuous_sg()
 #'
 #' @export
 

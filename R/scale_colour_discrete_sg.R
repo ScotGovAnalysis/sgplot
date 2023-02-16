@@ -1,17 +1,17 @@
 #' @title Discrete colour scales for Scottish Government plots
 #'
 #' @param palette Name of palette to use from `sg_colour_palettes`; e.g. main,
-#' sequential, focus.
+#' sequential, focus. Default value is 'main'.
 #' @param reverse Boolean value to indicate whether the palette should be
-#' reversed
-#' @param ... Additional arguments passed to scale type
+#' reversed.
+#' @param ... Additional arguments passed to scale type.
 #'
 #' @examples
 #' library(ggplot2)
+#'
 #' ggplot(mtcars, aes(x = mpg, y = wt, colour = as.factor(cyl))) +
 #'   geom_point() +
-#'   scale_colour_discrete_sg() +
-#'   theme_sg()
+#'   scale_colour_discrete_sg()
 #'
 #' @export
 

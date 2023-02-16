@@ -9,7 +9,17 @@
 #' 'dark-blue' from \code{sgplot::sg_colour_values}.
 #'
 #' @examples
+#' library(ggplot2)
+#'
+#' d <- subset(mpg, manufacturer == "ford")
+#'
+#' ggplot(d, aes(x = model)) + geom_bar()
+#' ggplot(d, aes(x = model, fill = class)) + geom_bar()
+#'
 #' use_sgplot()
+#'
+#' ggplot(d, aes(x = model)) + geom_bar()
+#' ggplot(d, aes(x = model, fill = class)) + geom_bar()
 #'
 #' @export
 
@@ -39,22 +49,22 @@ use_sgplot <- function(default_grid = c("y", "x", "xy", "none"),
   # Line
   ggplot2::update_geom_defaults(
     geom = "line",
-    new = list(colour = default_col,
+    new = list(colour = default_colour,
                size = 1)
   )
 
   # Col
   ggplot2::update_geom_defaults(
     geom = "col",
-    new = list(colour = default_col,
-               fill = default_col)
+    new = list(colour = default_colour,
+               fill = default_colour)
   )
 
   # Bar
   ggplot2::update_geom_defaults(
     geom = "bar",
-    new = list(colour = default_col,
-               fill = default_col)
+    new = list(colour = default_colour,
+               fill = default_colour)
   )
 
   # Text
@@ -66,7 +76,7 @@ use_sgplot <- function(default_grid = c("y", "x", "xy", "none"),
   # Point
   ggplot2::update_geom_defaults(
     geom = "point",
-    new = list(colour = default_col)
+    new = list(colour = default_colour)
   )
 
   cli::cli_alert_info("Default geom aesthetics set.")

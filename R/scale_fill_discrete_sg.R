@@ -1,20 +1,19 @@
 #' @title Discrete colour fill scales for Scottish Government plots
 #'
 #' @param palette Name of palette to use from `sg_colour_palettes`; e.g. main,
-#' sequential, focus.
+#' sequential, focus. Default value is 'main'.
 #' @param reverse Boolean value to indicate whether the palette should be
-#' reversed
-#' @param ... Additional arguments passed to scale type
+#' reversed.
+#' @param ... Additional arguments passed to scale type.
 #'
 #' @examples
 #' library(ggplot2)
-#' library(dplyr)
-#' mpg %>%
-#'   filter(substr(manufacturer, 1, 1) %in% c("a", "c", "f")) %>%
-#'   ggplot(aes(x = manufacturer, y = cty, fill = manufacturer)) +
-#'   geom_col() +
-#'   scale_fill_discrete_sg() +
-#'   theme_sg()
+#'
+#' d <- subset(mpg, manufacturer == "ford")
+#'
+#' ggplot(d, aes(x = model, fill = class)) +
+#'   geom_bar() +
+#'   scale_fill_discrete_sg()
 #'
 #' @export
 

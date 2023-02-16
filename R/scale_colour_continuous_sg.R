@@ -1,19 +1,19 @@
 #' @title Continuous colour scales for Scottish Government plots
 #'
 #' @param palette Name of palette to use from `sg_colour_palettes`; e.g. main,
-#' sequential, focus.
+#' sequential, focus. Default value is 'sequential'.
 #' @param reverse Boolean value to indicate whether the palette should be
 #' reversed.
 #' @param na_colour Colour to set for missing values.
 #' @param guide A name or function used to create guide. Default is "colourbar".
-#' @param ... Additional arguments passed to scale type
+#' @param ... Additional arguments passed to scale type.
 #'
 #' @examples
 #' library(ggplot2)
+#'
 #' ggplot(mtcars, aes(x = mpg, y = wt, colour = cyl)) +
 #'   geom_point() +
-#'   scale_colour_continuous_sg(palette = "sequential") +
-#'   theme_sg()
+#'   scale_colour_continuous_sg()
 #'
 #' @export
 
