@@ -9,10 +9,11 @@
 sg_palette <- function(palette = "main",
                        reverse = FALSE,
                        colour_names = FALSE) {
+
   # check for valid palette name
   if (!palette %in% names(sgplot::sg_colour_palettes)) {
     cli::cli_abort(c(
-      paste0("`", palette, "` is not a valid palette name.")
+      "x" = paste0("`", palette, "` is not a valid palette name.")
     ))
   }
 

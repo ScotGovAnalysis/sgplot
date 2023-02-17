@@ -24,7 +24,9 @@ scale_colour_continuous_sg <- function(palette = "sequential",
                                        ...) {
   # Error if palette doesn't exist
   if (!palette %in% names(sgplot::sg_colour_palettes)) {
-    stop(palette, " is not a valid palette name.")
+    cli::cli_abort(c(
+      "x" = paste(palette, "is not a valid palette name.")
+    ))
   }
 
   colours <- as.vector(sgplot::sg_colour_palettes[[palette]])
