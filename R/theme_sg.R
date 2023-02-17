@@ -30,8 +30,20 @@ theme_sg <- function(base_size = 12,
   light_grey <- "#d9d9d9"
   dark_grey <- "#595959"
 
-  # Add SG standard font
-  sysfonts::font_add_google(name = "Roboto", family = "sg-font")
+  # Select which font to use:
+  # Roboto is installed from Google Fonts on loading of sgplot package.
+  # If this is unsuccessful, use built in sans font.
+  sgplot_font <- if("sgplot-roboto" %in% sysfonts::font_families()) {
+    "sgplot-roboto"
+  } else {
+    cli::cli_warn(c(
+      "i" = paste("Roboto font is not available when working offline or in a",
+                  "restricted environment. Using built in sans font instead.")
+    ))
+    "sans"
+  }
+
+  # Use showtext to draw text
   showtext::showtext_auto()
 
   # The half-line (base_size / 2) sets up the basic vertical
@@ -65,7 +77,7 @@ theme_sg <- function(base_size = 12,
       linetype = 1
     ),
     text = ggplot2::element_text(
-      family = "sg-font",
+      family = sgplot_font,
       face = "plain",
       colour = "black",
       size = base_size,
