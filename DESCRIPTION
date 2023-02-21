@@ -8,6 +8,9 @@ Authors@R:
            email = "alice.byers@gov.scot")
 Description: Standard ggplot theme and colour palettes for use in Scottish Government.
 License: MIT + file LICENSE
+URL: 
+  https://github.com/DataScienceScotland/sgplot, 
+  https://DataScienceScotland.github.io/sgplot
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.2.3
