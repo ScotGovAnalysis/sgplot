@@ -33,7 +33,7 @@
     
     <a class="navbar-brand me-2" href="index.html">sgplot</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.0.9000</small>
+    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Unreleased version">0.0.0.9000</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -80,52 +80,35 @@
 </div>
 <!-- badges: start -->
 
-<p><code>sgplot</code> contains functions for creating accessible plots in the Scottish Government.</p>
-<p>The following functions are available:</p>
-<ul>
-<li>
-<code>sg_theme()</code> to apply a consistent theme to ggplot charts</li>
-<li>
-<code><a href="reference/scale_colour_discrete_sg.html">scale_colour_discrete_sg()</a></code> to apply discrete colour scales for charts</li>
-<li>
-<code>scale_colour_continuouse_sg()</code> to apply continuous colour scales for charts</li>
-<li>
-<code><a href="reference/scale_fill_discrete_sg.html">scale_fill_discrete_sg()</a></code> to apply discrete colour filling scales for charts</li>
-<li>
-<code><a href="reference/scale_fill_continuous_sg.html">scale_fill_continuous_sg()</a></code> to apply continuous colour filling scales for charts</li>
-</ul>
-<p>The available colours have been selected using the <a href="https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/" class="external-link">Government Analysis Function Data visualisation: colours guidance</a>. Names and hex codes for available colours and palettes can be viewed by running the following code:</p>
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># View names and hex codes for all colours</span></span>
-<span><span class="va">sg_colour_values</span></span>
-<span></span>
-<span><span class="co"># View names and hex codes for all colour palettes</span></span>
-<span><span class="va">sg_colour_palettes</span></span>
-<span></span>
-<span><span class="co"># View names and hex codes for `main` colour palette</span></span>
-<span><span class="va">sg_colour_palettes</span><span class="op">[[</span><span class="st">"main"</span><span class="op">]</span><span class="op">]</span></span></code></pre></div>
-<p>The following colour palettes are available: main, sequential and focus.</p>
+<!-- badges: end -->
+<p><code>sgplot</code> is an R package for creating accessible plots in the Scottish Government. Currently, functions are available for styling <code>ggplot2</code> plots.</p>
+<p>More information about the package and its functions can be found at <a href="">https://DataScienceScotland.github.io/sgplot</a>.</p>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
 <p>To install <code>sgplot</code>, the package <code>remotes</code> is required. The package can be installed directly from GitHub with:</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span></span>
 <span>  <span class="st">"DataScienceScotland/sgplot"</span>,</span>
 <span>  upgrade <span class="op">=</span> <span class="st">"never"</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-<p>Network security settings may prevent <code><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">remotes::install_github()</a></code> from working. If this is the case, <code>sgplot</code> can be installed by downloading the <a href="https://github.com/DataScienceScotland/sgplot/archive/main.zip" class="external-link">zip of the repository</a> and running the following code (replacing the section marked <code>&lt;&gt;</code>, including the arrows themselves):</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<p>Network security settings may prevent <code><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">remotes::install_github()</a></code> from working. If this is the case, <code>sgplot</code> can be installed by downloading the <a href="https://github.com/DataScienceScotland/sgplot/archive/main.zip" class="external-link">zip of the repository</a> and running the following code (replacing the section marked <code>&lt;&gt;</code>, including the arrows themselves, with the location of the downloaded zip):</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_local.html" class="external-link">install_local</a></span><span class="op">(</span></span>
 <span>  <span class="st">"&lt;FILEPATH OF ZIPPED FILE&gt;/sgplot-main.zip"</span>,</span>
 <span>  upgrade <span class="op">=</span> <span class="st">"never"</span></span>
 <span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="getting-started">Getting Started<a class="anchor" aria-label="anchor" href="#getting-started"></a>
+</h2>
 <p>The <code>sgplot</code> package can then be loaded using the <code><a href="https://rdrr.io/r/base/library.html" class="external-link">library()</a></code> function:</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/DataScienceScotland/sgplot" class="external-link">sgplot</a></span><span class="op">)</span></span></code></pre></div>
-<p>To access the help file associated with a function within the <code>sgplot</code> package, type <code>?function_name</code> into the RStudio console, for example:</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="op">?</span><span class="va">sg_theme</span></span></code></pre></div>
+<p>Help files for each function in the package can be found on the <a href="https://datasciencescotland.github.io/sgplot/reference">References</a> page of the package website. Alternatively, type <code>?function_name</code> into the RStudio console. For example:</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="op">?</span><span class="fu"><a href="reference/theme_sg.html">theme_sg</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<p>The easiest way to use <code>sgplot</code> is by adding <code><a href="reference/use_sgplot.html">use_sgplot()</a></code> to the beginning of your R script, Rmarkdown document or Shiny app code. This function will set a number of defaults to <code>ggplot2</code> geoms, use <code>sgplot</code> colour palettes and use <code><a href="reference/theme_sg.html">theme_sg()</a></code>.</p>
 </div>
 </div>
   </main><aside class="col-md-3"><div class="links">
