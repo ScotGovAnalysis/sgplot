@@ -33,7 +33,7 @@ theme_sg <- function(base_size = 12,
   # Select which font to use:
   # Roboto is installed from Google Fonts on loading of sgplot package.
   # If this is unsuccessful, use built in sans font.
-  sgplot_font <- if("sgplot-roboto" %in% sysfonts::font_families()) {
+  sgplot_font <- if ("sgplot-roboto" %in% sysfonts::font_families()) {
     "sgplot-roboto"
   } else {
     cli::cli_warn(c(
@@ -58,8 +58,8 @@ theme_sg <- function(base_size = 12,
   # Set grid lines dependent on grid arg
   grid_line  <- ggplot2::element_line(colour = light_grey)
   grid_blank <- ggplot2::element_blank()
-  grid_x <- if(grid %in% c("x", "xy")) grid_line else grid_blank
-  grid_y <- if(grid %in% c("y", "xy")) grid_line else grid_blank
+  grid_x <- if (grid %in% c("x", "xy")) grid_line else grid_blank
+  grid_y <- if (grid %in% c("y", "xy")) grid_line else grid_blank
 
   ggplot2::theme(
 

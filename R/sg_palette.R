@@ -21,7 +21,7 @@ sg_palette <- function(palette = "main",
     n_available <- length(sgplot::sg_colour_palettes[[palette]])
 
     # Warning if number of colours required is 2 and 'main2' not used
-    if (n == 2 & palette != "main2" & grepl("main", palette)) {
+    if (n == 2 && palette != "main2" && grepl("main", palette)) {
       cli::cli_warn(c(
         "!" = paste(
           "If only two colours are required,",
