@@ -12,9 +12,48 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
+
+library(ggplot2)
+
+print_pal2 <- function(pal_name) {
+  ggplot(data.frame(pal = sgplot::sg_colour_palettes[[pal_name]]), 
+         aes(x=1:length(pal), y = 1, fill=factor(1:length(pal)))) +
+    geom_tile() +
+    sgplot::scale_fill_discrete_sg(pal_name) +
+    theme_void()+
+    theme(legend.position="none") 
+}
+
 ```
 
-```{r setup}
-library(sgplot)
+The following colour palettes are available to use in `sgplot`:
+
+**main**
+
+```{r, echo = FALSE, fig.height = 1}
+print_pal2("main")
 ```
 
+**main2**
+
+```{r, echo = FALSE, fig.height = 1}
+print_pal2("main2")
+```
+
+**main6**
+
+```{r, echo = FALSE, fig.height = 1}
+print_pal2("main6")
+```
+
+**sequential**
+
+```{r, echo = FALSE, fig.height = 1}
+print_pal2("sequential")
+```
+
+**focus**
+
+```{r, echo = FALSE, fig.height = 1}
+print_pal2("focus")
+```
