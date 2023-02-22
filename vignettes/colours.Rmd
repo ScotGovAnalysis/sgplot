@@ -2,7 +2,7 @@
 title: "Colours"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{colours}
+  %\VignetteIndexEntry{Colours}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
