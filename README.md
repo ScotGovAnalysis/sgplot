@@ -1,12 +1,12 @@
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
-
 # sgplot <img src="man/figures/logo.svg" alt="sgplot logo" align="right" height="150" />
 
+<!-- badges: start -->
 [![GitHub release (latest by
 date)](https://img.shields.io/github/v/release/DataScienceScotland/sgplot)](https://github.com/DataScienceScotland/sgplot/releases/latest)
 [![R build
 status](https://github.com/DataScienceScotland/sgplot/workflows/R-CMD-check/badge.svg)](https://github.com/DataScienceScotland/sgplot/actions)
+<!-- badges: end -->
 
 `sgplot` contains functions for creating plots in the Scottish
 Government.

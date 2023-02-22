@@ -4,6 +4,7 @@ template:
   bootstrap: 5
 
 reference:
+
 - title: Style
   contents:
   - use_sgplot
