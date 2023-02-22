@@ -1,4 +1,19 @@
 url: https://datasciencescotland.github.io/sgplot
+
 template:
   bootstrap: 5
 
+reference:
+- title: Style
+  contents:
+  - use_sgplot
+  - theme_sg
+
+- title: Colours
+  contents:
+  - starts_with("scale")
+  - matches("colour")
+
+- title: internal
+  contents:
+  - sg_palette
