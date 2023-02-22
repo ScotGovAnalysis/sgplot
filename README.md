@@ -1,48 +1,18 @@
-
-# sgplot <img src="man/figures/logo.svg" alt="sgplot logo" align="right" height="150" />
+# sgplot <img src="man/figures/logo.svg" alt="sgplot logo" align="right" height="150"/>
 
 <!-- badges: start -->
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/DataScienceScotland/sgplot)](https://github.com/DataScienceScotland/sgplot/releases/latest)
-[![R build status](https://github.com/DataScienceScotland/sgplot/workflows/R-CMD-check/badge.svg)](https://github.com/DataScienceScotland/sgplot/actions)
+
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/DataScienceScotland/sgplot)](https://github.com/DataScienceScotland/sgplot/releases/latest) [![R build status](https://github.com/DataScienceScotland/sgplot/workflows/R-CMD-check/badge.svg)](https://github.com/DataScienceScotland/sgplot/actions)
+
 <!-- badges: end -->
 
-`sgplot` contains functions for creating accessible plots in the Scottish Government. 
+`sgplot` is an R package for creating accessible plots in the Scottish Government. Currently, functions are available for styling `ggplot2` plots.
 
-The following functions are available:
-
-- `sg_theme()` to apply a consistent theme to ggplot charts
-- `scale_colour_discrete_sg()` to apply discrete colour scales for
-  charts
-- `scale_colour_continuouse_sg()` to apply continuous colour scales for
-  charts
-- `scale_fill_discrete_sg()` to apply discrete colour filling scales for
-  charts
-- `scale_fill_continuous_sg()` to apply continuous colour filling scales
-  for charts
-
-The available colours have been selected using the [Government Analysis
-Function Data visualisation: colours
-guidance](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/).
-Names and hex codes for available colours and palettes can be viewed by
-running the following code:
-
-``` r
-# View names and hex codes for all colours
-sg_colour_values
-
-# View names and hex codes for all colour palettes
-sg_colour_palettes
-
-# View names and hex codes for `main` colour palette
-sg_colour_palettes[["main"]]
-```
-
-The following colour palettes are available: main, sequential and focus.
+More information about the package and its functions can be found at [https://DataScienceScotland.github.io/sgplot]().
 
 ## Installation
 
-To install `sgplot`, the package `remotes` is required. The package can
-be installed directly from GitHub with:
+To install `sgplot`, the package `remotes` is required. The package can be installed directly from GitHub with:
 
 ``` r
 remotes::install_github(
@@ -51,12 +21,7 @@ remotes::install_github(
 )
 ```
 
-Network security settings may prevent `remotes::install_github()` from
-working. If this is the case, `sgplot` can be installed by downloading
-the [zip of the
-repository](https://github.com/DataScienceScotland/sgplot/archive/main.zip)
-and running the following code (replacing the section marked `<>`,
-including the arrows themselves):
+Network security settings may prevent `remotes::install_github()` from working. If this is the case, `sgplot` can be installed by downloading the [zip of the repository](https://github.com/DataScienceScotland/sgplot/archive/main.zip) and running the following code (replacing the section marked `<>`, including the arrows themselves, with the location of the downloaded zip):
 
 ``` r
 remotes::install_local(
@@ -65,16 +30,18 @@ remotes::install_local(
 )
 ```
 
+## Getting Started
+
 The `sgplot` package can then be loaded using the `library()` function:
 
 ``` r
 library(sgplot)
 ```
 
-To access the help file associated with a function within the `sgplot`
-package, type `?function_name` into the RStudio console, for example:
+Help files for each function in the package can be found on the [References](https://datasciencescotland.github.io/sgplot/reference) page of the package website. Alternatively, type `?function_name` into the RStudio console. For example:
 
 ``` r
-?sg_theme
+?theme_sg()
 ```
 
+The easiest way to use `sgplot` is by adding `use_sgplot()` to the beginning of your R script, Rmarkdown document or Shiny app code. This function will set a number of defaults to `ggplot2` geoms, use `sgplot` colour palettes and use `theme_sg()`. 
