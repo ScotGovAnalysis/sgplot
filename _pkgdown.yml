@@ -3,6 +3,9 @@ url: https://datasciencescotland.github.io/sgplot
 template:
   bootstrap: 5
 
+development:
+  mode: auto
+
 reference:
 
 - title: Style
