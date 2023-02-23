@@ -8,9 +8,12 @@ development:
 
 reference:
 
-- title: Style
+- title: Set defaults
   contents:
   - use_sgplot
+
+- title: Style
+  contents:
   - theme_sg
 
 - title: Colours
