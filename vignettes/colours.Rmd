@@ -16,12 +16,16 @@ knitr::opts_chunk$set(
 library(ggplot2)
 
 print_pal2 <- function(pal_name) {
-  ggplot(data.frame(pal = sgplot::sg_colour_palettes[[pal_name]]), 
-         aes(x=1:length(pal), y = 1, fill=factor(1:length(pal)))) +
+  ggplot(
+    data     = data.frame(pal = sgplot::sg_colour_palettes[[pal_name]]),
+    mapping  = aes(x = seq_along(.data$pal),
+                   y = 1,
+                   fill = factor(seq_along(.data$pal)))
+  ) +
     geom_tile() +
     sgplot::scale_fill_discrete_sg(pal_name) +
-    theme_void()+
-    theme(legend.position="none") 
+    theme_void() +
+    theme(legend.position = "none")
 }
 
 ```
