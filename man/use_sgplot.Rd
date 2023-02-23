@@ -31,6 +31,6 @@ ggplot(d, aes(x = model, fill = class)) + geom_bar()
 use_sgplot()
 
 ggplot(d, aes(x = model)) + geom_bar()
-ggplot(d, aes(x = model, fill = class)) + geom_bar()
+ggplot(d, aes(x = model, fill = class, colour = class)) + geom_bar()
 
 }
