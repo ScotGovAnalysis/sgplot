@@ -45,3 +45,10 @@ Help files for each function in the package can be found on the [References](htt
 ```
 
 The easiest way to use `sgplot` is by adding `use_sgplot()` to the beginning of your R script, Rmarkdown document or Shiny app code. This function will set a number of defaults to `ggplot2` geoms, use `sgplot` colour palettes and use `theme_sg()`. 
+
+## Licence
+
+Unless stated otherwise, the codebase is released under [the MIT License](LICENSE). This covers both the codebase and any sample code in the documentation.
+
+The documentation is [© Crown copyright](http://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/) and available under the terms
+of the [Open Government 3.0](http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/) licence.
