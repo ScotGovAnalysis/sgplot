@@ -13,7 +13,7 @@ editor_options:
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
-  message = FALSE, 
+  message = FALSE,
   warning = FALSE
 )
 ```
@@ -25,8 +25,8 @@ library(dplyr)
 library(tibble)
 library(tidyr)
 
-dat <- 
-  enframe(sgplot::sg_colour_palettes) %>% 
+dat <-
+  enframe(sgplot::sg_colour_palettes) %>%
   unnest(value) %>%
   mutate(name = sprintf("%-10s", name)) %>%
   group_by(name) %>%
