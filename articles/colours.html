@@ -87,19 +87,42 @@
 
     
     
-<p>The following colour palettes are available to use in
-<code>sgplot</code>:</p>
-<p><strong>main</strong></p>
-<p><img src="colours_files/figure-html/unnamed-chunk-2-1.png" width="700"></p>
-<p><strong>main2</strong></p>
-<p><img src="colours_files/figure-html/unnamed-chunk-3-1.png" width="700"></p>
-<p><strong>main6</strong></p>
-<p><img src="colours_files/figure-html/unnamed-chunk-4-1.png" width="700"></p>
-<p><strong>sequential</strong></p>
-<p><img src="colours_files/figure-html/unnamed-chunk-5-1.png" width="700"></p>
-<p><strong>focus</strong></p>
-<p><img src="colours_files/figure-html/unnamed-chunk-6-1.png" width="700"></p>
-  </main>
+<p>The colours in <code>sgplot</code> have been selected using the
+Government Analysis Function <a href="https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/" class="external-link">Data
+visualisation: colours</a> guidance.</p>
+<div class="section level2">
+<h2 id="main-palette">Main Palette<a class="anchor" aria-label="anchor" href="#main-palette"></a>
+</h2>
+<p>There are three palettes available in the ‘main’ family.
+<code>main</code> is the default palette for discrete colour scales,
+however if only two colours are required, <code>main2</code> should be
+used as the dark blue and orange colours have the best colour contrast.
+Although <code>main6</code> is available to use, it should be avoided
+where possible, as it’s generally considered that use of four or more
+colours in a plot is excessive. Plot redesign should be considered where
+possible.</p>
+<p><img src="colours_files/figure-html/main-palettes-1.png" width="700"></p>
+</div>
+<div class="section level2">
+<h2 id="other-palettes">Other Palettes<a class="anchor" aria-label="anchor" href="#other-palettes"></a>
+</h2>
+<p>There are two other colour palettes available;
+<code>sequential</code> and <code>focus</code>.</p>
+<p><img src="colours_files/figure-html/other-palettes-1.png" width="700"></p>
+<p>Names and hex codes for available colours and palettes can be viewed
+by running the following code:</p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># View names and hex codes for all colours</span></span>
+<span><span class="fu">sgplot</span><span class="fu">::</span><span class="va"><a href="../reference/sg_colour_values.html">sg_colour_values</a></span></span>
+<span></span>
+<span><span class="co"># View names and hex codes for all colour palettes</span></span>
+<span><span class="fu">sgplot</span><span class="fu">::</span><span class="va"><a href="../reference/sg_colour_palettes.html">sg_colour_palettes</a></span></span>
+<span></span>
+<span><span class="co"># View names and hex codes for `main` colour palette</span></span>
+<span><span class="fu">sgplot</span><span class="fu">::</span><span class="va"><a href="../reference/sg_colour_palettes.html">sg_colour_palettes</a></span><span class="op">[[</span><span class="st">"main"</span><span class="op">]</span><span class="op">]</span></span></code></pre></div>
+</div>
+  </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
+    </nav></aside>
 </div>
 
 
