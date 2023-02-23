@@ -3,61 +3,88 @@ title: "Colours"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Colours}
-  %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::rmarkdown}
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
+  comment = "#>",
+  message = FALSE, 
+  warning = FALSE
 )
+```
+
+```{r colour-tiles, include = FALSE, echo = FALSE}
 
 library(ggplot2)
+library(dplyr)
+library(tibble)
+library(tidyr)
 
-print_pal2 <- function(pal_name) {
-  ggplot(
-    data     = data.frame(pal = sgplot::sg_colour_palettes[[pal_name]]),
-    mapping  = aes(x = seq_along(.data$pal),
-                   y = 1,
-                   fill = factor(seq_along(.data$pal)))
-  ) +
-    geom_tile() +
-    sgplot::scale_fill_discrete_sg(pal_name) +
-    theme_void() +
-    theme(legend.position = "none")
+dat <- 
+  enframe(sgplot::sg_colour_palettes) %>% 
+  unnest(value) %>%
+  mutate(name = sprintf("%-10s", name)) %>%
+  group_by(name) %>%
+  mutate(col = paste0("col", row_number())) %>%
+  ungroup() %>%
+  mutate(name = factor(name, levels = unique(.$name))) %>%
+  complete(name, col, fill = list(value = NA))
+
+col_tiles <- function(colour_data, scale_ratio = 1) {
+  ggplot(colour_data, aes(x = .data$col, y = .data$name, fill = .data$value)) +
+  geom_tile(color = "white",
+            linewidth = 3,
+            linetype = 1) +
+  scale_fill_identity() +
+  scale_y_discrete(limits = rev) +
+  theme_void() +
+  theme(axis.text.y = element_text(size = 12, hjust = 0)) +
+  coord_equal(ratio = scale_ratio)
 }
 
 ```
 
-The following colour palettes are available to use in `sgplot`:
+The colours in `sgplot` have been selected using the Government Analysis Function [Data visualisation: colours](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/) guidance.
 
-**main**
+## Main Palette
 
-```{r, echo = FALSE, fig.height = 1}
-print_pal2("main")
+There are three palettes available in the 'main' family. `main` is the default palette for discrete colour scales, however if only two colours are required, `main2` should be used as the dark blue and orange colours have the best colour contrast. Although `main6` is available to use, it should be avoided where possible, as it's generally considered that use of four or more colours in a plot is excessive. Plot redesign should be considered where possible.
+
+```{r main-palettes, echo = FALSE, fig.height = 4}
+
+dat %>%
+  filter(grepl("main", name)) %>%
+  col_tiles()
+
 ```
 
-**main2**
+## Other Palettes
 
-```{r, echo = FALSE, fig.height = 1}
-print_pal2("main2")
+There are two other colour palettes available; `sequential` and `focus`. 
+
+```{r other-palettes, echo = FALSE, fig.height = 3.5}
+
+dat %>%
+  filter(!grepl("main", name)) %>%
+  col_tiles()
+
 ```
 
-**main6**
 
-```{r, echo = FALSE, fig.height = 1}
-print_pal2("main6")
-```
+Names and hex codes for available colours and palettes can be viewed by running the following code:
 
-**sequential**
+```{r view-colours, eval = FALSE}
+# View names and hex codes for all colours
+sgplot::sg_colour_values
 
-```{r, echo = FALSE, fig.height = 1}
-print_pal2("sequential")
-```
+# View names and hex codes for all colour palettes
+sgplot::sg_colour_palettes
 
-**focus**
-
-```{r, echo = FALSE, fig.height = 1}
-print_pal2("focus")
+# View names and hex codes for `main` colour palette
+sgplot::sg_colour_palettes[["main"]]
 ```
