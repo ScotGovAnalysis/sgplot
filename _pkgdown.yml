@@ -6,6 +6,16 @@ template:
 development:
   mode: auto
 
+authors:
+  Alice Byers:
+    href: "https://github.com/alicebyers5"
+  Scottish Government:
+    href: "https://github.com/DataScienceScotland"
+  sidebar:
+    roles: [cre, aut, cph]
+  footer:
+    roles: [cre, aut, cph]
+
 reference:
 
 - title: Set defaults
