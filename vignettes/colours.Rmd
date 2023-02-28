@@ -74,7 +74,7 @@ col_tiles_alt <- function(pal = c("main", "other")) {
 
 ```
 
-`sgplot` uses colour palettes from the Government Analysis Function [Data visualisation: colours](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/) guidance. This guidance contains lots of information on best practice for using colour and how to ensure content meets the [accessibility legislation](https://www.w3.org/TR/WCAG21/) applicable to the public sector. `sgplot` should be used in conjunction with this guidance. 
+sgplot uses colour palettes from the Government Analysis Function [Data visualisation: colours](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/) guidance. This guidance contains lots of information on best practice for using colour and how to ensure content meets the [accessibility legislation](https://www.w3.org/TR/WCAG21/) applicable to the public sector. sgplot should be used in conjunction with this guidance. 
 
 The following are a few key considerations when using colour in plots:
 
