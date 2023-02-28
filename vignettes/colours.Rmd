@@ -47,15 +47,49 @@ col_tiles <- function(colour_data, scale_ratio = 1) {
   coord_equal(ratio = scale_ratio)
 }
 
+col_tiles_alt <- function(pal = c("main", "other")) {
+
+  pal <- match.arg(pal)
+
+  pattern <- if (pal == "main") "main" else "[^(main)\\d*]"
+
+  pal_names <- grep(pattern, names(sgplot::sg_colour_palettes),
+                    value = TRUE, perl = TRUE)
+
+  paste(
+    purrr::map_chr(
+      pal_names,
+      ~ paste0(
+        "The ", .x, " palette contains ",
+        glue::glue_collapse(
+          gsub(pattern = "-", replacement = " ",
+               x = names(sgplot::sg_colour_palettes[[.x]])),
+          sep = ", ", last = " and "),
+        ".")
+    ),
+    collapse = " "
+  )
+
+}
+
 ```
 
-The colours in `sgplot` have been selected using the Government Analysis Function [Data visualisation: colours](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/) guidance.
+`sgplot` uses colour palettes from the Government Analysis Function [Data visualisation: colours](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/) guidance. This guidance contains lots of information on best practice for using colour and how to ensure content meets the [accessibility legislation](https://www.w3.org/TR/WCAG21/) applicable to the public sector. `sgplot` should be used in conjunction with this guidance. 
 
-## Main Palette
+The following are a few key considerations when using colour in plots:
 
-There are three palettes available in the 'main' family. `main` is the default palette for discrete colour scales, however if only two colours are required, `main2` should be used as the dark blue and orange colours have the best colour contrast. Although `main6` is available to use, it should be avoided where possible, as it's generally considered that use of four or more colours in a plot is excessive. Plot redesign should be considered where possible.
+* Only use colour if absolutely necessary
+* Limit the number of different colours you use; ideally an absolute maximum of four
+* Use colour consistently when producing a series of plots
+* Do not rely on colour alone to convey a message
 
-```{r main-palettes, echo = FALSE, fig.height = 4}
+<br>
+
+## Main Palettes
+
+There are three palettes available for use with categorical data:
+
+```{r main-palettes, echo = FALSE, fig.height = 4, fig.alt = col_tiles_alt("main")}
 
 dat %>%
   filter(grepl("main", name)) %>%
@@ -63,11 +97,19 @@ dat %>%
 
 ```
 
+* `main` is the default palette for discrete colour scales.
+
+* `main2` should be used if only two colours are required as the dark blue and orange colours have the best colour contrast. If only two colour are required and another palette is used, a warning message will appear to advise you use `main2`.
+
+* `main6` is also available to use, however it should be avoided where possible, as it's generally considered that use of four or more colours in a plot is excessive. Plot redesign should be considered where possible and `main6` used as a last resort.
+
+<br>
+
 ## Other Palettes
 
-There are two other colour palettes available; `sequential` and `focus`. 
+There are two other colour palettes available: 
 
-```{r other-palettes, echo = FALSE, fig.height = 3.5}
+```{r other-palettes, echo = FALSE, fig.height = 3.5, fig.alt = col_tiles_alt("other")}
 
 dat %>%
   filter(!grepl("main", name)) %>%
@@ -75,6 +117,13 @@ dat %>%
 
 ```
 
+* `sequential` should be used for data where the order has some meaning. Note that not all colours in this palette have sufficient colour contrast against a white background or with each other. The Analysis Function colour guidance has some specific  [advice for using the sequential palette](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/#section-6) which should be considered.
+
+* `focus` should be used to highlight specific elements of a plot. The light grey colour in this palette does not have sufficient colour contrast against a white background and therefore this palette should only be used when it is essential to communicate your message. The Analysis Function colour guidance has some [advice for using the focus palette](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/#section-7) which should be considered.
+
+<br>
+
+## Viewing Palettes in R
 
 Names and hex codes for available colours and palettes can be viewed by running the following code:
 
