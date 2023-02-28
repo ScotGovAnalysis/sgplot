@@ -87,28 +87,67 @@
 
     
     
-<p>The colours in <code>sgplot</code> have been selected using the
-Government Analysis Function <a href="https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/" class="external-link">Data
-visualisation: colours</a> guidance.</p>
+<p><code>sgplot</code> uses colour palettes from the Government Analysis
+Function <a href="https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/" class="external-link">Data
+visualisation: colours</a> guidance. This guidance contains lots of
+information on best practice for using colour and how to ensure content
+meets the <a href="https://www.w3.org/TR/WCAG21/" class="external-link">accessibility
+legislation</a> applicable to the public sector. <code>sgplot</code>
+should be used in conjunction with this guidance.</p>
+<p>The following are a few key considerations when using colour in
+plots:</p>
+<ul>
+<li>Only use colour if absolutely necessary</li>
+<li>Limit the number of different colours you use; ideally an absolute
+maximum of four</li>
+<li>Use colour consistently when producing a series of plots</li>
+<li>Do not rely on colour alone to convey a message</li>
+</ul>
+<p><br></p>
 <div class="section level2">
-<h2 id="main-palette">Main Palette<a class="anchor" aria-label="anchor" href="#main-palette"></a>
+<h2 id="main-palettes">Main Palettes<a class="anchor" aria-label="anchor" href="#main-palettes"></a>
 </h2>
-<p>There are three palettes available in the ‘main’ family.
-<code>main</code> is the default palette for discrete colour scales,
-however if only two colours are required, <code>main2</code> should be
-used as the dark blue and orange colours have the best colour contrast.
-Although <code>main6</code> is available to use, it should be avoided
-where possible, as it’s generally considered that use of four or more
-colours in a plot is excessive. Plot redesign should be considered where
-possible.</p>
-<p><img src="colours_files/figure-html/main-palettes-1.png" width="700"></p>
+<p>There are three palettes available for use with categorical data:</p>
+<p><img src="colours_files/figure-html/main-palettes-1.png" alt="The main palette contains dark blue, turquoise, dark pink and orange. The main2 palette contains dark blue and orange. The main6 palette contains dark blue, turquoise, dark pink, orange, dark grey and light purple." width="700"></p>
+<ul>
+<li><p><code>main</code> is the default palette for discrete colour
+scales.</p></li>
+<li><p><code>main2</code> should be used if only two colours are
+required as the dark blue and orange colours have the best colour
+contrast. If only two colour are required and another palette is used, a
+warning message will appear to advise you use
+<code>main2</code>.</p></li>
+<li><p><code>main6</code> is also available to use, however it should be
+avoided where possible, as it’s generally considered that use of four or
+more colours in a plot is excessive. Plot redesign should be considered
+where possible and <code>main6</code> used as a last resort.</p></li>
+</ul>
+<p><br></p>
 </div>
 <div class="section level2">
 <h2 id="other-palettes">Other Palettes<a class="anchor" aria-label="anchor" href="#other-palettes"></a>
 </h2>
-<p>There are two other colour palettes available;
-<code>sequential</code> and <code>focus</code>.</p>
-<p><img src="colours_files/figure-html/other-palettes-1.png" width="700"></p>
+<p>There are two other colour palettes available:</p>
+<p><img src="colours_files/figure-html/other-palettes-1.png" alt="The sequential palette contains dark blue, mid blue and light blue. The focus palette contains dark blue and grey." width="700"></p>
+<ul>
+<li><p><code>sequential</code> should be used for data where the order
+has some meaning. Note that not all colours in this palette have
+sufficient colour contrast against a white background or with each
+other. The Analysis Function colour guidance has some specific <a href="https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/#section-6" class="external-link">advice
+for using the sequential palette</a> which should be
+considered.</p></li>
+<li><p><code>focus</code> should be used to highlight specific elements
+of a plot. The light grey colour in this palette does not have
+sufficient colour contrast against a white background and therefore this
+palette should only be used when it is essential to communicate your
+message. The Analysis Function colour guidance has some <a href="https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/#section-7" class="external-link">advice
+for using the focus palette</a> which should be considered.</p></li>
+</ul>
+<p><br></p>
+</div>
+<div class="section level2">
+<h2 id="viewing-palettes-in-r">Viewing Palettes in R<a class="anchor" aria-label="anchor" href="#viewing-palettes-in-r"></a>
+</h2>
 <p>Names and hex codes for available colours and palettes can be viewed
 by running the following code:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
