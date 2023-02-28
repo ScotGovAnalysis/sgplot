@@ -1,0 +1,73 @@
+---
+title: "Accessibility"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Accessibility}
+  %\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::rmarkdown}
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  message = FALSE,
+  warning = FALSE
+)
+```
+
+Accessibility legislation means that all content published on public sector websites, including charts, must meet the level A and AA success criterion in the [Web Content Accessibility Guidelines 2.1](https://www.w3.org/TR/WCAG21/). 
+
+The [Government Analysis Function](https://analysisfunction.civilservice.gov.uk/) has produced [guidance for producing charts](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/) that meet this criteria. Where possible, sgplot functions follow advice in this guidance , however, using sgplot does not guarantee accessibility. sgplot should therefore be used in conjunction with this guidance.
+
+<br>
+
+## Accessibility of charts using sgplot
+
+By applying `theme_sg` to ggplot2 plots, the following best practice is followed:
+
+* Plot background is white.
+
+* Axis lines, ticks and labels are dark grey (#d9d9d9).
+
+* Grid lines are light grey (#595959) and kept to a minimum; by default only major y axis lines are shown, but this can be controlled using the `grid` argument.
+
+* Text is black, uses [Roboto](https://fonts.google.com/specimen/Roboto) font (as per the Scottish Government [design system](https://designsystem.gov.scot/styles/typography/#font)) and is size 12 by default. Text size can be controlled using the `base_size` argument.
+
+* All text is horizontal.
+
+* Line thickness is relative to font size.
+
+Colour palettes from the Government Analysis Function [Data visualisation: colours](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/) guidance have been used in sgplot. These take into account the general considerations set out in accessibility legislation and all have sufficient colour contrast against a white background. These palettes can be applied to charts by using one of the four colour/fill functions:
+
+* `scale_colour_discrete_sg()`
+* `scale_fill_discrete_sg()`
+* `scale_colour_continuous_sg()`
+* `scale_fill_continuous_sg()`
+
+More information on colour palettes in sgplot can be found at `vignette("colours")`.
+
+<br>
+
+## Other accessibility considerations
+
+Using sgplot does not guarantee accessibility. The Analysis Function [chart guidance](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts) contains detailed information on other considerations that should be made. 
+
+These are a few key things to consider:
+
+* Consider what type of chart is best to convey your message. Keep it as simple as possible.
+
+* Plot titles should be provided in the body of the page, not embedded within the image of the plot. This does pose the risk of the plot image being re-shared without the title and losing context, however it is usually preferable to [prioritise accessibility](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/#section-6).
+
+* All plots must have alt text (this may be in the code behind an image of the plot, but could also be a table of data or a text description of the message the chart is presenting).
+
+* Take great care if using a [stacked bar chart](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/#section-10). Keep the number of categories to a minimum, and carefully consider the order of categories and bars.
+
+* If horizontal text is difficult to read (for example, if axis labels are overlapping), consider a different chart orientation or type.
+
+* If using a bar chart, the gap between bars should be narrower than the width of a single bar.
+
+* [Ask for feedback](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/#section-15) from colleagues and users.
+
