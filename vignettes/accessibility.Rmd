@@ -20,7 +20,17 @@ knitr::opts_chunk$set(
 
 Accessibility legislation means that all content published on public sector websites, including charts, must meet the level A and AA success criterion in the [Web Content Accessibility Guidelines 2.1](https://www.w3.org/TR/WCAG21/). 
 
-The [Government Analysis Function](https://analysisfunction.civilservice.gov.uk/) has produced [guidance for producing charts](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/) that meet this criteria. Where possible, sgplot functions follow advice in this guidance , however, using sgplot does not guarantee accessibility. sgplot should therefore be used in conjunction with this guidance.
+<br>
+
+## Resources
+
+The [Government Analysis Function](https://analysisfunction.civilservice.gov.uk/) has published a variety of resources for producing data visualisations:
+
+* [Charts Guidance](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/)
+* [Colours Guidance](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/)
+* [Data Visualisation e-Learning](https://analysisfunction.civilservice.gov.uk/support/communicating-analysis/introduction-to-data-visualisation-e-learning/) (in particular the [Accessibility and Colour](https://analysisfunction.civilservice.gov.uk/support/communicating-analysis/introduction-to-data-visualisation-e-learning/data-visualisation-e-learning-module-3-accessibility-and-colour-palettes/) module)
+
+sgplot has been developed following advice in the above guidance, however, using sgplot does not guarantee accessibility. sgplot should therefore be used in conjunction with this guidance.
 
 <br>
 
@@ -40,22 +50,20 @@ By applying `theme_sg` to ggplot2 plots, the following best practice is followed
 
 * Line thickness is relative to font size.
 
-Colour palettes from the Government Analysis Function [Data visualisation: colours](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/) guidance have been used in sgplot. These take into account the general considerations set out in accessibility legislation and all have sufficient colour contrast against a white background. These palettes can be applied to charts by using one of the four colour/fill functions:
+Colour palettes from the Analysis Function [colours guidance](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/) have been used in sgplot. The colours in these palettes all have sufficient colour contrast against a white background and take into account the general considerations for colour set out in accessibility legislation. These palettes can be applied to charts by using one of the four colour/fill functions:
 
 * `scale_colour_discrete_sg()`
 * `scale_fill_discrete_sg()`
 * `scale_colour_continuous_sg()`
 * `scale_fill_continuous_sg()`
 
-More information on colour palettes in sgplot can be found at `vignette("colours")`.
+More information on sgplot colours can be found at `vignette("colours")`.
 
 <br>
 
 ## Other accessibility considerations
 
-Using sgplot does not guarantee accessibility. The Analysis Function [chart guidance](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts) contains detailed information on other considerations that should be made. 
-
-These are a few key things to consider:
+Using sgplot does not guarantee accessibility. The Analysis Function [chart guidance](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts) contains detailed information on other considerations that should be made. Not all of these are repeated here, but we think the following are a good place to start:
 
 * Consider what type of chart is best to convey your message. Keep it as simple as possible.
 
@@ -67,7 +75,9 @@ These are a few key things to consider:
 
 * If horizontal text is difficult to read (for example, if axis labels are overlapping), consider a different chart orientation or type.
 
-* If using a bar chart, the gap between bars should be narrower than the width of a single bar.
+* If using a bar chart, the gap between bars should be narrower than the width of a single bar. The [R Graphics cookbook](https://r-graphics.org/recipe-bar-graph-adjust-width) describes how to do this.
+
+* Use commas as thousands separators in axis labels or text annotations.
 
 * [Ask for feedback](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/#section-15) from colleagues and users.
 
