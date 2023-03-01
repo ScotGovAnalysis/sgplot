@@ -92,13 +92,28 @@
 sector websites, including charts, must meet the level A and AA success
 criterion in the <a href="https://www.w3.org/TR/WCAG21/" class="external-link">Web Content
 Accessibility Guidelines 2.1</a>.</p>
-<p>The <a href="https://analysisfunction.civilservice.gov.uk/" class="external-link">Government Analysis
-Function</a> has produced <a href="https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/" class="external-link">guidance
-for producing charts</a> that meet this criteria. Where possible, sgplot
-functions follow advice in this guidance , however, using sgplot does
-not guarantee accessibility. sgplot should therefore be used in
-conjunction with this guidance.</p>
 <p><br></p>
+<div class="section level2">
+<h2 id="resources">Resources<a class="anchor" aria-label="anchor" href="#resources"></a>
+</h2>
+<p>The <a href="https://analysisfunction.civilservice.gov.uk/" class="external-link">Government Analysis
+Function</a> has published a variety of resources for producing data
+visualisations:</p>
+<ul>
+<li><a href="https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/" class="external-link">Charts
+Guidance</a></li>
+<li><a href="https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/" class="external-link">Colours
+Guidance</a></li>
+<li>
+<a href="https://analysisfunction.civilservice.gov.uk/support/communicating-analysis/introduction-to-data-visualisation-e-learning/" class="external-link">Data
+Visualisation e-Learning</a> (in particular the <a href="https://analysisfunction.civilservice.gov.uk/support/communicating-analysis/introduction-to-data-visualisation-e-learning/data-visualisation-e-learning-module-3-accessibility-and-colour-palettes/" class="external-link">Accessibility
+and Colour</a> module)</li>
+</ul>
+<p>sgplot has been developed following advice in the above guidance,
+however, using sgplot does not guarantee accessibility. sgplot should
+therefore be used in conjunction with this guidance.</p>
+<p><br></p>
+</div>
 <div class="section level2">
 <h2 id="accessibility-of-charts-using-sgplot">Accessibility of charts using sgplot<a class="anchor" aria-label="anchor" href="#accessibility-of-charts-using-sgplot"></a>
 </h2>
@@ -117,11 +132,11 @@ the <code>base_size</code> argument.</p></li>
 <li><p>All text is horizontal.</p></li>
 <li><p>Line thickness is relative to font size.</p></li>
 </ul>
-<p>Colour palettes from the Government Analysis Function <a href="https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/" class="external-link">Data
-visualisation: colours</a> guidance have been used in sgplot. These take
-into account the general considerations set out in accessibility
-legislation and all have sufficient colour contrast against a white
-background. These palettes can be applied to charts by using one of the
+<p>Colour palettes from the Analysis Function <a href="https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/" class="external-link">colours
+guidance</a> have been used in sgplot. The colours in these palettes all
+have sufficient colour contrast against a white background and take into
+account the general considerations for colour set out in accessibility
+legislation. These palettes can be applied to charts by using one of the
 four colour/fill functions:</p>
 <ul>
 <li><code><a href="../reference/scale_colour_discrete_sg.html">scale_colour_discrete_sg()</a></code></li>
@@ -129,7 +144,7 @@ four colour/fill functions:</p>
 <li><code><a href="../reference/scale_colour_continuous_sg.html">scale_colour_continuous_sg()</a></code></li>
 <li><code><a href="../reference/scale_fill_continuous_sg.html">scale_fill_continuous_sg()</a></code></li>
 </ul>
-<p>More information on colour palettes in sgplot can be found at
+<p>More information on sgplot colours can be found at
 <code><a href="../articles/colours.html">vignette("colours")</a></code>.</p>
 <p><br></p>
 </div>
@@ -139,8 +154,8 @@ four colour/fill functions:</p>
 <p>Using sgplot does not guarantee accessibility. The Analysis Function
 <a href="https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts" class="external-link">chart
 guidance</a> contains detailed information on other considerations that
-should be made.</p>
-<p>These are a few key things to consider:</p>
+should be made. Not all of these are repeated here, but we think the
+following are a good place to start:</p>
 <ul>
 <li><p>Consider what type of chart is best to convey your message. Keep
 it as simple as possible.</p></li>
@@ -159,7 +174,10 @@ consider the order of categories and bars.</p></li>
 labels are overlapping), consider a different chart orientation or
 type.</p></li>
 <li><p>If using a bar chart, the gap between bars should be narrower
-than the width of a single bar.</p></li>
+than the width of a single bar. The <a href="https://r-graphics.org/recipe-bar-graph-adjust-width" class="external-link">R Graphics
+cookbook</a> describes how to do this.</p></li>
+<li><p>Use commas as thousands separators in axis labels or text
+annotations.</p></li>
 <li><p><a href="https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/#section-15" class="external-link">Ask
 for feedback</a> from colleagues and users.</p></li>
 </ul>
