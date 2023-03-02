@@ -99,7 +99,7 @@ dat %>%
 
 * `main` is the default palette for discrete colour scales.
 
-* `main2` should be used if only two colours are required as the dark blue and orange colours have the best colour contrast. If only two colour are required and another palette is used, a warning message will appear to advise you use `main2`.
+* `main2` should be used if only two colours are required as the dark blue and orange colours have the best colour contrast. If only two colours are required and another palette is used, a warning message will appear to advise you use `main2`.
 
 * `main6` is also available to use, however it should be avoided where possible, as it's generally considered that use of four or more colours in a plot is excessive. Plot redesign should be considered where possible and `main6` used as a last resort.
 
