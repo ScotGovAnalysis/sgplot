@@ -11,9 +11,9 @@
 #'
 #' d <- subset(mpg, manufacturer == "ford")
 #'
-#' ggplot(d, aes(x = model, fill = class)) +
-#'   geom_bar() +
-#'   scale_fill_discrete_sg()
+#' ggplot(d, aes(x = class, fill = class)) +
+#'  geom_bar() +
+#'  scale_fill_discrete_sg()
 #'
 #' @export
 

@@ -8,10 +8,13 @@
 #'
 #' @examples
 #' library(ggplot2)
+#' library(dplyr)
 #'
-#' ggplot(mtcars, aes(x = mpg, y = wt, colour = as.factor(cyl))) +
-#'   geom_point() +
-#'   scale_colour_discrete_sg()
+#' economics_long %>%
+#'   filter(variable %in% c("psavert", "uempmed")) %>%
+#'   ggplot(aes(x = date, y = value, colour = variable)) +
+#'   geom_line(linewidth = 1) +
+#'   scale_colour_discrete_sg("main2")
 #'
 #' @export
 
