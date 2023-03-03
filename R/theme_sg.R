@@ -94,7 +94,7 @@ theme_sg <- function(base_size = 12,
     # set in previous section
 
     # Axis:
-    axis.line = NULL,
+    axis.line = ggplot2::element_blank(),
     axis.text = ggplot2::element_text(colour = dark_grey),
     axis.text.x = ggplot2::element_text(
       margin = ggplot2::margin(t = 0.8 * half_line / 2),
