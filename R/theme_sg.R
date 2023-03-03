@@ -39,7 +39,9 @@ theme_sg <- function(base_size = 12,
     cli::cli_warn(c(
       "i" = paste("Roboto font is not available when working offline or in a",
                   "restricted environment. Using built in sans font instead.")
-    ))
+    ),
+    .frequency = "once",
+    .frequency_id = "roboto")
     "sans"
   }
 
