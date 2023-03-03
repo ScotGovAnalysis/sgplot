@@ -100,7 +100,11 @@ ggplot(d, aes(x = model)) + geom_bar()
 ``` r
 sgplot::use_sgplot()
 
-ggplot(d, aes(x = model)) + geom_bar()
+ggplot(d, aes(x = model)) + 
+  geom_bar() +
+  # Make some other adjustments to improve look of plot
+  scale_y_continuous(expand = c(0, 0)) +
+  ggtitle("An example ggplot bar plot using sgplot")
 ```
 
 <img src="man/figures/README-ex2-1.png" alt="Plot with white background, light grey horizontal grid lines and dark blue bars." width="75%" />
