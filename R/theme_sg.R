@@ -181,7 +181,7 @@ theme_sg <- function(base_size = 12,
     # Plot:
     plot.background = ggplot2::element_rect(colour = "white"),
     plot.title = ggplot2::element_text(
-      size = ggplot2::rel(1.2),
+      size = ggplot2::rel(1.6),
       hjust = 0, vjust = 1,
       margin = ggplot2::margin(b = half_line)
     ),
