@@ -183,12 +183,12 @@ theme_sg <- function(base_size = 12,
     plot.title = ggplot2::element_text(
       size = ggplot2::rel(1.6),
       hjust = 0, vjust = 1,
-      margin = ggplot2::margin(b = half_line)
+      margin = ggplot2::margin(b = half_line * 2)
     ),
     plot.title.position = "panel",
     plot.subtitle = ggplot2::element_text(
       hjust = 0, vjust = 1,
-      margin = ggplot2::margin(b = half_line)
+      margin = ggplot2::margin(b = half_line * 2)
     ),
     plot.caption = ggplot2::element_text(
       size = ggplot2::rel(0.8),
