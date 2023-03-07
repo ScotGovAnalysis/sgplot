@@ -34,3 +34,7 @@ reference:
 - title: internal
   contents:
   - sg_palette
+
+figures:
+  dev: "svg"
+  fig.ext: svg

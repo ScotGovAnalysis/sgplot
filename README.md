@@ -93,7 +93,7 @@ d <- subset(mpg, manufacturer == "ford")
 ggplot(d, aes(x = model)) + geom_bar()
 ```
 
-<img src="man/figures/README-ex1-1.png" alt="Plot with grey background, white grid lines and dark grey bars." width="75%" />
+<img src="man/figures/README-ex1-1.svg" alt="Plot with grey background, white grid lines and dark grey bars." width="75%" />
 
 #### Example 2: Plot with one colour using sgplot defaults
 
@@ -107,7 +107,7 @@ ggplot(d, aes(x = model)) +
   ggtitle("An example ggplot bar plot using sgplot")
 ```
 
-<img src="man/figures/README-ex2-1.png" alt="Plot with white background, light grey horizontal grid lines and dark blue bars." width="75%" />
+<img src="man/figures/README-ex2-1.svg" alt="Plot with white background, light grey horizontal grid lines and dark blue bars." width="75%" />
 
 <br>
 

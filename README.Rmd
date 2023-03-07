@@ -11,7 +11,8 @@ knitr::opts_chunk$set(
   error = FALSE,
   message = FALSE,
   comment = "#>",
-  fig.path = "man/figures/README-"
+  fig.path = "man/figures/README-",
+  dev = "svg"
 )
 
 ex1_alt <- "Plot with grey background, white grid lines and dark grey bars."
