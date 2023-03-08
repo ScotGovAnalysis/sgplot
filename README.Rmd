@@ -83,6 +83,7 @@ The easiest way to use sgplot is by adding `use_sgplot()` to the beginning of yo
 
 ```{r ex1, fig.show = "hold", out.width = "75%", fig.alt = ex1_alt}
 library(ggplot2)
+
 d <- subset(mpg, manufacturer == "ford")
 
 ggplot(d, aes(x = model)) + geom_bar()
@@ -93,11 +94,15 @@ ggplot(d, aes(x = model)) + geom_bar()
 ```{r ex2, fig.show = "hold", out.width = "75%", fig.alt = ex2_alt}
 sgplot::use_sgplot()
 
-ggplot(d, aes(x = model)) + 
+ggplot(d, aes(x = tools::toTitleCase(model))) + 
   geom_bar() +
   # Make some other adjustments to improve look of plot
   scale_y_continuous(expand = c(0, 0)) +
-  ggtitle("An example ggplot bar plot using sgplot")
+  labs(
+    title = "An example ggplot bar plot using sgplot",
+    x     = "Car Model",
+    y     = "Count"
+  ) 
 ```
 
 <br>
