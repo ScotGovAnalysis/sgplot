@@ -8,7 +8,8 @@ theme_sg(
   base_size = 12,
   base_line_size = base_size/22,
   base_rect_size = base_size/22,
-  grid = c("y", "x", "xy", "none")
+  grid = c("y", "x", "xy", "none"),
+  axis = c("none", "y", "x", "xy")
 )
 }
 \arguments{
@@ -20,6 +21,9 @@ theme_sg(
 
 \item{grid}{'x', 'y', 'xy' or 'none' to determine which grid lines should
 be drawn. Defaults to 'y'.}
+
+\item{axis}{'x', 'y', 'xy' or 'none' to determine which axis lines should
+be drawn. Defaults to 'none'.}
 }
 \description{
 ggplot2 theme for Scottish Government plots.

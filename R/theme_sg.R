@@ -7,6 +7,8 @@
 #' @param base_rect_size base size for rect elements.
 #' @param grid 'x', 'y', 'xy' or 'none' to determine which grid lines should
 #' be drawn. Defaults to 'y'.
+#' @param axis 'x', 'y', 'xy' or 'none' to determine which axis lines should
+#' be drawn. Defaults to 'none'.
 #'
 #' @examples
 #' library(ggplot2)
@@ -22,9 +24,11 @@
 theme_sg <- function(base_size = 12,
                      base_line_size = base_size / 22,
                      base_rect_size = base_size / 22,
-                     grid = c("y", "x", "xy", "none")) {
+                     grid = c("y", "x", "xy", "none"),
+                     axis = c("none", "y", "x", "xy")) {
 
   grid <- match.arg(grid)
+  axis <- match.arg(axis)
 
   # Set colours
   light_grey <- "#d9d9d9"
@@ -63,6 +67,12 @@ theme_sg <- function(base_size = 12,
   grid_x <- if (grid %in% c("x", "xy")) grid_line else grid_blank
   grid_y <- if (grid %in% c("y", "xy")) grid_line else grid_blank
 
+  # Set axis lines dependent on axis arg
+  axis_line  <- ggplot2::element_line()
+  axis_blank <- ggplot2::element_blank()
+  axis_x <- if (axis %in% c("x", "xy")) axis_line else axis_blank
+  axis_y <- if (axis %in% c("y", "xy")) axis_line else axis_blank
+
   ggplot2::theme(
 
     # Set parent characteristics
@@ -96,7 +106,9 @@ theme_sg <- function(base_size = 12,
     # set in previous section
 
     # Axis:
-    axis.line = ggplot2::element_blank(),
+    axis.line = NULL,
+    axis.line.x = axis_x,
+    axis.line.y = axis_y,
     axis.text = ggplot2::element_text(colour = dark_grey),
     axis.text.x = ggplot2::element_text(
       margin = ggplot2::margin(t = 0.8 * half_line / 2),
