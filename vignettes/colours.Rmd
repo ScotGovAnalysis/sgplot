@@ -81,7 +81,7 @@ The following are a few key considerations when using colour in plots:
 * Only use colour if absolutely necessary
 * Limit the number of different colours you use; ideally an absolute maximum of four
 * Use colour consistently when producing a series of plots
-* Do not rely on colour alone to convey a message
+* Do not rely on colour alone to communicate a message
 
 <br>
 
