@@ -24,6 +24,14 @@ test_that("Error if too many colours requested", {
   expect_error(sg_palette("focus")(3))
 })
 
-test_that("Warning to use `main2` if two colours used.", {
+test_that("Use `main2` if two colours required.", {
+  expect_equal(
+    suppressWarnings(sg_palette("main")(2)),
+    unname(sg_colour_palettes$main2)
+  )
+  expect_equal(
+    suppressWarnings(sg_palette("main")(2)),
+    sg_palette("main2")(2)
+  )
   expect_warning(sg_palette("main")(2))
 })

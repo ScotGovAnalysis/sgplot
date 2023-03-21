@@ -10,7 +10,7 @@ sg_palette <- function(palette = "main",
                        reverse = FALSE,
                        colour_names = FALSE) {
 
-  # check for valid palette name
+  # Check valid palette name
   if (!palette %in% names(sgplot::sg_colour_palettes)) {
     cli::cli_abort(c(
       "x" = paste0("`", palette, "` is not a valid palette name.")
@@ -20,13 +20,11 @@ sg_palette <- function(palette = "main",
   function(n) {
     n_available <- length(sgplot::sg_colour_palettes[[palette]])
 
-    # Warning if number of colours required is 2 and 'main2' not used
+    # Use 'main2' if main palette used and only 2 colours required
     if (n == 2 && palette != "main2" && grepl("main", palette)) {
+      palette <- "main2"
       cli::cli_warn(c(
-        "!" = paste(
-          "If only two colours are required,",
-          "`main2` palette should be used."
-        )
+        "!" = "Using `main2` as only two colours are required."
       ))
     }
 
