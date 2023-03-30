@@ -16,6 +16,22 @@ authors:
   footer:
     roles: [cre, aut, cph]
 
+navbar:
+  structure:
+    left:  [cookbook, reference, articles, news]
+    right: [search, github]
+  components:
+    cookbook:
+      text: Cookbook
+      href: articles/cookbook.html
+    articles:
+      text: Articles
+      menu:
+      - text: Accessibility
+        href: articles/accessibility.html
+      - text: Colours
+        href: articles/colours.html
+
 reference:
 
 - title: Set defaults
