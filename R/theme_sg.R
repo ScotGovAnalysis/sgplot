@@ -175,7 +175,7 @@ theme_sg <- function(base_size = 12,
     panel.ontop = FALSE,
 
     # Strip:
-    strip.background = ggplot2::element_rect(fill = "grey85", colour = NA),
+    strip.background = ggplot2::element_blank(),
     strip.clip = "inherit",
     strip.text = ggplot2::element_text(
       size = ggplot2::rel(0.8),
