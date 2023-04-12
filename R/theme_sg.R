@@ -9,6 +9,8 @@
 #' be drawn. Defaults to 'y'.
 #' @param axis 'x', 'y', 'xy' or 'none' to determine which axis lines should
 #' be drawn. Defaults to 'none'.
+#' @param legend 'right', 'left', 'top', 'bottom', or 'none' to determine the
+#' position of the legend. Defaults to 'right'.
 #'
 #' @examples
 #' library(ggplot2)
@@ -25,10 +27,12 @@ theme_sg <- function(base_size = 12,
                      base_line_size = base_size / 22,
                      base_rect_size = base_size / 22,
                      grid = c("y", "x", "xy", "none"),
-                     axis = c("none", "y", "x", "xy")) {
+                     axis = c("none", "y", "x", "xy"),
+                     legend = c("right", "left", "top", "bottom", "none")) {
 
-  grid <- match.arg(grid)
-  axis <- match.arg(axis)
+  grid   <- match.arg(grid)
+  axis   <- match.arg(axis)
+  legend <- match.arg(legend)
 
   # Set colours
   light_grey <- "#d9d9d9"
@@ -157,7 +161,7 @@ theme_sg <- function(base_size = 12,
     legend.text.align = NULL,
     legend.title = ggplot2::element_text(hjust = 0),
     legend.title.align = NULL,
-    legend.position = "right",
+    legend.position = legend,
     legend.direction = NULL,
     legend.justification = "centre",
     legend.box = NULL,

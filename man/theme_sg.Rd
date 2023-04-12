@@ -9,7 +9,8 @@ theme_sg(
   base_line_size = base_size/22,
   base_rect_size = base_size/22,
   grid = c("y", "x", "xy", "none"),
-  axis = c("none", "y", "x", "xy")
+  axis = c("none", "y", "x", "xy"),
+  legend = c("right", "left", "top", "bottom", "none")
 )
 }
 \arguments{
@@ -24,6 +25,9 @@ be drawn. Defaults to 'y'.}
 
 \item{axis}{'x', 'y', 'xy' or 'none' to determine which axis lines should
 be drawn. Defaults to 'none'.}
+
+\item{legend}{'right', 'left', 'top', 'bottom', or 'none' to determine the
+position of the legend. Defaults to 'right'.}
 }
 \description{
 ggplot2 theme for Scottish Government plots.
