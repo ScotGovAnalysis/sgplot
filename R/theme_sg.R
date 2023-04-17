@@ -66,7 +66,7 @@ theme_sg <- function(base_size = 12,
 
     # Set parent characteristics
     line = ggplot2::element_line(
-      colour = dark_grey,
+      colour = light_grey,
       linewidth = base_line_size,
       linetype = 1,
       lineend = "butt"
@@ -98,7 +98,7 @@ theme_sg <- function(base_size = 12,
     axis.line = NULL,
     axis.line.x = axis_x,
     axis.line.y = axis_y,
-    axis.text = ggplot2::element_text(colour = dark_grey),
+    axis.text = NULL,
     axis.text.x = ggplot2::element_text(
       margin = ggplot2::margin(t = 0.8 * half_line / 2),
       vjust = 1
@@ -128,12 +128,14 @@ theme_sg <- function(base_size = 12,
     axis.title.y = ggplot2::element_text(
       angle = 0,
       margin = ggplot2::margin(r = half_line / 2),
-      vjust = 1
+      vjust = 1,
+      hjust = 1
     ),
     axis.title.y.right = ggplot2::element_text(
       angle = 0,
       margin = ggplot2::margin(l = half_line / 2),
-      vjust = 1
+      vjust = 1,
+      hjust = 1
     ),
 
     # Legend
@@ -193,7 +195,7 @@ theme_sg <- function(base_size = 12,
     ),
     plot.caption = ggplot2::element_text(
       size = ggplot2::rel(0.8),
-      hjust = 1, vjust = 1,
+      hjust = 0, vjust = 1,
       margin = ggplot2::margin(t = half_line)
     ),
     plot.caption.position = "panel",
