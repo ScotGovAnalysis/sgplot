@@ -44,7 +44,7 @@ By applying `theme_sg` to ggplot2 plots, the following best practice is followed
 
 * Grid lines are light grey (#595959) and kept to a minimum; by default only major y axis lines are shown, but this can be controlled using the `grid` argument.
 
-* Text is black, uses [Roboto](https://fonts.google.com/specimen/Roboto) font (as per the Scottish Government [design system](https://designsystem.gov.scot/styles/typography/#font)) and is size 12 by default. Text size can be controlled using the `base_size` argument.
+* Text is black, uses a Sans Serif font and is size 12 by default. Text size can be controlled using the `base_size` argument.
 
 * All text is horizontal.
 

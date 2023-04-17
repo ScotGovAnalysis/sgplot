@@ -38,23 +38,8 @@ theme_sg <- function(base_size = 12,
   light_grey <- "#d9d9d9"
   dark_grey <- "#595959"
 
-  # Select which font to use:
-  # Roboto is installed from Google Fonts on loading of sgplot package.
-  # If this is unsuccessful, use built in sans font.
-  sgplot_font <- if ("sgplot-roboto" %in% sysfonts::font_families()) {
-    "sgplot-roboto"
-  } else {
-    cli::cli_warn(c(
-      "i" = paste("Roboto font is not available when working offline or in a",
-                  "restricted environment. Using built in sans font instead.")
-    ),
-    .frequency = "once",
-    .frequency_id = "roboto")
-    "sans"
-  }
-
-  # Use showtext to draw text
-  showtext::showtext_auto()
+  # Use built in sans font
+  sgplot_font <- "sans"
 
   # The half-line (base_size / 2) sets up the basic vertical
   # rhythm of the theme. Most margins will be set to this value.

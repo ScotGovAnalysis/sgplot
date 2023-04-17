@@ -19,9 +19,7 @@ Depends:
 Imports:
   ggplot2,
   scales,
-  cli,
-  sysfonts,
-  showtext
+  cli
 Suggests: 
   dplyr,
   knitr,
