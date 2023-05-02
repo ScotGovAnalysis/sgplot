@@ -97,7 +97,7 @@ ggplot(bar_data, aes(x = reorder(country, -lifeExp), y = lifeExp)) +
 ```{r bar-chart-2}
 ggplot(bar_data, aes(x = lifeExp, y = reorder(country, lifeExp))) +
   geom_col(fill = sg_colour_values["dark-blue"]) +
-  theme_sg(grid = "x") +
+  theme_sg(grid = "x", axis = "y") +
   scale_x_continuous(expand = c(0, 0)) +
   labs(
     x = "",
@@ -193,6 +193,7 @@ gapminder |>
   facet_wrap( ~ continent, ncol = 2) + 
   scale_y_continuous(breaks = c(0, 2e9, 4e9),
                      labels = c(0, "2bn", "4bn")) +
+  coord_cartesian(clip = "off") +
   theme(axis.text.x = element_blank(),
         axis.ticks.x = element_blank()) +
   labs(
@@ -220,7 +221,7 @@ ann_labs <- ann_data |>
 
 ggplot(data = ann_data, aes(x = year, y = lifeExp, colour = country)) +
   geom_line(linewidth = 1) +
-  theme_sg(legend = "none") +
+  theme_sg(legend = "none", axis = "x") +
   scale_colour_discrete_sg("main2") +
   labs(
     x = "Year",
@@ -233,7 +234,9 @@ ggplot(data = ann_data, aes(x = year, y = lifeExp, colour = country)) +
             size = 12 / ggplot2::.pt,
             hjust = 0, 
             vjust = 0.5,
-            nudge_x = 0.5)
+            nudge_x = 0.5) +
+  scale_x_continuous(limits = c(1950, 2020),
+                     breaks = seq(1950, 2020, 10))
 ```
 
 However, this makes the code difficult to reuse as values are hard coded and not automatically generated from the data. This is more fiddly, however is possible.
