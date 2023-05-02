@@ -90,7 +90,8 @@ use_sgplot <- function(default_colour = sgplot::sg_colour_values["dark-blue"],
   ggplot2::update_geom_defaults(
     geom = "point",
     new = list(colour = default_colour,
-               fill   = default_colour)
+               fill   = default_colour,
+               size   = base_size / 8)
   )
 
   cli::cli_alert_info("Default geom aesthetics set.")
