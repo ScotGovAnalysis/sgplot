@@ -37,7 +37,8 @@ be installed directly from GitHub with:
 ``` r
 remotes::install_github(
   "DataScienceScotland/sgplot",
-  upgrade = "never"
+  upgrade = "never",
+  build_vignettes = TRUE
 )
 ```
 
@@ -52,7 +53,8 @@ zip:
 ``` r
 remotes::install_local(
   "<FILEPATH OF ZIPPED FILE>/sgplot-main.zip",
-  upgrade = "never"
+  upgrade = "never",
+  build_vignettes = TRUE
 )
 ```
 

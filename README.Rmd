@@ -44,7 +44,8 @@ To install sgplot, the remotes package is required. The package can then be inst
 ``` r
 remotes::install_github(
   "DataScienceScotland/sgplot",
-  upgrade = "never"
+  upgrade = "never",
+  build_vignettes = TRUE
 )
 ```
 
@@ -53,7 +54,8 @@ Network security settings may prevent `remotes::install_github()` from working. 
 ``` r
 remotes::install_local(
   "<FILEPATH OF ZIPPED FILE>/sgplot-main.zip",
-  upgrade = "never"
+  upgrade = "never",
+  build_vignettes = TRUE
 )
 ```
 
