@@ -9,7 +9,8 @@ theme_sg(
   base_line_size = base_size/22,
   base_rect_size = base_size/22,
   grid = c("y", "x", "xy", "none"),
-  axis = c("none", "y", "x", "xy"),
+  axis = c("x", "y", "xy", "none"),
+  ticks = c("xy", "x", "y", "none"),
   legend = c("right", "left", "top", "bottom", "none")
 )
 }
@@ -20,11 +21,9 @@ theme_sg(
 
 \item{base_rect_size}{base size for rect elements.}
 
-\item{grid}{'x', 'y', 'xy' or 'none' to determine which grid lines should
-be drawn. Defaults to 'y'.}
-
-\item{axis}{'x', 'y', 'xy' or 'none' to determine which axis lines should
-be drawn. Defaults to 'none'.}
+\item{grid, axis, ticks}{'x', 'y', 'xy' or 'none' to determine for which axes
+the attribute should be drawn. Grid defaults to 'y', axis to 'x', and
+ticks to 'xy'.}
 
 \item{legend}{'right', 'left', 'top', 'bottom', or 'none' to determine the
 position of the legend. Defaults to 'right'.}

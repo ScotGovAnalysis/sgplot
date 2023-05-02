@@ -5,10 +5,9 @@
 #' @param base_size base font size, given in pts.
 #' @param base_line_size base size for line elements.
 #' @param base_rect_size base size for rect elements.
-#' @param grid 'x', 'y', 'xy' or 'none' to determine which grid lines should
-#' be drawn. Defaults to 'y'.
-#' @param axis 'x', 'y', 'xy' or 'none' to determine which axis lines should
-#' be drawn. Defaults to 'none'.
+#' @param grid,axis,ticks 'x', 'y', 'xy' or 'none' to determine for which axes
+#' the attribute should be drawn. Grid defaults to 'y', axis to 'x', and
+#' ticks to 'xy'.
 #' @param legend 'right', 'left', 'top', 'bottom', or 'none' to determine the
 #' position of the legend. Defaults to 'right'.
 #'
@@ -27,11 +26,13 @@ theme_sg <- function(base_size = 12,
                      base_line_size = base_size / 22,
                      base_rect_size = base_size / 22,
                      grid = c("y", "x", "xy", "none"),
-                     axis = c("none", "y", "x", "xy"),
+                     axis = c("x", "y", "xy", "none"),
+                     ticks = c("xy", "x", "y", "none"),
                      legend = c("right", "left", "top", "bottom", "none")) {
 
   grid   <- match.arg(grid)
   axis   <- match.arg(axis)
+  ticks  <- match.arg(ticks)
   legend <- match.arg(legend)
 
   # Set colours
@@ -53,14 +54,20 @@ theme_sg <- function(base_size = 12,
   # Set grid lines dependent on grid arg
   grid_line  <- ggplot2::element_line(colour = light_grey)
   grid_blank <- ggplot2::element_blank()
-  grid_x <- if (grid %in% c("x", "xy")) grid_line else grid_blank
-  grid_y <- if (grid %in% c("y", "xy")) grid_line else grid_blank
+  grid_x     <- if (grid %in% c("x", "xy")) grid_line else grid_blank
+  grid_y     <- if (grid %in% c("y", "xy")) grid_line else grid_blank
 
   # Set axis lines dependent on axis arg
   axis_line  <- ggplot2::element_line()
   axis_blank <- ggplot2::element_blank()
-  axis_x <- if (axis %in% c("x", "xy")) axis_line else axis_blank
-  axis_y <- if (axis %in% c("y", "xy")) axis_line else axis_blank
+  axis_x     <- if (axis %in% c("x", "xy")) axis_line else axis_blank
+  axis_y     <- if (axis %in% c("y", "xy")) axis_line else axis_blank
+
+  # Set axis ticks dependent on ticks arg
+  axis_ticks <- ggplot2::element_line()
+  no_ticks   <- ggplot2::element_blank()
+  ticks_x    <- if (ticks %in% c("x", "xy")) axis_ticks else no_ticks
+  ticks_y    <- if (ticks %in% c("y", "xy")) axis_ticks else no_ticks
 
   ggplot2::theme(
 
@@ -129,13 +136,13 @@ theme_sg <- function(base_size = 12,
       angle = 0,
       margin = ggplot2::margin(r = half_line / 2),
       vjust = 1,
-      hjust = 1
+      hjust = 0.5
     ),
     axis.title.y.right = ggplot2::element_text(
       angle = 0,
       margin = ggplot2::margin(l = half_line / 2),
       vjust = 1,
-      hjust = 1
+      hjust = 0.5
     ),
 
     # Legend
