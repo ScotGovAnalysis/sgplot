@@ -123,6 +123,8 @@ theme_sg <- function(base_size = 12,
       hjust = 0
     ),
     axis.ticks = NULL,
+    axis.ticks.x = ticks_x,
+    axis.ticks.y = ticks_y,
     axis.ticks.length = ggplot2::unit(half_line / 2, "pt"),
     axis.title.x = ggplot2::element_text(
       margin = ggplot2::margin(t = half_line / 2),
