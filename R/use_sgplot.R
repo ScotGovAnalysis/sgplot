@@ -1,6 +1,6 @@
-#' @title Use \code{sgplot} defaults.
+#' @title Use sgplot defaults.
 #'
-#' @description Set \code{sgplot} theme, colour palette and geom aesthetic
+#' @description Set sgplot theme, colour palette and geom aesthetic
 #' defaults for ggplot2 charts.
 #'
 #' @param default_colour Default colour/fill for geoms. Default value is
