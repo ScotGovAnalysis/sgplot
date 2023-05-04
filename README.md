@@ -25,7 +25,10 @@ and
 sgplot should be used in conjunction with these guidance documents.
 
 More information about the package and its functions can be found on the
-[sgplot website](https://DataScienceScotland.github.io/sgplot).
+[sgplot website](https://DataScienceScotland.github.io/sgplot). In
+particular, the
+[cookbook](https://DataScienceScotland.github.io/sgplot/articles/cookbook.html)
+contains lots of examples.
 
 <br>
 
