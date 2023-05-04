@@ -9,7 +9,7 @@ editor_options:
   chunk_output_type: console
 ---
 
-```{r, include = FALSE}
+```{r setup, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
@@ -22,7 +22,11 @@ This cookbook provides examples of the code used to produce various chart types 
 
 If there is a chart type or task which you think would be useful to include here, please [submit a suggestion](https://github.com/DataScienceScotland/sgplot/issues/new?assignees=alicebyers5&labels=documentation&title=Cookbook+suggestion).
 
-**Note**: Titles and subtitles have been included in the charts in this cookbook for demonstration purposes. However, for accessibility reasons, it is usually preferable to provide titles in the body of the page rather than embedded within the image of the plot.
+**use_sgplot** <br>
+The examples in this cookbook use the sgplot theme and colour functions explicitly, however it may be easier to make use of the `use_sgplot()` function if your charts all require a similar style. More information on `use_sgplot` can be found on the [homepage](https://datasciencescotland.github.io/sgplot/#use-sgplot-as-default).
+
+**Note on use of titles, subtitles and captions** <br>
+Titles, subtitles and captions have been embedded in the charts in this cookbook for demonstration purposes. However, for accessibility reasons, it is usually preferable to provide titles in the body of the page rather than embedded within the image of the plot.
 
 The following packages are required to produce the example charts in this cookbook:
 
@@ -37,258 +41,25 @@ library(gapminder)
 
 <br>
 
-## Line charts
-
-### Line chart with one line
-
-```{r line-charts-1}
-gapminder |>
-  filter(country == "United Kingdom") |>
-  ggplot(aes(x = year, y = lifeExp)) +
-  geom_line(linewidth = 1, colour = sg_colour_values["dark-blue"]) +
-  theme_sg() +
-  labs(
-    x = "Year",
-    y = "",
-    title = "Life Expectancy in the United Kingdom"
-  )
-```
-
-### Line chart with multiple lines
-
-```{r line-charts-2}
-gapminder |>
-  filter(country %in% c("United Kingdom", "France")) |>
-  ggplot(aes(x = year, y = lifeExp, colour = country)) +
-  geom_line(linewidth = 1) +
-  theme_sg(legend = "bottom") +
-  scale_colour_discrete_sg("main2") +
-  labs(
-    x = "Year",
-    y = "",
-    title = "Life Expectancy in the United Kingdom and France",
-    colour = ""
-  )
+```{r chart-types, child = "cookbook/_chart-types.Rmd"} 
 ```
 
 <br>
 
-## Bar charts
-
-```{r bar-data}
-bar_data <- 
-  gapminder |> 
-  filter(year == 2007 & continent == "Europe") |>
-  slice_max(order_by = lifeExp, n = 5)
-```
-
-```{r bar-chart-1}
-ggplot(bar_data, aes(x = reorder(country, -lifeExp), y = lifeExp)) +
-  geom_col(fill = sg_colour_values["dark-blue"]) +
-  theme_sg() +
-  scale_y_continuous(expand = c(0, 0)) +
-  labs(
-    x = "",
-    y = "",
-    title = "Highest European life expectancy, 2007"
-  )
-```
-
-```{r bar-chart-2}
-ggplot(bar_data, aes(x = lifeExp, y = reorder(country, lifeExp))) +
-  geom_col(fill = sg_colour_values["dark-blue"]) +
-  theme_sg(grid = "x", axis = "y") +
-  scale_x_continuous(expand = c(0, 0)) +
-  labs(
-    x = "",
-    y = "",
-    title = "Highest European life expectancy, 2007"
-  )
-```
-
-### Grouped bar chart
-
-```{r grouped-bar-chart}
-grouped_bar_data <- 
-  gapminder |> 
-  filter(year %in% c(1967, 2007) & 
-           country %in% c("United Kingdom", "Ireland", "France", "Belgium"))
-
-ggplot(grouped_bar_data, 
-       aes(x = country, y = lifeExp, fill = as.factor(year))) +
-  geom_bar(stat = "identity", position = "dodge") +
-  scale_y_continuous(expand = c(0, 0)) +
-  theme_sg(legend = "bottom") +
-  scale_fill_discrete_sg("main2") +
-  labs(
-    x = "Country",
-    y = "",
-    fill = "",
-    title = "Difference in life expectancy, 1967-2007"
-  )
-```
-
-### Stacked bar chart
-
-```{r stacked-bar-chart}
-stacked_bar_data <- 
-  gapminder |> 
-  filter(year == 2007) |>
-  mutate(lifeExpGrouped = cut(lifeExp, 
-                    breaks = c(0, 75, Inf),
-                    labels = c("Under 75", "75+"))) |>
-  group_by(continent, lifeExpGrouped) |>
-  summarise(n_countries = n(), .groups = "drop") |>
-  group_by(continent) |>
-  mutate(perc_countries = n_countries / sum(n_countries) * 100, 
-         .groups = "drop")
-  
-ggplot(stacked_bar_data, 
-       aes(x = continent, y = perc_countries, fill = lifeExpGrouped)) +
-  geom_bar(stat = "identity", position = "fill") +
-  theme_sg(legend = "bottom") +
-  scale_y_continuous(expand = c(0, 0), labels = scales::percent) +
-  scale_fill_discrete_sg("main2") +
-  labs(
-    x = "Continent",
-    y = "",
-    fill = "Life Expectancy",
-    title = "Percentage of countries by life expectancy band, 2007"
-  )
+```{r annotations, child = "cookbook/_annotations.Rmd"} 
 ```
 
 <br>
 
-## Histograms
-
-```{r histogram}
-gapminder |>
-  filter(year == 2007) |>
-  ggplot(aes(x = lifeExp)) +
-  geom_histogram(binwidth = 5, 
-                 colour = "white", 
-                 fill = sg_colour_values["dark-blue"]) +
-  theme_sg() +
-  scale_y_continuous(expand = c(0, 0)) +
-  labs(
-    x = "",
-    y = "",
-    title = "Distribution of life expectancy, 2007"
-  )
+```{r customisations, child = "cookbook/_customisations.Rmd"} 
 ```
 
 <br>
 
-## Small multiples
-
-```{r small-multiples}
-gapminder |>
-  filter(continent != "Oceania") |>
-  group_by(continent, year) |>
-  summarise(pop = sum(as.numeric(pop)), .groups = "drop") |>
-  ggplot(aes(x = year, y = pop, fill = continent)) +
-  geom_area() +
-  theme_sg(legend = "none") +
-  scale_fill_discrete_sg() + 
-  facet_wrap( ~ continent, ncol = 2) + 
-  scale_y_continuous(breaks = c(0, 2e9, 4e9),
-                     labels = c(0, "2bn", "4bn")) +
-  coord_cartesian(clip = "off") +
-  theme(axis.text.x = element_blank(),
-        axis.ticks.x = element_blank()) +
-  labs(
-    x = "",
-    y = "",
-    title = "Population growth by continent, 1952-2007"
-  )
+```{r colour-palettes, child = "cookbook/_colour-palettes.Rmd"} 
 ```
 
 <br>
 
-## Adding annotations
-
-Adding annotations can be quite fiddly. The easiest way to add an annotation is to manually define the co-ordinates of the required positioning. 
-
-```{r annotations}
-ann_data <- gapminder |>
-  filter(country %in% c("United Kingdom", "France"))
-
-ann_labs <- ann_data |> 
-  group_by(country) |>
-  mutate(min_year = min(year)) |>
-  filter(year == max(year)) |>
-  ungroup()
-
-ggplot(data = ann_data, aes(x = year, y = lifeExp, colour = country)) +
-  geom_line(linewidth = 1) +
-  theme_sg(legend = "none", axis = "x") +
-  scale_colour_discrete_sg("main2") +
-  labs(
-    x = "Year",
-    y = "",
-    title = "Life Expectancy in the United Kingdom and France",
-    colour = ""
-  ) + 
-  geom_text(data = ann_labs, 
-            aes(x = year, y = lifeExp, label = country, colour = country),
-            size = 12 / ggplot2::.pt,
-            hjust = 0, 
-            vjust = 0.5,
-            nudge_x = 0.5) +
-  scale_x_continuous(limits = c(1950, 2020),
-                     breaks = seq(1950, 2020, 10))
+```{r acknowledgments, child = "cookbook/_acknowledgments.Rmd"} 
 ```
-
-However, this makes the code difficult to reuse as values are hard coded and not automatically generated from the data. This is more fiddly, however is possible.
-
-
-
-<br>
-
-## Theme customisation
-
-<br>
-
-## Using a different colour palette
-
-Colour palettes from the Analysis Function [colours guidance](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/) have been used in sgplot. The colours in these palettes all have sufficient colour contrast against a white background and take into account the general considerations for colour set out in accessibility legislation. More information on the colours used in sgplot can be found in the [Colours article](https://datasciencescotland.github.io/sgplot/articles/colours.html) or by running `vignette("colours", package = "sgplot")`.
-
-There may be instances where you'd like to use a different colour palette. If so, this should be carefully considered to ensure it meets accessibility requirements. The previously mentioned Analysis Function guidance outlines [appropriate steps for choosing your own accessibile colour palette](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/#section-9) and should be used.
-
-```{r different-colour-palette-1}
-my_palette <- c("#0F820D", "#000000")
-
-gapminder |>
-  filter(country == "United Kingdom") |>
-  ggplot(aes(x = year, y = lifeExp)) +
-  geom_line(linewidth = 1, colour = my_palette[1]) +
-  theme_sg() +
-  labs(
-    x = "Year",
-    y = "",
-    title = "Life Expectancy in the United Kingdom"
-  )
-```
-
-```{r different-colour-palette-2}
-gapminder |>
-  filter(country %in% c("United Kingdom", "France")) |>
-  ggplot(aes(x = year, y = lifeExp, colour = country)) +
-  geom_line(linewidth = 1) +
-  theme_sg(legend = "bottom") +
-  scale_colour_manual(values = my_palette) +
-  labs(
-    x = "Year",
-    y = "",
-    title = "Life Expectancy in the United Kingdom and France",
-    colour = ""
-  )
-```
-
-### Adding a new colour palette to sgplot
-
-If you use a different palette regularly and feel it would be useful for this to be added to sgplot, please [open an issue](https://github.com/DataScienceScotland/sgplot/issues/new?assignees=alicebyers5&labels=enhancement&title=New+colour+palette+suggestion) to discuss this with package maintainers. Further guidance for contributing to sgplot will be available shortly.
-
-<br>
-
-## Anything else?

@@ -1,0 +1,292 @@
+## Line charts
+
+### Line chart with one line
+
+```{r line-charts-1}
+#| fig.alt = "A line chart using sgplot theme and dark blue colour."
+
+gapminder |>
+  filter(country == "United Kingdom") |>
+  ggplot(aes(x = year, y = lifeExp)) +
+  geom_line(linewidth = 1, colour = sg_colour_values["dark-blue"]) +
+  theme_sg() +
+  scale_y_continuous(limits = c(0, 82), 
+                     breaks = seq(0, 80, 20),
+                     expand = c(0, 0)) +
+  scale_x_continuous(breaks = seq(1952, 2007, 5)) +
+  labs(
+    x = "Year",
+    y = NULL,
+    title = "Living Longer",
+    subtitle = "Life Expectancy in the United Kingdom 1952-2007",
+    caption = "Source: Gapminder"
+  )
+```
+
+### Line chart with multiple lines
+
+```{r line-charts-2, fig.height = 5}
+#| fig.alt = "A multiple line chart using sgplot theme and main2 colour palette."
+
+gapminder |>
+  filter(country %in% c("United Kingdom", "China")) |>
+  ggplot(aes(x = year, y = lifeExp, colour = country)) +
+  geom_line(linewidth = 1) +
+  theme_sg(legend = "bottom") +
+  scale_colour_discrete_sg("main2") +
+  scale_y_continuous(limits = c(0, 82), 
+                     breaks = seq(0, 80, 20),
+                     expand = c(0, 0)) +
+  scale_x_continuous(breaks = seq(1952, 2007, 5)) +  
+  labs(
+    x = "Year",
+    y = NULL,
+    title = "Living Longer",
+    subtitle = "Life Expectancy in the United Kingdom and China 1952-2007",
+    caption = "Source: Gapminder",
+    colour = NULL
+  )
+```
+
+An example with line labels and no legend can be found in the [Adding annotations](#adding-annotations) section.
+
+<br>
+
+## Bar charts
+
+```{r bar-data}
+bar_data <- 
+  gapminder |> 
+  filter(year == 2007 & continent == "Europe") |>
+  slice_max(order_by = lifeExp, n = 5)
+```
+
+```{r bar-chart-1}
+#| fig.alt = "A bar chart using sgplot theme and dark blue colour."
+
+ggplot(bar_data, aes(x = reorder(country, -lifeExp), y = lifeExp)) +
+  geom_col(fill = sg_colour_values["dark-blue"]) +
+  theme_sg() +
+  scale_y_continuous(expand = c(0, 0)) +
+  labs(
+    x = NULL,
+    y = NULL,
+    title = "Iceland has the highest life expectancy in Europe",
+    subtitle = "Life expectancy in European countries, 2007",
+    caption = "Source: Gapminder"
+  )
+```
+
+A bar chart can sometimes look better with horizontal bars. This can also be a good option if your bar labels are long and difficult to display horizontally on the x axis. To produce a horizontal bar chart, swap the variables defined for x and y in `aes()` and make a few tweaks to `theme_sg()`; draw grid lines for the x axis only by setting the `grid` argument, and draw an axis line for the y axis only by setting the `axis` argument.
+
+```{r bar-chart-2}
+#| fig.alt = "A horizontal bar chart using sgplot theme and dark blue colour."
+
+ggplot(bar_data, aes(x = lifeExp, y = reorder(country, lifeExp))) +
+  geom_col(fill = sg_colour_values["dark-blue"]) +
+  theme_sg(grid = "x", axis = "y") +
+  scale_x_continuous(expand = c(0, 0)) +
+  labs(
+    x = NULL,
+    y = NULL,
+    title = "Iceland has the highest life expectancy in Europe",
+    subtitle = "Life expectancy in European countries, 2007",
+    caption = "Source: Gapminder"
+  )
+```
+
+
+### Grouped bar chart
+
+To create a grouped bar chart, set `stat = "identity"` and `position = "dodge"` in the call to `geom_bar()`. Also assign a variable to `fill` within `aes()` to determine what variable is used to create bars within groups. The `legend` argument in `theme_sg()` can be used to set the position of the legend.
+
+```{r grouped-bar-chart, fig.height = 5.5}
+#| fig.alt = "A grouped bar chart using sgplot theme and colours from main2 palette"
+
+grouped_bar_data <- 
+  gapminder |> 
+  filter(year %in% c(1967, 2007) & 
+           country %in% c("United Kingdom", "Ireland", "France", "Belgium"))
+
+ggplot(grouped_bar_data, 
+       aes(x = country, y = lifeExp, fill = as.factor(year))) +
+  geom_bar(stat = "identity", position = "dodge") +
+  scale_y_continuous(expand = c(0, 0)) +
+  theme_sg(legend = "bottom") +
+  scale_fill_discrete_sg("main2") +
+  labs(
+    x = "Country",
+    y = NULL,
+    fill = NULL,
+    title = "Living longer",
+    subtitle = "Difference in life expectancy, 1967-2007",
+    caption = "Source: Gapminder"
+  )
+```
+
+### Stacked bar chart
+
+To create a stacked bar chart, set `stat = "identity` and `position = "fill"` in the call to `geom_bar()` and assign a variable to `fill` as before. This will plot your data as part-to-whole. To plot counts, set `position = "identity"`.
+
+Caution should be taken when producing stacked bar charts. They can quickly become difficult to interpret if plotting non part-to-whole data, and/or if plotting more than two categories per stack. First and last categories in the stack will always be easier to compare across bars than those in the middle. Think carefully about the story you are trying to tell with your chart.
+
+```{r stacked-bar-chart, fig.height = 5.5}
+#| fig.alt = "A stacked bar chart using sgplot theme and colours from main2 palette"
+
+stacked_bar_data <- 
+  gapminder |> 
+  filter(year == 2007) |>
+  mutate(lifeExpGrouped = cut(lifeExp, 
+                    breaks = c(0, 75, Inf),
+                    labels = c("Under 75", "75+"))) |>
+  group_by(continent, lifeExpGrouped) |>
+  summarise(n_countries = n(), .groups = "drop")
+  
+ggplot(stacked_bar_data, 
+       aes(x = continent, y = n_countries, fill = lifeExpGrouped)) +
+  geom_bar(stat = "identity", position = "fill") +
+  theme_sg(legend = "bottom") +
+  scale_y_continuous(expand = c(0, 0), labels = scales::percent) +
+  coord_cartesian(clip = "off") +
+  scale_fill_discrete_sg("main2") +
+  labs(
+    x = NULL,
+    y = NULL,
+    fill = "Life Expectancy",
+    title = "How life expectancy varies across continents",
+    subtitle = "Percentage of countries by life expectancy band, 2007",
+    caption = "Source: Gapminder"
+  )
+```
+
+<br>
+
+## Histograms
+
+```{r histogram}
+#| fig.alt = "A histogram with sgplot theme and dark blue colour."
+
+gapminder |>
+  filter(year == 2007) |>
+  ggplot(aes(x = lifeExp)) +
+  geom_histogram(binwidth = 5, 
+                 colour = "white", 
+                 fill = sg_colour_values["dark-blue"]) +
+  theme_sg() +
+  scale_y_continuous(expand = c(0, 0)) +
+  labs(
+    x = NULL,
+    y = "Number of \ncountries",
+    title = "How life expectancy varies",
+    subtitle = "Distribution of life expectancy, 2007",
+    caption = "Source: Gapminder"
+  )
+```
+
+<br>
+
+## Scatterplots
+
+```{r scatterplot, fig.height = 5}
+#| fig.alt = "A scatterplot using sgplot theme and dark blue colour."
+
+gapminder |>
+  filter(year == 2007) |>
+  ggplot(aes(x = gdpPercap, y = lifeExp, size = pop)) +
+  geom_point(colour = sg_colour_values["dark-blue"]) +
+  theme_sg(axis = "none", grid = 'xy') +
+  scale_x_continuous(
+    labels = function(x) scales::dollar(x, prefix = "£")
+  ) +
+  scale_size_continuous(labels = scales::comma) +
+  labs(
+    x = "GDP",
+    y = "Life\nExpectancy",
+    size = "Population",
+    title = stringr::str_wrap(
+      "The relationship between GDP and Life Expectancy is complex", 40
+    ),
+    subtitle = "GDP and Life Expectancy for all countires, 2007",
+    caption = "Source: Gapminder"
+  )
+```
+
+<br>
+
+## Small multiples
+
+```{r small-multiples, fig.height = 5.5}
+#| fig.alt = "A small multiples area chart using sgplot theme and main colour palette."
+
+gapminder |>
+  filter(continent != "Oceania") |>
+  group_by(continent, year) |>
+  summarise(pop = sum(as.numeric(pop)), .groups = "drop") |>
+  ggplot(aes(x = year, y = pop, fill = continent)) +
+  geom_area() +
+  theme_sg(axis = "none", ticks = "none", legend = "none") +
+  scale_fill_discrete_sg() + 
+  facet_wrap( ~ continent, ncol = 2) + 
+  scale_y_continuous(breaks = c(0, 2e9, 4e9),
+                     labels = c(0, "2bn", "4bn")) +
+  coord_cartesian(clip = "off") +
+  theme(axis.text.x = element_blank()) +
+  labs(
+    x = NULL,
+    y = NULL,
+    title = "Asia's rapid growth",
+    subtitle = "Population growth by continent, 1952-2007",
+    caption = "Source: Gapminder"
+  )
+```
+
+<br>
+
+## Pie charts
+
+```{r pie-chart}
+#| fig.alt = "A pie chart using sgplot theme and main2 palette."
+
+stacked_bar_data |>
+  filter(continent == "Europe") |>
+  ggplot(aes(x = "", y = n_countries, fill = lifeExpGrouped)) +
+  geom_col(colour = "white", position = "fill") +
+  coord_polar(theta = "y") +
+  theme_sg(grid = "none", axis = "none", ticks = "none") +
+  theme(axis.text = element_blank()) +
+  scale_fill_discrete_sg("main2") +
+  labs(
+    x = NULL,
+    y = NULL,
+    fill = NULL,
+    title = "How life expectancy varies in Europe",
+    subtitle = "Percentage of countries by life expectancy band, 2007",
+    caption = "Source: Gapminder"
+  )
+
+```
+
+<br>
+
+## Focus charts
+
+```{r focus-chart}
+#| fig.alt = "A bar chart with the bar for Sweden highlighted in dark blue and other bars in grey."
+
+bar_data |>
+  ggplot(
+    aes(x = reorder(country, -lifeExp), y = lifeExp, 
+        fill = country == "Sweden")
+  ) +
+  geom_col() +
+  theme_sg(legend = "none") +
+  scale_y_continuous(expand = c(0, 0)) +
+  scale_fill_discrete_sg("focus", reverse = TRUE) +
+  labs(
+    x = NULL,
+    y = NULL,
+    title = "Sweden has the fourth highest life expectancy in Europe",
+    subtitle = "Life expectancy in European countries, 2007",
+    caption = "Source: Gapminder"
+  )
+```

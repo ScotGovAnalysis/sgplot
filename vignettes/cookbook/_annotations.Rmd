@@ -1,0 +1,97 @@
+## Annotations
+
+Labelling your chart is often preferable to using a legend, as often this relies on a user matching the legend to the data using colour alone. The legend can be removed from a chart by setting `legend = "none"` in `theme_sg()`.
+
+The easiest way to add an annotation is to manually define the co-ordinates of the required position.
+
+```{r annotations-data}
+ann_data <- gapminder |>
+  filter(country %in% c("United Kingdom", "China"))
+```
+
+```{r annotations-1}
+#| fig.alt = "A multiple line chart with colour co-ordinated line labels using sgplot theme and main2 palette."
+
+ann_data |>
+  ggplot(aes(x = year, y = lifeExp, colour = country)) +
+  geom_line(linewidth = 1) +
+  theme_sg(legend = "none") +
+  scale_colour_discrete_sg("main2") +
+  scale_y_continuous(limits = c(0, 82), 
+                     breaks = seq(0, 80, 20),
+                     expand = c(0, 0)) +
+  scale_x_continuous(limits = c(1952, 2017),
+                     breaks = seq(1952, 2017, 5)) +  
+  annotate(geom = "text", x = 2008, y = 73, label = "China",
+           colour = sg_colour_values["dark-blue"],
+           hjust = 0, vjust = 0.5) +
+  annotate(geom = "text", x = 2008, y = 79.4, label = "United Kingdom",
+           colour = sg_colour_values["orange"],
+           hjust = 0, vjust = 0.5) +
+  labs(
+    x = "Year",
+    y = NULL,
+    title = "Living Longer",
+    subtitle = "Life Expectancy in the United Kingdom and China 1952-2007",
+    caption = "Source: Gapminder"
+  )
+```
+
+However, this makes the code difficult to reuse as values are hard coded and not automatically generated from the data. Automating the position of annotations is possible, but more fiddly. 
+
+The following examples use `geom_text()`, however `geom_label()` is also an option and draws a rectangle behind the text, sometimes making it easier to read. These functions have `nudge` arguments that can be used to displace text to improve the positioning.
+
+```{r annotations-2}
+#| fig.alt = "A multiple line chart with colour co-ordinated line labels using sgplot theme and main2 palette."
+
+ann_labs <- ann_data |> 
+  group_by(country) |>
+  mutate(min_year = min(year)) |>
+  filter(year == max(year)) |>
+  ungroup()
+
+ann_data |>
+  ggplot(aes(x = year, y = lifeExp, colour = country)) +
+  geom_line(linewidth = 1) +
+  theme_sg(legend = "none") +
+  scale_colour_discrete_sg("main2") +
+  scale_y_continuous(limits = c(0, 82), 
+                     breaks = seq(0, 80, 20),
+                     expand = c(0, 0)) +
+  scale_x_continuous(limits = c(1952, 2017),
+                     breaks = seq(1952, 2017, 5)) +  
+  geom_text(data = ann_labs, 
+            aes(x = year, y = lifeExp, label = country, colour = country),
+            size = 12 / .pt,
+            hjust = 0, 
+            vjust = 0.5,
+            nudge_x = 0.5) +
+  labs(
+    x = "Year",
+    y = NULL,
+    title = "Living Longer",
+    subtitle = "Life Expectancy in the United Kingdom and China 1952-2007",
+    caption = "Source: Gapminder"
+  )
+```
+
+Annotations may also be used to add value labels to a bar chart.
+
+```{r annotations-3}
+#| fig.alt = "A bar chart with white text labels at the end of each bar."
+
+ggplot(bar_data, aes(x = reorder(country, -lifeExp), y = lifeExp)) +
+  geom_col(fill = sg_colour_values["dark-blue"]) +
+  geom_text(aes(label = round(lifeExp, 1)), nudge_y = -5, colour = "white") +
+  theme_sg() +
+  scale_y_continuous(expand = c(0, 0)) +
+  labs(
+    x = NULL,
+    y = NULL,
+    title = "Iceland has the highest life expectancy in Europe",
+    subtitle = "Life expectancy in European countries, 2007",
+    caption = "Source: Gapminder"
+  )
+```
+
+**Note**: The `annotate()` function should be used to add annotations with manually defined positioning co-ordinates, whereas `geom_text()` should be used when using co-ordinates defined in a data frame. Although the reverse may work, text can appear blurry.
