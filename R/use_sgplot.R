@@ -58,9 +58,21 @@ use_sgplot <- function(default_colour = sgplot::sg_colour_values["dark-blue"],
   base_line_size <- eval(default$base_line_size)
   base_rect_size <- eval(default$base_rect_size)
 
-  # Line
+  # Lines
   ggplot2::update_geom_defaults(
     geom = "line",
+    new = list(colour = default_colour,
+               linewidth = base_line_size)
+  )
+
+  ggplot2::update_geom_defaults(
+    geom = "hline",
+    new = list(colour = default_colour,
+               linewidth = base_line_size)
+  )
+
+  ggplot2::update_geom_defaults(
+    geom = "vline",
     new = list(colour = default_colour,
                linewidth = base_line_size)
   )
