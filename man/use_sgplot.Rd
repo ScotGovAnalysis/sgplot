@@ -2,7 +2,7 @@
 % Please edit documentation in R/use_sgplot.R
 \name{use_sgplot}
 \alias{use_sgplot}
-\title{Use \code{sgplot} defaults.}
+\title{Use sgplot defaults.}
 \usage{
 use_sgplot(default_colour = sgplot::sg_colour_values["dark-blue"], ...)
 }
@@ -13,7 +13,7 @@ use_sgplot(default_colour = sgplot::sg_colour_values["dark-blue"], ...)
 \item{...}{Arguments passed to \code{theme_sg}.}
 }
 \description{
-Set \code{sgplot} theme, colour palette and geom aesthetic
+Set sgplot theme, colour palette and geom aesthetic
 defaults for ggplot2 charts.
 }
 \examples{
