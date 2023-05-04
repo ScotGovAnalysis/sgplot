@@ -26,6 +26,7 @@ Accessibility legislation means that all content published on public sector webs
 
 The [Government Analysis Function](https://analysisfunction.civilservice.gov.uk/) has published a variety of resources for producing data visualisations:
 
+* [Charts Checklist](https://analysisfunction.civilservice.gov.uk/policy-store/charts-a-checklist/)
 * [Charts Guidance](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/)
 * [Colours Guidance](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/)
 * [Data Visualisation e-Learning](https://analysisfunction.civilservice.gov.uk/support/communicating-analysis/introduction-to-data-visualisation-e-learning/) (in particular the [Accessibility and Colour](https://analysisfunction.civilservice.gov.uk/support/communicating-analysis/introduction-to-data-visualisation-e-learning/data-visualisation-e-learning-module-3-accessibility-and-colour-palettes/) module)
@@ -40,7 +41,7 @@ By applying `theme_sg` to ggplot2 plots, the following best practice is followed
 
 * Plot background is white.
 
-* Axis lines, ticks and labels are dark grey (#d9d9d9).
+* Axis lines and ticks are light grey (#595959). By default, only the x axis is shown but these can be controlled using the `axis` and `ticks` arguments.
 
 * Grid lines are light grey (#595959) and kept to a minimum; by default only major y axis lines are shown, but this can be controlled using the `grid` argument.
 
