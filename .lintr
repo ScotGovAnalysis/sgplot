@@ -1,2 +1,3 @@
 linters: linters_with_defaults() # see vignette("lintr")
+exclude: list("^#| fig.alt = ")
 encoding: "UTF-8"
