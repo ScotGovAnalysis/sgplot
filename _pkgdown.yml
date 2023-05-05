@@ -8,13 +8,28 @@ development:
 
 authors:
   Alice Byers:
-    href: "https://github.com/alicebyers5"
+    html: "Alice Byers&nbsp;&nbsp;\
+    <a href='mailto:alice.byers@gov.scot'>\
+    <i class='fas fa-envelope' aria-hidden='true'></i>\
+    <span class='visually-hidden'>Email Alice Byers></span></a>&nbsp;&nbsp;\
+    <a href='https://github.com/alicebyers5'>\
+    <i class='fab fa-github' aria-hidden='true'></i>\
+    <span class='visually-hidden'>Alice Byers GitHub profile></span></a>"
   Scottish Government:
-    href: "https://github.com/DataScienceScotland"
+    html: "Scottish Government&nbsp;&nbsp;\
+    <a href='mailto:statistics.enquiries@gov.scot'>\
+    <i class='fas fa-envelope' aria-hidden='true'></i>\
+    <span class='visually-hidden'>Email Scottish Government></span></a>\
+    &nbsp;&nbsp;\
+    <a href='https://github.com/DataScienceScotland'>\
+    <i class='fab fa-github' aria-hidden='true'></i>\
+    <span class='visually-hidden'>Scottish Government GitHub profile></span>\
+    </a>"
   sidebar:
-    roles: [cre, aut, cph]
+    roles: [cre, aut]
   footer:
-    roles: [cre, aut, cph]
+    roles: [cph]
+    text: "Developed by"
 
 navbar:
   structure:
