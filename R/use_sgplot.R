@@ -98,6 +98,12 @@ use_sgplot <- function(default_colour = sgplot::sg_colour_values["dark-blue"],
                size = base_size / ggplot2::.pt)
   )
 
+  ggplot2::update_geom_defaults(
+    geom = "label",
+    new = list(colour = "black",
+               size = base_size / ggplot2::.pt)
+  )
+
   # Point
   ggplot2::update_geom_defaults(
     geom = "point",
