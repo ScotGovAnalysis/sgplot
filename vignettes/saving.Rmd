@@ -1,0 +1,91 @@
+---
+title: "Saving charts"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Saving charts}
+  %\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::rmarkdown}
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  message = FALSE,
+  warning = FALSE
+)
+
+mm_to_inch <- function(x) {x / 25.4}
+
+```
+
+This article covers best practice guidance for saving charts as images. This may be as a standalone image file, or embedded in a document produced using R Markdown.
+
+This guidance follows recommendations in the [Government Analysis Function charts guidance](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/#section-4).
+
+
+## File format
+
+The best format to save images of charts is Scalable Vector Graphic (SVG) format. SVG files retain the same quality regardless of the size they are viewed at. This means SVG images are more accessible than other image formats such as JPG or PNG.
+
+You can find an [example of a chart image in an SVG, JPEG and PNG format on GOV.UK](https://www.gov.uk/government/publications/examples-of-visual-content-to-use-on-govuk/examples-of-visual-content-to-use-on-govuk#image-formats-for-charts).
+
+If you cannot use an SVG image, then a JPG or PNG image is acceptable. 
+
+
+## Size and dimensions
+
+A chart should follow the flow of the content surrounding it. It should be roughly the same width as the text before and after the image.
+
+The dimensions of your chart will depend on where you plan to use it. For example, if you're using a page-based document such as Microsoft Word, and would like to include a landscape image on an A4 portrait page, a width of 159 mm and height of 100 mm works well. 
+
+When using the SVG file format, actual saved image dimensions will be exactly as specified. However, when using JPG or PNG formats, they may not be. This is because these file formats are also influenced by DPI (dots per inch). DPI is a measure of the resolution of an image; the higher the DPI, the more crisp and good quality your image will be. 
+
+This is another good reason to use SVG over these formats, however if you are limited to JPG or PNG, it may take some trial and error to find the correct combination of width, height and DPI.
+
+
+## Saving images from R
+
+
+### Standalone image file 
+
+The `ggsave()` function from `ggplot2` can be used to save a standalone image file. To specify the SVG file format, simple ensure your file name ends with `.svg`. The following example uses the recommended dimensions from the previous section.
+
+```{r standalone-svg, eval = FALSE}
+ggsave(myplot, filename = "example-plot.svg", 
+       width = 159, height = 100, units = "mm")
+```
+
+For a JPG or PNG image, also consider the DPI value. In `ggsave`, this can be supplied as a numerical value, or as a string input. For best quality, use "retina".
+
+```{r standalong-png, eval = FALSE}
+ggsave(myplot, filename = "example-plot.png",
+       width = 159, height = 100, units = "mm", dpi = "retina")
+```
+
+
+### R Markdown
+
+For plots included in an R Markdown document, file format and dimensions can be set in the code chunk options. 
+
+````markdown
+`r ''````{r plot1, file.ext = "svg"}
+plot1
+```
+````
+
+However, if you want all of your images to be in the same format, it is usually easier to set this option globally in the first code chunk of your document.
+
+````markdown
+`r ''````{r setup}
+knitr::opts_chunk$set(file.ext = "svg")
+```
+````
+
+
+#### HTML
+
+#### Mircrosft Word
+

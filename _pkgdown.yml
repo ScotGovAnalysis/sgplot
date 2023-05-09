@@ -46,6 +46,8 @@ navbar:
         href: articles/accessibility.html
       - text: Colours
         href: articles/colours.html
+      - text: Saving charts
+        href: articles/saving.html
 
 reference:
 
