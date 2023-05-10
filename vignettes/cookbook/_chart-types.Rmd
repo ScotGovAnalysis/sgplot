@@ -50,7 +50,6 @@ gapminder |>
 
 An example with line labels and no legend can be found in the [Adding annotations](#adding-annotations) section.
 
-<br>
 
 ## Bar charts
 
@@ -159,7 +158,6 @@ ggplot(stacked_bar_data,
   )
 ```
 
-<br>
 
 ## Histograms
 
@@ -183,7 +181,6 @@ gapminder |>
   )
 ```
 
-<br>
 
 ## Scatterplots
 
@@ -211,7 +208,6 @@ gapminder |>
   )
 ```
 
-<br>
 
 ## Small multiples
 
@@ -240,7 +236,6 @@ gapminder |>
   )
 ```
 
-<br>
 
 ## Pie charts
 
@@ -266,7 +261,6 @@ stacked_bar_data |>
 
 ```
 
-<br>
 
 ## Focus charts
 

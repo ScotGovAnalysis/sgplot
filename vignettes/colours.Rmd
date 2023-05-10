@@ -83,7 +83,6 @@ The following are a few key considerations when using colour in plots:
 * Use colour consistently when producing a series of plots
 * Do not rely on colour alone to communicate a message
 
-<br>
 
 ## Main Palettes
 
@@ -103,7 +102,6 @@ dat %>%
 
 * `main6` is also available to use, however it should be avoided where possible, as it's generally considered that use of four or more colours in a plot is excessive. Plot redesign should be considered where possible and `main6` used as a last resort.
 
-<br>
 
 ## Other Palettes
 
@@ -121,14 +119,11 @@ dat %>%
 
 * `focus` should be used to highlight specific elements of a plot. The light grey colour in this palette does not have sufficient colour contrast against a white background and therefore this palette should only be used when it is essential to communicate your message. The Analysis Function colour guidance has some [advice for using the focus palette](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/#section-7) which should be considered.
 
-<br>
-
 
 ## A note on choice of colour palettes
 
 Although Scottish Government [colour palettes](https://designsystem.gov.scot/styles/colour-customisation/) do exist, they have been developed primarily for web development. The colours do not have sufficient contrast with each other and therefore are not suitable for use in charts. It is for this reason that sgplot uses colour palettes from the [Analysis Function guidance](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/). sgplot palettes may be updated in future when Scottish Government colour palettes for charts are developed.
 
-<br>
 
 ## Viewing Palettes in R
 

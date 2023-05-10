@@ -30,8 +30,6 @@ particular, the
 [cookbook](https://DataScienceScotland.github.io/sgplot/articles/cookbook.html)
 contains lots of examples.
 
-<br>
-
 ## Installation
 
 To install sgplot, the remotes package is required. The package can then
@@ -61,8 +59,6 @@ remotes::install_local(
 )
 ```
 
-<br>
-
 ## Getting Started
 
 Once installed, sgplot can be loaded using the `library()` function:
@@ -79,8 +75,6 @@ the RStudio console. For example:
 ``` r
 ?theme_sg()
 ```
-
-<br>
 
 ### Use sgplot as default
 
@@ -118,8 +112,6 @@ ggplot(d, aes(x = tools::toTitleCase(model))) +
 ```
 
 <img src="man/figures/README-ex2-1.svg" alt="Plot with white background, light grey horizontal grid lines and dark blue bars." width="75%" />
-
-<br>
 
 ## Licence
 

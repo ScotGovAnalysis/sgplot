@@ -1,5 +1,7 @@
 ---
 output: github_document
+editor_options: 
+  chunk_output_type: console
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -35,7 +37,6 @@ The package has been developed using the [Government Analysis Function](https://
 
 More information about the package and its functions can be found on the [sgplot website](https://DataScienceScotland.github.io/sgplot). In particular, the [cookbook](https://DataScienceScotland.github.io/sgplot/articles/cookbook.html) contains lots of examples.
 
-<br>
 
 ## Installation
 
@@ -59,7 +60,6 @@ remotes::install_local(
 )
 ```
 
-<br>
 
 ## Getting Started
 
@@ -75,7 +75,6 @@ Help files for each function in the package can be found on the [References](htt
 ?theme_sg()
 ```
 
-<br>
 
 ### Use sgplot as default
 
@@ -107,7 +106,6 @@ ggplot(d, aes(x = tools::toTitleCase(model))) +
   ) 
 ```
 
-<br>
 
 ## Licence
 

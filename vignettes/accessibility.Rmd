@@ -20,7 +20,6 @@ knitr::opts_chunk$set(
 
 Accessibility legislation means that all content published on public sector websites, including charts, must meet the level A and AA success criterion in the [Web Content Accessibility Guidelines 2.1](https://www.w3.org/TR/WCAG21/). 
 
-<br>
 
 ## Resources
 
@@ -33,7 +32,6 @@ The [Government Analysis Function](https://analysisfunction.civilservice.gov.uk/
 
 sgplot has been developed following advice in the above guidance, however, using sgplot does not guarantee accessibility. sgplot should therefore be used in conjunction with this guidance.
 
-<br>
 
 ## Accessibility of charts using sgplot
 
@@ -60,7 +58,6 @@ Colour palettes from the Analysis Function [colours guidance](https://analysisfu
 
 More information on sgplot colours can be found at `vignette("colours")`.
 
-<br>
 
 ## Other accessibility considerations
 
@@ -81,4 +78,3 @@ Using sgplot does not guarantee accessibility. The Analysis Function [chart guid
 * Use commas as thousands separators in axis labels or text annotations.
 
 * [Ask for feedback](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/#section-15) from colleagues and users.
-

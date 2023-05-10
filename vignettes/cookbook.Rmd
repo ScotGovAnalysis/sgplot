@@ -39,27 +39,22 @@ library(dplyr)
 library(gapminder)
 ```
 
-<br>
 
 ```{r chart-types, child = "cookbook/_chart-types.Rmd"} 
 ```
 
-<br>
 
 ```{r annotations, child = "cookbook/_annotations.Rmd"} 
 ```
 
-<br>
 
 ```{r customisations, child = "cookbook/_customisations.Rmd"} 
 ```
 
-<br>
 
 ```{r colour-palettes, child = "cookbook/_colour-palettes.Rmd"} 
 ```
 
-<br>
 
 ```{r acknowledgments, child = "cookbook/_acknowledgments.Rmd"} 
 ```
