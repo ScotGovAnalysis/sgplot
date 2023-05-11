@@ -52,4 +52,4 @@ gapminder |>
 
 ### Adding a new colour palette to sgplot
 
-If you use a different palette regularly and feel it would be useful for this to be added to sgplot, please [open an issue](https://github.com/DataScienceScotland/sgplot/issues/new?assignees=alicebyers5&labels=enhancement&title=New+colour+palette+suggestion) to discuss this with package maintainers. Further guidance for contributing to sgplot will be available shortly.
+If you use a different palette regularly and feel it would be useful for this to be added to sgplot, please make a suggestion as per the [contributing guidance](https://datasciencescotland.github.io/sgplot/CONTRIBTUING.html).
