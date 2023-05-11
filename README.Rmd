@@ -17,9 +17,10 @@ knitr::opts_chunk$set(
   dev = "svg"
 )
 
-ex1_alt <- "Plot with grey background, white grid lines and dark grey bars."
-ex2_alt <- paste("Plot with white background, light grey horizontal grid lines",
-                 "and dark blue bars.")
+ex1_alt <- paste("A bar chart with grey background, white grid lines",
+                 "and dark grey bars.")
+ex2_alt <- paste("A bar chart with white background,",
+                 "light grey horizontal grid lines dark blue bars.")
 
 ```
 
@@ -82,28 +83,44 @@ The easiest way to use sgplot is by adding `use_sgplot()` to the beginning of yo
 
 #### Example 1: Plot with one colour using ggplot2 defaults
 
-```{r ex1, fig.show = "hold", out.width = "75%", fig.alt = ex1_alt}
+```{r ex1, fig.alt = ex1_alt}
 library(ggplot2)
+library(dplyr)
+library(gapminder)
 
-d <- subset(mpg, manufacturer == "ford")
-
-ggplot(d, aes(x = model)) + geom_bar()
+gapminder |> 
+  filter(year == 2007 & continent == "Europe") |>
+  slice_max(order_by = lifeExp, n = 5) |>
+  ggplot() +
+  geom_col(aes(x = reorder(country, -lifeExp), y = lifeExp)) +
+  scale_y_continuous(expand = c(0, 0)) +
+  labs(
+    x = NULL,
+    y = NULL,
+    title = "Iceland has the highest life expectancy in Europe",
+    subtitle = "Life expectancy in European countries, 2007",
+    caption = "Source: Gapminder"
+  )
 ```
 
 #### Example 2: Plot with one colour using sgplot defaults
 
-```{r ex2, fig.show = "hold", out.width = "75%", fig.alt = ex2_alt}
+```{r ex2, fig.alt = ex2_alt}
 sgplot::use_sgplot()
 
-ggplot(d, aes(x = tools::toTitleCase(model))) + 
-  geom_bar() +
-  # Make some other adjustments to improve look of plot
+gapminder |> 
+  filter(year == 2007 & continent == "Europe") |>
+  slice_max(order_by = lifeExp, n = 5) |>
+  ggplot() +
+  geom_col(aes(x = reorder(country, -lifeExp), y = lifeExp)) +
   scale_y_continuous(expand = c(0, 0)) +
   labs(
-    title = "An example ggplot bar plot using sgplot",
-    x     = "Car Model",
-    y     = "Count"
-  ) 
+    x = NULL,
+    y = NULL,
+    title = "Iceland has the highest life expectancy in Europe",
+    subtitle = "Life expectancy in European countries, 2007",
+    caption = "Source: Gapminder"
+  )
 ```
 
 

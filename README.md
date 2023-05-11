@@ -87,31 +87,47 @@ colour palettes and use `theme_sg()`.
 
 ``` r
 library(ggplot2)
+library(dplyr)
+library(gapminder)
 
-d <- subset(mpg, manufacturer == "ford")
-
-ggplot(d, aes(x = model)) + geom_bar()
+gapminder |> 
+  filter(year == 2007 & continent == "Europe") |>
+  slice_max(order_by = lifeExp, n = 5) |>
+  ggplot() +
+  geom_col(aes(x = reorder(country, -lifeExp), y = lifeExp)) +
+  scale_y_continuous(expand = c(0, 0)) +
+  labs(
+    x = NULL,
+    y = NULL,
+    title = "Iceland has the highest life expectancy in Europe",
+    subtitle = "Life expectancy in European countries, 2007",
+    caption = "Source: Gapminder"
+  )
 ```
 
-<img src="man/figures/README-ex1-1.svg" alt="Plot with grey background, white grid lines and dark grey bars." width="75%" />
+<img src="man/figures/README-ex1-1.svg" alt="A bar chart with grey background, white grid lines and dark grey bars."  />
 
 #### Example 2: Plot with one colour using sgplot defaults
 
 ``` r
 sgplot::use_sgplot()
 
-ggplot(d, aes(x = tools::toTitleCase(model))) + 
-  geom_bar() +
-  # Make some other adjustments to improve look of plot
+gapminder |> 
+  filter(year == 2007 & continent == "Europe") |>
+  slice_max(order_by = lifeExp, n = 5) |>
+  ggplot() +
+  geom_col(aes(x = reorder(country, -lifeExp), y = lifeExp)) +
   scale_y_continuous(expand = c(0, 0)) +
   labs(
-    title = "An example ggplot bar plot using sgplot",
-    x     = "Car Model",
-    y     = "Count"
-  ) 
+    x = NULL,
+    y = NULL,
+    title = "Iceland has the highest life expectancy in Europe",
+    subtitle = "Life expectancy in European countries, 2007",
+    caption = "Source: Gapminder"
+  )
 ```
 
-<img src="man/figures/README-ex2-1.svg" alt="Plot with white background, light grey horizontal grid lines and dark blue bars." width="75%" />
+<img src="man/figures/README-ex2-1.svg" alt="A bar chart with white background, light grey horizontal grid lines dark blue bars."  />
 
 ## Licence
 
