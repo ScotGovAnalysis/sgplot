@@ -49,14 +49,13 @@ use_sgplot <- function(default_colour = sgplot::sg_colour_values["dark-blue"],
   default <- formals(theme_sg)
 
   # Replace default values with those passed to use_sgplot
-  for(i in length(list(...))) {
+  for (i in length(list(...))) {
     default <- replace(default, i, list(...)[i])
   }
 
   # Evaluate base_size values for use in geom defaults
   base_size <- eval(default$base_size)
   base_line_size <- eval(default$base_line_size)
-  base_rect_size <- eval(default$base_rect_size)
 
   # Lines
   ggplot2::update_geom_defaults(

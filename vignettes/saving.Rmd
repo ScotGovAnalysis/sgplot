@@ -16,9 +16,6 @@ knitr::opts_chunk$set(
   message = FALSE,
   warning = FALSE
 )
-
-mm_to_inch <- function(x) {x / 25.4}
-
 ```
 
 This article covers best practice guidance for saving charts as images. This may be as a standalone image file, or embedded in a document produced using R Markdown.
@@ -61,7 +58,7 @@ When using the SVG file format, actual saved image dimensions will be exactly as
 The `ggsave()` function from `ggplot2` can be used to save a standalone image file. To specify the SVG file format, simply ensure your file name ends with `.svg`. The following example uses the recommended dimensions from the previous section.
 
 ```{r standalone-svg, eval = FALSE}
-ggsave(myplot, filename = "example-plot.svg", 
+ggsave(myplot, filename = "example-plot.svg",
        width = 159, height = 100, units = "mm")
 ```
 

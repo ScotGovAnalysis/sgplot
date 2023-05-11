@@ -10,7 +10,7 @@ gapminder |>
   ggplot(aes(x = year, y = lifeExp)) +
   geom_line(linewidth = 1, colour = sg_colour_values["dark-blue"]) +
   theme_sg() +
-  scale_y_continuous(limits = c(0, 82), 
+  scale_y_continuous(limits = c(0, 82),
                      breaks = seq(0, 80, 20),
                      expand = c(0, 0)) +
   scale_x_continuous(breaks = seq(1952, 2007, 5)) +
@@ -34,10 +34,10 @@ gapminder |>
   geom_line(linewidth = 1) +
   theme_sg(legend = "bottom") +
   scale_colour_discrete_sg("main2") +
-  scale_y_continuous(limits = c(0, 82), 
+  scale_y_continuous(limits = c(0, 82),
                      breaks = seq(0, 80, 20),
                      expand = c(0, 0)) +
-  scale_x_continuous(breaks = seq(1952, 2007, 5)) +  
+  scale_x_continuous(breaks = seq(1952, 2007, 5)) +
   labs(
     x = "Year",
     y = NULL,
@@ -54,8 +54,8 @@ An example with line labels and no legend can be found in the [Adding annotation
 ## Bar charts
 
 ```{r bar-data}
-bar_data <- 
-  gapminder |> 
+bar_data <-
+  gapminder |>
   filter(year == 2007 & continent == "Europe") |>
   slice_max(order_by = lifeExp, n = 5)
 ```
@@ -102,12 +102,12 @@ To create a grouped bar chart, set `stat = "identity"` and `position = "dodge"` 
 ```{r grouped-bar-chart, fig.height = 5.5}
 #| fig.alt = "A grouped bar chart using sgplot theme and colours from main2 palette"
 
-grouped_bar_data <- 
-  gapminder |> 
-  filter(year %in% c(1967, 2007) & 
+grouped_bar_data <-
+  gapminder |>
+  filter(year %in% c(1967, 2007) &
            country %in% c("United Kingdom", "Ireland", "France", "Belgium"))
 
-ggplot(grouped_bar_data, 
+ggplot(grouped_bar_data,
        aes(x = country, y = lifeExp, fill = as.factor(year))) +
   geom_bar(stat = "identity", position = "dodge") +
   scale_y_continuous(expand = c(0, 0)) +
@@ -132,16 +132,16 @@ Caution should be taken when producing stacked bar charts. They can quickly beco
 ```{r stacked-bar-chart, fig.height = 5.5}
 #| fig.alt = "A stacked bar chart using sgplot theme and colours from main2 palette"
 
-stacked_bar_data <- 
-  gapminder |> 
+stacked_bar_data <-
+  gapminder |>
   filter(year == 2007) |>
-  mutate(lifeExpGrouped = cut(lifeExp, 
+  mutate(lifeExpGrouped = cut(lifeExp,
                     breaks = c(0, 75, Inf),
                     labels = c("Under 75", "75+"))) |>
   group_by(continent, lifeExpGrouped) |>
   summarise(n_countries = n(), .groups = "drop")
-  
-ggplot(stacked_bar_data, 
+
+ggplot(stacked_bar_data,
        aes(x = continent, y = n_countries, fill = lifeExpGrouped)) +
   geom_bar(stat = "identity", position = "fill") +
   theme_sg(legend = "bottom") +
@@ -167,8 +167,8 @@ ggplot(stacked_bar_data,
 gapminder |>
   filter(year == 2007) |>
   ggplot(aes(x = lifeExp)) +
-  geom_histogram(binwidth = 5, 
-                 colour = "white", 
+  geom_histogram(binwidth = 5,
+                 colour = "white",
                  fill = sg_colour_values["dark-blue"]) +
   theme_sg() +
   scale_y_continuous(expand = c(0, 0)) +
@@ -191,7 +191,7 @@ gapminder |>
   filter(year == 2007) |>
   ggplot(aes(x = gdpPercap, y = lifeExp, size = pop)) +
   geom_point(colour = sg_colour_values["dark-blue"]) +
-  theme_sg(axis = "none", grid = 'xy') +
+  theme_sg(axis = "none", grid = "xy") +
   scale_x_continuous(
     labels = function(x) scales::dollar(x, prefix = "£")
   ) +
@@ -221,8 +221,8 @@ gapminder |>
   ggplot(aes(x = year, y = pop, fill = continent)) +
   geom_area() +
   theme_sg(axis = "none", ticks = "none", legend = "none") +
-  scale_fill_discrete_sg() + 
-  facet_wrap( ~ continent, ncol = 2) + 
+  scale_fill_discrete_sg() +
+  facet_wrap(~ continent, ncol = 2) +
   scale_y_continuous(breaks = c(0, 2e9, 4e9),
                      labels = c(0, "2bn", "4bn")) +
   coord_cartesian(clip = "off") +
@@ -269,7 +269,7 @@ stacked_bar_data |>
 
 bar_data |>
   ggplot(
-    aes(x = reorder(country, -lifeExp), y = lifeExp, 
+    aes(x = reorder(country, -lifeExp), y = lifeExp,
         fill = country == "Sweden")
   ) +
   geom_col() +

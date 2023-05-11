@@ -37,7 +37,6 @@ theme_sg <- function(base_size = 12,
 
   # Set colours
   light_grey <- "#d9d9d9"
-  dark_grey <- "#595959"
 
   # Use built in sans font
   sgplot_font <- "sans"

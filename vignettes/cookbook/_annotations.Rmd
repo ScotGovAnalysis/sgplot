@@ -17,11 +17,11 @@ ann_data |>
   geom_line(linewidth = 1) +
   theme_sg(legend = "none") +
   scale_colour_discrete_sg("main2") +
-  scale_y_continuous(limits = c(0, 82), 
+  scale_y_continuous(limits = c(0, 82),
                      breaks = seq(0, 80, 20),
                      expand = c(0, 0)) +
   scale_x_continuous(limits = c(1952, 2017),
-                     breaks = seq(1952, 2017, 5)) +  
+                     breaks = seq(1952, 2017, 5)) +
   annotate(geom = "text", x = 2008, y = 73, label = "China",
            colour = sg_colour_values["dark-blue"],
            hjust = 0, vjust = 0.5) +
@@ -44,7 +44,7 @@ The following examples use `geom_text()`, however `geom_label()` is also an opti
 ```{r annotations-2}
 #| fig.alt = "A multiple line chart with colour co-ordinated line labels using sgplot theme and main2 palette."
 
-ann_labs <- ann_data |> 
+ann_labs <- ann_data |>
   group_by(country) |>
   mutate(min_year = min(year)) |>
   filter(year == max(year)) |>
@@ -55,15 +55,15 @@ ann_data |>
   geom_line(linewidth = 1) +
   theme_sg(legend = "none") +
   scale_colour_discrete_sg("main2") +
-  scale_y_continuous(limits = c(0, 82), 
+  scale_y_continuous(limits = c(0, 82),
                      breaks = seq(0, 80, 20),
                      expand = c(0, 0)) +
   scale_x_continuous(limits = c(1952, 2017),
-                     breaks = seq(1952, 2017, 5)) +  
-  geom_text(data = ann_labs, 
+                     breaks = seq(1952, 2017, 5)) +
+  geom_text(data = ann_labs,
             aes(x = year, y = lifeExp, label = country, colour = country),
             size = 12 / .pt,
-            hjust = 0, 
+            hjust = 0,
             vjust = 0.5,
             nudge_x = 0.5) +
   labs(

@@ -116,7 +116,7 @@ gapminder |>
              linewidth = 1, linetype = "dashed") +
   annotate(geom = "text", x = 2007, y = 70, label = "Age 70") +
   theme_sg() +
-  scale_y_continuous(limits = c(0, 82), 
+  scale_y_continuous(limits = c(0, 82),
                      breaks = seq(0, 80, 20),
                      expand = c(0, 0)) +
   scale_x_continuous(breaks = seq(1952, 2007, 5)) +
@@ -137,7 +137,7 @@ If text is too long, it may be cut off or distort the dimensions of the chart.
 ```{r text-wrap-1}
 #| fig.alt = "A bar chart with end of main title text not visible and long y axis title skewing the dimensions of the chart."
 
-plot <- 
+plot <-
   ggplot(bar_data, aes(x = reorder(country, -lifeExp), y = lifeExp)) +
   geom_col(fill = sg_colour_values["dark-blue"]) +
   theme_sg() +
@@ -149,7 +149,7 @@ plot <-
   )
 
 plot +
-  labs(    
+  labs(
     y = "Percentage of countries",
     title = paste("Iceland has the highest life expectancy in Europe",
                    "followed closely by Switzerland")
@@ -162,7 +162,7 @@ There are two suggested ways to solve this issue; Insert `\n` within a string to
 #| fig.alt = "A bar chart with main title and y axis title text wrapped onto two lines."
 
 plot +
-  labs(    
+  labs(
     y = "Percentage\nof countries",
     title = stringr::str_wrap(
       paste("Iceland has the highest life expectancy in Europe",

@@ -10,7 +10,7 @@
 
 mm_to_inch <- function(x) {
 
-  if(!inherits(x, "numeric")) {
+  if (!inherits(x, "numeric")) {
     cli::cli_abort("x must be numeric.")
   }
 
