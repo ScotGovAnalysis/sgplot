@@ -1,0 +1,60 @@
+---
+title: "Cookbook"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Cookbook}
+  %\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::rmarkdown}
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  message = FALSE,
+  warning = FALSE
+)
+```
+
+This cookbook provides examples of the code used to produce various chart types using sgplot. There are also examples to demonstrate how to apply further customisation to sgplot charts.
+
+If there is a chart type or task which you think would be useful to include here, please [submit a suggestion](https://github.com/DataScienceScotland/sgplot/issues/new?assignees=alicebyers5&labels=documentation&title=Cookbook+suggestion).
+
+**use_sgplot** <br>
+The examples in this cookbook use the sgplot theme and colour functions explicitly, however it may be easier to make use of the `use_sgplot()` function if your charts all require a similar style. More information on `use_sgplot` can be found on the [homepage](https://datasciencescotland.github.io/sgplot/#use-sgplot-as-default).
+
+**Note on use of titles, subtitles and captions** <br>
+Titles, subtitles and captions have been embedded in the charts in this cookbook for demonstration purposes. However, for accessibility reasons, it is usually preferable to provide titles in the body of the page rather than embedded within the image of the plot.
+
+The following packages are required to produce the example charts in this cookbook:
+
+```{r load-packages}
+library(sgplot)
+library(ggplot2)
+library(dplyr)
+
+# Use gapminder data for cookbook charts
+library(gapminder)
+```
+
+
+```{r chart-types, child = "cookbook/_chart-types.Rmd"} 
+```
+
+
+```{r annotations, child = "cookbook/_annotations.Rmd"} 
+```
+
+
+```{r customisations, child = "cookbook/_customisations.Rmd"} 
+```
+
+
+```{r colour-palettes, child = "cookbook/_colour-palettes.Rmd"} 
+```
+
+
+```{r acknowledgments, child = "cookbook/_acknowledgments.Rmd"} 
+```

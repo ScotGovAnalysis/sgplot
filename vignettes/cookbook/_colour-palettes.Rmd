@@ -1,0 +1,55 @@
+## Using a different colour palette
+
+Colour palettes from the Analysis Function [colours guidance](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/) have been used in sgplot. The colours in these palettes all have sufficient colour contrast against a white background and take into account the general considerations for colour set out in accessibility legislation. More information on the colours used in sgplot can be found in the [Colours article](https://datasciencescotland.github.io/sgplot/articles/colours.html).
+
+There may be instances where you'd like to use a different colour palette. If so, this should be carefully considered to ensure it meets accessibility requirements. The previously mentioned Analysis Function guidance outlines [appropriate steps for choosing your own accessibile colour palette](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/#section-9) and should be used.
+
+```{r different-colour-palette-1}
+#| fig.alt = "A line chart using sgplot theme and first colour from custom palette."
+
+my_palette <- c("#0F820D", "#000000")
+
+gapminder |>
+  filter(country == "United Kingdom") |>
+  ggplot(aes(x = year, y = lifeExp)) +
+  geom_line(linewidth = 1, colour = my_palette[1]) +
+  theme_sg() +
+  scale_y_continuous(limits = c(0, 82),
+                     breaks = seq(0, 80, 20),
+                     expand = c(0, 0)) +
+  scale_x_continuous(breaks = seq(1952, 2007, 5)) +
+  labs(
+    x = "Year",
+    y = NULL,
+    title = "Living Longer",
+    subtitle = "Life Expectancy in the United Kingdom 1952-2007",
+    caption = "Source: Gapminder"
+  )
+```
+
+```{r different-colour-palette-2, fig.height = 5.5}
+#| fig.alt = "A multiple line chart using sgplot theme and colours from custom palette."
+
+gapminder |>
+  filter(country %in% c("United Kingdom", "China")) |>
+  ggplot(aes(x = year, y = lifeExp, colour = country)) +
+  geom_line(linewidth = 1) +
+  theme_sg(legend = "bottom") +
+  scale_colour_manual(values = my_palette) +
+  scale_y_continuous(limits = c(0, 82),
+                     breaks = seq(0, 80, 20),
+                     expand = c(0, 0)) +
+  scale_x_continuous(breaks = seq(1952, 2007, 5)) +
+  labs(
+    x = "Year",
+    y = NULL,
+    title = "Living Longer",
+    subtitle = "Life Expectancy in the United Kingdom and China 1952-2007",
+    caption = "Source: Gapminder",
+    colour = NULL
+  )
+```
+
+### Adding a new colour palette to sgplot
+
+If you use a different palette regularly and feel it would be useful for this to be added to sgplot, please make a suggestion as per the [contributing guidance](https://datasciencescotland.github.io/sgplot/CONTRIBTUING.html).

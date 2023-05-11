@@ -1,8 +1,8 @@
 Package: sgplot
 Title: Graphic Styles and Colours for Scottish Government Plots
-Version: 0.0.0.9000
+Version: 0.0.0.9001
 Authors@R: c(
-    person("Scottish Government", , , "statistics.enquiries@gov.scot", role = "cph"),
+    person("Scottish Government", , , "statistics.enquiries@gov.scot", role = c("cph", "fnd")),
     person("Alice", "Byers", , "alice.byers@gov.scot", c("aut", "cre"))
   )
 Description: Standard ggplot theme and colour palettes for use in Scottish Government.
@@ -19,9 +19,7 @@ Depends:
 Imports:
   ggplot2,
   scales,
-  cli,
-  sysfonts,
-  showtext
+  cli
 Suggests: 
   dplyr,
   knitr,
@@ -30,5 +28,7 @@ Suggests:
   tidyr,
   glue,
   purrr,
+  gapminder,
+  stringr,
   testthat (>= 2.1.0)
 VignetteBuilder: knitr

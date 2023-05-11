@@ -5,10 +5,11 @@
 #' @param base_size base font size, given in pts.
 #' @param base_line_size base size for line elements.
 #' @param base_rect_size base size for rect elements.
-#' @param grid 'x', 'y', 'xy' or 'none' to determine which grid lines should
-#' be drawn. Defaults to 'y'.
-#' @param axis 'x', 'y', 'xy' or 'none' to determine which axis lines should
-#' be drawn. Defaults to 'none'.
+#' @param grid,axis,ticks 'x', 'y', 'xy' or 'none' to determine for which axes
+#' the attribute should be drawn. Grid defaults to 'y', axis to 'x', and
+#' ticks to 'xy'.
+#' @param legend 'right', 'left', 'top', 'bottom', or 'none' to determine the
+#' position of the legend. Defaults to 'right'.
 #'
 #' @examples
 #' library(ggplot2)
@@ -25,32 +26,20 @@ theme_sg <- function(base_size = 12,
                      base_line_size = base_size / 22,
                      base_rect_size = base_size / 22,
                      grid = c("y", "x", "xy", "none"),
-                     axis = c("none", "y", "x", "xy")) {
+                     axis = c("x", "y", "xy", "none"),
+                     ticks = c("xy", "x", "y", "none"),
+                     legend = c("right", "left", "top", "bottom", "none")) {
 
-  grid <- match.arg(grid)
-  axis <- match.arg(axis)
+  grid   <- match.arg(grid)
+  axis   <- match.arg(axis)
+  ticks  <- match.arg(ticks)
+  legend <- match.arg(legend)
 
   # Set colours
   light_grey <- "#d9d9d9"
-  dark_grey <- "#595959"
 
-  # Select which font to use:
-  # Roboto is installed from Google Fonts on loading of sgplot package.
-  # If this is unsuccessful, use built in sans font.
-  sgplot_font <- if ("sgplot-roboto" %in% sysfonts::font_families()) {
-    "sgplot-roboto"
-  } else {
-    cli::cli_warn(c(
-      "i" = paste("Roboto font is not available when working offline or in a",
-                  "restricted environment. Using built in sans font instead.")
-    ),
-    .frequency = "once",
-    .frequency_id = "roboto")
-    "sans"
-  }
-
-  # Use showtext to draw text
-  showtext::showtext_auto()
+  # Use built in sans font
+  sgplot_font <- "sans"
 
   # The half-line (base_size / 2) sets up the basic vertical
   # rhythm of the theme. Most margins will be set to this value.
@@ -64,20 +53,26 @@ theme_sg <- function(base_size = 12,
   # Set grid lines dependent on grid arg
   grid_line  <- ggplot2::element_line(colour = light_grey)
   grid_blank <- ggplot2::element_blank()
-  grid_x <- if (grid %in% c("x", "xy")) grid_line else grid_blank
-  grid_y <- if (grid %in% c("y", "xy")) grid_line else grid_blank
+  grid_x     <- if (grid %in% c("x", "xy")) grid_line else grid_blank
+  grid_y     <- if (grid %in% c("y", "xy")) grid_line else grid_blank
 
   # Set axis lines dependent on axis arg
   axis_line  <- ggplot2::element_line()
   axis_blank <- ggplot2::element_blank()
-  axis_x <- if (axis %in% c("x", "xy")) axis_line else axis_blank
-  axis_y <- if (axis %in% c("y", "xy")) axis_line else axis_blank
+  axis_x     <- if (axis %in% c("x", "xy")) axis_line else axis_blank
+  axis_y     <- if (axis %in% c("y", "xy")) axis_line else axis_blank
+
+  # Set axis ticks dependent on ticks arg
+  axis_ticks <- ggplot2::element_line()
+  no_ticks   <- ggplot2::element_blank()
+  ticks_x    <- if (ticks %in% c("x", "xy")) axis_ticks else no_ticks
+  ticks_y    <- if (ticks %in% c("y", "xy")) axis_ticks else no_ticks
 
   ggplot2::theme(
 
     # Set parent characteristics
     line = ggplot2::element_line(
-      colour = dark_grey,
+      colour = light_grey,
       linewidth = base_line_size,
       linetype = 1,
       lineend = "butt"
@@ -109,7 +104,7 @@ theme_sg <- function(base_size = 12,
     axis.line = NULL,
     axis.line.x = axis_x,
     axis.line.y = axis_y,
-    axis.text = ggplot2::element_text(colour = dark_grey),
+    axis.text = NULL,
     axis.text.x = ggplot2::element_text(
       margin = ggplot2::margin(t = 0.8 * half_line / 2),
       vjust = 1
@@ -127,6 +122,8 @@ theme_sg <- function(base_size = 12,
       hjust = 0
     ),
     axis.ticks = NULL,
+    axis.ticks.x = ticks_x,
+    axis.ticks.y = ticks_y,
     axis.ticks.length = ggplot2::unit(half_line / 2, "pt"),
     axis.title.x = ggplot2::element_text(
       margin = ggplot2::margin(t = half_line / 2),
@@ -139,12 +136,14 @@ theme_sg <- function(base_size = 12,
     axis.title.y = ggplot2::element_text(
       angle = 0,
       margin = ggplot2::margin(r = half_line / 2),
-      vjust = 1
+      vjust = 1,
+      hjust = 0.5
     ),
     axis.title.y.right = ggplot2::element_text(
       angle = 0,
       margin = ggplot2::margin(l = half_line / 2),
-      vjust = 1
+      vjust = 1,
+      hjust = 0.5
     ),
 
     # Legend
@@ -157,7 +156,7 @@ theme_sg <- function(base_size = 12,
     legend.text.align = NULL,
     legend.title = ggplot2::element_text(hjust = 0),
     legend.title.align = NULL,
-    legend.position = "right",
+    legend.position = legend,
     legend.direction = NULL,
     legend.justification = "centre",
     legend.box = NULL,
@@ -175,7 +174,7 @@ theme_sg <- function(base_size = 12,
     panel.ontop = FALSE,
 
     # Strip:
-    strip.background = ggplot2::element_rect(fill = "grey85", colour = NA),
+    strip.background = ggplot2::element_blank(),
     strip.clip = "inherit",
     strip.text = ggplot2::element_text(
       size = ggplot2::rel(0.8),
@@ -204,7 +203,7 @@ theme_sg <- function(base_size = 12,
     ),
     plot.caption = ggplot2::element_text(
       size = ggplot2::rel(0.8),
-      hjust = 1, vjust = 1,
+      hjust = 0, vjust = 1,
       margin = ggplot2::margin(t = half_line)
     ),
     plot.caption.position = "panel",

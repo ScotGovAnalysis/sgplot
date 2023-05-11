@@ -74,16 +74,15 @@ col_tiles_alt <- function(pal = c("main", "other")) {
 
 ```
 
-sgplot uses colour palettes from the Government Analysis Function [Data visualisation: colours](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/) guidance. This guidance contains lots of information on best practice for using colour and how to ensure content meets the [accessibility legislation](https://www.w3.org/TR/WCAG21/) applicable to the public sector. sgplot should be used in conjunction with this guidance. 
+sgplot uses colour palettes from the [Government Analysis Function colours guidance](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/). This guidance contains lots of information on best practice for using colour and how to ensure content meets the [accessibility legislation](https://www.w3.org/TR/WCAG21/) applicable to the public sector. sgplot should be used in conjunction with this guidance. 
 
 The following are a few key considerations when using colour in plots:
 
 * Only use colour if absolutely necessary
 * Limit the number of different colours you use; ideally an absolute maximum of four
 * Use colour consistently when producing a series of plots
-* Do not rely on colour alone to convey a message
+* Do not rely on colour alone to communicate a message
 
-<br>
 
 ## Main Palettes
 
@@ -99,11 +98,10 @@ dat %>%
 
 * `main` is the default palette for discrete colour scales.
 
-* `main2` should be used if only two colours are required as the dark blue and orange colours have the best colour contrast. If only two colours are required and another palette is used, a warning message will appear to advise you use `main2`.
+* `main2` should be used if only two colours are required as the dark blue and orange colours have the best colour contrast. If only two colours are required and another palette from the `main` family is used, `main2` will be used instead.
 
 * `main6` is also available to use, however it should be avoided where possible, as it's generally considered that use of four or more colours in a plot is excessive. Plot redesign should be considered where possible and `main6` used as a last resort.
 
-<br>
 
 ## Other Palettes
 
@@ -121,7 +119,11 @@ dat %>%
 
 * `focus` should be used to highlight specific elements of a plot. The light grey colour in this palette does not have sufficient colour contrast against a white background and therefore this palette should only be used when it is essential to communicate your message. The Analysis Function colour guidance has some [advice for using the focus palette](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/#section-7) which should be considered.
 
-<br>
+
+## A note on choice of colour palettes
+
+Although Scottish Government [colour palettes](https://designsystem.gov.scot/styles/colour-customisation/) do exist, they have been developed primarily for web development. The colours do not have sufficient contrast with each other and therefore are not suitable for use in charts. It is for this reason that sgplot uses colour palettes from the [Analysis Function guidance](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/). sgplot palettes may be updated in future when Scottish Government colour palettes for charts are developed.
+
 
 ## Viewing Palettes in R
 

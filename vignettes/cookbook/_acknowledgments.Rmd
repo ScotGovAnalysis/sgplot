@@ -1,0 +1,3 @@
+## Acknowledgments
+
+This cookbook and the examples it contains have been inspired by the [BBC Visual and Data Journalism cookbook for R graphics](https://bbc.github.io/rcookbook/) and their [bbplot](https://github.com/bbc/bbplot) package.

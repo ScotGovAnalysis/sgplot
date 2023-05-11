@@ -20,19 +20,18 @@ knitr::opts_chunk$set(
 
 Accessibility legislation means that all content published on public sector websites, including charts, must meet the level A and AA success criterion in the [Web Content Accessibility Guidelines 2.1](https://www.w3.org/TR/WCAG21/). 
 
-<br>
 
 ## Resources
 
 The [Government Analysis Function](https://analysisfunction.civilservice.gov.uk/) has published a variety of resources for producing data visualisations:
 
+* [Charts Checklist](https://analysisfunction.civilservice.gov.uk/policy-store/charts-a-checklist/)
 * [Charts Guidance](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/)
 * [Colours Guidance](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/)
 * [Data Visualisation e-Learning](https://analysisfunction.civilservice.gov.uk/support/communicating-analysis/introduction-to-data-visualisation-e-learning/) (in particular the [Accessibility and Colour](https://analysisfunction.civilservice.gov.uk/support/communicating-analysis/introduction-to-data-visualisation-e-learning/data-visualisation-e-learning-module-3-accessibility-and-colour-palettes/) module)
 
 sgplot has been developed following advice in the above guidance, however, using sgplot does not guarantee accessibility. sgplot should therefore be used in conjunction with this guidance.
 
-<br>
 
 ## Accessibility of charts using sgplot
 
@@ -40,11 +39,11 @@ By applying `theme_sg` to ggplot2 plots, the following best practice is followed
 
 * Plot background is white.
 
-* Axis lines, ticks and labels are dark grey (#d9d9d9).
+* Axis lines and ticks are light grey (#595959). By default, only the x axis is shown but these can be controlled using the `axis` and `ticks` arguments.
 
 * Grid lines are light grey (#595959) and kept to a minimum; by default only major y axis lines are shown, but this can be controlled using the `grid` argument.
 
-* Text is black, uses [Roboto](https://fonts.google.com/specimen/Roboto) font (as per the Scottish Government [design system](https://designsystem.gov.scot/styles/typography/#font)) and is size 12 by default. Text size can be controlled using the `base_size` argument.
+* Text is black, uses a Sans Serif font and is size 12 by default. Text size can be controlled using the `base_size` argument.
 
 * All text is horizontal.
 
@@ -59,7 +58,6 @@ Colour palettes from the Analysis Function [colours guidance](https://analysisfu
 
 More information on sgplot colours can be found at `vignette("colours")`.
 
-<br>
 
 ## Other accessibility considerations
 
@@ -80,4 +78,3 @@ Using sgplot does not guarantee accessibility. The Analysis Function [chart guid
 * Use commas as thousands separators in axis labels or text annotations.
 
 * [Ask for feedback](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/#section-15) from colleagues and users.
-

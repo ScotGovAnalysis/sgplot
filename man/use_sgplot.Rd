@@ -2,22 +2,18 @@
 % Please edit documentation in R/use_sgplot.R
 \name{use_sgplot}
 \alias{use_sgplot}
-\title{Use \code{sgplot} defaults.}
+\title{Use sgplot defaults.}
 \usage{
-use_sgplot(
-  default_grid = c("y", "x", "xy", "none"),
-  default_colour = sgplot::sg_colour_values["dark-blue"]
-)
+use_sgplot(default_colour = sgplot::sg_colour_values["dark-blue"], ...)
 }
 \arguments{
-\item{default_grid}{'x', 'y', 'xy' or 'none' to determine which grid lines
-should be drawn. Defaults to 'y'.}
-
 \item{default_colour}{Default colour/fill for geoms. Default value is
 'dark-blue' from \code{sgplot::sg_colour_values}.}
+
+\item{...}{Arguments passed to \code{theme_sg}.}
 }
 \description{
-Set \code{sgplot} theme, colour palette and geom aesthetic
+Set sgplot theme, colour palette and geom aesthetic
 defaults for ggplot2 charts.
 }
 \examples{

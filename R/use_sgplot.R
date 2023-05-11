@@ -1,12 +1,11 @@
-#' @title Use \code{sgplot} defaults.
+#' @title Use sgplot defaults.
 #'
-#' @description Set \code{sgplot} theme, colour palette and geom aesthetic
+#' @description Set sgplot theme, colour palette and geom aesthetic
 #' defaults for ggplot2 charts.
 #'
-#' @param default_grid 'x', 'y', 'xy' or 'none' to determine which grid lines
-#' should be drawn. Defaults to 'y'.
 #' @param default_colour Default colour/fill for geoms. Default value is
 #' 'dark-blue' from \code{sgplot::sg_colour_values}.
+#' @param ... Arguments passed to \code{theme_sg}.
 #'
 #' @examples
 #' library(ggplot2)
@@ -24,12 +23,12 @@
 #' @export
 
 
-use_sgplot <- function(default_grid = c("y", "x", "xy", "none"),
-                       default_colour = sgplot::sg_colour_values["dark-blue"]) {
+use_sgplot <- function(default_colour = sgplot::sg_colour_values["dark-blue"],
+                       ...) {
 
   # Use sgplot theme ----
 
-  ggplot2::theme_set(theme_sg(grid = default_grid))
+  ggplot2::theme_set(theme_sg(...))
 
   cli::cli_alert_info("Default ggplot2 theme set to `theme_sg`.")
 
@@ -46,11 +45,35 @@ use_sgplot <- function(default_grid = c("y", "x", "xy", "none"),
 
   # Set default geom characteristics ----
 
-  # Line
+  # Get default base sizes used in theme
+  default <- formals(theme_sg)
+
+  # Replace default values with those passed to use_sgplot
+  for (i in length(list(...))) {
+    default <- replace(default, i, list(...)[i])
+  }
+
+  # Evaluate base_size values for use in geom defaults
+  base_size <- eval(default$base_size)
+  base_line_size <- eval(default$base_line_size)
+
+  # Lines
   ggplot2::update_geom_defaults(
     geom = "line",
     new = list(colour = default_colour,
-               size = 1)
+               linewidth = base_line_size)
+  )
+
+  ggplot2::update_geom_defaults(
+    geom = "hline",
+    new = list(colour = default_colour,
+               linewidth = base_line_size)
+  )
+
+  ggplot2::update_geom_defaults(
+    geom = "vline",
+    new = list(colour = default_colour,
+               linewidth = base_line_size)
   )
 
   # Col
@@ -70,13 +93,22 @@ use_sgplot <- function(default_grid = c("y", "x", "xy", "none"),
   # Text
   ggplot2::update_geom_defaults(
     geom = "text",
-    new = list(colour = "black")
+    new = list(colour = "black",
+               size = base_size / ggplot2::.pt)
+  )
+
+  ggplot2::update_geom_defaults(
+    geom = "label",
+    new = list(colour = "black",
+               size = base_size / ggplot2::.pt)
   )
 
   # Point
   ggplot2::update_geom_defaults(
     geom = "point",
-    new = list(colour = default_colour)
+    new = list(colour = default_colour,
+               fill   = default_colour,
+               size   = base_size / 8)
   )
 
   cli::cli_alert_info("Default geom aesthetics set.")
