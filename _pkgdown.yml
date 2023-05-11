@@ -64,6 +64,10 @@ reference:
   - starts_with("scale")
   - matches("colour")
 
+- title: Helpers
+  contents:
+  - mm_to_inch
+
 - title: internal
   contents:
   - sg_palette
