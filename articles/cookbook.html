@@ -422,11 +422,13 @@ co-ordinates of the required position.</p>
 <span>                     expand <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">0</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html" class="external-link">scale_x_continuous</a></span><span class="op">(</span>limits <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1952</span>, <span class="fl">2017</span><span class="op">)</span>,</span>
 <span>                     breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="fl">1952</span>, <span class="fl">2017</span>, <span class="fl">5</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/annotate.html" class="external-link">annotate</a></span><span class="op">(</span>geom <span class="op">=</span> <span class="st">"text"</span>, x <span class="op">=</span> <span class="fl">2008</span>, y <span class="op">=</span> <span class="fl">73</span>, label <span class="op">=</span> <span class="st">"China"</span>,</span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/annotate.html" class="external-link">annotate</a></span><span class="op">(</span>geom <span class="op">=</span> <span class="st">"label"</span>, x <span class="op">=</span> <span class="fl">2008</span>, y <span class="op">=</span> <span class="fl">73</span>, label <span class="op">=</span> <span class="st">"China"</span>,</span>
 <span>           colour <span class="op">=</span> <span class="va">sg_colour_values</span><span class="op">[</span><span class="st">"dark-blue"</span><span class="op">]</span>,</span>
+<span>           label.size <span class="op">=</span> <span class="cn">NA</span>,</span>
 <span>           hjust <span class="op">=</span> <span class="fl">0</span>, vjust <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/annotate.html" class="external-link">annotate</a></span><span class="op">(</span>geom <span class="op">=</span> <span class="st">"text"</span>, x <span class="op">=</span> <span class="fl">2008</span>, y <span class="op">=</span> <span class="fl">79.4</span>, label <span class="op">=</span> <span class="st">"United Kingdom"</span>,</span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/annotate.html" class="external-link">annotate</a></span><span class="op">(</span>geom <span class="op">=</span> <span class="st">"label"</span>, x <span class="op">=</span> <span class="fl">2008</span>, y <span class="op">=</span> <span class="fl">79.4</span>, label <span class="op">=</span> <span class="st">"United Kingdom"</span>,</span>
 <span>           colour <span class="op">=</span> <span class="va">sg_colour_values</span><span class="op">[</span><span class="st">"orange"</span><span class="op">]</span>,</span>
+<span>           label.size <span class="op">=</span> <span class="cn">NA</span>,</span>
 <span>           hjust <span class="op">=</span> <span class="fl">0</span>, vjust <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span></span>
 <span>    x <span class="op">=</span> <span class="st">"Year"</span>,</span>
@@ -439,11 +441,20 @@ co-ordinates of the required position.</p>
 <p>However, this makes the code difficult to reuse as values are hard
 coded and not automatically generated from the data. Automating the
 position of annotations is possible, but more fiddly.</p>
-<p>The following examples use <code><a href="https://ggplot2.tidyverse.org/reference/geom_text.html" class="external-link">geom_text()</a></code>, however
-<code><a href="https://ggplot2.tidyverse.org/reference/geom_text.html" class="external-link">geom_label()</a></code> is also an option and draws a rectangle behind
-the text, sometimes making it easier to read. These functions have
+<p>The following examples use <code><a href="https://ggplot2.tidyverse.org/reference/geom_text.html" class="external-link">geom_label()</a></code> to use values
+from the data to position annotations. <code><a href="https://ggplot2.tidyverse.org/reference/geom_text.html" class="external-link">geom_label()</a></code> draws a
+rectangle behind the text (white by default) and a border the same
+colour as the text (<code>label_size = NA</code> can be used to remove
+the border). <code><a href="https://ggplot2.tidyverse.org/reference/geom_text.html" class="external-link">geom_text()</a></code> is also an option for annotations,
+but this does not include a background and so can be harder for text to
+read if it overlaps with other chart elements. These functions also have
 <code>nudge</code> arguments that can be used to displace text to
 improve the positioning.</p>
+<p>Note that in the previous examples, <code><a href="https://ggplot2.tidyverse.org/reference/annotate.html" class="external-link">annotate()</a></code> also
+requires a geom (<code>label</code> or <code>text</code>). These operate
+in the same way as <code><a href="https://ggplot2.tidyverse.org/reference/geom_text.html" class="external-link">geom_label()</a></code> and
+<code><a href="https://ggplot2.tidyverse.org/reference/geom_text.html" class="external-link">geom_text()</a></code>, but as discussed, <code><a href="https://ggplot2.tidyverse.org/reference/annotate.html" class="external-link">annotate()</a></code> is
+only able to deal with fixed values.</p>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ann_labs</span> <span class="op">&lt;-</span> <span class="va">ann_data</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">group_by</a></span><span class="op">(</span><span class="va">country</span><span class="op">)</span> <span class="op">|&gt;</span></span>
@@ -461,12 +472,13 @@ improve the positioning.</p>
 <span>                     expand <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">0</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html" class="external-link">scale_x_continuous</a></span><span class="op">(</span>limits <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1952</span>, <span class="fl">2017</span><span class="op">)</span>,</span>
 <span>                     breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="fl">1952</span>, <span class="fl">2017</span>, <span class="fl">5</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_text.html" class="external-link">geom_text</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">ann_labs</span>,</span>
-<span>            <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">lifeExp</span>, label <span class="op">=</span> <span class="va">country</span>, colour <span class="op">=</span> <span class="va">country</span><span class="op">)</span>,</span>
-<span>            size <span class="op">=</span> <span class="fl">12</span> <span class="op">/</span> <span class="va">.pt</span>,</span>
-<span>            hjust <span class="op">=</span> <span class="fl">0</span>,</span>
-<span>            vjust <span class="op">=</span> <span class="fl">0.5</span>,</span>
-<span>            nudge_x <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_text.html" class="external-link">geom_label</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">ann_labs</span>,</span>
+<span>             <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">lifeExp</span>, label <span class="op">=</span> <span class="va">country</span>, colour <span class="op">=</span> <span class="va">country</span><span class="op">)</span>,</span>
+<span>             size <span class="op">=</span> <span class="fl">12</span> <span class="op">/</span> <span class="va">.pt</span>,</span>
+<span>             hjust <span class="op">=</span> <span class="fl">0</span>,</span>
+<span>             vjust <span class="op">=</span> <span class="fl">0.5</span>,</span>
+<span>             nudge_x <span class="op">=</span> <span class="fl">0.5</span>,</span>
+<span>             label.size <span class="op">=</span> <span class="cn">NA</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span></span>
 <span>    x <span class="op">=</span> <span class="st">"Year"</span>,</span>
 <span>    y <span class="op">=</span> <span class="cn">NULL</span>,</span>
@@ -475,11 +487,14 @@ improve the positioning.</p>
 <span>    caption <span class="op">=</span> <span class="st">"Source: Gapminder"</span></span>
 <span>  <span class="op">)</span></span></code></pre></div>
 <p><img src="cookbook_files/figure-html/annotations-2-1.svg" alt="A multiple line chart with colour co-ordinated line labels using sgplot theme and main2 palette." width="700"></p>
-<p>Annotations may also be used to add value labels to a bar chart.</p>
+<p>Annotations may also be used to add value labels to a bar chart. Note
+that <code><a href="https://ggplot2.tidyverse.org/reference/geom_text.html" class="external-link">geom_text()</a></code> is used here as a background is not
+required.</p>
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">bar_data</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/reorder.factor.html" class="external-link">reorder</a></span><span class="op">(</span><span class="va">country</span>, <span class="op">-</span><span class="va">lifeExp</span><span class="op">)</span>, y <span class="op">=</span> <span class="va">lifeExp</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html" class="external-link">geom_col</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="va">sg_colour_values</span><span class="op">[</span><span class="st">"dark-blue"</span><span class="op">]</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_text.html" class="external-link">geom_text</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>label <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span><span class="va">lifeExp</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span>, nudge_y <span class="op">=</span> <span class="op">-</span><span class="fl">5</span>, colour <span class="op">=</span> <span class="st">"white"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_text.html" class="external-link">geom_text</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>label <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span><span class="va">lifeExp</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span>, nudge_y <span class="op">=</span> <span class="op">-</span><span class="fl">5</span>, colour <span class="op">=</span> <span class="st">"white"</span>,</span>
+<span>            size <span class="op">=</span> <span class="fl">12</span> <span class="op">/</span> <span class="va">.pt</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="../reference/theme_sg.html">theme_sg</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html" class="external-link">scale_y_continuous</a></span><span class="op">(</span>expand <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">0</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span></span>
@@ -492,9 +507,9 @@ improve the positioning.</p>
 <p><img src="cookbook_files/figure-html/annotations-3-1.svg" alt="A bar chart with white text labels at the end of each bar." width="700"></p>
 <p><strong>Note</strong>: The <code><a href="https://ggplot2.tidyverse.org/reference/annotate.html" class="external-link">annotate()</a></code> function should be
 used to add annotations with manually defined positioning co-ordinates,
-whereas <code><a href="https://ggplot2.tidyverse.org/reference/geom_text.html" class="external-link">geom_text()</a></code> should be used when using co-ordinates
-defined in a data frame. Although the reverse may work, text can appear
-blurry.</p>
+whereas <code><a href="https://ggplot2.tidyverse.org/reference/geom_text.html" class="external-link">geom_label()</a></code> and <code><a href="https://ggplot2.tidyverse.org/reference/geom_text.html" class="external-link">geom_text()</a></code> should be
+used when using co-ordinates defined in a data frame. Although the
+reverse may work, text can appear blurry.</p>
 </div>
 <div class="section level2">
 <h2 id="other-customisations">Other customisations<a class="anchor" aria-label="anchor" href="#other-customisations"></a>
