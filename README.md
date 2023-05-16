@@ -129,6 +129,14 @@ gapminder |>
 
 <img src="man/figures/README-ex2-1.svg" alt="A bar chart with white background, light grey horizontal grid lines dark blue bars."  />
 
+**Note on use of titles, subtitles and captions** <br> Titles, subtitles
+and captions have been embedded in these example charts for
+demonstration purposes. However, for accessibility reasons, it is
+usually preferable to provide titles in the body of the page rather than
+embedded within the image of the plot. More information is available in
+the [accessibility
+article](https://datasciencescotland.github.io/sgplot/articles/accessibility.html#other-accessibility-considerations).
+
 ## Licence
 
 Unless stated otherwise, the codebase is released under [the MIT
