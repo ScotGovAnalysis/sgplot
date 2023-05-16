@@ -177,7 +177,6 @@ theme_sg <- function(base_size = 12,
     strip.background = ggplot2::element_blank(),
     strip.clip = "inherit",
     strip.text = ggplot2::element_text(
-      size = ggplot2::rel(0.8),
       margin = ggplot2::margin(
         0.8 * half_line, 0.8 * half_line,
         0.8 * half_line, 0.8 * half_line
