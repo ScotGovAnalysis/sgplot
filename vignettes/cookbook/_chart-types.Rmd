@@ -284,3 +284,41 @@ bar_data |>
     caption = "Source: Gapminder"
   )
 ```
+
+
+## Interactive charts
+
+To make a `ggplot2` chart interactive, use `ggplotly()` from the `plotly` package. Note however that `ggplotly()` has a number of 'quirks', including the following:
+
+* sgplot uses the 'sans' font family, however `plotly` does not recognise this font. To work around this you should add a further call to `theme` to set the font family for text to `""`. 
+
+* Subtitles and captions are not supported in `ggplotly()`. As stated elsewhere in this guidance, titles and subtitles should ideally be included in the body of text surrounding a chart rather than embedded in the chart itself, and so this is hopefully not a big issue. This example therefore has no title, subtitle or caption.
+
+```{r interactive-charts}
+#| fig.alt = "An interactive bar chart using sgplot theme and dark blue colour. A tooltip appears when hovering over each bar."
+
+p <-
+  bar_data |>
+  # Format text for tooltips
+  mutate(tooltip = paste0(
+    "Country: ", country, "\n",
+    "Life Expectancy: ", round(lifeExp, 1)
+  )) |>
+  ggplot(aes(x = reorder(country, -lifeExp), y = lifeExp, text = tooltip)) +
+  geom_col(fill = sg_colour_values["dark-blue"]) +
+  theme_sg(ticks = "x") +
+  theme(text = element_text(family = "")) +
+  scale_y_continuous(expand = c(0, 0)) +
+  labs(
+    x = NULL,
+    y = NULL
+  )
+
+plotly::ggplotly(p, tooltip = "text") |>
+  plotly::config(
+    modeBarButtons = list(list("resetViews")),
+    displaylogo = FALSE
+  )
+```
+
+sgplot currently only works with `ggplot2` charts, however there are plans to [develop the package further to support interactive Highcharts](https://github.com/DataScienceScotland/sgplot/issues/5) produced using the [`highcharter`](https://jkunst.com/highcharter) package.
