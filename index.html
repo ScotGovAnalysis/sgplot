@@ -95,14 +95,14 @@
 </h2>
 <p>To install sgplot, the remotes package is required. The package can then be installed directly from GitHub with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span></span>
+<code class="sourceCode R"><span><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span></span>
 <span>  <span class="st">"DataScienceScotland/sgplot"</span>,</span>
 <span>  upgrade <span class="op">=</span> <span class="st">"never"</span>,</span>
 <span>  build_vignettes <span class="op">=</span> <span class="cn">TRUE</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-<p>Network security settings may prevent <code>remotes::install_github()</code> from working. If this is the case, sgplot can be installed by downloading the <a href="https://github.com/DataScienceScotland/sgplot/archive/main.zip" class="external-link">zip of the repository</a> and running the following code, replacing the section marked <code>&lt;&gt;</code> (including the arrows themselves) with the location of the downloaded zip:</p>
+<p>Network security settings may prevent <code><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">remotes::install_github()</a></code> from working. If this is the case, sgplot can be installed by downloading the <a href="https://github.com/DataScienceScotland/sgplot/archive/main.zip" class="external-link">zip of the repository</a> and running the following code, replacing the section marked <code>&lt;&gt;</code> (including the arrows themselves) with the location of the downloaded zip:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_local</span><span class="op">(</span></span>
+<code class="sourceCode R"><span><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_local.html" class="external-link">install_local</a></span><span class="op">(</span></span>
 <span>  <span class="st">"&lt;FILEPATH OF ZIPPED FILE&gt;/sgplot-main.zip"</span>,</span>
 <span>  upgrade <span class="op">=</span> <span class="st">"never"</span>,</span>
 <span>  build_vignettes <span class="op">=</span> <span class="cn">TRUE</span></span>
