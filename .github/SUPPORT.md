@@ -2,6 +2,17 @@
 
 Thanks for using sgplot!
 
+## Try these first
+
+* If you want to find out more about any of sgplot's functions; help files can be found on the [References](https://datasciencescotland.github.io/sgplot/reference) page of the package website. Alternatively, type `?function_name` into the RStudio console. For example:
+
+   ``` r
+   ?theme_sg()
+   ```
+
+* If you need help with `ggplot2`, it might be helpful to look at the [sgplot cookbook](https://datasciencescotland.github.io/sgplot/articles/cookbook.html) which contains lots of example code to create various types of chart. The [ggplot2 website](https://ggplot2.tidyverse.org/index.html) may also be helpful.
+
+
 ## Where to ask for help
 
 * If it's a question: Ask the Scottish Government [R Yammer community](https://web.yammer.com/main/groups/eyJfdHlwZSI6Ikdyb3VwIiwiaWQiOiI2MzQ4MzE2NjczIn0).
