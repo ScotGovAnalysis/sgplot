@@ -32,8 +32,16 @@ contains lots of examples.
 
 ## Installation
 
-To install sgplot, the remotes package is required. The package can then
-be installed directly from GitHub with:
+If you are working within the Scottish Government network, you can
+install sgplot in the same way as with other R packages. The easiest way
+to do this is by using the
+[pkginstaller](https://github.com/DataScienceScotland/pkginstaller/tree/main)
+add-in. Further guidance is available on
+[eRDM](https://erdm.scotland.gov.uk:8443/documents/A42404229/details).
+
+Alternatively, sgplot can be installed directly from GitHub. Note that
+this method requires the remotes package and may not work from within
+the Scottish Government network.
 
 ``` r
 remotes::install_github(
@@ -43,9 +51,7 @@ remotes::install_github(
 )
 ```
 
-Network security settings may prevent `remotes::install_github()` from
-working. If this is the case, sgplot can be installed by downloading the
-[zip of the
+Finally, sgplot can also be installed by downloading the [zip of the
 repository](https://github.com/DataScienceScotland/sgplot/archive/main.zip)
 and running the following code, replacing the section marked `<>`
 (including the arrows themselves) with the location of the downloaded
