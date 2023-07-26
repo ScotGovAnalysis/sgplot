@@ -8,7 +8,7 @@
 gapminder |>
   filter(country == "United Kingdom") |>
   ggplot(aes(x = year, y = lifeExp)) +
-  geom_line(linewidth = 1, colour = sg_colour_values["dark-blue"]) +
+  geom_line(linewidth = 1, colour = sg_colour_values["blue"]) +
   theme_sg() +
   scale_y_continuous(limits = c(0, 82),
                      breaks = seq(0, 80, 20),
@@ -26,14 +26,14 @@ gapminder |>
 ### Line chart with multiple lines
 
 ```{r line-charts-2, fig.height = 5}
-#| fig.alt = "A multiple line chart using sgplot theme and main2 colour palette."
+#| fig.alt = "A multiple line chart using sgplot theme and main colour palette."
 
 gapminder |>
   filter(country %in% c("United Kingdom", "China")) |>
   ggplot(aes(x = year, y = lifeExp, colour = country)) +
   geom_line(linewidth = 1) +
   theme_sg(legend = "bottom") +
-  scale_colour_discrete_sg("main2") +
+  scale_colour_discrete_sg() +
   scale_y_continuous(limits = c(0, 82),
                      breaks = seq(0, 80, 20),
                      expand = c(0, 0)) +
@@ -64,7 +64,7 @@ bar_data <-
 #| fig.alt = "A bar chart using sgplot theme and dark blue colour."
 
 ggplot(bar_data, aes(x = reorder(country, -lifeExp), y = lifeExp)) +
-  geom_col(fill = sg_colour_values["dark-blue"]) +
+  geom_col(fill = sg_colour_values["blue"]) +
   theme_sg() +
   scale_y_continuous(expand = c(0, 0)) +
   labs(
@@ -82,7 +82,7 @@ A bar chart can sometimes look better with horizontal bars. This can also be a g
 #| fig.alt = "A horizontal bar chart using sgplot theme and dark blue colour."
 
 ggplot(bar_data, aes(x = lifeExp, y = reorder(country, lifeExp))) +
-  geom_col(fill = sg_colour_values["dark-blue"]) +
+  geom_col(fill = sg_colour_values["blue"]) +
   theme_sg(grid = "x", axis = "y") +
   scale_x_continuous(expand = c(0, 0)) +
   labs(
@@ -100,7 +100,7 @@ ggplot(bar_data, aes(x = lifeExp, y = reorder(country, lifeExp))) +
 To create a grouped bar chart, set `stat = "identity"` and `position = "dodge"` in the call to `geom_bar()`. Also assign a variable to `fill` within `aes()` to determine what variable is used to create bars within groups. The `legend` argument in `theme_sg()` can be used to set the position of the legend.
 
 ```{r grouped-bar-chart, fig.height = 5.5}
-#| fig.alt = "A grouped bar chart using sgplot theme and colours from main2 palette"
+#| fig.alt = "A grouped bar chart using sgplot theme and colours from main palette"
 
 grouped_bar_data <-
   gapminder |>
@@ -112,7 +112,7 @@ ggplot(grouped_bar_data,
   geom_bar(stat = "identity", position = "dodge") +
   scale_y_continuous(expand = c(0, 0)) +
   theme_sg(legend = "bottom") +
-  scale_fill_discrete_sg("main2") +
+  scale_fill_discrete_sg() +
   labs(
     x = "Country",
     y = NULL,
@@ -130,7 +130,7 @@ To create a stacked bar chart, set `stat = "identity` and `position = "fill"` in
 Caution should be taken when producing stacked bar charts. They can quickly become difficult to interpret if plotting non part-to-whole data, and/or if plotting more than two categories per stack. First and last categories in the stack will always be easier to compare across bars than those in the middle. Think carefully about the story you are trying to tell with your chart.
 
 ```{r stacked-bar-chart, fig.height = 5.5}
-#| fig.alt = "A stacked bar chart using sgplot theme and colours from main2 palette"
+#| fig.alt = "A stacked bar chart using sgplot theme and colours from main palette"
 
 stacked_bar_data <-
   gapminder |>
@@ -147,7 +147,7 @@ ggplot(stacked_bar_data,
   theme_sg(legend = "bottom") +
   scale_y_continuous(expand = c(0, 0), labels = scales::percent) +
   coord_cartesian(clip = "off") +
-  scale_fill_discrete_sg("main2") +
+  scale_fill_discrete_sg() +
   labs(
     x = NULL,
     y = NULL,
@@ -169,7 +169,7 @@ gapminder |>
   ggplot(aes(x = lifeExp)) +
   geom_histogram(binwidth = 5,
                  colour = "white",
-                 fill = sg_colour_values["dark-blue"]) +
+                 fill = sg_colour_values["blue"]) +
   theme_sg() +
   scale_y_continuous(expand = c(0, 0)) +
   labs(
@@ -190,7 +190,7 @@ gapminder |>
 gapminder |>
   filter(year == 2007) |>
   ggplot(aes(x = gdpPercap, y = lifeExp, size = pop)) +
-  geom_point(colour = sg_colour_values["dark-blue"]) +
+  geom_point(colour = sg_colour_values["blue"]) +
   theme_sg(axis = "none", grid = "xy") +
   scale_x_continuous(
     labels = function(x) scales::dollar(x, prefix = "£")
@@ -240,7 +240,7 @@ gapminder |>
 ## Pie charts
 
 ```{r pie-chart}
-#| fig.alt = "A pie chart using sgplot theme and main2 palette."
+#| fig.alt = "A pie chart using sgplot theme and main palette."
 
 stacked_bar_data |>
   filter(continent == "Europe") |>
@@ -249,7 +249,7 @@ stacked_bar_data |>
   coord_polar(theta = "y") +
   theme_sg(grid = "none", axis = "none", ticks = "none") +
   theme(axis.text = element_blank()) +
-  scale_fill_discrete_sg("main2") +
+  scale_fill_discrete_sg() +
   labs(
     x = NULL,
     y = NULL,
@@ -305,7 +305,7 @@ p <-
     "Life Expectancy: ", round(lifeExp, 1)
   )) |>
   ggplot(aes(x = reorder(country, -lifeExp), y = lifeExp, text = tooltip)) +
-  geom_col(fill = sg_colour_values["dark-blue"]) +
+  geom_col(fill = sg_colour_values["blue"]) +
   theme_sg(ticks = "x") +
   theme(text = element_text(family = "")) +
   scale_y_continuous(expand = c(0, 0)) +
