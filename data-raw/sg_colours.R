@@ -8,7 +8,7 @@ sg_colour_values <- c(
   `orange` = "#e5682a",
   `dark-green` = "#0b4c0b",
   `green` = "#5d9f3c",
-  `brown` = "592c20",
+  `brown` = "#592c20",
   `pink` = "#ca72a2",
   `mid-blue` = "#0065bd",
   `light-blue` = "#55a8f2",
