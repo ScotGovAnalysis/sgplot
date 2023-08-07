@@ -19,8 +19,8 @@ test_that("Correct data used in table", {
 test_that("Example column filled with correct colours", {
 
   fill <- c()
-  for(i in tab$`_styles`$styles) {
-    if(names(i) == "cell_fill") fill <- c(fill, i$cell_fill$color)
+  for (i in tab$`_styles`$styles) {
+    if (names(i) == "cell_fill") fill <- c(fill, i$cell_fill$color)
   }
 
   expect_identical(toupper(unname(cols)), fill)

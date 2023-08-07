@@ -39,22 +39,22 @@ sg_palette <- function(palette = "main",
 
     ext_palettes <- subset(
       names(palette_list),
-      stringr::str_detect(names(palette_list), "^main[5-9]")
+      stringr::str_detect(names(palette_list), "^main([5-9]|-extended)")
     )
 
     # Error if more colours requested than exist in palette
     if (n > n_available) {
       cli::cli_abort(c(
-        "x" = paste(
+        "x" = glue::glue(
           "There are not enough colours available in the `{palette}`",
           "palette from `{palette_type}_colour_palettes`",
           "({n_available} available)."
         ),
-        "i" = paste(
+        "i" = glue::glue(
           "Accessibility guidance recommends a limit of four",
           "colours per chart. If more than four colours are",
           "required, first consider chart redesign. If it is",
-          "essential to use more than four colours, the {ext_palettes}",
+          "essential to use more than four colours, the `{ext_palettes}`",
           "palette{?s} can be used."
         )
       ))
