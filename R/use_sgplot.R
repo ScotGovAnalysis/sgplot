@@ -23,7 +23,7 @@
 #' @export
 
 
-use_sgplot <- function(default_colour = sgplot::sg_colour_values["blue"],
+use_sgplot <- function(default_colour = sgplot::sg_colour_values["dark-blue"],
                        ...) {
 
   # Use sgplot theme ----

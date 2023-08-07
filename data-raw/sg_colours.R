@@ -2,7 +2,7 @@
 # Source: https://designsystem.gov.scot/styles/colour
 
 sg_colour_values <- c(
-  `blue` = "#002d54",
+  `dark-blue` = "#002d54",
   `teal` = "#2b9c93",
   `purple` = "#6a2063",
   `orange` = "#e5682a",
@@ -16,14 +16,14 @@ sg_colour_values <- c(
 )
 
 sg_colour_palettes <- list(
-  `main` = sg_colour_values[c("blue", "teal", "purple", "orange")],
+  `main` = sg_colour_values[c("dark-blue", "teal", "purple", "orange")],
   `main-extended` = sg_colour_values[c(
-    "blue", "teal", "purple",
+    "dark-blue", "teal", "purple",
     "orange", "dark-green", "green",
     "brown", "pink"
   )],
-  `sequential` = sg_colour_values[c("blue", "mid-blue", "light-blue")],
-  `focus` = sg_colour_values[c("blue", "grey")]
+  `sequential` = sg_colour_values[c("dark-blue", "mid-blue", "light-blue")],
+  `focus` = sg_colour_values[c("dark-blue", "grey")]
 )
 
 usethis::use_data(sg_colour_values, sg_colour_palettes, overwrite = TRUE)

@@ -86,7 +86,7 @@ Annotations may also be used to add value labels to a bar chart. Note that `geom
 #| fig.alt = "A bar chart with white text labels at the end of each bar."
 
 ggplot(bar_data, aes(x = reorder(country, -lifeExp), y = lifeExp)) +
-  geom_col(fill = sg_colour_values["blue"]) +
+  geom_col(fill = sg_colour_values["dark-blue"]) +
   geom_text(aes(label = round(lifeExp, 1)),
             nudge_y = -5, colour = "white") +
   theme_sg() +

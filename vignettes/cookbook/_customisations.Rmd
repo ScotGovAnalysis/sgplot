@@ -11,7 +11,7 @@ To control the order of bars in a chart, wrap the variable you want to arrange w
 
 bar_data |>
   ggplot(aes(x = lifeExp, y = reorder(country, lifeExp))) +
-  geom_col(fill = sg_colour_values["blue"]) +
+  geom_col(fill = sg_colour_values["dark-blue"]) +
   theme_sg(axis = "y", grid = "x")
 ```
 
@@ -139,7 +139,7 @@ If text is too long, it may be cut off or distort the dimensions of the chart.
 
 plot <-
   ggplot(bar_data, aes(x = reorder(country, -lifeExp), y = lifeExp)) +
-  geom_col(fill = sg_colour_values["blue"]) +
+  geom_col(fill = sg_colour_values["dark-blue"]) +
   theme_sg() +
   scale_y_continuous(expand = c(0, 0)) +
   labs(
@@ -181,7 +181,7 @@ If you find you need to adjust theme elements for your chart, this can be done u
 #| fig.alt = "A bar chart using sgplot theme and dark blue colour, with axis lines and ticks coloured black."
 
 ggplot(bar_data, aes(x = reorder(country, -lifeExp), y = lifeExp)) +
-  geom_col(fill = sg_colour_values["blue"]) +
+  geom_col(fill = sg_colour_values["dark-blue"]) +
   theme_sg(axis = "xy") +
   theme(axis.line = element_line(colour = "black"),
         axis.ticks = element_line(colour = "black")) +

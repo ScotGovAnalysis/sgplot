@@ -4,7 +4,7 @@
 \alias{use_sgplot}
 \title{Use sgplot defaults.}
 \usage{
-use_sgplot(default_colour = sgplot::sg_colour_values["blue"], ...)
+use_sgplot(default_colour = sgplot::sg_colour_values["dark-blue"], ...)
 }
 \arguments{
 \item{default_colour}{Default colour/fill for geoms. Default value is

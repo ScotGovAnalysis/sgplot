@@ -8,7 +8,7 @@
 gapminder |>
   filter(country == "United Kingdom") |>
   ggplot(aes(x = year, y = lifeExp)) +
-  geom_line(linewidth = 1, colour = sg_colour_values["blue"]) +
+  geom_line(linewidth = 1, colour = sg_colour_values["dark-blue"]) +
   theme_sg() +
   scale_y_continuous(limits = c(0, 82),
                      breaks = seq(0, 80, 20),
@@ -64,7 +64,7 @@ bar_data <-
 #| fig.alt = "A bar chart using sgplot theme and dark blue colour."
 
 ggplot(bar_data, aes(x = reorder(country, -lifeExp), y = lifeExp)) +
-  geom_col(fill = sg_colour_values["blue"]) +
+  geom_col(fill = sg_colour_values["dark-blue"]) +
   theme_sg() +
   scale_y_continuous(expand = c(0, 0)) +
   labs(
@@ -82,7 +82,7 @@ A bar chart can sometimes look better with horizontal bars. This can also be a g
 #| fig.alt = "A horizontal bar chart using sgplot theme and dark blue colour."
 
 ggplot(bar_data, aes(x = lifeExp, y = reorder(country, lifeExp))) +
-  geom_col(fill = sg_colour_values["blue"]) +
+  geom_col(fill = sg_colour_values["dark-blue"]) +
   theme_sg(grid = "x", axis = "y") +
   scale_x_continuous(expand = c(0, 0)) +
   labs(
@@ -169,7 +169,7 @@ gapminder |>
   ggplot(aes(x = lifeExp)) +
   geom_histogram(binwidth = 5,
                  colour = "white",
-                 fill = sg_colour_values["blue"]) +
+                 fill = sg_colour_values["dark-blue"]) +
   theme_sg() +
   scale_y_continuous(expand = c(0, 0)) +
   labs(
@@ -190,7 +190,7 @@ gapminder |>
 gapminder |>
   filter(year == 2007) |>
   ggplot(aes(x = gdpPercap, y = lifeExp, size = pop)) +
-  geom_point(colour = sg_colour_values["blue"]) +
+  geom_point(colour = sg_colour_values["dark-blue"]) +
   theme_sg(axis = "none", grid = "xy") +
   scale_x_continuous(
     labels = function(x) scales::dollar(x, prefix = "£")
@@ -305,7 +305,7 @@ p <-
     "Life Expectancy: ", round(lifeExp, 1)
   )) |>
   ggplot(aes(x = reorder(country, -lifeExp), y = lifeExp, text = tooltip)) +
-  geom_col(fill = sg_colour_values["blue"]) +
+  geom_col(fill = sg_colour_values["dark-blue"]) +
   theme_sg(ticks = "x") +
   theme(text = element_text(family = "")) +
   scale_y_continuous(expand = c(0, 0)) +
