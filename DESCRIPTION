@@ -17,9 +17,10 @@ RoxygenNote: 7.2.3
 Depends:
   R (>= 2.10)
 Imports:
-  ggplot2,
-  scales,
-  cli
+    ggplot2,
+    scales,
+    cli,
+    rlang
 Suggests: 
   dplyr,
   knitr,
@@ -31,5 +32,6 @@ Suggests:
   gapminder,
   stringr,
   testthat (>= 2.1.0),
-  plotly
+  plotly,
+  gt
 VignetteBuilder: knitr
