@@ -17,11 +17,7 @@ sg_colour_values <- c(
 
 sg_colour_palettes <- list(
   `main` = sg_colour_values[c("blue", "teal", "purple", "orange")],
-  `main6` = sg_colour_values[c(
-    "blue", "teal", "purple",
-    "orange", "dark-green", "green"
-  )],
-  `main8` = sg_colour_values[c(
+  `main-extended` = sg_colour_values[c(
     "blue", "teal", "purple",
     "orange", "dark-green", "green",
     "brown", "pink"

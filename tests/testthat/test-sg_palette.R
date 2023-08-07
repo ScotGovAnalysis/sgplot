@@ -8,8 +8,8 @@ test_that("Correct value returned", {
     unname(af_colour_palettes$main)
   )
   expect_equal(
-    sg_palette("main6", colour_names = TRUE)(5),
-    sg_colour_palettes$main6[1:5]
+    sg_palette("main-extended", colour_names = TRUE)(5),
+    sg_colour_palettes$`main-extended`[1:5]
   )
   expect_equal(
     sg_palette("sequential", colour_names = TRUE)(3),
