@@ -4,7 +4,12 @@
 # sgplot <img src="man/figures/logo.svg" alt="sgplot logo" align="right" height="150"/>
 
 <!-- badges: start -->
-<!-- [![GitHub release (latest by date)](https://img.shields.io/github/v/release/DataScienceScotland/sgplot)](https://github.com/DataScienceScotland/sgplot/releases/latest) [![R build status](https://github.com/DataScienceScotland/sgplot/workflows/R-CMD-check/badge.svg)](https://github.com/DataScienceScotland/sgplot/actions) -->
+
+[![GitHub release (latest by
+date)](https://img.shields.io/github/v/release/DataScienceScotland/sgplot)](https://github.com/DataScienceScotland/sgplot/releases/latest)
+[![R build
+status](https://github.com/DataScienceScotland/sgplot/workflows/R-CMD-check/badge.svg)](https://github.com/DataScienceScotland/sgplot/actions)
+
 <!-- badges: end -->
 
 sgplot is an R package for creating accessible plots in the Scottish
