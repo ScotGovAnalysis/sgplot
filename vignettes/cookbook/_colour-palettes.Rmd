@@ -1,8 +1,17 @@
 ## Using a different colour palette
 
-Colour palettes from the Analysis Function [colours guidance](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/) have been used in sgplot. The colours in these palettes all have sufficient colour contrast against a white background and take into account the general considerations for colour set out in accessibility legislation. More information on the colours used in sgplot can be found in the [Colours article](https://datasciencescotland.github.io/sgplot/articles/colours.html).
+sgplot provides colour palettes as set out by the [Scottish Government Design System](https://designsystem.gov.scot/guidance/charts). 
+These palettes have been developed to meet the [Web Content Accessibility Guidelines 2.1 for graphical objects](https://www.w3.org/WAI/WCAG21/Understanding/non-text-contrast.html).
 
-There may be instances where you'd like to use a different colour palette. If so, this should be carefully considered to ensure it meets accessibility requirements. The previously mentioned Analysis Function guidance outlines [appropriate steps for choosing your own accessibile colour palette](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/#section-9) and should be used.
+The Analysis Function guidance also contains [suggested colour palettes](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/#section-4). 
+These are also provided in sgplot, however the Scottish Government palettes are used by default. 
+To use an Analysis Function palette, set `palette_type = "af"` when using any of the `scale_` [colour functions](https://datasciencescotland.github.io/sgplot/reference/index.html#colours).
+
+More information on the colours used in sgplot can be found at `vignette("colours")`.
+
+There may be instances where you'd like to use a different colour palette. 
+If so, this should be carefully considered to ensure it meets accessibility requirements. 
+The Analysis Function guidance outlines [appropriate steps for choosing your own accessibile colour palette](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/#section-9) and should be used.
 
 ```{r different-colour-palette-1}
 #| fig.alt = "A line chart using sgplot theme and first colour from custom palette."

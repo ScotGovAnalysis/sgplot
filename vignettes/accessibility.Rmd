@@ -23,7 +23,7 @@ Accessibility legislation means that all content published on public sector webs
 
 ## Resources
 
-The [Government Analysis Function](https://analysisfunction.civilservice.gov.uk/) has published a variety of resources for producing data visualisations:
+The [Government Analysis Function](https://analysisfunction.civilservice.gov.uk/) has published a variety of resources for producing accessible data visualisations:
 
 * [Charts Checklist](https://analysisfunction.civilservice.gov.uk/policy-store/charts-a-checklist/)
 * [Charts Guidance](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/)
@@ -49,7 +49,8 @@ By applying `theme_sg` to ggplot2 plots, the following best practice is followed
 
 * Line thickness is relative to font size.
 
-Colour palettes from the Analysis Function [colours guidance](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/) have been used in sgplot. The colours in these palettes all have sufficient colour contrast against a white background and take into account the general considerations for colour set out in accessibility legislation. These palettes can be applied to charts by using one of the four colour/fill functions:
+sgplot provides colour palettes as set out by the [Scottish Government Design System](https://designsystem.gov.scot/guidance/charts). 
+These palettes have been developed to meet the [Web Content Accessibility Guidelines 2.1 for graphical objects](https://www.w3.org/WAI/WCAG21/Understanding/non-text-contrast.html) and can be applied to charts by using one of the four colour/fill functions:
 
 * `scale_colour_discrete_sg()`
 * `scale_fill_discrete_sg()`
@@ -61,7 +62,8 @@ More information on sgplot colours can be found at `vignette("colours")`.
 
 ## Other accessibility considerations
 
-Using sgplot does not guarantee accessibility. The Analysis Function [chart guidance](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts) contains detailed information on other considerations that should be made. Not all of these are repeated here, but we think the following are a good place to start:
+Using sgplot does not guarantee accessibility. The Analysis Function [chart guidance](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts) contains detailed information on other considerations that should be made. 
+Not all of these are repeated here, but we think the following are a good place to start:
 
 * Consider what type of chart is best to convey your message. Keep it as simple as possible.
 

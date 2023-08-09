@@ -16,13 +16,12 @@ sgplot is an R package for creating accessible plots in the Scottish
 Government. Currently, functions are available for styling ggplot2
 plots.
 
-The package has been developed using the [Government Analysis
-Function](https://analysisfunction.civilservice.gov.uk/) Data
-Visualisation guidance for
-[charts](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/)
-and
-[colours](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/).
-sgplot should be used in conjunction with these guidance documents.
+The package has been developed using the [Government Analysis Function
+Data Visualisation
+guidance](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/)
+and uses accessible colour palettes from the [Scottish Government Design
+System](https://designsystem.gov.scot/guidance/charts). sgplot should be
+used in conjunction with these guidance documents.
 
 More information about the package and its functions can be found on the
 [sgplot website](https://DataScienceScotland.github.io/sgplot). In
