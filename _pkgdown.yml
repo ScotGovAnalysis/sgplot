@@ -62,7 +62,8 @@ reference:
 - title: Colours
   contents:
   - starts_with("scale")
-  - matches("colour")
+  - starts_with("sg_colour")
+  - starts_with("af_colour")
 
 - title: Helpers
   contents:
@@ -71,6 +72,7 @@ reference:
 - title: internal
   contents:
   - sg_palette
+  - colour_table
 
 figures:
   dev: "svg"
