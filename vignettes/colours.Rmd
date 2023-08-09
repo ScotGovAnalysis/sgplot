@@ -19,7 +19,10 @@ knitr::opts_chunk$set(
   echo = FALSE
 )
 
-table_note <- "Note: the cells in the ‘Example of colour’ column may appear blank to screen reader software. They contain a colour fill, but no data."
+table_note <- paste(
+  "Note: the cells in the ‘Example of colour’ column may appear blank",
+  "to screen reader software. They contain a colour fill, but no data."
+)
 ```
 
 sgplot provides colour palettes as set out by the [Scottish Government Design System](https://designsystem.gov.scot/guidance/charts). 
