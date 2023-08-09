@@ -27,7 +27,9 @@ More information about the package and its functions can be found on the
 [sgplot website](https://DataScienceScotland.github.io/sgplot). In
 particular, the
 [cookbook](https://DataScienceScotland.github.io/sgplot/articles/cookbook.html)
-contains lots of examples.
+contains lots of examples. Slides are also available for an internal
+[presentation given to statisticians and
+analysts](https://alicebyers5.github.io/presentations-and-blogs/2023-06-19_sgplot/slides.html).
 
 ## Installation
 
