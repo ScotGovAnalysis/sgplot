@@ -2,6 +2,7 @@
 
 * Add [Scottish Government Design System colour palettes](https://designsystem.gov.scot/guidance/charts)
 * Reduce `base_line_size` in `theme_sg()`
+* Remove default dark blue outline from `geom_col` and `geom_bar` when using `use_sgplot()`.
 
 # sgplot 0.1.0
 
