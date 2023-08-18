@@ -79,15 +79,13 @@ use_sgplot <- function(default_colour = sgplot::sg_colour_values["dark-blue"],
   # Col
   ggplot2::update_geom_defaults(
     geom = "col",
-    new = list(colour = default_colour,
-               fill = default_colour)
+    new = list(fill = default_colour)
   )
 
   # Bar
   ggplot2::update_geom_defaults(
     geom = "bar",
-    new = list(colour = default_colour,
-               fill = default_colour)
+    new = list(fill = default_colour)
   )
 
   # Text
