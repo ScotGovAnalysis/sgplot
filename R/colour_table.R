@@ -21,7 +21,8 @@ colour_table <- function(pal) {
       fn = scales::col_factor(
         palette = pal,
         domain = NULL
-      )) |>
+      )
+    ) |>
     gt::cols_width(
       name ~ gt::px(110),
       value ~ gt::px(100),

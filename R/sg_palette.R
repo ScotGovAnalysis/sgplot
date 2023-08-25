@@ -21,7 +21,7 @@ sg_palette <- function(palette = "main",
   if (!palette %in% names(palette_list)) {
     cli::cli_abort(c(
       "x" = paste("`{palette}` is not a valid palette name ",
-                   "in `{palette_type}_colour_palettes`.")
+                  "in `{palette_type}_colour_palettes`.")
     ))
   }
 
@@ -29,8 +29,12 @@ sg_palette <- function(palette = "main",
     n_available <- length(palette_list[[palette]])
 
     # Use 'main2' if AF main palette used and only 2 colours required
-    if (palette_type == "af" &&
-        n == 2 && palette != "main2" && grepl("main", palette)) {
+    if (
+      palette_type == "af" &&
+      n == 2 &&
+      palette != "main2" &&
+      grepl("main", palette)
+    ) {
       palette <- "main2"
       cli::cli_warn(c(
         "!" = "Using `main2` as only two colours are required."

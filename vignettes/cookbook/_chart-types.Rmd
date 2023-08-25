@@ -136,8 +136,8 @@ stacked_bar_data <-
   gapminder |>
   filter(year == 2007) |>
   mutate(lifeExpGrouped = cut(lifeExp,
-                    breaks = c(0, 75, Inf),
-                    labels = c("Under 75", "75+"))) |>
+                              breaks = c(0, 75, Inf),
+                              labels = c("Under 75", "75+"))) |>
   group_by(continent, lifeExpGrouped) |>
   summarise(n_countries = n(), .groups = "drop")
 

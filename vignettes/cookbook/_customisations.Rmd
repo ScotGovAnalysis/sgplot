@@ -152,7 +152,7 @@ plot +
   labs(
     y = "Percentage of countries",
     title = paste("Iceland has the highest life expectancy in Europe",
-                   "followed closely by Switzerland")
+                  "followed closely by Switzerland")
   )
 ```
 
