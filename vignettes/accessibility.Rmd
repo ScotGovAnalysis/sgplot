@@ -49,7 +49,7 @@ By applying `theme_sg` to ggplot2 plots, the following best practice is followed
 
 * Line thickness is relative to font size.
 
-sgplot provides colour palettes as set out by the [Scottish Government Design System](https://designsystem.gov.scot/guidance/charts). 
+sgplot provides colour palettes as set out by the [Scottish Government Design System](https://designsystem.gov.scot/guidance/charts/data-visualisation-colour-palettes). 
 These palettes have been developed to meet the [Web Content Accessibility Guidelines 2.1 for graphical objects](https://www.w3.org/WAI/WCAG21/Understanding/non-text-contrast.html) and can be applied to charts by using one of the four colour/fill functions:
 
 * `scale_colour_discrete_sg()`

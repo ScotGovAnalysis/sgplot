@@ -8,7 +8,7 @@
 A character vector
 }
 \source{
-\href{https://designsystem.gov.scot/styles/colour}{Scottish Government Design System}
+\href{https://designsystem.gov.scot/guidance/charts/data-visualisation-colour-palettes}{Scottish Government Design System}
 }
 \usage{
 sg_colour_values

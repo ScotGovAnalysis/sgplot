@@ -1,5 +1,6 @@
 # Scottish Government (SG) Design System colours and palettes ----
-# Source: https://designsystem.gov.scot/styles/colour
+# Source: https://designsystem.gov.scot/guidance/
+#   charts/data-visualisation-colour-palettes
 
 sg_colour_values <- c(
   `dark-blue` = "#002d54",

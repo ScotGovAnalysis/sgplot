@@ -5,7 +5,7 @@
 #' hex code.
 #'
 #' @format A character vector
-#' @source \href{https://designsystem.gov.scot/styles/colour}{Scottish Government Design System}
+#' @source \href{https://designsystem.gov.scot/guidance/charts/data-visualisation-colour-palettes}{Scottish Government Design System}
 # nolint end
 
 "sg_colour_values"
@@ -17,7 +17,7 @@
 #' @description A list grouping colours into palettes.
 #'
 #' @format A character list
-#' @source \href{https://designsystem.gov.scot/styles/colour}{Scottish Government Design System}
+#' @source \href{https://designsystem.gov.scot/guidance/charts/data-visualisation-colour-palettes}{Scottish Government Design System}
 # nolint end
 
 "sg_colour_palettes"

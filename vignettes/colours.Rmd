@@ -25,7 +25,7 @@ table_note <- paste(
 )
 ```
 
-sgplot provides colour palettes as set out by the [Scottish Government Design System](https://designsystem.gov.scot/guidance/charts). 
+sgplot provides colour palettes as set out by the [Scottish Government Design System](https://designsystem.gov.scot/guidance/charts/data-visualisation-colour-palettes). 
 
 These palettes have been developed to meet the [Web Content Accessibility Guidelines 2.1 for graphical objects](https://www.w3.org/WAI/WCAG21/Understanding/non-text-contrast.html). The colours in the [main palette for categorical data](#main-palette) all have at least a 3:1 colour contrast ratio with white (#ffffff) and off-white (#f8f8f8) backgrounds, as well as with adjacent colours in the palette. 
 
@@ -33,7 +33,7 @@ These palettes have been developed to meet the [Web Content Accessibility Guidel
 ## Things to consider when using colour
 
 Using sgplot colour palettes does not guarantee that your charts will be accessible. 
-Both the [Scottish Government ](https://designsystem.gov.scot/guidance/charts) and the [Analysis Function](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/) have published guidance on other steps you should take to ensure the accessible use of colour.
+Both the [Scottish Government ](https://designsystem.gov.scot/guidance/charts/data-visualisation-colour-palettes) and the [Analysis Function](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/) have published guidance on other steps you should take to ensure the accessible use of colour.
 sgplot should be used in conjunction with the advice given in these guidance documents.
 
 The following are a few key things to consider when using colour in data visualisations:

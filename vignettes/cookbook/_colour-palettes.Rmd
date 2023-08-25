@@ -1,6 +1,6 @@
 ## Using a different colour palette
 
-sgplot provides colour palettes as set out by the [Scottish Government Design System](https://designsystem.gov.scot/guidance/charts). 
+sgplot provides colour palettes as set out by the [Scottish Government Design System](https://designsystem.gov.scot/guidance/charts/data-visualisation-colour-palettes). 
 These palettes have been developed to meet the [Web Content Accessibility Guidelines 2.1 for graphical objects](https://www.w3.org/WAI/WCAG21/Understanding/non-text-contrast.html).
 
 The Analysis Function guidance also contains [suggested colour palettes](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/#section-4). 
