@@ -20,8 +20,8 @@ The package has been developed using the [Government Analysis Function
 Data Visualisation
 guidance](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/)
 and uses accessible colour palettes from the [Scottish Government Design
-System](https://designsystem.gov.scot/guidance/charts). sgplot should be
-used in conjunction with these guidance documents.
+System](https://designsystem.gov.scot/guidance/charts/data-visualisation-colour-palettes).
+sgplot should be used in conjunction with these guidance documents.
 
 More information about the package and its functions can be found on the
 [sgplot website](https://DataScienceScotland.github.io/sgplot). In
