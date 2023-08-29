@@ -40,6 +40,15 @@
     <loc>https://datasciencescotland.github.io/sgplot/news/index.html</loc>
   </url>
   <url>
+    <loc>https://datasciencescotland.github.io/sgplot/reference/af_colour_palettes.html</loc>
+  </url>
+  <url>
+    <loc>https://datasciencescotland.github.io/sgplot/reference/af_colour_values.html</loc>
+  </url>
+  <url>
+    <loc>https://datasciencescotland.github.io/sgplot/reference/colour_table.html</loc>
+  </url>
+  <url>
     <loc>https://datasciencescotland.github.io/sgplot/reference/index.html</loc>
   </url>
   <url>
@@ -65,6 +74,9 @@
   </url>
   <url>
     <loc>https://datasciencescotland.github.io/sgplot/reference/sg_palette.html</loc>
+  </url>
+  <url>
+    <loc>https://datasciencescotland.github.io/sgplot/reference/sgplot-package.html</loc>
   </url>
   <url>
     <loc>https://datasciencescotland.github.io/sgplot/reference/theme_sg.html</loc>

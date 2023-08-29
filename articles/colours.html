@@ -34,7 +34,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">sgplot</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">0.1.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">0.2.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -93,70 +93,4417 @@
 
     
     
-<p>sgplot uses colour palettes from the <a href="https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/" class="external-link">Government
-Analysis Function colours guidance</a>. This guidance contains lots of
-information on best practice for using colour and how to ensure content
-meets the <a href="https://www.w3.org/TR/WCAG21/" class="external-link">accessibility
-legislation</a> applicable to the public sector. sgplot should be used
-in conjunction with this guidance.</p>
-<p>The following are a few key considerations when using colour in
-plots:</p>
-<ul>
-<li>Only use colour if absolutely necessary</li>
-<li>Limit the number of different colours you use; ideally an absolute
-maximum of four</li>
-<li>Use colour consistently when producing a series of plots</li>
-<li>Do not rely on colour alone to communicate a message</li>
-</ul>
+<p>sgplot provides colour palettes as set out by the <a href="https://designsystem.gov.scot/guidance/charts/data-visualisation-colour-palettes" class="external-link">Scottish
+Government Design System</a>.</p>
+<p>These palettes have been developed to meet the <a href="https://www.w3.org/WAI/WCAG21/Understanding/non-text-contrast.html" class="external-link">Web
+Content Accessibility Guidelines 2.1 for graphical objects</a>. The
+colours in the <a href="#main-palette">main palette for categorical
+data</a> all have at least a 3:1 colour contrast ratio with white
+(#ffffff) and off-white (#f8f8f8) backgrounds, as well as with adjacent
+colours in the palette.</p>
 <div class="section level2">
-<h2 id="main-palettes">Main Palettes<a class="anchor" aria-label="anchor" href="#main-palettes"></a>
+<h2 id="things-to-consider-when-using-colour">Things to consider when using colour<a class="anchor" aria-label="anchor" href="#things-to-consider-when-using-colour"></a>
 </h2>
-<p>There are three palettes available for use with categorical data:</p>
-<p><img src="colours_files/figure-html/main-palettes-1.svg" alt="The main palette contains dark blue, turquoise, dark pink and orange. The main2 palette contains dark blue and orange. The main6 palette contains dark blue, turquoise, dark pink, orange, dark grey and light purple." width="700"></p>
+<p>Using sgplot colour palettes does not guarantee that your charts will
+be accessible. Both the <a href="https://designsystem.gov.scot/guidance/charts/data-visualisation-colour-palettes" class="external-link">Scottish
+Government</a> and the <a href="https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/" class="external-link">Analysis
+Function</a> have published guidance on other steps you should take to
+ensure the accessible use of colour. sgplot should be used in
+conjunction with the advice given in these guidance documents.</p>
+<p>The following are a few key things to consider when using colour in
+data visualisations:</p>
 <ul>
-<li><p><code>main</code> is the default palette for discrete colour
-scales.</p></li>
-<li><p><code>main2</code> should be used if only two colours are
+<li><p>Only use colour if absolutely necessary</p></li>
+<li><p>Do not rely on colour alone to communicate a message</p></li>
+<li><p>Use colour consistently when producing a series of plots</p></li>
+<li><p>Limit the number of different colours you use; ideally an
+absolute maximum of four</p></li>
+<li><p>Use colour palettes in the order presented to ensure adjacent
+colours have sufficient contrast with each other</p></li>
+</ul>
+</div>
+<div class="section level2">
+<h2 id="scottish-government-colour-palettes">Scottish Government colour palettes<a class="anchor" aria-label="anchor" href="#scottish-government-colour-palettes"></a>
+</h2>
+<p>The Scottish Government colour palettes are used by default in
+sgplot.</p>
+<div class="section level3">
+<h3 id="main-palette">Main palette<a class="anchor" aria-label="anchor" href="#main-palette"></a>
+</h3>
+<p>The <code>main</code> palette should be used with categorical
+data.</p>
+<p>Note: the cells in the ‘Example of colour’ column may appear blank to
+screen reader software. They contain a colour fill, but no data.</p>
+<div id="lctjjcamta" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#lctjjcamta table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#lctjjcamta thead, #lctjjcamta tbody, #lctjjcamta tfoot, #lctjjcamta tr, #lctjjcamta td, #lctjjcamta th {
+  border-style: none;
+}
+
+#lctjjcamta p {
+  margin: 0;
+  padding: 0;
+}
+
+#lctjjcamta .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#lctjjcamta .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#lctjjcamta .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#lctjjcamta .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#lctjjcamta .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#lctjjcamta .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lctjjcamta .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#lctjjcamta .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#lctjjcamta .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#lctjjcamta .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#lctjjcamta .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#lctjjcamta .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#lctjjcamta .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#lctjjcamta .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#lctjjcamta .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#lctjjcamta .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#lctjjcamta .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#lctjjcamta .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#lctjjcamta .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lctjjcamta .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#lctjjcamta .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#lctjjcamta .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#lctjjcamta .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lctjjcamta .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#lctjjcamta .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#lctjjcamta .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lctjjcamta .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lctjjcamta .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#lctjjcamta .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lctjjcamta .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#lctjjcamta .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lctjjcamta .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#lctjjcamta .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lctjjcamta .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#lctjjcamta .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lctjjcamta .gt_left {
+  text-align: left;
+}
+
+#lctjjcamta .gt_center {
+  text-align: center;
+}
+
+#lctjjcamta .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#lctjjcamta .gt_font_normal {
+  font-weight: normal;
+}
+
+#lctjjcamta .gt_font_bold {
+  font-weight: bold;
+}
+
+#lctjjcamta .gt_font_italic {
+  font-style: italic;
+}
+
+#lctjjcamta .gt_super {
+  font-size: 65%;
+}
+
+#lctjjcamta .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#lctjjcamta .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#lctjjcamta .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#lctjjcamta .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#lctjjcamta .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#lctjjcamta .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#lctjjcamta .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="table gt_table" style="table-layout: fixed;; width: 0px" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width:110px;">
+<col style="width:100px;">
+<col style="width:150px;">
+</colgroup>
+<thead><tr class="gt_col_headings">
+<th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Colour name">Colour name</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Hex code">Hex code</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Example of colour">Example of colour</th>
+    </tr></thead>
+<tbody class="gt_table_body">
+<tr>
+<td headers="name" class="gt_row gt_left">dark-blue</td>
+<td headers="value" class="gt_row gt_left">#002d54</td>
+<td headers="example" class="gt_row gt_left" style="background-color: #002D54; color: #FFFFFF;"></td>
+</tr>
+<tr>
+<td headers="name" class="gt_row gt_left">teal</td>
+<td headers="value" class="gt_row gt_left">#2b9c93</td>
+<td headers="example" class="gt_row gt_left" style="background-color: #2B9C93; color: #FFFFFF;"></td>
+</tr>
+<tr>
+<td headers="name" class="gt_row gt_left">purple</td>
+<td headers="value" class="gt_row gt_left">#6a2063</td>
+<td headers="example" class="gt_row gt_left" style="background-color: #6A2063; color: #FFFFFF;"></td>
+</tr>
+<tr>
+<td headers="name" class="gt_row gt_left">orange</td>
+<td headers="value" class="gt_row gt_left">#e5682a</td>
+<td headers="example" class="gt_row gt_left" style="background-color: #E5682A; color: #FFFFFF;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>You should try to use an absolute maximum of four colours in a chart.
+If you feel you need more than four, think about how you could redesign
+your chart to avoid this. If you absolutely must use more than four
+colours, the <code>main-extended</code> palette can be used.</p>
+<p>Note: the cells in the ‘Example of colour’ column may appear blank to
+screen reader software. They contain a colour fill, but no data.</p>
+<div id="kdoctjdpgm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#kdoctjdpgm table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#kdoctjdpgm thead, #kdoctjdpgm tbody, #kdoctjdpgm tfoot, #kdoctjdpgm tr, #kdoctjdpgm td, #kdoctjdpgm th {
+  border-style: none;
+}
+
+#kdoctjdpgm p {
+  margin: 0;
+  padding: 0;
+}
+
+#kdoctjdpgm .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#kdoctjdpgm .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#kdoctjdpgm .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#kdoctjdpgm .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#kdoctjdpgm .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#kdoctjdpgm .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#kdoctjdpgm .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#kdoctjdpgm .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#kdoctjdpgm .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#kdoctjdpgm .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#kdoctjdpgm .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#kdoctjdpgm .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#kdoctjdpgm .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#kdoctjdpgm .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#kdoctjdpgm .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#kdoctjdpgm .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#kdoctjdpgm .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#kdoctjdpgm .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#kdoctjdpgm .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#kdoctjdpgm .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#kdoctjdpgm .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#kdoctjdpgm .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#kdoctjdpgm .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#kdoctjdpgm .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#kdoctjdpgm .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#kdoctjdpgm .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#kdoctjdpgm .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#kdoctjdpgm .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#kdoctjdpgm .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#kdoctjdpgm .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#kdoctjdpgm .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#kdoctjdpgm .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#kdoctjdpgm .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#kdoctjdpgm .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#kdoctjdpgm .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#kdoctjdpgm .gt_left {
+  text-align: left;
+}
+
+#kdoctjdpgm .gt_center {
+  text-align: center;
+}
+
+#kdoctjdpgm .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#kdoctjdpgm .gt_font_normal {
+  font-weight: normal;
+}
+
+#kdoctjdpgm .gt_font_bold {
+  font-weight: bold;
+}
+
+#kdoctjdpgm .gt_font_italic {
+  font-style: italic;
+}
+
+#kdoctjdpgm .gt_super {
+  font-size: 65%;
+}
+
+#kdoctjdpgm .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#kdoctjdpgm .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#kdoctjdpgm .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#kdoctjdpgm .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#kdoctjdpgm .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#kdoctjdpgm .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#kdoctjdpgm .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="table gt_table" style="table-layout: fixed;; width: 0px" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width:110px;">
+<col style="width:100px;">
+<col style="width:150px;">
+</colgroup>
+<thead><tr class="gt_col_headings">
+<th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Colour name">Colour name</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Hex code">Hex code</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Example of colour">Example of colour</th>
+    </tr></thead>
+<tbody class="gt_table_body">
+<tr>
+<td headers="name" class="gt_row gt_left">dark-blue</td>
+<td headers="value" class="gt_row gt_left">#002d54</td>
+<td headers="example" class="gt_row gt_left" style="background-color: #002D54; color: #FFFFFF;"></td>
+</tr>
+<tr>
+<td headers="name" class="gt_row gt_left">teal</td>
+<td headers="value" class="gt_row gt_left">#2b9c93</td>
+<td headers="example" class="gt_row gt_left" style="background-color: #2B9C93; color: #FFFFFF;"></td>
+</tr>
+<tr>
+<td headers="name" class="gt_row gt_left">purple</td>
+<td headers="value" class="gt_row gt_left">#6a2063</td>
+<td headers="example" class="gt_row gt_left" style="background-color: #6A2063; color: #FFFFFF;"></td>
+</tr>
+<tr>
+<td headers="name" class="gt_row gt_left">orange</td>
+<td headers="value" class="gt_row gt_left">#e5682a</td>
+<td headers="example" class="gt_row gt_left" style="background-color: #E5682A; color: #FFFFFF;"></td>
+</tr>
+<tr>
+<td headers="name" class="gt_row gt_left">dark-green</td>
+<td headers="value" class="gt_row gt_left">#0b4c0b</td>
+<td headers="example" class="gt_row gt_left" style="background-color: #0B4C0B; color: #FFFFFF;"></td>
+</tr>
+<tr>
+<td headers="name" class="gt_row gt_left">green</td>
+<td headers="value" class="gt_row gt_left">#5d9f3c</td>
+<td headers="example" class="gt_row gt_left" style="background-color: #5D9F3C; color: #FFFFFF;"></td>
+</tr>
+<tr>
+<td headers="name" class="gt_row gt_left">brown</td>
+<td headers="value" class="gt_row gt_left">#592c20</td>
+<td headers="example" class="gt_row gt_left" style="background-color: #592C20; color: #FFFFFF;"></td>
+</tr>
+<tr>
+<td headers="name" class="gt_row gt_left">pink</td>
+<td headers="value" class="gt_row gt_left">#ca72a2</td>
+<td headers="example" class="gt_row gt_left" style="background-color: #CA72A2; color: #FFFFFF;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section level3">
+<h3 id="sequential-palette">Sequential palette<a class="anchor" aria-label="anchor" href="#sequential-palette"></a>
+</h3>
+<p>The <code>sequential</code> colour palette should be used for data
+where the order has some meaning.</p>
+<p>Note: the cells in the ‘Example of colour’ column may appear blank to
+screen reader software. They contain a colour fill, but no data.</p>
+<div id="vsrizmxuqu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#vsrizmxuqu table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#vsrizmxuqu thead, #vsrizmxuqu tbody, #vsrizmxuqu tfoot, #vsrizmxuqu tr, #vsrizmxuqu td, #vsrizmxuqu th {
+  border-style: none;
+}
+
+#vsrizmxuqu p {
+  margin: 0;
+  padding: 0;
+}
+
+#vsrizmxuqu .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#vsrizmxuqu .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#vsrizmxuqu .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#vsrizmxuqu .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#vsrizmxuqu .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#vsrizmxuqu .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#vsrizmxuqu .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#vsrizmxuqu .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#vsrizmxuqu .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#vsrizmxuqu .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#vsrizmxuqu .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#vsrizmxuqu .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#vsrizmxuqu .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#vsrizmxuqu .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#vsrizmxuqu .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#vsrizmxuqu .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#vsrizmxuqu .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#vsrizmxuqu .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#vsrizmxuqu .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vsrizmxuqu .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#vsrizmxuqu .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#vsrizmxuqu .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#vsrizmxuqu .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vsrizmxuqu .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#vsrizmxuqu .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#vsrizmxuqu .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#vsrizmxuqu .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vsrizmxuqu .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#vsrizmxuqu .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#vsrizmxuqu .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#vsrizmxuqu .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#vsrizmxuqu .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#vsrizmxuqu .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vsrizmxuqu .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#vsrizmxuqu .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vsrizmxuqu .gt_left {
+  text-align: left;
+}
+
+#vsrizmxuqu .gt_center {
+  text-align: center;
+}
+
+#vsrizmxuqu .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#vsrizmxuqu .gt_font_normal {
+  font-weight: normal;
+}
+
+#vsrizmxuqu .gt_font_bold {
+  font-weight: bold;
+}
+
+#vsrizmxuqu .gt_font_italic {
+  font-style: italic;
+}
+
+#vsrizmxuqu .gt_super {
+  font-size: 65%;
+}
+
+#vsrizmxuqu .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#vsrizmxuqu .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#vsrizmxuqu .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#vsrizmxuqu .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#vsrizmxuqu .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#vsrizmxuqu .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#vsrizmxuqu .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="table gt_table" style="table-layout: fixed;; width: 0px" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width:110px;">
+<col style="width:100px;">
+<col style="width:150px;">
+</colgroup>
+<thead><tr class="gt_col_headings">
+<th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Colour name">Colour name</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Hex code">Hex code</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Example of colour">Example of colour</th>
+    </tr></thead>
+<tbody class="gt_table_body">
+<tr>
+<td headers="name" class="gt_row gt_left">dark-blue</td>
+<td headers="value" class="gt_row gt_left">#002d54</td>
+<td headers="example" class="gt_row gt_left" style="background-color: #002D54; color: #FFFFFF;"></td>
+</tr>
+<tr>
+<td headers="name" class="gt_row gt_left">mid-blue</td>
+<td headers="value" class="gt_row gt_left">#0065bd</td>
+<td headers="example" class="gt_row gt_left" style="background-color: #0065BD; color: #FFFFFF;"></td>
+</tr>
+<tr>
+<td headers="name" class="gt_row gt_left">light-blue</td>
+<td headers="value" class="gt_row gt_left">#55a8f2</td>
+<td headers="example" class="gt_row gt_left" style="background-color: #55A8F2; color: #FFFFFF;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>As this palette is restricted to tints of one colour, there are
+issues with colour contrast. Neither <code>dark-blue</code> or
+<code>light-blue</code> have sufficient colour contrast with
+<code>mid-blue</code>. Follow the <a href="https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/#section-6" class="external-link">advice
+for using the sequential palette</a> in the Analysis Function colour
+guidance when using this palette.</p>
+</div>
+<div class="section level3">
+<h3 id="focus-palette">Focus palette<a class="anchor" aria-label="anchor" href="#focus-palette"></a>
+</h3>
+<p>The <code>focus</code> palette should be used to highlight specific
+elements of a plot.</p>
+<p>Note: the cells in the ‘Example of colour’ column may appear blank to
+screen reader software. They contain a colour fill, but no data.</p>
+<div id="cyvdpzfmng" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#cyvdpzfmng table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#cyvdpzfmng thead, #cyvdpzfmng tbody, #cyvdpzfmng tfoot, #cyvdpzfmng tr, #cyvdpzfmng td, #cyvdpzfmng th {
+  border-style: none;
+}
+
+#cyvdpzfmng p {
+  margin: 0;
+  padding: 0;
+}
+
+#cyvdpzfmng .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#cyvdpzfmng .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#cyvdpzfmng .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#cyvdpzfmng .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#cyvdpzfmng .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#cyvdpzfmng .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#cyvdpzfmng .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#cyvdpzfmng .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#cyvdpzfmng .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#cyvdpzfmng .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#cyvdpzfmng .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#cyvdpzfmng .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#cyvdpzfmng .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#cyvdpzfmng .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#cyvdpzfmng .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#cyvdpzfmng .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#cyvdpzfmng .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#cyvdpzfmng .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#cyvdpzfmng .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#cyvdpzfmng .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#cyvdpzfmng .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#cyvdpzfmng .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#cyvdpzfmng .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#cyvdpzfmng .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#cyvdpzfmng .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#cyvdpzfmng .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#cyvdpzfmng .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#cyvdpzfmng .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#cyvdpzfmng .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#cyvdpzfmng .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#cyvdpzfmng .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#cyvdpzfmng .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#cyvdpzfmng .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#cyvdpzfmng .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#cyvdpzfmng .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#cyvdpzfmng .gt_left {
+  text-align: left;
+}
+
+#cyvdpzfmng .gt_center {
+  text-align: center;
+}
+
+#cyvdpzfmng .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#cyvdpzfmng .gt_font_normal {
+  font-weight: normal;
+}
+
+#cyvdpzfmng .gt_font_bold {
+  font-weight: bold;
+}
+
+#cyvdpzfmng .gt_font_italic {
+  font-style: italic;
+}
+
+#cyvdpzfmng .gt_super {
+  font-size: 65%;
+}
+
+#cyvdpzfmng .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#cyvdpzfmng .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#cyvdpzfmng .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#cyvdpzfmng .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#cyvdpzfmng .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#cyvdpzfmng .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#cyvdpzfmng .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="table gt_table" style="table-layout: fixed;; width: 0px" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width:110px;">
+<col style="width:100px;">
+<col style="width:150px;">
+</colgroup>
+<thead><tr class="gt_col_headings">
+<th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Colour name">Colour name</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Hex code">Hex code</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Example of colour">Example of colour</th>
+    </tr></thead>
+<tbody class="gt_table_body">
+<tr>
+<td headers="name" class="gt_row gt_left">dark-blue</td>
+<td headers="value" class="gt_row gt_left">#002d54</td>
+<td headers="example" class="gt_row gt_left" style="background-color: #002D54; color: #FFFFFF;"></td>
+</tr>
+<tr>
+<td headers="name" class="gt_row gt_left">grey</td>
+<td headers="value" class="gt_row gt_left">#949494</td>
+<td headers="example" class="gt_row gt_left" style="background-color: #949494; color: #FFFFFF;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The <code>grey</code> in this palette does not meet the required
+colour contrast with an off-white background (#f8f8f8), therefore charts
+using this palette should only use a white background (#ffffff).</p>
+</div>
+</div>
+<div class="section level2">
+<h2 id="analysis-function-colour-palettes">Analysis Function colour palettes<a class="anchor" aria-label="anchor" href="#analysis-function-colour-palettes"></a>
+</h2>
+<p>The Analysis Function guidance also contains <a href="https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/#section-4" class="external-link">suggested
+colour palettes</a>. These are also provided in sgplot, however the
+Scottish Government palettes are used by default. To use an Analysis
+Function palette, set <code>palette_type = "af"</code> when using any of
+the <code>scale_</code> <a href="https://datasciencescotland.github.io/sgplot/reference/index.html#colours">colour
+functions</a>.</p>
+<div class="section level3">
+<h3 id="main-palette-1">Main palette<a class="anchor" aria-label="anchor" href="#main-palette-1"></a>
+</h3>
+<p>The <code>main</code> palette should be used with categorical
+data.</p>
+<p>Note: the cells in the ‘Example of colour’ column may appear blank to
+screen reader software. They contain a colour fill, but no data.</p>
+<div id="euuushaauo" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#euuushaauo table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#euuushaauo thead, #euuushaauo tbody, #euuushaauo tfoot, #euuushaauo tr, #euuushaauo td, #euuushaauo th {
+  border-style: none;
+}
+
+#euuushaauo p {
+  margin: 0;
+  padding: 0;
+}
+
+#euuushaauo .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#euuushaauo .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#euuushaauo .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#euuushaauo .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#euuushaauo .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#euuushaauo .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#euuushaauo .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#euuushaauo .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#euuushaauo .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#euuushaauo .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#euuushaauo .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#euuushaauo .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#euuushaauo .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#euuushaauo .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#euuushaauo .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#euuushaauo .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#euuushaauo .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#euuushaauo .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#euuushaauo .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#euuushaauo .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#euuushaauo .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#euuushaauo .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#euuushaauo .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#euuushaauo .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#euuushaauo .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#euuushaauo .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#euuushaauo .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#euuushaauo .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#euuushaauo .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#euuushaauo .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#euuushaauo .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#euuushaauo .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#euuushaauo .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#euuushaauo .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#euuushaauo .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#euuushaauo .gt_left {
+  text-align: left;
+}
+
+#euuushaauo .gt_center {
+  text-align: center;
+}
+
+#euuushaauo .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#euuushaauo .gt_font_normal {
+  font-weight: normal;
+}
+
+#euuushaauo .gt_font_bold {
+  font-weight: bold;
+}
+
+#euuushaauo .gt_font_italic {
+  font-style: italic;
+}
+
+#euuushaauo .gt_super {
+  font-size: 65%;
+}
+
+#euuushaauo .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#euuushaauo .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#euuushaauo .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#euuushaauo .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#euuushaauo .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#euuushaauo .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#euuushaauo .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="table gt_table" style="table-layout: fixed;; width: 0px" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width:110px;">
+<col style="width:100px;">
+<col style="width:150px;">
+</colgroup>
+<thead><tr class="gt_col_headings">
+<th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Colour name">Colour name</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Hex code">Hex code</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Example of colour">Example of colour</th>
+    </tr></thead>
+<tbody class="gt_table_body">
+<tr>
+<td headers="name" class="gt_row gt_left">dark-blue</td>
+<td headers="value" class="gt_row gt_left">#12436D</td>
+<td headers="example" class="gt_row gt_left" style="background-color: #12436D; color: #FFFFFF;"></td>
+</tr>
+<tr>
+<td headers="name" class="gt_row gt_left">turquoise</td>
+<td headers="value" class="gt_row gt_left">#28A197</td>
+<td headers="example" class="gt_row gt_left" style="background-color: #28A197; color: #FFFFFF;"></td>
+</tr>
+<tr>
+<td headers="name" class="gt_row gt_left">dark-pink</td>
+<td headers="value" class="gt_row gt_left">#801650</td>
+<td headers="example" class="gt_row gt_left" style="background-color: #801650; color: #FFFFFF;"></td>
+</tr>
+<tr>
+<td headers="name" class="gt_row gt_left">orange</td>
+<td headers="value" class="gt_row gt_left">#F46A25</td>
+<td headers="example" class="gt_row gt_left" style="background-color: #F46A25; color: #FFFFFF;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The <code>main2</code> palette should be used if only two colours are
 required as the dark blue and orange colours have the best colour
-contrast. If only two colours are required and another palette from the
-<code>main</code> family is used, <code>main2</code> will be used
-instead.</p></li>
-<li><p><code>main6</code> is also available to use, however it should be
-avoided where possible, as it’s generally considered that use of four or
-more colours in a plot is excessive. Plot redesign should be considered
-where possible and <code>main6</code> used as a last resort.</p></li>
-</ul>
+contrast with each other. If only two colours are required and another
+palette from the <code>main</code> family is used, <code>main2</code>
+will be used instead.</p>
+<p>Note: the cells in the ‘Example of colour’ column may appear blank to
+screen reader software. They contain a colour fill, but no data.</p>
+<div id="fdkoiyozeq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#fdkoiyozeq table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#fdkoiyozeq thead, #fdkoiyozeq tbody, #fdkoiyozeq tfoot, #fdkoiyozeq tr, #fdkoiyozeq td, #fdkoiyozeq th {
+  border-style: none;
+}
+
+#fdkoiyozeq p {
+  margin: 0;
+  padding: 0;
+}
+
+#fdkoiyozeq .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#fdkoiyozeq .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#fdkoiyozeq .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#fdkoiyozeq .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#fdkoiyozeq .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#fdkoiyozeq .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#fdkoiyozeq .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#fdkoiyozeq .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#fdkoiyozeq .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#fdkoiyozeq .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#fdkoiyozeq .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#fdkoiyozeq .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#fdkoiyozeq .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#fdkoiyozeq .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#fdkoiyozeq .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#fdkoiyozeq .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#fdkoiyozeq .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#fdkoiyozeq .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#fdkoiyozeq .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#fdkoiyozeq .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#fdkoiyozeq .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#fdkoiyozeq .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#fdkoiyozeq .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#fdkoiyozeq .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#fdkoiyozeq .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#fdkoiyozeq .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#fdkoiyozeq .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#fdkoiyozeq .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#fdkoiyozeq .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#fdkoiyozeq .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#fdkoiyozeq .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#fdkoiyozeq .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#fdkoiyozeq .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#fdkoiyozeq .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#fdkoiyozeq .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#fdkoiyozeq .gt_left {
+  text-align: left;
+}
+
+#fdkoiyozeq .gt_center {
+  text-align: center;
+}
+
+#fdkoiyozeq .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#fdkoiyozeq .gt_font_normal {
+  font-weight: normal;
+}
+
+#fdkoiyozeq .gt_font_bold {
+  font-weight: bold;
+}
+
+#fdkoiyozeq .gt_font_italic {
+  font-style: italic;
+}
+
+#fdkoiyozeq .gt_super {
+  font-size: 65%;
+}
+
+#fdkoiyozeq .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#fdkoiyozeq .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#fdkoiyozeq .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#fdkoiyozeq .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#fdkoiyozeq .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#fdkoiyozeq .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#fdkoiyozeq .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="table gt_table" style="table-layout: fixed;; width: 0px" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width:110px;">
+<col style="width:100px;">
+<col style="width:150px;">
+</colgroup>
+<thead><tr class="gt_col_headings">
+<th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Colour name">Colour name</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Hex code">Hex code</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Example of colour">Example of colour</th>
+    </tr></thead>
+<tbody class="gt_table_body">
+<tr>
+<td headers="name" class="gt_row gt_left">dark-blue</td>
+<td headers="value" class="gt_row gt_left">#12436D</td>
+<td headers="example" class="gt_row gt_left" style="background-color: #12436D; color: #FFFFFF;"></td>
+</tr>
+<tr>
+<td headers="name" class="gt_row gt_left">orange</td>
+<td headers="value" class="gt_row gt_left">#F46A25</td>
+<td headers="example" class="gt_row gt_left" style="background-color: #F46A25; color: #FFFFFF;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The <code>main6</code> palette is available if an extended palette is
+required.</p>
+<p>Note: the cells in the ‘Example of colour’ column may appear blank to
+screen reader software. They contain a colour fill, but no data.</p>
+<div id="wfdqgyhxyu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#wfdqgyhxyu table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#wfdqgyhxyu thead, #wfdqgyhxyu tbody, #wfdqgyhxyu tfoot, #wfdqgyhxyu tr, #wfdqgyhxyu td, #wfdqgyhxyu th {
+  border-style: none;
+}
+
+#wfdqgyhxyu p {
+  margin: 0;
+  padding: 0;
+}
+
+#wfdqgyhxyu .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#wfdqgyhxyu .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#wfdqgyhxyu .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#wfdqgyhxyu .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#wfdqgyhxyu .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#wfdqgyhxyu .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#wfdqgyhxyu .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#wfdqgyhxyu .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#wfdqgyhxyu .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#wfdqgyhxyu .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#wfdqgyhxyu .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#wfdqgyhxyu .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#wfdqgyhxyu .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#wfdqgyhxyu .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#wfdqgyhxyu .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#wfdqgyhxyu .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#wfdqgyhxyu .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#wfdqgyhxyu .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#wfdqgyhxyu .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#wfdqgyhxyu .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#wfdqgyhxyu .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#wfdqgyhxyu .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#wfdqgyhxyu .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#wfdqgyhxyu .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#wfdqgyhxyu .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#wfdqgyhxyu .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#wfdqgyhxyu .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#wfdqgyhxyu .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#wfdqgyhxyu .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#wfdqgyhxyu .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#wfdqgyhxyu .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#wfdqgyhxyu .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#wfdqgyhxyu .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#wfdqgyhxyu .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#wfdqgyhxyu .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#wfdqgyhxyu .gt_left {
+  text-align: left;
+}
+
+#wfdqgyhxyu .gt_center {
+  text-align: center;
+}
+
+#wfdqgyhxyu .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#wfdqgyhxyu .gt_font_normal {
+  font-weight: normal;
+}
+
+#wfdqgyhxyu .gt_font_bold {
+  font-weight: bold;
+}
+
+#wfdqgyhxyu .gt_font_italic {
+  font-style: italic;
+}
+
+#wfdqgyhxyu .gt_super {
+  font-size: 65%;
+}
+
+#wfdqgyhxyu .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#wfdqgyhxyu .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#wfdqgyhxyu .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#wfdqgyhxyu .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#wfdqgyhxyu .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#wfdqgyhxyu .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#wfdqgyhxyu .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="table gt_table" style="table-layout: fixed;; width: 0px" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width:110px;">
+<col style="width:100px;">
+<col style="width:150px;">
+</colgroup>
+<thead><tr class="gt_col_headings">
+<th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Colour name">Colour name</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Hex code">Hex code</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Example of colour">Example of colour</th>
+    </tr></thead>
+<tbody class="gt_table_body">
+<tr>
+<td headers="name" class="gt_row gt_left">dark-blue</td>
+<td headers="value" class="gt_row gt_left">#12436D</td>
+<td headers="example" class="gt_row gt_left" style="background-color: #12436D; color: #FFFFFF;"></td>
+</tr>
+<tr>
+<td headers="name" class="gt_row gt_left">turquoise</td>
+<td headers="value" class="gt_row gt_left">#28A197</td>
+<td headers="example" class="gt_row gt_left" style="background-color: #28A197; color: #FFFFFF;"></td>
+</tr>
+<tr>
+<td headers="name" class="gt_row gt_left">dark-pink</td>
+<td headers="value" class="gt_row gt_left">#801650</td>
+<td headers="example" class="gt_row gt_left" style="background-color: #801650; color: #FFFFFF;"></td>
+</tr>
+<tr>
+<td headers="name" class="gt_row gt_left">orange</td>
+<td headers="value" class="gt_row gt_left">#F46A25</td>
+<td headers="example" class="gt_row gt_left" style="background-color: #F46A25; color: #FFFFFF;"></td>
+</tr>
+<tr>
+<td headers="name" class="gt_row gt_left">dark-grey</td>
+<td headers="value" class="gt_row gt_left">#3D3D3D</td>
+<td headers="example" class="gt_row gt_left" style="background-color: #3D3D3D; color: #FFFFFF;"></td>
+</tr>
+<tr>
+<td headers="name" class="gt_row gt_left">light-purple</td>
+<td headers="value" class="gt_row gt_left">#A285D1</td>
+<td headers="example" class="gt_row gt_left" style="background-color: #A285D1; color: #FFFFFF;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section level3">
+<h3 id="sequential-palette-1">Sequential palette<a class="anchor" aria-label="anchor" href="#sequential-palette-1"></a>
+</h3>
+<p>The <code>sequential</code> colour palette should be used for data
+where the order has some meaning.</p>
+<p>Note: the cells in the ‘Example of colour’ column may appear blank to
+screen reader software. They contain a colour fill, but no data.</p>
+<div id="zhznuclxzb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#zhznuclxzb table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#zhznuclxzb thead, #zhznuclxzb tbody, #zhznuclxzb tfoot, #zhznuclxzb tr, #zhznuclxzb td, #zhznuclxzb th {
+  border-style: none;
+}
+
+#zhznuclxzb p {
+  margin: 0;
+  padding: 0;
+}
+
+#zhznuclxzb .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#zhznuclxzb .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#zhznuclxzb .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#zhznuclxzb .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#zhznuclxzb .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#zhznuclxzb .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#zhznuclxzb .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#zhznuclxzb .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#zhznuclxzb .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#zhznuclxzb .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#zhznuclxzb .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#zhznuclxzb .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#zhznuclxzb .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#zhznuclxzb .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#zhznuclxzb .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#zhznuclxzb .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#zhznuclxzb .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#zhznuclxzb .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#zhznuclxzb .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zhznuclxzb .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#zhznuclxzb .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#zhznuclxzb .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#zhznuclxzb .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zhznuclxzb .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#zhznuclxzb .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#zhznuclxzb .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#zhznuclxzb .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zhznuclxzb .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#zhznuclxzb .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#zhznuclxzb .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#zhznuclxzb .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#zhznuclxzb .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#zhznuclxzb .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zhznuclxzb .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#zhznuclxzb .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zhznuclxzb .gt_left {
+  text-align: left;
+}
+
+#zhznuclxzb .gt_center {
+  text-align: center;
+}
+
+#zhznuclxzb .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#zhznuclxzb .gt_font_normal {
+  font-weight: normal;
+}
+
+#zhznuclxzb .gt_font_bold {
+  font-weight: bold;
+}
+
+#zhznuclxzb .gt_font_italic {
+  font-style: italic;
+}
+
+#zhznuclxzb .gt_super {
+  font-size: 65%;
+}
+
+#zhznuclxzb .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#zhznuclxzb .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#zhznuclxzb .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#zhznuclxzb .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#zhznuclxzb .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#zhznuclxzb .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#zhznuclxzb .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="table gt_table" style="table-layout: fixed;; width: 0px" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width:110px;">
+<col style="width:100px;">
+<col style="width:150px;">
+</colgroup>
+<thead><tr class="gt_col_headings">
+<th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Colour name">Colour name</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Hex code">Hex code</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Example of colour">Example of colour</th>
+    </tr></thead>
+<tbody class="gt_table_body">
+<tr>
+<td headers="name" class="gt_row gt_left">dark-blue</td>
+<td headers="value" class="gt_row gt_left">#12436D</td>
+<td headers="example" class="gt_row gt_left" style="background-color: #12436D; color: #FFFFFF;"></td>
+</tr>
+<tr>
+<td headers="name" class="gt_row gt_left">mid-blue</td>
+<td headers="value" class="gt_row gt_left">#2073BC</td>
+<td headers="example" class="gt_row gt_left" style="background-color: #2073BC; color: #FFFFFF;"></td>
+</tr>
+<tr>
+<td headers="name" class="gt_row gt_left">light-blue</td>
+<td headers="value" class="gt_row gt_left">#6BACE6</td>
+<td headers="example" class="gt_row gt_left" style="background-color: #6BACE6; color: #000000;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>As this palette is restricted to tints of one colour, there are
+issues with colour contrast. Follow the <a href="https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/#section-6" class="external-link">advice
+for using the sequential palette</a> in the Analysis Function colour
+guidance when using this palette.</p>
+</div>
+<div class="section level3">
+<h3 id="focus-palette-1">Focus palette<a class="anchor" aria-label="anchor" href="#focus-palette-1"></a>
+</h3>
+<p>The <code>focus</code> palette should be used to highlight specific
+elements of a plot.</p>
+<p>Note: the cells in the ‘Example of colour’ column may appear blank to
+screen reader software. They contain a colour fill, but no data.</p>
+<div id="cxcwelzbpt" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#cxcwelzbpt table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#cxcwelzbpt thead, #cxcwelzbpt tbody, #cxcwelzbpt tfoot, #cxcwelzbpt tr, #cxcwelzbpt td, #cxcwelzbpt th {
+  border-style: none;
+}
+
+#cxcwelzbpt p {
+  margin: 0;
+  padding: 0;
+}
+
+#cxcwelzbpt .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#cxcwelzbpt .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#cxcwelzbpt .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#cxcwelzbpt .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#cxcwelzbpt .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#cxcwelzbpt .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#cxcwelzbpt .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#cxcwelzbpt .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#cxcwelzbpt .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#cxcwelzbpt .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#cxcwelzbpt .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#cxcwelzbpt .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#cxcwelzbpt .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#cxcwelzbpt .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#cxcwelzbpt .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#cxcwelzbpt .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#cxcwelzbpt .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#cxcwelzbpt .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#cxcwelzbpt .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#cxcwelzbpt .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#cxcwelzbpt .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#cxcwelzbpt .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#cxcwelzbpt .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#cxcwelzbpt .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#cxcwelzbpt .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#cxcwelzbpt .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#cxcwelzbpt .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#cxcwelzbpt .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#cxcwelzbpt .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#cxcwelzbpt .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#cxcwelzbpt .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#cxcwelzbpt .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#cxcwelzbpt .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#cxcwelzbpt .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#cxcwelzbpt .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#cxcwelzbpt .gt_left {
+  text-align: left;
+}
+
+#cxcwelzbpt .gt_center {
+  text-align: center;
+}
+
+#cxcwelzbpt .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#cxcwelzbpt .gt_font_normal {
+  font-weight: normal;
+}
+
+#cxcwelzbpt .gt_font_bold {
+  font-weight: bold;
+}
+
+#cxcwelzbpt .gt_font_italic {
+  font-style: italic;
+}
+
+#cxcwelzbpt .gt_super {
+  font-size: 65%;
+}
+
+#cxcwelzbpt .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#cxcwelzbpt .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#cxcwelzbpt .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#cxcwelzbpt .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#cxcwelzbpt .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#cxcwelzbpt .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#cxcwelzbpt .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="table gt_table" style="table-layout: fixed;; width: 0px" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width:110px;">
+<col style="width:100px;">
+<col style="width:150px;">
+</colgroup>
+<thead><tr class="gt_col_headings">
+<th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Colour name">Colour name</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Hex code">Hex code</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Example of colour">Example of colour</th>
+    </tr></thead>
+<tbody class="gt_table_body">
+<tr>
+<td headers="name" class="gt_row gt_left">dark-blue</td>
+<td headers="value" class="gt_row gt_left">#12436D</td>
+<td headers="example" class="gt_row gt_left" style="background-color: #12436D; color: #FFFFFF;"></td>
+</tr>
+<tr>
+<td headers="name" class="gt_row gt_left">grey</td>
+<td headers="value" class="gt_row gt_left">#BFBFBF</td>
+<td headers="example" class="gt_row gt_left" style="background-color: #BFBFBF; color: #000000;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The light grey colour in this palette does not have sufficient colour
+contrast against a white background and therefore this palette should
+only be used when it is essential to communicate your message. Follow
+the <a href="https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/#section-7" class="external-link">advice
+for using the focus palette</a> in the Analysis Function colour guidance
+when using this palette.</p>
+<p>The <a href="#focus-chart-palette">Scottish Government focus
+palette</a> does not have this issue, so you may wish to use this
+instead.</p>
+</div>
 </div>
 <div class="section level2">
-<h2 id="other-palettes">Other Palettes<a class="anchor" aria-label="anchor" href="#other-palettes"></a>
+<h2 id="using-a-different-colour-palette">Using a different colour palette<a class="anchor" aria-label="anchor" href="#using-a-different-colour-palette"></a>
 </h2>
-<p>There are two other colour palettes available:</p>
-<p><img src="colours_files/figure-html/other-palettes-1.svg" alt="The sequential palette contains dark blue, mid blue and light blue. The focus palette contains dark blue and grey." width="700"></p>
-<ul>
-<li><p><code>sequential</code> should be used for data where the order
-has some meaning. Note that not all colours in this palette have
-sufficient colour contrast against a white background or with each
-other. The Analysis Function colour guidance has some specific <a href="https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/#section-6" class="external-link">advice
-for using the sequential palette</a> which should be
-considered.</p></li>
-<li><p><code>focus</code> should be used to highlight specific elements
-of a plot. The light grey colour in this palette does not have
-sufficient colour contrast against a white background and therefore this
-palette should only be used when it is essential to communicate your
-message. The Analysis Function colour guidance has some <a href="https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/#section-7" class="external-link">advice
-for using the focus palette</a> which should be considered.</p></li>
-</ul>
-</div>
-<div class="section level2">
-<h2 id="a-note-on-choice-of-colour-palettes">A note on choice of colour palettes<a class="anchor" aria-label="anchor" href="#a-note-on-choice-of-colour-palettes"></a>
-</h2>
-<p>Although Scottish Government <a href="https://designsystem.gov.scot/styles/colour-customisation/" class="external-link">colour
-palettes</a> do exist, they have been developed primarily for web
-development. The colours do not have sufficient contrast with each other
-and therefore are not suitable for use in charts. It is for this reason
-that sgplot uses colour palettes from the <a href="https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/" class="external-link">Analysis
-Function guidance</a>. sgplot palettes may be updated in future when
-Scottish Government colour palettes for charts are developed.</p>
+<p>There may be instances where you’d like to use a different colour
+palette. If so, this should be carefully considered to ensure it meets
+accessibility requirements. The Analysis Function guidance outlines <a href="https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/#section-9" class="external-link">appropriate
+steps for choosing your own accessibile colour palette</a> and should be
+used.</p>
+<p>An example of how to use an alternative colour palette is provided in
+the <a href="https://datasciencescotland.github.io/sgplot/articles/cookbook.html#using-a-different-colour-palette">cookbook</a>.
+However, if you use a different palette regularly and feel it would be
+useful for this to be added to sgplot, please make a suggestion as per
+the <a href="https://datasciencescotland.github.io/sgplot/CONTRIBTUING.html">contributing
+guidance</a>.</p>
 </div>
 <div class="section level2">
 <h2 id="viewing-palettes-in-r">Viewing Palettes in R<a class="anchor" aria-label="anchor" href="#viewing-palettes-in-r"></a>
@@ -171,7 +4518,13 @@ by running the following code:</p>
 <span><span class="fu">sgplot</span><span class="fu">::</span><span class="va"><a href="../reference/sg_colour_palettes.html">sg_colour_palettes</a></span></span>
 <span></span>
 <span><span class="co"># View names and hex codes for `main` colour palette</span></span>
-<span><span class="fu">sgplot</span><span class="fu">::</span><span class="va"><a href="../reference/sg_colour_palettes.html">sg_colour_palettes</a></span><span class="op">[[</span><span class="st">"main"</span><span class="op">]</span><span class="op">]</span></span></code></pre></div>
+<span><span class="fu">sgplot</span><span class="fu">::</span><span class="va"><a href="../reference/sg_colour_palettes.html">sg_colour_palettes</a></span><span class="op">$</span><span class="va">main</span></span>
+<span></span>
+<span><span class="co"># For Analysis Function palettes, use the af_ prefix</span></span>
+<span><span class="fu">sgplot</span><span class="fu">::</span><span class="va"><a href="../reference/af_colour_palettes.html">af_colour_palettes</a></span></span></code></pre></div>
+<p>The reference files for <code>scale_</code> <a href="https://datasciencescotland.github.io/sgplot/reference/index.html#colours">colour
+functions</a> provide examples of how to apply these palettes to ggplot2
+charts.</p>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
     </nav></aside>
