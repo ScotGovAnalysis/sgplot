@@ -31,9 +31,9 @@ sg_palette <- function(palette = "main",
     # Use 'main2' if AF main palette used and only 2 colours required
     if (
       palette_type == "af" &&
-      n == 2 &&
-      palette != "main2" &&
-      grepl("main", palette)
+        n == 2 &&
+        palette != "main2" &&
+        grepl("main", palette)
     ) {
       palette <- "main2"
       cli::cli_warn(c(
