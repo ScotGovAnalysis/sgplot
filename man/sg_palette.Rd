@@ -4,7 +4,12 @@
 \alias{sg_palette}
 \title{Return function to use Scottish Government colour palette}
 \usage{
-sg_palette(palette = "main", reverse = FALSE, colour_names = FALSE)
+sg_palette(
+  palette = "main",
+  reverse = FALSE,
+  colour_names = FALSE,
+  palette_type = c("sg", "af")
+)
 }
 \arguments{
 \item{palette}{Name of palette from `sg_colour_palettes`}
@@ -14,6 +19,9 @@ reversed}
 
 \item{colour_names}{Boolean value to indicate whether colour names should be
 included}
+
+\item{palette_type}{Either `sg` to use Scottish Government palettes, or `af`
+to use Analysis Function palettes. Defaults to `sg`.}
 }
 \description{
 Return function to use Scottish Government colour palette

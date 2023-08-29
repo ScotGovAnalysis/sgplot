@@ -78,7 +78,7 @@ stacked_bar_data |>
   geom_bar(stat = "identity", position = "fill") +
   theme_sg(legend = "bottom") +
   scale_y_continuous(expand = c(0, 0), labels = scales::percent) +
-  scale_fill_discrete_sg("main2") +
+  scale_fill_discrete_sg() +
   labs(
     x = NULL,
     y = NULL,
@@ -111,8 +111,8 @@ To add a horizontal or vertical line across the whole plot, use `geom_hline()` o
 gapminder |>
   filter(country == "United Kingdom") |>
   ggplot(aes(x = year, y = lifeExp)) +
-  geom_line(linewidth = 1, colour = sg_colour_values["dark-blue"]) +
-  geom_hline(yintercept = 75, colour = sg_colour_values["orange"],
+  geom_line(linewidth = 1, colour = sg_colour_values[1]) +
+  geom_hline(yintercept = 75, colour = sg_colour_values[2],
              linewidth = 1, linetype = "dashed") +
   annotate(geom = "text", x = 2007, y = 70, label = "Age 70") +
   theme_sg() +
@@ -152,7 +152,7 @@ plot +
   labs(
     y = "Percentage of countries",
     title = paste("Iceland has the highest life expectancy in Europe",
-                   "followed closely by Switzerland")
+                  "followed closely by Switzerland")
   )
 ```
 

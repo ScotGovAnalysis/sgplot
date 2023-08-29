@@ -8,7 +8,7 @@ use_sgplot(default_colour = sgplot::sg_colour_values["dark-blue"], ...)
 }
 \arguments{
 \item{default_colour}{Default colour/fill for geoms. Default value is
-'dark-blue' from \code{sgplot::sg_colour_values}.}
+'blue' from \code{sgplot::sg_colour_values}.}
 
 \item{...}{Arguments passed to \code{theme_sg}.}
 }

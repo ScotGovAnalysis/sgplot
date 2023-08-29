@@ -10,24 +10,24 @@ ann_data <- gapminder |>
 ```
 
 ```{r annotations-1}
-#| fig.alt = "A multiple line chart with colour co-ordinated line labels using sgplot theme and main2 palette."
+#| fig.alt = "A multiple line chart with colour co-ordinated line labels using sgplot theme and main palette."
 
 ann_data |>
   ggplot(aes(x = year, y = lifeExp, colour = country)) +
   geom_line(linewidth = 1) +
   theme_sg(legend = "none") +
-  scale_colour_discrete_sg("main2") +
+  scale_colour_discrete_sg() +
   scale_y_continuous(limits = c(0, 82),
                      breaks = seq(0, 80, 20),
                      expand = c(0, 0)) +
   scale_x_continuous(limits = c(1952, 2017),
                      breaks = seq(1952, 2017, 5)) +
   annotate(geom = "label", x = 2008, y = 73, label = "China",
-           colour = sg_colour_values["dark-blue"],
+           colour = sg_colour_values[1],
            label.size = NA,
            hjust = 0, vjust = 0.5) +
   annotate(geom = "label", x = 2008, y = 79.4, label = "United Kingdom",
-           colour = sg_colour_values["orange"],
+           colour = sg_colour_values[2],
            label.size = NA,
            hjust = 0, vjust = 0.5) +
   labs(
@@ -59,7 +59,7 @@ ann_data |>
   ggplot(aes(x = year, y = lifeExp, colour = country)) +
   geom_line(linewidth = 1) +
   theme_sg(legend = "none") +
-  scale_colour_discrete_sg("main2") +
+  scale_colour_discrete_sg() +
   scale_y_continuous(limits = c(0, 82),
                      breaks = seq(0, 80, 20),
                      expand = c(0, 0)) +
