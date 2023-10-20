@@ -15,7 +15,11 @@ sg_palette <- function(palette = "main",
 
   palette_type <- match.arg(palette_type)
 
-  palette_list <- get(paste0(palette_type, "_colour_palettes"))
+  palette_list <- switch(
+    palette_type,
+    af = sgplot::af_colour_palettes,
+    sg = sgplot::sg_colour_palettes
+  )
 
   # Check valid palette name
   if (!palette %in% names(palette_list)) {
