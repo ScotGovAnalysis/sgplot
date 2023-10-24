@@ -28,8 +28,11 @@ scale_fill_continuous_sg <- function(palette = "sequential",
 
   palette_type <- match.arg(palette_type)
 
-  palette_list <- get(paste0(palette_type, "_colour_palettes"),
-                      as.environment("package:sgplot"))
+  palette_list <- switch(
+    palette_type,
+    af = sgplot::af_colour_palettes,
+    sg = sgplot::sg_colour_palettes
+  )
 
   # Error if palette doesn't exist
   if (!palette %in% names(palette_list)) {

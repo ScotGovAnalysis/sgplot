@@ -10,7 +10,7 @@ use_sgplot(default_colour = sgplot::sg_colour_values["dark-blue"], ...)
 \item{default_colour}{Default colour/fill for geoms. Default value is
 'blue' from \code{sgplot::sg_colour_values}.}
 
-\item{...}{Arguments passed to \code{theme_sg}.}
+\item{...}{Arguments passed to \code{sgplot::theme_sg()}.}
 }
 \description{
 Set sgplot theme, colour palette and geom aesthetic

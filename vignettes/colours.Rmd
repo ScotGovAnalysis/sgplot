@@ -163,13 +163,13 @@ Follow the [advice for using the focus palette](https://analysisfunction.civilse
 The [Scottish Government focus palette](#focus-chart-palette) does not have this issue, so you may wish to use this instead.
 
 
-## Using a different colour palette
+## Using your own colour palette
 
 There may be instances where you'd like to use a different colour palette. 
 If so, this should be carefully considered to ensure it meets accessibility requirements. 
 The Analysis Function guidance outlines [appropriate steps for choosing your own accessibile colour palette](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/#section-9) and should be used.
 
-An example of how to use an alternative colour palette is provided in the [cookbook](https://datasciencescotland.github.io/sgplot/articles/cookbook.html#using-a-different-colour-palette).
+An example of how to use an alternative colour palette is provided in the [cookbook](https://datasciencescotland.github.io/sgplot/articles/cookbook.html#using-your-own-colour-palette).
 However, if you use a different palette regularly and feel it would be useful for this to be added to sgplot, please make a suggestion as per the [contributing guidance](https://datasciencescotland.github.io/sgplot/CONTRIBTUING.html).
 
 
@@ -191,4 +191,4 @@ sgplot::sg_colour_palettes$main
 sgplot::af_colour_palettes
 ```
 
-The reference files for `scale_` [colour functions](https://datasciencescotland.github.io/sgplot/reference/index.html#colours) provide examples of how to apply these palettes to ggplot2 charts.
+Examples of how to apply these palettes to ggplot2 charts are available in both the [cookbook](https://datasciencescotland.github.io/sgplot/articles/cookbook.html) and the reference files for `scale_` [colour functions](https://datasciencescotland.github.io/sgplot/reference/index.html#colours).

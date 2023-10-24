@@ -5,7 +5,7 @@
 #'
 #' @param default_colour Default colour/fill for geoms. Default value is
 #' 'blue' from \code{sgplot::sg_colour_values}.
-#' @param ... Arguments passed to \code{theme_sg}.
+#' @param ... Arguments passed to \code{sgplot::theme_sg()}.
 #'
 #' @examples
 #' library(ggplot2)
