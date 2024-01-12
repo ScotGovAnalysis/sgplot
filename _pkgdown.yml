@@ -1,4 +1,4 @@
-url: https://datasciencescotland.github.io/sgplot
+url: https://scotgovanalysis.github.io/sgplot
 
 template:
   bootstrap: 5
@@ -21,7 +21,7 @@ authors:
     <i class='fas fa-envelope' aria-hidden='true'></i>\
     <span class='visually-hidden'>Email Scottish Government></span></a>\
     &nbsp;&nbsp;\
-    <a href='https://github.com/DataScienceScotland'>\
+    <a href='https://github.com/scotgovanalysis'>\
     <i class='fab fa-github' aria-hidden='true'></i>\
     <span class='visually-hidden'>Scottish Government GitHub profile></span>\
     </a>"
