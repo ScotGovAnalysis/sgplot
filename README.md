@@ -6,9 +6,9 @@
 <!-- badges: start -->
 
 [![GitHub release (latest by
-date)](https://img.shields.io/github/v/release/DataScienceScotland/sgplot)](https://github.com/DataScienceScotland/sgplot/releases/latest)
+date)](https://img.shields.io/github/v/release/ScotGovAnalysis/sgplot)](https://github.com/ScotGovAnalysis/sgplot/releases/latest)
 [![R build
-status](https://github.com/DataScienceScotland/sgplot/workflows/R-CMD-check/badge.svg)](https://github.com/DataScienceScotland/sgplot/actions)
+status](https://github.com/ScotGovAnalysis/sgplot/workflows/R-CMD-check/badge.svg)](https://github.com/ScotGovAnalysis/sgplot/actions)
 
 <!-- badges: end -->
 
@@ -24,9 +24,9 @@ System](https://designsystem.gov.scot/guidance/charts/data-visualisation-colour-
 sgplot should be used in conjunction with these guidance documents.
 
 More information about the package and its functions can be found on the
-[sgplot website](https://DataScienceScotland.github.io/sgplot). In
+[sgplot website](https://ScotGovAnalysis.github.io/sgplot). In
 particular, the
-[cookbook](https://DataScienceScotland.github.io/sgplot/articles/cookbook.html)
+[cookbook](https://ScotGovAnalysis.github.io/sgplot/articles/cookbook.html)
 contains lots of examples. Slides are also available for an internal
 [presentation given to statisticians and
 analysts](https://alicebyers5.github.io/presentations-and-blogs/2023-06-19_sgplot/slides.html).
@@ -36,7 +36,7 @@ analysts](https://alicebyers5.github.io/presentations-and-blogs/2023-06-19_sgplo
 If you are working within the Scottish Government network, you can
 install sgplot in the same way as with other R packages. The easiest way
 to do this is by using the
-[pkginstaller](https://github.com/DataScienceScotland/pkginstaller/tree/main)
+[pkginstaller](https://github.com/ScotGovAnalysis/pkginstaller/tree/main)
 add-in. Further guidance is available on
 [eRDM](https://erdm.scotland.gov.uk:8443/documents/A42404229/details).
 
@@ -46,14 +46,14 @@ the Scottish Government network.
 
 ``` r
 remotes::install_github(
-  "DataScienceScotland/sgplot",
+  "ScotGovAnalysis/sgplot",
   upgrade = "never",
   build_vignettes = TRUE
 )
 ```
 
 Finally, sgplot can also be installed by downloading the [zip of the
-repository](https://github.com/DataScienceScotland/sgplot/archive/main.zip)
+repository](https://github.com/ScotGovAnalysis/sgplot/archive/main.zip)
 and running the following code, replacing the section marked `<>`
 (including the arrows themselves) with the location of the downloaded
 zip:
@@ -75,9 +75,9 @@ library(sgplot)
 ```
 
 Help files for each function in the package can be found on the
-[References](https://datasciencescotland.github.io/sgplot/reference)
-page of the package website. Alternatively, type `?function_name` into
-the RStudio console. For example:
+[References](https://ScotGovAnalysis.github.io/sgplot/reference) page of
+the package website. Alternatively, type `?function_name` into the
+RStudio console. For example:
 
 ``` r
 ?theme_sg()
@@ -142,7 +142,7 @@ demonstration purposes. However, for accessibility reasons, it is
 usually preferable to provide titles in the body of the page rather than
 embedded within the image of the plot. More information is available in
 the [accessibility
-article](https://datasciencescotland.github.io/sgplot/articles/accessibility.html#other-accessibility-considerations).
+article](https://ScotGovAnalysis.github.io/sgplot/articles/accessibility.html#other-accessibility-considerations).
 
 ## Licence
 

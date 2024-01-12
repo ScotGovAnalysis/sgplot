@@ -11,9 +11,9 @@ Standard ggplot theme and colour palettes for use in Scottish Government.
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/DataScienceScotland/sgplot}
-  \item \url{https://DataScienceScotland.github.io/sgplot}
-  \item Report bugs at \url{https://github.com/DataScienceScotland/sgplot/issues}
+  \item \url{https://github.com/ScotGovAnalysis/sgplot}
+  \item \url{https://ScotGovAnalysis.github.io/sgplot}
+  \item Report bugs at \url{https://github.com/ScotGovAnalysis/sgplot/issues}
 }
 
 }

@@ -2,7 +2,7 @@
 
 * Fix issue where `scale_` functions didn't work without the package being loaded (#26)
 
-* Add [examples of using non-default colour palettes](https://datasciencescotland.github.io/sgplot/articles/cookbook.html#using-different-colour-palettes) (#24)
+* Add [examples of using non-default colour palettes](https://ScotGovAnalysis.github.io/sgplot/articles/cookbook.html#using-different-colour-palettes) (#24)
 
 * Add link to `theme_sg()` in `use_sgplot()` help file
 
@@ -20,4 +20,4 @@
 
 * Add functions to create accessible plots using `ggplot2`
 
-* Add pkgdown site (https://datasciencescotland.github.io/sgplot) including [cookbook](https://datasciencescotland.github.io/sgplot/articles/cookbook.html)
+* Add pkgdown site (https://ScotGovAnalysis.github.io/sgplot) including [cookbook](https://ScotGovAnalysis.github.io/sgplot/articles/cookbook.html)

@@ -8,9 +8,9 @@ Authors@R: c(
 Description: Standard ggplot theme and colour palettes for use in Scottish Government.
 License: MIT + file LICENSE
 URL: 
-  https://github.com/DataScienceScotland/sgplot, 
-  https://DataScienceScotland.github.io/sgplot
-BugReports: https://github.com/DataScienceScotland/sgplot/issues
+  https://github.com/ScotGovAnalysis/sgplot, 
+  https://ScotGovAnalysis.github.io/sgplot
+BugReports: https://github.com/ScotGovAnalysis/sgplot/issues
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.2.3
