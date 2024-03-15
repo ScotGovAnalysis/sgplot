@@ -1,3 +1,9 @@
+# sgplot 0.2.2
+
+* Fix links to contributing guidance in vignettes
+
+* Update required `roxygen` version
+
 # sgplot 0.2.1
 
 * Fix issue where `scale_` functions didn't work without the package being loaded (#26)
