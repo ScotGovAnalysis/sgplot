@@ -34,7 +34,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">sgplot</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">0.2.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">0.2.2</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -180,35 +180,35 @@ dimensions in inches. If you’d rather use millimetres, use the
 <code>fig.cap</code>. Note that by default, the value given to
 <code>fig.cap</code> will be shown under the chart. If you’d rather turn
 this off, you can control this in the R Markdown YAML header:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> </span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">word_document</span><span class="kw">:</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="at">   </span><span class="fu">fig_caption</span><span class="kw">:</span><span class="at"> </span><span class="ch">no</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="at">  </span><span class="fu">word_document</span><span class="kw">:</span></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="at">   </span><span class="fu">fig_caption</span><span class="kw">:</span><span class="at"> </span><span class="ch">no</span></span></code></pre></div>
 </li>
 </ul>
 <p>Set these options in a code chunk header:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r plot1, dev = "svg", fig.width = mm_to_inch(159), fig.height = mm_to_inch(100), fig.alt = "A description of plot1"}</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="in">plot1</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="in">```{r plot1, dev = "svg", fig.width = mm_to_inch(159), fig.height = mm_to_inch(100), fig.alt = "A description of plot1"}</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="in">plot1</span></span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
 <p>It can sometimes make your code easier to read by specifying chunk
 options within the chunk:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r plot1}</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| dev = "svg"</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig.width = mm_to_inch(159)</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig.height = mm_to_inch(100)</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig.alt = "A description of plot1"</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="in">plot1</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="in">```{r plot1}</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="in">#| dev = "svg"</span></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="in">#| fig.width = mm_to_inch(159)</span></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="in">#| fig.height = mm_to_inch(100)</span></span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="in">#| fig.alt = "A description of plot1"</span></span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a><span class="in">plot1</span></span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
 <p>If you would like all of your images to be in the same format, it is
 usually easier to set options globally in the first code chunk of your
 document:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r setup, include = FALSE}</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="in">knitr::opts_chunk$set(</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="in">  dev = "svg",</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="in">  fig.width = mm_to_inch(159), </span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="in">  fig.height = mm_to_inch(100)</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="in">)</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="in">```{r setup, include = FALSE}</span></span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="in">knitr::opts_chunk$set(</span></span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="in">  dev = "svg",</span></span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a><span class="in">  fig.width = mm_to_inch(159), </span></span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a><span class="in">  fig.height = mm_to_inch(100)</span></span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a><span class="in">)</span></span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
 <p>Note that sgplot must be loaded before setting global options,
 otherwise you will need to specify the package when calling
 <code>mm_to_inch</code>; e.g. <code><a href="../reference/mm_to_inch.html">sgplot::mm_to_inch()</a></code>.</p>
