@@ -170,7 +170,7 @@ If so, this should be carefully considered to ensure it meets accessibility requ
 The Analysis Function guidance outlines [appropriate steps for choosing your own accessibile colour palette](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/#section-9) and should be used.
 
 An example of how to use an alternative colour palette is provided in the [cookbook](https://scotgovanalysis.github.io/sgplot/articles/cookbook.html#using-your-own-colour-palette).
-However, if you use a different palette regularly and feel it would be useful for this to be added to sgplot, please make a suggestion as per the [contributing guidance](https://scotgovanalysis.github.io/sgplot/CONTRIBTUING.html).
+However, if you use a different palette regularly and feel it would be useful for this to be added to sgplot, please make a suggestion as per the [contributing guidance](https://scotgovanalysis.github.io/sgplot/CONTRIBUTING.html).
 
 
 ## Viewing Palettes in R
