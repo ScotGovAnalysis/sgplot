@@ -29,7 +29,7 @@ authors:
     roles: [cre, aut]
   footer:
     roles: [cph]
-    text: "Developed by"
+    text: "Developed by the"
 
 navbar:
   structure:
