@@ -7,6 +7,8 @@
 #' included
 #' @param palette_type Either `sg` to use Scottish Government palettes, or `af`
 #' to use Analysis Function palettes. Defaults to `sg`.
+#'
+#' @noRd
 
 sg_palette <- function(palette = "main",
                        reverse = FALSE,

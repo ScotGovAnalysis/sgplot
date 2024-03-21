@@ -72,11 +72,6 @@ reference:
   contents:
   - mm_to_inch
 
-- title: internal
-  contents:
-  - sg_palette
-  - colour_table
-
 figures:
   dev: "svg"
   fig.ext: svg

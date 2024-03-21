@@ -4,6 +4,8 @@
 #' e.g. \code{sgplot::sg_colour_palettes[["main"]]}
 #'
 #' @return An object of class \code{gt_tbl}.
+#'
+#' @noRd
 
 colour_table <- function(pal) {
 
