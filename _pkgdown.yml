@@ -9,14 +9,14 @@ development:
   mode: auto
 
 authors:
-  Alice Byers:
-    html: "Alice Byers&nbsp;&nbsp;\
-    <a href='mailto:alice.byers@gov.scot'>\
+  Alice Hannah:
+    html: "Alice Hannah&nbsp;&nbsp;\
+    <a href='mailto:alice.hannah@gov.scot'>\
     <i class='fas fa-envelope' aria-hidden='true'></i>\
-    <span class='visually-hidden'>Email Alice Byers></span></a>&nbsp;&nbsp;\
-    <a href='https://github.com/alicebyers5'>\
+    <span class='visually-hidden'>Email Alice Hannah></span></a>&nbsp;&nbsp;\
+    <a href='https://github.com/alice-hannah'>\
     <i class='fab fa-github' aria-hidden='true'></i>\
-    <span class='visually-hidden'>Alice Byers GitHub profile></span></a>"
+    <span class='visually-hidden'>Alice Hannah GitHub profile></span></a>"
   Scottish Government:
     html: "Scottish Government&nbsp;&nbsp;\
     <a href='mailto:statistics.enquiries@gov.scot'>\

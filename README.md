@@ -29,7 +29,7 @@ particular, the
 [cookbook](https://ScotGovAnalysis.github.io/sgplot/articles/cookbook.html)
 contains lots of examples. Slides are also available for an internal
 [presentation given to statisticians and
-analysts](https://alicebyers5.github.io/presentations-and-blogs/2023-06-19_sgplot/slides.html).
+analysts](https://alice-hannah.github.io/presentations-and-blogs/2023-06-19_sgplot/slides.html).
 
 ## Installation
 

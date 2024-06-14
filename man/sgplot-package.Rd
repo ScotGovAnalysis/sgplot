@@ -18,7 +18,7 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Alice Byers \email{alice.byers@gov.scot}
+\strong{Maintainer}: Alice Hannah \email{alice.hannah@gov.scot}
 
 Other contributors:
 \itemize{
