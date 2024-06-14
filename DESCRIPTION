@@ -3,7 +3,7 @@ Title: Graphic Styles and Colours for Scottish Government Plots
 Version: 0.2.2.9000
 Authors@R: c(
     person("Scottish Government", , , "statistics.enquiries@gov.scot", role = c("cph", "fnd")),
-    person("Alice", "Byers", , "alice.byers@gov.scot", c("aut", "cre"))
+    person("Alice", "Hannah", , "alice.hannah@gov.scot", c("aut", "cre"))
   )
 Description: Standard ggplot theme and colour palettes for use in Scottish Government.
 License: MIT + file LICENSE
