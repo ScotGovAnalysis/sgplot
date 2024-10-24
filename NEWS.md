@@ -1,5 +1,7 @@
 # sgplot (development version)
 
+* Add Social Security Scotland colours (`sss_colour_values`) and palettes (`sss_colour_palettes`)
+
 # sgplot 0.2.2
 
 * Fix links to contributing guidance in vignettes

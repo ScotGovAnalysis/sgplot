@@ -23,6 +23,25 @@
 "sg_colour_palettes"
 
 
+#' @title Social Security Scotland colour names and hex codes
+#'
+#' @description A vector containing colour names and their corresponding
+#' hex code.
+#'
+#' @format A character vector
+
+"sss_colour_values"
+
+
+#' @title Social Security Scotland colour palettes
+#'
+#' @description A list grouping colours into palettes.
+#'
+#' @format A character list
+
+"sss_colour_palettes"
+
+
 # nolint start
 #' @title Analysis Function colour names and hex codes
 #'
