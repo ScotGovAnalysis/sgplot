@@ -8,7 +8,8 @@ sss_colour_values <- c(
   `dark-green` = "#0b4c0b",
   `green` = "#5d9f3c",
   `brown` = "#592c20",
-  `pink` = "#ca72a2",
+  `light-pink` = "#ca72a2",
+  `dark-blue` = "#002d54",
   `mid-blue` = "#0065bd",
   `light-blue` = "#55a8f2",
   `grey` = "#949494"
@@ -19,7 +20,7 @@ sss_colour_palettes <- list(
   `main-extended` = sss_colour_values[c(
     "navy", "pink", "purple",
     "orange", "dark-green", "green",
-    "brown", "pink"
+    "brown", "light-pink"
   )],
   `sequential` = sss_colour_values[c("dark-blue", "mid-blue", "light-blue")],
   `focus` = sss_colour_values[c("dark-blue", "grey")]
