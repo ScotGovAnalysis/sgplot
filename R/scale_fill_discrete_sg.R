@@ -1,9 +1,10 @@
 #' @title Discrete colour fill scales for Scottish Government plots
 #'
 #' @param palette Name of palette to use; e.g. "main", "sequential", "focus."
-#' Default value is "main."
-#' @param palette_type Either "sg" to use Scottish Government palettes, or "af"
-#' to use Analysis Function palettes. Defaults to "sg".
+#' Default value is "main".
+#' @param palette_type Either `sg` to use Scottish Government palettes, `sss`
+#' to use Social Security Scotland palettes or `af` to use Analysis Function
+#' palettes. Defaults to `sg`.
 #' @param reverse Boolean value to indicate whether the palette should be
 #' reversed.
 #' @param ... Additional arguments passed to scale type.
@@ -20,7 +21,7 @@
 #' @export
 
 scale_fill_discrete_sg <- function(palette = "main",
-                                   palette_type = c("sg", "af"),
+                                   palette_type = c("sg", "sss", "af"),
                                    reverse = FALSE,
                                    ...) {
 
