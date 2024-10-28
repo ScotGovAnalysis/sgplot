@@ -3,18 +3,26 @@
 \docType{data}
 \name{sg_colour_values}
 \alias{sg_colour_values}
+\alias{sg_colour_palettes}
 \title{Scottish Government colour names and hex codes}
 \format{
-A character vector
+An object of class \code{character} of length 11.
+
+An object of class \code{list} of length 4.
 }
 \source{
 \href{https://designsystem.gov.scot/guidance/charts/data-visualisation-colour-palettes}{Scottish Government Design System}
 }
 \usage{
 sg_colour_values
+
+sg_colour_palettes
 }
 \description{
-A vector containing colour names and their corresponding
-hex code.
+\itemize{
+\item \code{sg_colour_values} is a vector containing colour names and their corresponding
+hex codes.
+\item \code{sg_colour_palettes} is a list grouping colours into palettes.
+}
 }
 \keyword{datasets}

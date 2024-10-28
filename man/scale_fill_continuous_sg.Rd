@@ -6,7 +6,7 @@
 \usage{
 scale_fill_continuous_sg(
   palette = "sequential",
-  palette_type = c("sg", "af"),
+  palette_type = c("sg", "sss", "af"),
   reverse = FALSE,
   na_colour = "grey50",
   guide = "colourbar",
@@ -17,8 +17,9 @@ scale_fill_continuous_sg(
 \item{palette}{Name of palette to use; e.g. "main", "sequential", "focus."
 Default value is "sequential".}
 
-\item{palette_type}{Either "sg" to use Scottish Government palettes, or "af"
-to use Analysis Function palettes. Defaults to "sg".}
+\item{palette_type}{Either `sg` to use Scottish Government palettes, `sss`
+to use Social Security Scotland palettes or `af` to use Analysis Function
+palettes. Defaults to `sg`.}
 
 \item{reverse}{Boolean value to indicate whether the palette should be
 reversed.}

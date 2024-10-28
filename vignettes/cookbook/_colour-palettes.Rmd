@@ -43,7 +43,7 @@ gapminder |>
 
 Note: This chart is for demonstration purposes only. Accessibility guidance recommends using a maximum of four colours to avoid clutter.
 
-To use an Analysis Function palette, set `palette_type = "af"` when using any of the `scale_` [colour functions](https://scotgovanalysis.github.io/sgplot/reference/index.html#colours). 
+To use an Analysis Function palette, set `palette_type = "af"` when using any of the `scale_` [colour functions](https://scotgovanalysis.github.io/sgplot/reference/index.html#colour-scales). 
 For example, to use the Analysis Function `main2` palette:
 
 ```{r af-palette, fig.height = 5}

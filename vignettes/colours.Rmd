@@ -25,9 +25,11 @@ table_note <- paste(
 )
 ```
 
-sgplot provides colour palettes as set out by the [Scottish Government Design System](https://designsystem.gov.scot/guidance/charts/data-visualisation-colour-palettes). 
+sgplot provides [Scottish Government branded colour palettes](#sg) as set out by the [Scottish Government Design System](https://designsystem.gov.scot/guidance/charts/data-visualisation-colour-palettes). 
 
 These palettes have been developed to meet the [Web Content Accessibility Guidelines 2.1 for graphical objects](https://www.w3.org/WAI/WCAG21/Understanding/non-text-contrast.html). The colours in the [main palette for categorical data](#main-palette) all have at least a 3:1 colour contrast ratio with white (#ffffff) and off-white (#f8f8f8) backgrounds, as well as with adjacent colours in the palette. 
+
+In addition to the default [Scottish Government palettes](#sg), sgplot also supports the use of branded palettes for [Social Security Scotland](#sss) and the [Government Analysis Function](#af).
 
 
 ## Things to consider when using colour
@@ -49,11 +51,13 @@ The following are a few key things to consider when using colour in data visuali
 *   Use colour palettes in the order presented to ensure adjacent colours have sufficient contrast with each other
 
 
-## Scottish Government colour palettes
+## Colour palettes in sgplot
+
+### Scottish Government {#sg}
 
 The Scottish Government colour palettes are used by default in sgplot.
 
-### Main palette
+#### Main palette
 
 The `main` palette should be used with categorical data.
 
@@ -72,7 +76,7 @@ sgplot:::colour_table(sgplot::sg_colour_palettes$`main-extended`)
 ```
 
 
-### Sequential palette
+#### Sequential palette {#sg-sequential}
 
 The `sequential` colour palette should be used for data where the order has some meaning.
 
@@ -87,7 +91,7 @@ Neither `dark-blue` or `light-blue` have sufficient colour contrast with `mid-bl
 Follow the [advice for using the sequential palette](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/#section-6) in the Analysis Function colour guidance when using this palette.
 
 
-### Focus palette
+#### Focus palette {#sg-focus}
 
 The `focus` palette should be used to highlight specific elements of a plot.
 
@@ -100,12 +104,63 @@ sgplot:::colour_table(sgplot::sg_colour_palettes$focus)
 The `grey` in this palette does not meet the required colour contrast with an off-white background (#f8f8f8), therefore charts using this palette should only use a white background (#ffffff).
 
 
-## Analysis Function colour palettes
+### Social Security Scotland {#sss}
 
-The Analysis Function guidance also contains [suggested colour palettes](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/#section-4). These are also provided in sgplot, however the Scottish Government palettes are used by default. To use an Analysis Function palette, set `palette_type = "af"` when using any of the `scale_` [colour functions](https://scotgovanalysis.github.io/sgplot/reference/index.html#colours).
+To use a Social Security Scotland palette, set `palette_type = "sss"` when using any of the `scale_` [colour functions](https://scotgovanalysis.github.io/sgplot/reference/index.html#colour-scales).
+
+#### Main palette
+
+The `main` palette should be used with categorical data.
+
+`r table_note`
+
+```{r}
+sgplot:::colour_table(sgplot::sss_colour_palettes$main)
+```
+
+You should try to use an absolute maximum of four colours in a chart. If you feel you need more than four, think about how you could redesign your chart to avoid this. If you absolutely must use more than four colours, the `main-extended` palette can be used.
+
+`r table_note`
+
+```{r}
+sgplot:::colour_table(sgplot::sss_colour_palettes$`main-extended`)
+```
 
 
-### Main palette
+#### Sequential palette
+
+The `sequential` colour palette should be used for data where the order has some meaning. This palette is the same as the [Scottish Government sequential palette](#sg-sequential).
+
+`r table_note`
+
+```{r}
+sgplot:::colour_table(sgplot::sss_colour_palettes$sequential)
+```
+
+As this palette is restricted to tints of one colour, there are issues with colour contrast.
+Neither `dark-blue` or `light-blue` have sufficient colour contrast with `mid-blue`. 
+Follow the [advice for using the sequential palette](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/#section-6) in the Analysis Function colour guidance when using this palette.
+
+
+#### Focus palette
+
+The `focus` palette should be used to highlight specific elements of a plot.This palette is the same as the [Scottish Government focus palette](#sg-focus).
+
+`r table_note`
+
+```{r}
+sgplot:::colour_table(sgplot::sss_colour_palettes$focus)
+```
+
+The `grey` in this palette does not meet the required colour contrast with an off-white background (#f8f8f8), therefore charts using this palette should only use a white background (#ffffff).
+
+
+### Government Analysis Function {#af}
+
+The Government Analysis Function guidance also contains [suggested colour palettes](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/#section-4). These are also provided in sgplot, however the Scottish Government palettes are used by default. To use an Analysis Function palette, set `palette_type = "af"` when using any of the `scale_` [colour functions](https://scotgovanalysis.github.io/sgplot/reference/index.html#colour-scales).
+
+
+#### Main palette
 
 The `main` palette should be used with categorical data.
 
@@ -133,7 +188,7 @@ sgplot:::colour_table(sgplot::af_colour_palettes$main6)
 ```
 
 
-### Sequential palette
+#### Sequential palette
 
 The `sequential` colour palette should be used for data where the order has some meaning.
 
@@ -147,7 +202,7 @@ As this palette is restricted to tints of one colour, there are issues with colo
 Follow the [advice for using the sequential palette](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/#section-6) in the Analysis Function colour guidance when using this palette.
 
 
-### Focus palette
+#### Focus palette
 
 The `focus` palette should be used to highlight specific elements of a plot.
 
@@ -173,7 +228,7 @@ An example of how to use an alternative colour palette is provided in the [cookb
 However, if you use a different palette regularly and feel it would be useful for this to be added to sgplot, please make a suggestion as per the [contributing guidance](https://scotgovanalysis.github.io/sgplot/CONTRIBUTING.html).
 
 
-## Viewing Palettes in R
+## Viewing palettes in R
 
 Names and hex codes for available colours and palettes can be viewed by running the following code:
 
@@ -187,8 +242,11 @@ sgplot::sg_colour_palettes
 # View names and hex codes for `main` colour palette
 sgplot::sg_colour_palettes$main
 
+# For Social Security Scotland palettes, use the sss_ prefix
+sgplot::sss_colour_palettes
+
 # For Analysis Function palettes, use the af_ prefix
 sgplot::af_colour_palettes
 ```
 
-Examples of how to apply these palettes to ggplot2 charts are available in both the [cookbook](https://scotgovanalysis.github.io/sgplot/articles/cookbook.html) and the reference files for `scale_` [colour functions](https://scotgovanalysis.github.io/sgplot/reference/index.html#colours).
+Examples of how to apply these palettes to ggplot2 charts are available in both the [cookbook](https://scotgovanalysis.github.io/sgplot/articles/cookbook.html) and the reference files for `scale_` [colour functions](https://scotgovanalysis.github.io/sgplot/reference/index.html#colour-scales).
