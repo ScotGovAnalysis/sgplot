@@ -61,13 +61,14 @@ reference:
   contents:
   - theme_sg
 
-- title: Colours
+- title: Colour scales
   contents:
   - starts_with("scale")
 
 - title: Colour values
   contents:
   - starts_with("sg_colour")
+  - starts_with("sss_colour")
   - starts_with("af_colour")
 
 - title: Helpers
