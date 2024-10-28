@@ -47,7 +47,6 @@ scale_colour_continuous_sg <- function(palette = "sequential",
 
   ggplot2::continuous_scale(
     aesthetics = "colour",
-    scale_name = paste0(palette_type, "_continuous"),
     palette    = scales::gradient_n_pal(colours, values = NULL, "Lab"),
     na.value   = na_colour,
     guide      = guide,
@@ -86,7 +85,6 @@ scale_fill_continuous_sg <- function(palette = "sequential",
 
   ggplot2::continuous_scale(
     aesthetics = "fill",
-    scale_name = paste0(palette_type, "_continuous"),
     palette    = scales::gradient_n_pal(colours, values = NULL, "Lab"),
     na.value   = na_colour,
     guide      = guide,

@@ -35,8 +35,7 @@ scale_colour_discrete_sg <- function(palette = "main",
   palette_type <- match.arg(palette_type)
 
   ggplot2::discrete_scale(
-    "colour",
-    paste0(palette_type, "_", palette),
+    aesthetics = "colour",
     palette = sg_palette(palette, reverse, palette_type = palette_type),
     ...
   )
@@ -55,8 +54,7 @@ scale_fill_discrete_sg <- function(palette = "main",
   palette_type <- match.arg(palette_type)
 
   ggplot2::discrete_scale(
-    "fill",
-    paste0(palette_type, "_", palette),
+    aesthetics = "fill",
     palette = sg_palette(palette, reverse, palette_type = palette_type),
     ...
   )
