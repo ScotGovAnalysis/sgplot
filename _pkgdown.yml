@@ -41,15 +41,26 @@ navbar:
     cookbook:
       text: Cookbook
       href: articles/cookbook.html
-    articles:
-      text: Articles
-      menu:
-      - text: Accessibility
-        href: articles/accessibility.html
-      - text: Colours
-        href: articles/colours.html
-      - text: Saving charts
-        href: articles/saving.html
+
+articles:
+
+- title: "Guidance"
+  navbar: ~
+  contents:
+  - accessibility
+  - colours
+  - saving
+
+- title: "Cookbook"
+  desc: "Example code for various chart types using sgplot"
+  contents:
+  - cookbook
+
+- title: "Developer"
+  desc: "Guidance for package developers"
+  contents:
+  - new-colours
+
 
 reference:
 

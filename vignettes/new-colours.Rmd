@@ -1,0 +1,27 @@
+---
+title: "Adding new colour palettes"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Adding new colour palettes}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+This article is for sgplot code developers. It outlines the steps required to add or edit colour palettes to the package. As with any changes to the package, please follow the [contributing guidance](https://scotgovanalysis.github.io/sgplot/CONTRIBUTING.html).
+
+## How it works
+
+Colours and palettes are grouped by organisation or brand. 
+
+## Making changes to existing colours or palettes
+
+
+
+## Adding a new set of colour palettes
+
+* New file in data-raw
+* Run new file to produce files in data
+* Add documentation to R/data.R
+* Add to pkgdown reference
+* Add new palette name to pallete_type in all functions
+* Add new palette_type to switch call in sg_palette (improve/test for this)
