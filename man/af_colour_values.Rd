@@ -3,18 +3,26 @@
 \docType{data}
 \name{af_colour_values}
 \alias{af_colour_values}
+\alias{af_colour_palettes}
 \title{Analysis Function colour names and hex codes}
 \format{
-A character vector
+An object of class \code{character} of length 9.
+
+An object of class \code{list} of length 5.
 }
 \source{
 \href{https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/}{Government Analysis Function Colours Guidance}
 }
 \usage{
 af_colour_values
+
+af_colour_palettes
 }
 \description{
-A vector containing colour names and their corresponding
-hex code.
+\itemize{
+\item \code{af_colour_values} is a vector containing colour names and their corresponding
+hex codes.
+\item \code{af_colour_palettes} is a list grouping colours into palettes.
+}
 }
 \keyword{datasets}

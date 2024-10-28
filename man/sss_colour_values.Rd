@@ -3,15 +3,23 @@
 \docType{data}
 \name{sss_colour_values}
 \alias{sss_colour_values}
+\alias{sss_colour_palettes}
 \title{Social Security Scotland colour names and hex codes}
 \format{
-A character vector
+An object of class \code{character} of length 12.
+
+An object of class \code{list} of length 4.
 }
 \usage{
 sss_colour_values
+
+sss_colour_palettes
 }
 \description{
-A vector containing colour names and their corresponding
-hex code.
+\itemize{
+\item \code{sss_colour_values} is a vector containing colour names and their corresponding
+hex codes.
+\item \code{sss_colour_palettes} is a list grouping colours into palettes.
+}
 }
 \keyword{datasets}

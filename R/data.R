@@ -1,67 +1,48 @@
-# nolint start
+# nolint: start
 #' @title Scottish Government colour names and hex codes
 #'
-#' @description A vector containing colour names and their corresponding
-#' hex code.
+#' @description
+#' * \code{sg_colour_values} is a vector containing colour names and their corresponding
+#' hex codes.
+#' * \code{sg_colour_palettes} is a list grouping colours into palettes.
 #'
-#' @format A character vector
 #' @source \href{https://designsystem.gov.scot/guidance/charts/data-visualisation-colour-palettes}{Scottish Government Design System}
-# nolint end
+#' @md
+# nolint: end
 
 "sg_colour_values"
 
-
-# nolint start
-#' @title Scottish Government colour palettes
-#'
-#' @description A list grouping colours into palettes.
-#'
-#' @format A character list
-#' @source \href{https://designsystem.gov.scot/guidance/charts/data-visualisation-colour-palettes}{Scottish Government Design System}
-# nolint end
-
+#' @rdname sg_colour_values
 "sg_colour_palettes"
 
 
 #' @title Social Security Scotland colour names and hex codes
 #'
-#' @description A vector containing colour names and their corresponding
-#' hex code.
-#'
-#' @format A character vector
+#' @description
+#' * \code{sss_colour_values} is a vector containing colour names and their corresponding
+#' hex codes.
+#' * \code{sss_colour_palettes} is a list grouping colours into palettes.
+#' @md
 
 "sss_colour_values"
 
-
-#' @title Social Security Scotland colour palettes
-#'
-#' @description A list grouping colours into palettes.
-#'
-#' @format A character list
-
+#' @rdname sss_colour_values
 "sss_colour_palettes"
 
 
 # nolint start
 #' @title Analysis Function colour names and hex codes
 #'
-#' @description A vector containing colour names and their corresponding
-#' hex code.
+#' @description
+#' * \code{af_colour_values} is a vector containing colour names and their corresponding
+#' hex codes.
+#' * \code{af_colour_palettes} is a list grouping colours into palettes.
 #'
-#' @format A character vector
 #' @source \href{https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/}{Government Analysis Function Colours Guidance}
+#' @md
 # nolint end
 
 "af_colour_values"
 
-
-# nolint start
-#' @title Analysis Function colour palettes
-#'
-#' @description A list grouping colours into palettes.
-#'
-#' @format A character list
-#' @source \href{https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/}{Government Analysis Function Colours Guidance}
-# nolint end
-
+#' @rdname af_colour_values
 "af_colour_palettes"
