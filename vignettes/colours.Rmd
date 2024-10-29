@@ -108,6 +108,8 @@ The `grey` in this palette does not meet the required colour contrast with an of
 
 To use a Social Security Scotland palette, set `palette_type = "sss"` when using any of the `scale_` [colour functions](https://scotgovanalysis.github.io/sgplot/reference/index.html#colour-scales).
 
+If you have any questions about these palettes, please contact the [Social Security Scotland statistics mailbox](mailto:MI@socialsecurity.gov.scot).
+
 #### Main palette
 
 The `main` palette should be used with categorical data.

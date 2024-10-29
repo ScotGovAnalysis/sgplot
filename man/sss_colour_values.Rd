@@ -4,11 +4,15 @@
 \name{sss_colour_values}
 \alias{sss_colour_values}
 \alias{sss_colour_palettes}
-\title{Social Security Scotland colour names and hex codes}
+\title{Social Security Scotland colours and palettes}
 \format{
 An object of class \code{character} of length 12.
 
 An object of class \code{list} of length 4.
+}
+\source{
+Contact the \href{mailto:MI@socialsecurity.gov.scot}{Social Security Scotland Statistics mailbox}
+with any queries about these colours and palettes.
 }
 \usage{
 sss_colour_values

@@ -1,5 +1,5 @@
 # nolint: start
-#' @title Scottish Government colour names and hex codes
+#' @title Scottish Government colours and palettes
 #'
 #' @description
 #' * \code{sg_colour_values} is a vector containing colour names and their corresponding
@@ -16,12 +16,16 @@
 "sg_colour_palettes"
 
 
-#' @title Social Security Scotland colour names and hex codes
+#' @title Social Security Scotland colours and palettes
 #'
 #' @description
 #' * \code{sss_colour_values} is a vector containing colour names and their corresponding
 #' hex codes.
 #' * \code{sss_colour_palettes} is a list grouping colours into palettes.
+#'
+#' @source Contact the \href{mailto:MI@socialsecurity.gov.scot}{Social Security Scotland Statistics mailbox}
+#' with any queries about these colours and palettes.
+#'
 #' @md
 
 "sss_colour_values"
@@ -31,7 +35,7 @@
 
 
 # nolint start
-#' @title Analysis Function colour names and hex codes
+#' @title Government Analysis Function colours and palettes
 #'
 #' @description
 #' * \code{af_colour_values} is a vector containing colour names and their corresponding

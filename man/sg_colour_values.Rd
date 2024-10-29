@@ -4,7 +4,7 @@
 \name{sg_colour_values}
 \alias{sg_colour_values}
 \alias{sg_colour_palettes}
-\title{Scottish Government colour names and hex codes}
+\title{Scottish Government colours and palettes}
 \format{
 An object of class \code{character} of length 11.
 
