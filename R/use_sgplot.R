@@ -50,7 +50,7 @@ use_sgplot <- function(default_colour = sgplot::sg_colour_values["dark-blue"],
 
   # Update default values with those passed to use_sgplot
   new_values <- c(...)
-  for (i in 1:length(new_values)) {
+  for (i in seq_along(new_values)) {
     default <- replace(default,
                        which(names(default) == names(new_values)[i]),
                        new_values[i])

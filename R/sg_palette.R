@@ -5,9 +5,9 @@
 #' reversed.
 #' @param colour_names Boolean value to indicate whether colour names should be
 #' included.
-#' @param palette_type Either `sg` to use Scottish Government palettes, `sss`
-#' to use Social Security Scotland palettes or `af` to use Analysis Function
-#' palettes. Defaults to `sg`.
+#' @param palette_type Either "sg" to use Scottish Government palettes
+#' (default), "sss" to use Social Security Scotland palettes or "af" to use
+#' Analysis Function palettes.
 #'
 #' @noRd
 
@@ -31,7 +31,7 @@ sg_palette <- function(palette = "main",
   if (!palette %in% names(palette_list)) {
     cli::cli_abort(
       c("x" = paste("{.str {palette}} is not a valid palette name ",
-                  "for {.str {palette_type}} palette type."),
+                    "for {.str {palette_type}} palette type."),
         "i" = "Available palette{?s}: {.str {names(palette_list)}}."),
       call = error_call
     )
