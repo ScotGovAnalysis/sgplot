@@ -144,15 +144,13 @@ Follow the [advice for using the sequential palette](https://analysisfunction.ci
 
 #### Focus palette
 
-The `focus` palette should be used to highlight specific elements of a plot.This palette is the same as the [Scottish Government focus palette](#sg-focus).
+The `focus` palette should be used to highlight specific elements of a plot.
 
 `r table_note`
 
 ```{r}
 sgplot:::colour_table(sgplot::sss_colour_palettes$focus)
 ```
-
-The `grey` in this palette does not meet the required colour contrast with an off-white background (#f8f8f8), therefore charts using this palette should only use a white background (#ffffff).
 
 
 ### Government Analysis Function {#af}
