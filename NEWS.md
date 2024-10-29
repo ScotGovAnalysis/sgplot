@@ -1,4 +1,4 @@
-# sgplot (development version)
+# sgplot 0.3.0
 
 * Add Social Security Scotland colours (`sss_colour_values`) and palettes (`sss_colour_palettes`)
 
