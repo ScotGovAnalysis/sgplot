@@ -57,7 +57,7 @@ The following are a few key things to consider when using colour in data visuali
 
 The Scottish Government colour palettes are used by default in sgplot.
 
-#### Main palette
+#### Main palette {#sg-main}
 
 The `main` palette should be used with categorical data.
 

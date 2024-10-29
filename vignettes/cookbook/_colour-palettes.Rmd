@@ -3,9 +3,9 @@
 sgplot provides colour palettes as set out by the [Scottish Government Design System](https://designsystem.gov.scot/guidance/charts/data-visualisation-colour-palettes). 
 These palettes have been developed to meet the [Web Content Accessibility Guidelines 2.1 for graphical objects](https://www.w3.org/WAI/WCAG21/Understanding/non-text-contrast.html).
 
-The Analysis Function guidance also contains [suggested colour palettes](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/#section-4). 
-These are also provided in sgplot, however the Scottish Government palettes are used by default. 
-The [main palette](https://scotgovanalysis.github.io/sgplot/articles/colours.html#main-palette) is the default for discrete colour/fill functions, and the [sequential palette](https://scotgovanalysis.github.io/sgplot/articles/colours.html#sequential-palette) for continuous colour/fill functions.
+The [main palette](https://scotgovanalysis.github.io/sgplot/articles/colours.html#sg-main) is the default for discrete colour/fill functions, and the [sequential palette](https://scotgovanalysis.github.io/sgplot/articles/colours.html#sg-sequential) for continuous colour/fill functions.
+
+The Scottish Government palettes are used by default, however palettes are also available for [Social Security Scotland](https://scotgovanalysis.github.io/sgplot/articles/colours.html#sss) and the [Government Analysis Function](https://scotgovanalysis.github.io/sgplot/articles/colours.html#af).
 
 More information on the colours used in sgplot can be found at `vignette("colours")`.
 
