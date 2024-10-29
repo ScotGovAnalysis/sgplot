@@ -57,7 +57,7 @@ The following are a few key things to consider when using colour in data visuali
 
 The Scottish Government colour palettes are used by default in sgplot.
 
-#### Main palette
+#### Main palette {#sg-main}
 
 The `main` palette should be used with categorical data.
 
@@ -108,6 +108,8 @@ The `grey` in this palette does not meet the required colour contrast with an of
 
 To use a Social Security Scotland palette, set `palette_type = "sss"` when using any of the `scale_` [colour functions](https://scotgovanalysis.github.io/sgplot/reference/index.html#colour-scales).
 
+If you have any questions about these palettes, please contact the [Social Security Scotland statistics mailbox](mailto:MI@socialsecurity.gov.scot).
+
 #### Main palette
 
 The `main` palette should be used with categorical data.
@@ -144,15 +146,13 @@ Follow the [advice for using the sequential palette](https://analysisfunction.ci
 
 #### Focus palette
 
-The `focus` palette should be used to highlight specific elements of a plot.This palette is the same as the [Scottish Government focus palette](#sg-focus).
+The `focus` palette should be used to highlight specific elements of a plot.
 
 `r table_note`
 
 ```{r}
 sgplot:::colour_table(sgplot::sss_colour_palettes$focus)
 ```
-
-The `grey` in this palette does not meet the required colour contrast with an off-white background (#f8f8f8), therefore charts using this palette should only use a white background (#ffffff).
 
 
 ### Government Analysis Function {#af}

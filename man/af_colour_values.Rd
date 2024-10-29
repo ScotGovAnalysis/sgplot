@@ -4,7 +4,7 @@
 \name{af_colour_values}
 \alias{af_colour_values}
 \alias{af_colour_palettes}
-\title{Analysis Function colour names and hex codes}
+\title{Government Analysis Function colours and palettes}
 \format{
 An object of class \code{character} of length 9.
 

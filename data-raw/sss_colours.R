@@ -12,7 +12,7 @@ sss_colour_values <- c(
   `dark-blue` = "#002d54",
   `mid-blue` = "#0065bd",
   `light-blue` = "#55a8f2",
-  `grey` = "#949494"
+  `grey` = "#8F8F8F"
 )
 
 sss_colour_palettes <- list(
@@ -23,7 +23,7 @@ sss_colour_palettes <- list(
     "brown", "light-pink"
   )],
   `sequential` = sss_colour_values[c("dark-blue", "mid-blue", "light-blue")],
-  `focus` = sss_colour_values[c("dark-blue", "grey")]
+  `focus` = sss_colour_values[c("navy", "grey")]
 )
 
 usethis::use_data(sss_colour_values, sss_colour_palettes, overwrite = TRUE)

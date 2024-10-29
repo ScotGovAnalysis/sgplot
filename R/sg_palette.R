@@ -5,18 +5,20 @@
 #' reversed.
 #' @param colour_names Boolean value to indicate whether colour names should be
 #' included.
-#' @param palette_type Either `sg` to use Scottish Government palettes, `sss`
-#' to use Social Security Scotland palettes or `af` to use Analysis Function
-#' palettes. Defaults to `sg`.
+#' @param palette_type Either "sg" to use Scottish Government palettes
+#' (default), "sss" to use Social Security Scotland palettes or "af" to use
+#' Analysis Function palettes.
 #'
 #' @noRd
 
 sg_palette <- function(palette = "main",
                        reverse = FALSE,
                        colour_names = FALSE,
-                       palette_type = c("sg", "sss", "af")) {
+                       palette_type = c("sg", "sss", "af"),
+                       error_call = rlang::caller_env(),
+                       error_arg = rlang::caller_arg(palette)) {
 
-  palette_type <- match.arg(palette_type)
+  palette_type <- rlang::arg_match(palette_type)
 
   palette_list <- switch(
     palette_type,
@@ -27,10 +29,12 @@ sg_palette <- function(palette = "main",
 
   # Check valid palette name
   if (!palette %in% names(palette_list)) {
-    cli::cli_abort(c(
-      "x" = paste("`{palette}` is not a valid palette name ",
-                  "in `{palette_type}_colour_palettes`.")
-    ))
+    cli::cli_abort(
+      c("x" = paste("{.str {palette}} is not a valid palette name ",
+                    "for {.str {palette_type}} palette type."),
+        "i" = "Available palette{?s}: {.str {names(palette_list)}}."),
+      call = error_call
+    )
   }
 
   function(n) {
@@ -45,7 +49,7 @@ sg_palette <- function(palette = "main",
     ) {
       palette <- "main2"
       cli::cli_warn(c(
-        "!" = "Using `main2` as only two colours are required."
+        "!" = "Using {.str main2} as only two colours are required."
       ))
     }
 
@@ -56,20 +60,25 @@ sg_palette <- function(palette = "main",
 
     # Error if more colours requested than exist in palette
     if (n > n_available) {
-      cli::cli_abort(c(
-        "x" = glue::glue(
-          "There are not enough colours available in the `{palette}`",
-          "palette from `{palette_type}_colour_palettes`",
-          "({n_available} available)."
+      cli::cli_abort(
+        c(
+          "x" = paste("{.arg {error_arg}} must contain at least",
+                      "{n} colours."),
+          "i" = paste("The {.str {palette}} palette from the ",
+                      "{.str {palette_type}} palette type",
+                      "only contains {n_available} colours."),
+          if (n > 4) {
+            c("i" = paste("Accessibility guidance recommends a limit of four",
+                          "colours per chart. If more than four colours are",
+                          "required, first consider chart redesign."))
+          },
+          if (n > 4 & !is.null(ext_palettes)) {
+            c("i" = paste("If it is essential to use more than four colours,",
+                          "the {.str {ext_palettes}} palette{?s} can be used."))
+          }
         ),
-        "i" = glue::glue(
-          "Accessibility guidance recommends a limit of four",
-          "colours per chart. If more than four colours are",
-          "required, first consider chart redesign. If it is",
-          "essential to use more than four colours, the `{ext_palettes}`",
-          "palette{?s} can be used."
-        )
-      ))
+        call = error_call
+      )
     }
 
     pal <- palette_list[[palette]][seq_len(n)]

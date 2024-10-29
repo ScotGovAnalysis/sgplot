@@ -1,6 +1,8 @@
-# sgplot (development version)
+# sgplot 0.3.0
 
 * Add Social Security Scotland colours (`sss_colour_values`) and palettes (`sss_colour_palettes`)
+
+* Fix bug in `use_sgplot()` when passing arguments to `theme_sg()`
 
 # sgplot 0.2.2
 
