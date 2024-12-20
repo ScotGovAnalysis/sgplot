@@ -3,35 +3,38 @@ Title: Graphic Styles and Colours for Scottish Government Plots
 Version: 0.3.0.9000
 Authors@R: c(
     person("Scottish Government", , , "statistics.enquiries@gov.scot", role = c("cph", "fnd")),
-    person("Alice", "Hannah", , "alice.hannah@gov.scot", c("aut", "cre"))
+    person("Alice", "Hannah", , "alice.hannah@gov.scot", role = c("aut", "cre"))
   )
-Description: Standard ggplot theme and colour palettes for use in Scottish Government.
+Description: Standard ggplot theme and colour palettes for use in Scottish
+    Government.
 License: MIT + file LICENSE
-URL: 
-  https://github.com/ScotGovAnalysis/sgplot, 
-  https://ScotGovAnalysis.github.io/sgplot
+URL: https://github.com/ScotGovAnalysis/sgplot,
+    https://ScotGovAnalysis.github.io/sgplot
 BugReports: https://github.com/ScotGovAnalysis/sgplot/issues
+Depends:
+    R (>= 2.10)
+Imports:
+    cli,
+    ggplot2,
+    lifecycle,
+    rlang,
+    scales
+Suggests: 
+    dplyr,
+    gapminder,
+    glue,
+    gt,
+    knitr,
+    plotly,
+    purrr,
+    rmarkdown,
+    stringr,
+    testthat (>= 2.1.0),
+    tibble,
+    tidyr
+VignetteBuilder: 
+    knitr
 Encoding: UTF-8
 LazyData: true
+Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
-Depends:
-  R (>= 2.10)
-Imports:
-    ggplot2,
-    scales,
-    cli,
-    rlang
-Suggests: 
-  dplyr,
-  knitr,
-  rmarkdown,
-  tibble,
-  tidyr,
-  glue,
-  purrr,
-  gapminder,
-  stringr,
-  testthat (>= 2.1.0),
-  plotly,
-  gt
-VignetteBuilder: knitr

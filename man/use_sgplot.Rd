@@ -4,13 +4,16 @@
 \alias{use_sgplot}
 \title{Use sgplot defaults.}
 \usage{
-use_sgplot(default_colour = sgplot::sg_colour_values["dark-blue"], ...)
+use_sgplot(palette_type = "sg", ..., default_colour = deprecated())
 }
 \arguments{
-\item{default_colour}{Default colour/fill for geoms. Default value is
-'blue' from \code{sgplot::sg_colour_values}.}
+\item{palette_type}{Name of palette type to use. Defaults to "sg". For all
+available palette types, run \code{available_palette_types()}.}
 
 \item{...}{Arguments passed to \code{sgplot::theme_sg()}.}
+
+\item{default_colour}{\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}} Use the
+\code{palette_type} argument instead.}
 }
 \description{
 Set sgplot theme, colour palette and geom aesthetic
@@ -21,11 +24,17 @@ library(ggplot2)
 
 d <- subset(mpg, manufacturer == "ford")
 
+# ggplot2 defaults
 ggplot(d, aes(x = model)) + geom_bar()
 ggplot(d, aes(x = model, fill = class)) + geom_bar()
 
+# Use sgplot defaults
 use_sgplot()
+ggplot(d, aes(x = model)) + geom_bar()
+ggplot(d, aes(x = model, fill = class, colour = class)) + geom_bar()
 
+# Use sgplot defaults and Social Security Scotland colour palettes
+use_sgplot(palette_type = "sss")
 ggplot(d, aes(x = model)) + geom_bar()
 ggplot(d, aes(x = model, fill = class, colour = class)) + geom_bar()
 

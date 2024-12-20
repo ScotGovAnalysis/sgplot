@@ -28,7 +28,7 @@ scale_fill_continuous_sg(
 Default value is "sequential".}
 
 \item{palette_type}{Name of palette type to use. Defaults to "sg". For all
-available palette types, run `available_palette_types()`.}
+available palette types, run \code{available_palette_types()}.}
 
 \item{reverse}{Boolean value to indicate whether the palette should be
 reversed.}
