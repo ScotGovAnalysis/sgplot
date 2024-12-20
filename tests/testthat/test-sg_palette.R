@@ -48,6 +48,11 @@ test_that("Correct colours returned", {
     af_colour_palettes$sequential[seq_len(2)]
   )
 
+  expect_equal(
+    get_colours("sss", "main", n = NULL),
+    sss_colour_palettes$main
+  )
+
 })
 
 test_that("Switch to `main2` for af if only 2 colours required", {

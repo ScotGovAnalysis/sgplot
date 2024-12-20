@@ -55,6 +55,8 @@ get_colours <- function(palette_type, palette, n) {
 
   n_available <- length(all_palettes[[palette]])
 
+  if (is.null(n)) n <- n_available
+
   # Use 'main2' if AF main palette used and only 2 colours required
   if (
     palette_type == "af" &&
