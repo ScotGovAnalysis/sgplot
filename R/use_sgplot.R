@@ -3,28 +3,51 @@
 #' @description Set sgplot theme, colour palette and geom aesthetic
 #' defaults for ggplot2 charts.
 #'
-#' @param default_colour Default colour/fill for geoms. Default value is
-#' 'blue' from \code{sgplot::sg_colour_values}.
+#' @param palette_type Name of palette type to use. Defaults to "sg". For all
+#' available palette types, run `available_palette_types()`.
 #' @param ... Arguments passed to \code{sgplot::theme_sg()}.
+#' @param default_colour `r lifecycle::badge("deprecated")` Use the
+#' `palette_type` argument instead.
 #'
 #' @examples
 #' library(ggplot2)
 #'
 #' d <- subset(mpg, manufacturer == "ford")
 #'
+#' # ggplot2 defaults
 #' ggplot(d, aes(x = model)) + geom_bar()
 #' ggplot(d, aes(x = model, fill = class)) + geom_bar()
 #'
+#' # Use sgplot defaults
 #' use_sgplot()
+#' ggplot(d, aes(x = model)) + geom_bar()
+#' ggplot(d, aes(x = model, fill = class, colour = class)) + geom_bar()
 #'
+#' # Use sgplot defaults and Social Security Scotland colour palettes
+#' use_sgplot(palette_type = "sss")
 #' ggplot(d, aes(x = model)) + geom_bar()
 #' ggplot(d, aes(x = model, fill = class, colour = class)) + geom_bar()
 #'
 #' @export
 
 
-use_sgplot <- function(default_colour = sgplot::sg_colour_values["dark-blue"],
-                       ...) {
+use_sgplot <- function(palette_type = "sg",
+                       ...,
+                       default_colour = deprecated()) {
+
+  if (lifecycle::is_present(default_colour)) {
+    lifecycle::deprecate_warn(
+      when = "0.4.0",
+      what = "use_sgplot(default_colour)",
+      details = c(
+        "Please use the `palette_type` argument instead.",
+        "The `default colour` value supplied will not be used."
+      )
+    )
+  }
+
+  main_colour <- sg_palette(palette = "main",
+                            palette_type = palette_type)(1)
 
   # Use sgplot theme ----
 
@@ -35,12 +58,22 @@ use_sgplot <- function(default_colour = sgplot::sg_colour_values["dark-blue"],
 
   # Use sgplot colour palette ----
 
-  options(ggplot2.continuous.fill = scale_fill_continuous_sg,
-          ggplot2.continuous.colour = scale_colour_continuous_sg,
-          ggplot2.discrete.fill = scale_fill_discrete_sg,
-          ggplot2.discrete.colour = scale_colour_discrete_sg)
+  options(
+    ggplot2.continuous.fill = function() {
+      scale_fill_continuous_sg(palette_type = palette_type)
+    },
+    ggplot2.continuous.colour = function() {
+      scale_colour_continuous_sg(palette_type = palette_type)
+    },
+    ggplot2.discrete.fill = function() {
+      scale_fill_discrete_sg(palette_type = palette_type)
+    },
+    ggplot2.discrete.colour = function() {
+      scale_colour_discrete_sg(palette_type = palette_type)
+    }
+  )
 
-  cli::cli_alert_info("Default colours set.")
+  cli::cli_alert_info("Default colours set to {.str {palette_type}} palettes.")
 
 
   # Set default geom characteristics ----
@@ -63,32 +96,32 @@ use_sgplot <- function(default_colour = sgplot::sg_colour_values["dark-blue"],
   # Lines
   ggplot2::update_geom_defaults(
     geom = "line",
-    new = list(colour = default_colour,
+    new = list(colour = main_colour,
                linewidth = base_line_size)
   )
 
   ggplot2::update_geom_defaults(
     geom = "hline",
-    new = list(colour = default_colour,
+    new = list(colour = main_colour,
                linewidth = base_line_size)
   )
 
   ggplot2::update_geom_defaults(
     geom = "vline",
-    new = list(colour = default_colour,
+    new = list(colour = main_colour,
                linewidth = base_line_size)
   )
 
   # Col
   ggplot2::update_geom_defaults(
     geom = "col",
-    new = list(fill = default_colour)
+    new = list(fill = main_colour)
   )
 
   # Bar
   ggplot2::update_geom_defaults(
     geom = "bar",
-    new = list(fill = default_colour)
+    new = list(fill = main_colour)
   )
 
   # Text
@@ -107,8 +140,8 @@ use_sgplot <- function(default_colour = sgplot::sg_colour_values["dark-blue"],
   # Point
   ggplot2::update_geom_defaults(
     geom = "point",
-    new = list(colour = default_colour,
-               fill   = default_colour,
+    new = list(colour = main_colour,
+               fill   = main_colour,
                size   = base_size / 8)
   )
 
