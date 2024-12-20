@@ -20,30 +20,16 @@
 #' @export
 
 scale_colour_continuous_sg <- function(palette = "sequential",
-                                       palette_type = c("sg", "sss", "af"),
+                                       palette_type = "sg",
                                        reverse = FALSE,
                                        na_colour = "grey50",
                                        guide = "colourbar",
                                        ...) {
 
-  palette_type <- match.arg(palette_type)
-
-  palette_list <- switch(
-    palette_type,
-    af  = sgplot::af_colour_palettes,
-    sg  = sgplot::sg_colour_palettes,
-    sss = sgplot::sss_colour_palettes
-  )
-
-  # Error if palette doesn't exist
-  if (!palette %in% names(palette_list)) {
-    cli::cli_abort(c(
-      "x" = paste("`{palette}` is not a valid palette name in",
-                  "`{palette_type}_colour_palettes`.")
-    ))
-  }
-
-  colours <- as.vector(palette_list[[palette]])
+  colours <-
+    sg_palette(palette = palette,
+               palette_type = palette_type,
+               reverse = reverse)(n = NULL)
 
   ggplot2::continuous_scale(
     aesthetics = "colour",
@@ -52,36 +38,23 @@ scale_colour_continuous_sg <- function(palette = "sequential",
     guide      = guide,
     ...
   )
+
 }
 
 #' @export
 #' @rdname scale_colour_continuous_sg
 
 scale_fill_continuous_sg <- function(palette = "sequential",
-                                     palette_type = c("sg", "sss", "af"),
+                                     palette_type = "sg",
                                      reverse = FALSE,
                                      na_colour = "grey50",
                                      guide = "colourbar",
                                      ...) {
 
-  palette_type <- match.arg(palette_type)
-
-  palette_list <- switch(
-    palette_type,
-    af  = sgplot::af_colour_palettes,
-    sg  = sgplot::sg_colour_palettes,
-    sss = sgplot::sss_colour_palettes
-  )
-
-  # Error if palette doesn't exist
-  if (!palette %in% names(palette_list)) {
-    cli::cli_abort(c(
-      "x" = paste("`{palette}` is not a valid palette name in",
-                  "`{palette_type}_colour_palettes`.")
-    ))
-  }
-
-  colours <- as.vector(palette_list[[palette]])
+  colours <-
+    sg_palette(palette = palette,
+               palette_type = palette_type,
+               reverse = reverse)(n = NULL)
 
   ggplot2::continuous_scale(
     aesthetics = "fill",
@@ -90,4 +63,5 @@ scale_fill_continuous_sg <- function(palette = "sequential",
     guide      = guide,
     ...
   )
+
 }
