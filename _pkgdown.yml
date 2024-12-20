@@ -73,6 +73,8 @@ reference:
 
 - title: Helpers
   contents:
+  - available_palettes
+  - check_palette
   - mm_to_inch
 
 figures:

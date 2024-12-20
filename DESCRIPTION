@@ -1,6 +1,6 @@
 Package: sgplot
 Title: Graphic Styles and Colours for Scottish Government Plots
-Version: 0.3.0
+Version: 0.3.0.9000
 Authors@R: c(
     person("Scottish Government", , , "statistics.enquiries@gov.scot", role = c("cph", "fnd")),
     person("Alice", "Hannah", , "alice.hannah@gov.scot", c("aut", "cre"))
@@ -13,7 +13,7 @@ URL:
 BugReports: https://github.com/ScotGovAnalysis/sgplot/issues
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.3.1
+RoxygenNote: 7.3.2
 Depends:
   R (>= 2.10)
 Imports:
