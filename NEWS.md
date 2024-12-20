@@ -1,5 +1,16 @@
 # sgplot (development version)
 
+* New functionality to set default colour palettes in `use_sgplot()` (#34).
+Previously, users were only able to control the default colour in charts 
+with a single colour (by providing a `default_colour`) and not for charts 
+where `colour` or `fill` aesthetics were used. Now, the `palette_type` argument 
+can be used to set the default palette type. For example, Social Security 
+Scotland users can use `use_sgplot(palette_type = "sss")`. The "sg" palettes 
+are used by default.
+
+* The `default_colour` argument of `use_sgplot()` has been deprecated in favour 
+of the `palette_type` argument (#34). 
+
 # sgplot 0.3.0
 
 * Add Social Security Scotland colours (`sss_colour_values`) and palettes (`sss_colour_palettes`)
