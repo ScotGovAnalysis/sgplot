@@ -1,6 +1,7 @@
 #' @title Available palettes and palette types
 #'
 #' @param palette_type String.
+#' @param error_call Environment to reference in error messages.
 #'
 #' @return A character vector of available palettes or palette types.
 #'
@@ -10,9 +11,9 @@
 #'
 #' @export
 
-available_palettes <- function(palette_type) {
+available_palettes <- function(palette_type, error_call = rlang::caller_env()) {
 
-  check_palette_type(palette_type)
+  check_palette_type(palette_type, error_call = error_call)
 
   vec_name <- paste0("sgplot::", palette_type, "_colour_palettes")
 
@@ -40,6 +41,7 @@ available_palette_types <- function() {
 #' `available_palette_types()` and `available_palettes()`.
 #'
 #' @param palette_type,palette String.
+#' @param error_call Environment to reference in error messages.
 #'
 #' @return The value being checked is returned invisibly if the check is
 #' successful. Otherwise the function will return an error.
@@ -50,14 +52,17 @@ available_palette_types <- function() {
 #'
 #' @export
 
-check_palette <- function(palette_type, palette) {
+check_palette <- function(palette_type,
+                          palette,
+                          error_call = rlang::caller_env()) {
 
-  if (!palette %in% available_palettes(palette_type)) {
+  if (!palette %in% available_palettes(palette_type, error_call = error_call)) {
     cli::cli_abort(
       c("x" = paste("{.arg {palette}} is not an available",
                     "{.str {palette_type}} palette."),
         "i" = paste("Available palette{?s}:",
-                    "{.str {available_palettes(palette_type)}}."))
+                    "{.str {available_palettes(palette_type)}}.")),
+      call = error_call
     )
   } else {
     invisible(palette)
@@ -68,12 +73,15 @@ check_palette <- function(palette_type, palette) {
 #' @export
 #' @rdname check_palette
 
-check_palette_type <- function(palette_type) {
+check_palette_type <- function(palette_type,
+                               error_call = rlang::caller_env()) {
 
   if (!palette_type %in% available_palette_types()) {
     cli::cli_abort(
       c("x" = "{.arg {palette_type}} is not an available palette type.",
-        "i" = "Available palette type{?s}: {.str {available_palette_types()}}.")
+        "i" = paste("Available palette type{?s}:",
+                    "{.str {available_palette_types()}}.")),
+      call = error_call
     )
   } else {
     invisible(palette_type)

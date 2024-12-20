@@ -7,6 +7,7 @@
 #' included.
 #' @param palette_type Name of palette type to use. Defaults to "sg". For all
 #' available palette types, run `available_palette_types()`.
+#' @param error_call Environment to reference in error messages.
 #'
 #' @return Function with one argument, `n`.
 #'
@@ -16,13 +17,12 @@ sg_palette <- function(palette = "main",
                        reverse = FALSE,
                        colour_names = FALSE,
                        palette_type = "sg",
-                       error_call = rlang::caller_env(),
-                       error_arg = rlang::caller_arg(palette)) {
+                       error_call = rlang::caller_env()) {
 
-  check_palette(palette_type, palette)
+  check_palette(palette_type, palette, error_call = error_call)
 
   function(n) {
-    pal <- get_colours(palette_type, palette, n)
+    pal <- get_colours(palette_type, palette, n, error_call = error_call)
 
     if (reverse) pal <- rev(pal)
 
@@ -47,7 +47,12 @@ sg_palette <- function(palette = "main",
 #'
 #' @noRd
 
-get_colours <- function(palette_type, palette, n) {
+get_colours <- function(palette_type,
+                        palette,
+                        n,
+                        error_call = rlang::caller_env()) {
+
+  check_palette(palette_type, palette, error_call = error_call)
 
   all_palettes <- eval(parse(
     text = paste0("sgplot::", palette_type, "_colour_palettes")
@@ -91,7 +96,8 @@ get_colours <- function(palette_type, palette, n) {
           c("i" = paste("If it is essential to use more than four colours,",
                         "the {.str {ext_palettes}} palette{?s} can be used."))
         }
-      )
+      ),
+      call = error_call
     )
   }
 

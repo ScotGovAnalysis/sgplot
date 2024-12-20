@@ -5,12 +5,14 @@
 \alias{available_palette_types}
 \title{Available palettes and palette types}
 \usage{
-available_palettes(palette_type)
+available_palettes(palette_type, error_call = rlang::caller_env())
 
 available_palette_types()
 }
 \arguments{
 \item{palette_type}{String.}
+
+\item{error_call}{Environment to reference in error messages.}
 }
 \value{
 A character vector of available palettes or palette types.

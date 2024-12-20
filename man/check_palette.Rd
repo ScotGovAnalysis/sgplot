@@ -5,12 +5,14 @@
 \alias{check_palette_type}
 \title{Check palettes and palette types}
 \usage{
-check_palette(palette_type, palette)
+check_palette(palette_type, palette, error_call = rlang::caller_env())
 
-check_palette_type(palette_type)
+check_palette_type(palette_type, error_call = rlang::caller_env())
 }
 \arguments{
 \item{palette_type, palette}{String.}
+
+\item{error_call}{Environment to reference in error messages.}
 }
 \value{
 The value being checked is returned invisibly if the check is
