@@ -18,7 +18,7 @@ successful. Otherwise the function will return an error.
 }
 \description{
 Checks values against those available in
-`available_palette_types()` and `available_palettes()`.
+\code{available_palette_types()} and \code{available_palettes()}.
 }
 \examples{
 check_palette_type("sg")

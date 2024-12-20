@@ -35,3 +35,4 @@ Suggests:
   plotly,
   gt
 VignetteBuilder: knitr
+Roxygen: list(markdown = TRUE)
