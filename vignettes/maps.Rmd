@@ -1,0 +1,39 @@
+---
+title: "Maps"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Maps}
+  %\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::rmarkdown}
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  message = FALSE,
+  warning = FALSE
+)
+```
+
+## Guidance
+
+Links to other guidance (e.g. design system)
+
+## Shape files
+
+Where to find common shape files (inc. low vs. high water mark)
+Simplifying geometries
+Copyright
+
+## Accessibility
+
+Use of colour
+Alternative formats (e.g. alt text, data table)
+
+## Other things to consider?
+
+Selecting break points
+

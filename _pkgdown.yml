@@ -50,6 +50,8 @@ navbar:
         href: articles/colours.html
       - text: Saving charts
         href: articles/saving.html
+      - text: Maps
+        href: articles/maps.html
 
 reference:
 
