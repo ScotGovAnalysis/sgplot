@@ -9,7 +9,7 @@ Description: Standard ggplot theme and colour palettes for use in Scottish
     Government.
 License: MIT + file LICENSE
 URL: https://github.com/ScotGovAnalysis/sgplot,
-    https://ScotGovAnalysis.github.io/sgplot
+    https://scotgovanalysis.github.io/sgplot
 BugReports: https://github.com/ScotGovAnalysis/sgplot/issues
 Depends:
     R (>= 2.10)
