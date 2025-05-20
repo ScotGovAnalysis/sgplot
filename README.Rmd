@@ -44,23 +44,20 @@ Slides are also available for an internal [presentation given to statisticians a
 
 ## Installation
 
-If you are working within the Scottish Government network, you can install sgplot in the same way as with other R packages. The easiest way to do this is by using the [pkginstaller](https://github.com/ScotGovAnalysis/pkginstaller/tree/main) add-in. Further guidance is available on [eRDM](https://erdm.scotland.gov.uk:8443/documents/A42404229/details).
+If you are working within the Scottish Government network, you can install sgplot in the same way as with other R packages. [Further guidance is available on eRDM](https://erdm.scotland.gov.uk:8443/documents/A42404229/details).
 
-Alternatively, sgplot can be installed directly from GitHub. Note that this method requires the remotes package and may not work from within the Scottish Government network.
+Alternatively, install from CRAN:
 
 ``` r
-remotes::install_github(
-  "ScotGovAnalysis/sgplot",
-  upgrade = "never",
-  build_vignettes = TRUE
-)
+install.packages("sgplot")
 ```
 
-Finally, sgplot can also be installed by downloading the [zip of the repository](https://github.com/ScotGovAnalysis/sgplot/archive/main.zip) and running the following code, replacing the section marked `<>` (including the arrows themselves) with the location of the downloaded zip:
+Or install the development version from GitHub:
 
 ``` r
-remotes::install_local(
-  "<FILEPATH OF ZIPPED FILE>/sgplot-main.zip",
+# install.packages("remotes")
+remotes::install_github(
+  "ScotGovAnalysis/sgplot",
   upgrade = "never",
   build_vignettes = TRUE
 )
