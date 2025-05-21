@@ -5,8 +5,8 @@ Authors@R: c(
     person("Scottish Government", , , "statistics.enquiries@gov.scot", role = c("cph", "fnd")),
     person("Alice", "Hannah", , "alice.hannah@gov.scot", role = c("aut", "cre"))
   )
-Description: Standard ggplot theme and colour palettes for use in Scottish
-    Government.
+Description: A 'ggplot2' theme and colour palettes to create accessible
+    data visualisations in the Scottish Government.
 License: MIT + file LICENSE
 URL: https://github.com/ScotGovAnalysis/sgplot,
     https://ScotGovAnalysis.github.io/sgplot

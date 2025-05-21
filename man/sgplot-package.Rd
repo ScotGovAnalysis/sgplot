@@ -6,7 +6,7 @@
 \alias{sgplot-package}
 \title{sgplot: Graphic Styles and Colours for Scottish Government Plots}
 \description{
-Standard ggplot theme and colour palettes for use in Scottish Government.
+A 'ggplot2' theme and colour palettes to create accessible data visualisations in the Scottish Government.
 }
 \seealso{
 Useful links:
