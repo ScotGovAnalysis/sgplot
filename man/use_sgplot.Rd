@@ -15,6 +15,10 @@ available palette types, run \code{available_palette_types()}.}
 \item{default_colour}{\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}} Use the
 \code{palette_type} argument instead.}
 }
+\value{
+NULL. Function is used for side effects of setting default ggplot2
+theme, colour palette and geom aesthetics.
+}
 \description{
 Set sgplot theme, colour palette and geom aesthetic
 defaults for ggplot2 charts.

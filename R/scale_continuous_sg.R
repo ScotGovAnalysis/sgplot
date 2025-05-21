@@ -6,6 +6,8 @@
 #' @param guide A name or function used to create guide. Default is "colourbar".
 #' @inheritParams scale_colour_discrete_sg
 #'
+#' @returns ggplot2 continuous colour/fill scale
+#'
 #' @examples
 #' library(ggplot2)
 #'
