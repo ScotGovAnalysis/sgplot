@@ -11,8 +11,8 @@ A 'ggplot2' theme and colour palettes to create accessible data visualisations i
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/ScotGovAnalysis/sgplot}
-  \item \url{https://ScotGovAnalysis.github.io/sgplot}
+  \item \url{https://github.com/ScotGovAnalysis/sgplot/}
+  \item \url{https://ScotGovAnalysis.github.io/sgplot/}
   \item Report bugs at \url{https://github.com/ScotGovAnalysis/sgplot/issues}
 }
 

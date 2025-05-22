@@ -8,8 +8,8 @@ Authors@R: c(
 Description: A 'ggplot2' theme and colour palettes to create accessible
     data visualisations in the Scottish Government.
 License: MIT + file LICENSE
-URL: https://github.com/ScotGovAnalysis/sgplot,
-    https://ScotGovAnalysis.github.io/sgplot
+URL: https://github.com/ScotGovAnalysis/sgplot/,
+    https://ScotGovAnalysis.github.io/sgplot/
 BugReports: https://github.com/ScotGovAnalysis/sgplot/issues
 Depends:
     R (>= 2.10)

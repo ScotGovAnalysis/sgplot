@@ -321,4 +321,4 @@ plotly::ggplotly(p, tooltip = "text") |>
   )
 ```
 
-sgplot currently only works with `ggplot2` charts, however there are plans to [develop the package further to support interactive Highcharts](https://github.com/scotgovanalysis/sgplot/issues/5) produced using the [`highcharter`](https://jkunst.com/highcharter) package.
+sgplot currently only works with `ggplot2` charts, however there are plans to [develop the package further to support interactive Highcharts](https://github.com/scotgovanalysis/sgplot/issues/5) produced using the [`highcharter`](https://jkunst.com/highcharter/) package.
