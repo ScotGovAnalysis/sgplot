@@ -24,7 +24,7 @@ System](https://designsystem.gov.scot/guidance/charts/data-visualisation-colour-
 sgplot should be used in conjunction with these guidance documents.
 
 More information about the package and its functions can be found on the
-[sgplot website](https://ScotGovAnalysis.github.io/sgplot). In
+[sgplot website](https://ScotGovAnalysis.github.io/sgplot/). In
 particular, the
 [cookbook](https://ScotGovAnalysis.github.io/sgplot/articles/cookbook.html)
 contains lots of examples. Slides are also available for an internal
@@ -34,9 +34,7 @@ analysts](https://alice-hannah.github.io/presentations-and-blogs/2023-06-19_sgpl
 ## Installation
 
 If you are working within the Scottish Government network, you can
-install sgplot in the same way as with other R packages. [Further
-guidance is available on
-eRDM](https://erdm.scotland.gov.uk:8443/documents/A42404229/details).
+install sgplot in the same way as with other R packages.
 
 Alternatively, install from CRAN:
 
@@ -64,8 +62,8 @@ library(sgplot)
 ```
 
 Help files for each function in the package can be found on the
-[References](https://ScotGovAnalysis.github.io/sgplot/reference) page of
-the package website. Alternatively, type `?function_name` into the
+[References](https://ScotGovAnalysis.github.io/sgplot/reference/) page
+of the package website. Alternatively, type `?function_name` into the
 RStudio console. For example:
 
 ``` r
