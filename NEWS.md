@@ -1,4 +1,4 @@
-# sgplot (development version)
+# sgplot 0.4.0
 
 * `use_sgplot()` gains a `palette_type` argument to set default palette type 
 for geoms. The default value is "sg" to use Scottish Government colour palettes.

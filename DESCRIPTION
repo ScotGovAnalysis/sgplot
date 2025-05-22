@@ -1,6 +1,6 @@
 Package: sgplot
 Title: Graphic Styles and Colours for Scottish Government Plots
-Version: 0.3.0.9000
+Version: 0.4.0
 Authors@R: c(
     person("Scottish Government", , , "statistics.enquiries@gov.scot", role = c("cph", "fnd")),
     person("Alice", "Hannah", , "alice.hannah@gov.scot", role = c("aut", "cre"))
