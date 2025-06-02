@@ -24,7 +24,7 @@ System](https://designsystem.gov.scot/guidance/charts/data-visualisation-colour-
 sgplot should be used in conjunction with these guidance documents.
 
 More information about the package and its functions can be found on the
-[sgplot website](https://ScotGovAnalysis.github.io/sgplot). In
+[sgplot website](https://ScotGovAnalysis.github.io/sgplot/). In
 particular, the
 [cookbook](https://ScotGovAnalysis.github.io/sgplot/articles/cookbook.html)
 contains lots of examples. Slides are also available for an internal
@@ -34,33 +34,20 @@ analysts](https://alice-hannah.github.io/presentations-and-blogs/2023-06-19_sgpl
 ## Installation
 
 If you are working within the Scottish Government network, you can
-install sgplot in the same way as with other R packages. The easiest way
-to do this is by using the
-[pkginstaller](https://github.com/ScotGovAnalysis/pkginstaller/tree/main)
-add-in. Further guidance is available on
-[eRDM](https://erdm.scotland.gov.uk:8443/documents/A42404229/details).
+install sgplot in the same way as with other R packages.
 
-Alternatively, sgplot can be installed directly from GitHub. Note that
-this method requires the remotes package and may not work from within
-the Scottish Government network.
+Alternatively, install from CRAN:
 
 ``` r
-remotes::install_github(
-  "ScotGovAnalysis/sgplot",
-  upgrade = "never",
-  build_vignettes = TRUE
-)
+install.packages("sgplot")
 ```
 
-Finally, sgplot can also be installed by downloading the [zip of the
-repository](https://github.com/ScotGovAnalysis/sgplot/archive/main.zip)
-and running the following code, replacing the section marked `<>`
-(including the arrows themselves) with the location of the downloaded
-zip:
+Or install the development version from GitHub:
 
 ``` r
-remotes::install_local(
-  "<FILEPATH OF ZIPPED FILE>/sgplot-main.zip",
+# install.packages("remotes")
+remotes::install_github(
+  "ScotGovAnalysis/sgplot",
   upgrade = "never",
   build_vignettes = TRUE
 )
@@ -75,8 +62,8 @@ library(sgplot)
 ```
 
 Help files for each function in the package can be found on the
-[References](https://ScotGovAnalysis.github.io/sgplot/reference) page of
-the package website. Alternatively, type `?function_name` into the
+[References](https://ScotGovAnalysis.github.io/sgplot/reference/) page
+of the package website. Alternatively, type `?function_name` into the
 RStudio console. For example:
 
 ``` r
@@ -151,7 +138,7 @@ License](LICENSE). This covers both the codebase and any sample code in
 the documentation.
 
 The documentation is [© Crown
-copyright](http://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/)
+copyright](https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/)
 and available under the terms of the [Open Government
-3.0](http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/)
+3.0](https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/)
 licence.

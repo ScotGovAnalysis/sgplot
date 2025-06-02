@@ -31,6 +31,9 @@ reversed.}
 
 \item{...}{Additional arguments passed to scale type.}
 }
+\value{
+ggplot2 discrete colour/fill scale
+}
 \description{
 Discrete colour/fill scales for Scottish Government plots
 }

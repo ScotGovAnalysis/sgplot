@@ -9,6 +9,9 @@
 #' @param default_colour `r lifecycle::badge("deprecated")` Use the
 #' `palette_type` argument instead.
 #'
+#' @returns NULL. Function is used for side effects of setting default ggplot2
+#' theme, colour palette and geom aesthetics.
+#'
 #' @examples
 #' library(ggplot2)
 #'
