@@ -6,15 +6,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Cookbook • sgplot</title>
-<!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
-<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png">
-<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png">
-<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png">
-<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png">
+<!-- favicons --><link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+<link rel="icon" type="”image/svg+xml”" href="../favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="icon" sizes="any" href="../favicon.ico">
+<link rel="manifest" href="../site.webmanifest">
 <script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
-<script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/Roboto-0.4.9/font.css" rel="stylesheet">
+<script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/Roboto-0.4.10/font.css" rel="stylesheet">
 <link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><link href="../extra.css" rel="stylesheet">
@@ -29,7 +28,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">sgplot</a>
 
-    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">0.3.0.9000</small>
+    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">0.4.0.9000</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -88,7 +87,7 @@ a suggestion</a>.</p>
 the sgplot theme and colour functions explicitly, however it may be
 easier to make use of the <code><a href="../reference/use_sgplot.html">use_sgplot()</a></code> function if your
 charts all require a similar style. More information on
-<code>use_sgplot</code> can be found on the <a href="https://scotgovanalysis.github.io/sgplot/#use-sgplot-as-default">homepage</a>.</p>
+<code>use_sgplot</code> can be found on the <a href="https://scotgovanalysis.github.io/sgplot/#use-sgplot-as-default" class="external-link">homepage</a>.</p>
 <p><strong>Note on use of titles, subtitles and captions</strong> <br>
 Titles, subtitles and captions have been embedded in the charts in this
 cookbook for demonstration purposes. However, for accessibility reasons,
@@ -97,10 +96,8 @@ rather than embedded within the image of the plot.</p>
 <p>The following packages are required to produce the example charts in
 this cookbook:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ScotGovAnalysis/sgplot" class="external-link">sgplot</a></span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ScotGovAnalysis/sgplot/" class="external-link">sgplot</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>
-<span><span class="co">#&gt; Error in get(paste0(generic, ".", class), envir = get_method_env()) : </span></span>
-<span><span class="co">#&gt;   object 'type_sum.accel' not found</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Use gapminder data for cookbook charts</span></span>
@@ -429,10 +426,10 @@ or caption.</p></li>
 <span>    displaylogo <span class="op">=</span> <span class="cn">FALSE</span></span>
 <span>  <span class="op">)</span></span></code></pre></div>
 <div class="plotly html-widget html-fill-item" id="htmlwidget-ac96cb3ee4656e2e9ec3" style="width:700px;height:432.632880098888px;"></div>
-<script type="application/json" data-for="htmlwidget-ac96cb3ee4656e2e9ec3">{"x":{"data":[{"orientation":"v","width":[0.89999999999999991,0.90000000000000013,0.90000000000000036,0.90000000000000036,0.90000000000000036],"base":[0,0,0,0,0],"x":[1,2,3,4,5],"y":[81.757000000000005,81.700999999999993,80.941000000000003,80.884,80.656999999999996],"text":["Country: Iceland<br />Life Expectancy: 81.8","Country: Switzerland<br />Life Expectancy: 81.7","Country: Spain<br />Life Expectancy: 80.9","Country: Sweden<br />Life Expectancy: 80.9","Country: France<br />Life Expectancy: 80.7"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(0,45,84,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":28.914533462478666,"r":7.9701120797011216,"b":32.839813661731469,"l":27.895392278953928},"paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":15.940224159402241},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.40000000000000002,5.5999999999999996],"tickmode":"array","ticktext":["Iceland","Switzerland","Spain","Sweden","France"],"tickvals":[1,2,3,4,5],"categoryorder":"array","categoryarray":["Iceland","Switzerland","Spain","Sweden","France"],"nticks":null,"ticks":"outside","tickcolor":"rgba(217,217,217,1)","ticklen":3.9850560398505603,"tickwidth":0.66417600664176002,"showticklabels":true,"tickfont":{"color":"rgba(0,0,0,1)","family":"","size":15.940224159402241},"tickangle":-0,"showline":true,"linecolor":"rgba(217,217,217,1)","linewidth":0.66417600664176002,"showgrid":false,"gridcolor":null,"gridwidth":0,"zeroline":false,"anchor":"y","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":15.940224159402241}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0,81.757000000000005],"tickmode":"array","ticktext":["0","20","40","60","80"],"tickvals":[0,20,40,60,80],"categoryorder":"array","categoryarray":["0","20","40","60","80"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.9850560398505608,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(0,0,0,1)","family":"","size":15.940224159402243},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(217,217,217,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"x","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":15.940224159402241}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.8897637795275593,"font":{"color":"rgba(0,0,0,1)","family":"","size":12.7521793275218}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"modeBarButtons":[["resetViews"]],"displaylogo":false},"source":"A","attrs":{"1a086655f2df":{"x":{},"y":{},"text":{},"type":"bar"}},"cur_data":"1a086655f2df","visdat":{"1a086655f2df":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script><p>sgplot currently only works with <code>ggplot2</code> charts, however
+<script type="application/json" data-for="htmlwidget-ac96cb3ee4656e2e9ec3">{"x":{"data":[{"orientation":"v","width":[0.89999999999999991,0.90000000000000013,0.90000000000000036,0.90000000000000036,0.90000000000000036],"base":[0,0,0,0,0],"x":[1,2,3,4,5],"y":[81.757000000000005,81.700999999999993,80.941000000000003,80.884,80.656999999999996],"text":["Country: Iceland<br />Life Expectancy: 81.8","Country: Switzerland<br />Life Expectancy: 81.7","Country: Spain<br />Life Expectancy: 80.9","Country: Sweden<br />Life Expectancy: 80.9","Country: France<br />Life Expectancy: 80.7"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(0,45,84,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":28.914533462478666,"r":7.9701120797011216,"b":32.839813661731469,"l":27.895392278953928},"paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":15.940224159402241},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.40000000000000002,5.5999999999999996],"tickmode":"array","ticktext":["Iceland","Switzerland","Spain","Sweden","France"],"tickvals":[1,2,3,4,5],"categoryorder":"array","categoryarray":["Iceland","Switzerland","Spain","Sweden","France"],"nticks":null,"ticks":"outside","tickcolor":"rgba(217,217,217,1)","ticklen":3.9850560398505603,"tickwidth":0.66417600664176002,"showticklabels":true,"tickfont":{"color":"rgba(0,0,0,1)","family":"","size":15.940224159402241},"tickangle":-0,"showline":true,"linecolor":"rgba(217,217,217,1)","linewidth":0.66417600664176002,"showgrid":false,"gridcolor":null,"gridwidth":0,"zeroline":false,"anchor":"y","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":15.940224159402241}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0,81.757000000000005],"tickmode":"array","ticktext":["0","20","40","60","80"],"tickvals":[0,20,40,60,80],"categoryorder":"array","categoryarray":["0","20","40","60","80"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.9850560398505608,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(0,0,0,1)","family":"","size":15.940224159402243},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(217,217,217,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"x","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":15.940224159402241}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.8897637795275593,"font":{"color":"rgba(0,0,0,1)","family":"","size":12.7521793275218}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"modeBarButtons":[["resetViews"]],"displaylogo":false},"source":"A","attrs":{"207d28491381":{"x":{},"y":{},"text":{},"type":"bar"}},"cur_data":"207d28491381","visdat":{"207d28491381":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script><p>sgplot currently only works with <code>ggplot2</code> charts, however
 there are plans to <a href="https://github.com/scotgovanalysis/sgplot/issues/5" class="external-link">develop the
 package further to support interactive Highcharts</a> produced using the
-<a href="https://jkunst.com/highcharter" class="external-link"><code>highcharter</code></a>
+<a href="https://jkunst.com/highcharter/" class="external-link"><code>highcharter</code></a>
 package.</p>
 </div>
 <div class="section level2">
@@ -551,7 +548,7 @@ reverse may work, text can appear blurry.</p>
 </h2>
 <p><code><a href="../reference/theme_sg.html">theme_sg()</a></code> has arguments to control the legend position
 and appearance of grid lines, axis lines and axis ticks. More
-information on accepted values can be found in the <a href="https://scotgovanalysis.github.io/sgplot/reference/theme_sg.html">help
+information on accepted values can be found in the <a href="https://scotgovanalysis.github.io/sgplot/reference/theme_sg.html" class="external-link">help
 file</a>.</p>
 <div class="section level3">
 <h3 id="sorting-a-bar-chart">Sorting a bar chart<a class="anchor" aria-label="anchor" href="#sorting-a-bar-chart"></a>
@@ -753,13 +750,13 @@ made.</p>
 Government Design System</a>. These palettes have been developed to meet
 the <a href="https://www.w3.org/WAI/WCAG21/Understanding/non-text-contrast.html" class="external-link">Web
 Content Accessibility Guidelines 2.1 for graphical objects</a>.</p>
-<p>The <a href="https://scotgovanalysis.github.io/sgplot/articles/colours.html#sg-main">main
+<p>The <a href="https://scotgovanalysis.github.io/sgplot/articles/colours.html#sg-main" class="external-link">main
 palette</a> is the default for discrete colour/fill functions, and the
-<a href="https://scotgovanalysis.github.io/sgplot/articles/colours.html#sg-sequential">sequential
+<a href="https://scotgovanalysis.github.io/sgplot/articles/colours.html#sg-sequential" class="external-link">sequential
 palette</a> for continuous colour/fill functions.</p>
 <p>The Scottish Government palettes are used by default, however
-palettes are also available for <a href="https://scotgovanalysis.github.io/sgplot/articles/colours.html#sss">Social
-Security Scotland</a> and the <a href="https://scotgovanalysis.github.io/sgplot/articles/colours.html#af">Government
+palettes are also available for <a href="https://scotgovanalysis.github.io/sgplot/articles/colours.html#sss" class="external-link">Social
+Security Scotland</a> and the <a href="https://scotgovanalysis.github.io/sgplot/articles/colours.html#af" class="external-link">Government
 Analysis Function</a>.</p>
 <p>More information on the colours used in sgplot can be found at
 <code><a href="../articles/colours.html">vignette("colours")</a></code>.</p>
@@ -798,7 +795,7 @@ guidance recommends using a maximum of four colours to avoid
 clutter.</p>
 <p>To use an Analysis Function palette, set
 <code>palette_type = "af"</code> when using any of the
-<code>scale_</code> <a href="https://scotgovanalysis.github.io/sgplot/reference/index.html#colour-scales">colour
+<code>scale_</code> <a href="https://scotgovanalysis.github.io/sgplot/reference/index.html#colour-scales" class="external-link">colour
 functions</a>. For example, to use the Analysis Function
 <code>main2</code> palette:</p>
 <div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
@@ -829,7 +826,7 @@ functions</a>. For example, to use the Analysis Function
 is not available in sgplot. If so, this should be carefully considered
 to ensure it meets accessibility requirements. The Analysis Function
 guidance outlines <a href="https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/#section-9" class="external-link">appropriate
-steps for choosing your own accessibile colour palette</a> and should be
+steps for choosing your own accessible colour palette</a> and should be
 used.</p>
 <div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">my_palette</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"#0F820D"</span>, <span class="st">"#000000"</span><span class="op">)</span></span>
@@ -875,7 +872,7 @@ used.</p>
 <h4 id="adding-a-new-colour-palette-to-sgplot">Adding a new colour palette to sgplot<a class="anchor" aria-label="anchor" href="#adding-a-new-colour-palette-to-sgplot"></a>
 </h4>
 <p>If you use a different palette regularly and feel it would be useful
-for this to be added to sgplot, please make a suggestion as per the <a href="https://scotgovanalysis.github.io/sgplot/CONTRIBUTING.html">contributing
+for this to be added to sgplot, please make a suggestion as per the <a href="https://scotgovanalysis.github.io/sgplot/CONTRIBUTING.html" class="external-link">contributing
 guidance</a>.</p>
 </div>
 </div>
@@ -898,7 +895,7 @@ Journalism cookbook for R graphics</a> and their <a href="https://github.com/bbc
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.3.</p>
 </div>
 
     </footer>

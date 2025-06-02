@@ -1,12 +1,12 @@
 pandoc: 3.1.11
-pkgdown: 2.1.1
+pkgdown: 2.1.3
 pkgdown_sha: ~
 articles:
   accessibility: accessibility.html
   colours: colours.html
   cookbook: cookbook.html
   saving: saving.html
-last_built: 2024-12-20T16:27Z
+last_built: 2025-06-02T08:59Z
 urls:
-  reference: https://scotgovanalysis.github.io/sgplot/reference
-  article: https://scotgovanalysis.github.io/sgplot/articles
+  reference: https://ScotGovAnalysis.github.io/sgplot/reference
+  article: https://ScotGovAnalysis.github.io/sgplot/articles
