@@ -27,9 +27,8 @@ ex2_alt <- paste("A bar chart with white background,",
 # sgplot <img src="man/figures/logo.svg" alt="sgplot logo" align="right" height="150"/>
 
 <!-- badges: start -->
-
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/ScotGovAnalysis/sgplot)](https://github.com/ScotGovAnalysis/sgplot/releases/latest) [![R build status](https://github.com/ScotGovAnalysis/sgplot/workflows/R-CMD-check/badge.svg)](https://github.com/ScotGovAnalysis/sgplot/actions)
-
+[![CRAN status](https://www.r-pkg.org/badges/version/sgplot)](https://CRAN.R-project.org/package=sgplot) 
+[![R build status](https://github.com/ScotGovAnalysis/sgplot/workflows/R-CMD-check/badge.svg)](https://github.com/ScotGovAnalysis/sgplot/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 sgplot is an R package for creating accessible plots in the Scottish Government. Currently, functions are available for styling ggplot2 plots.
