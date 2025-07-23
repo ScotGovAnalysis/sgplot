@@ -12,10 +12,10 @@ authors:
   Alice Hannah:
     html: "Alice Hannah&nbsp;&nbsp;\
     <a href='mailto:alice.hannah@gov.scot'>\
-    <i class='fas fa-envelope' aria-hidden='true'></i>\
+    <i class='fa-solid fa-envelope' aria-hidden='true'></i>\
     <span class='visually-hidden'>Email Alice Hannah></span></a>&nbsp;&nbsp;\
     <a href='https://github.com/alice-hannah'>\
-    <i class='fab fa-github' aria-hidden='true'></i>\
+    <i class='fa-brands fa-github' aria-hidden='true'></i>\
     <span class='visually-hidden'>Alice Hannah GitHub profile></span></a>"
   Scottish Government:
     html: "Scottish Government&nbsp;&nbsp;\
@@ -24,11 +24,11 @@ authors:
     <span class='visually-hidden'>Scottish Government Website></span>\
     </a>&nbsp;&nbsp;\
     <a href='mailto:statistics.enquiries@gov.scot'>\
-    <i class='fas fa-envelope' aria-hidden='true'></i>\
+    <i class='fa-solid fa-envelope' aria-hidden='true'></i>\
     <span class='visually-hidden'>Email Scottish Government></span></a>\
     &nbsp;&nbsp;\
     <a href='https://github.com/scotgovanalysis'>\
-    <i class='fab fa-github' aria-hidden='true'></i>\
+    <i class='fa-brands fa-github' aria-hidden='true'></i>\
     <span class='visually-hidden'>Scottish Government GitHub profile></span>\
     </a>"
   sidebar:
