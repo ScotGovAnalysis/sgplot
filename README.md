@@ -5,11 +5,10 @@
 
 <!-- badges: start -->
 
-[![GitHub release (latest by
-date)](https://img.shields.io/github/v/release/ScotGovAnalysis/sgplot)](https://github.com/ScotGovAnalysis/sgplot/releases/latest)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/sgplot)](https://CRAN.R-project.org/package=sgplot)
 [![R build
-status](https://github.com/ScotGovAnalysis/sgplot/workflows/R-CMD-check/badge.svg)](https://github.com/ScotGovAnalysis/sgplot/actions)
-
+status](https://github.com/ScotGovAnalysis/sgplot/workflows/R-CMD-check/badge.svg)](https://github.com/ScotGovAnalysis/sgplot/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 sgplot is an R package for creating accessible plots in the Scottish
