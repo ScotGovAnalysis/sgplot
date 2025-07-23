@@ -1,5 +1,8 @@
 # sgplot (development version)
 
+* Fix bug where `use_sgplot()` could not handle passing multiple arguments of
+different types to `theme_sg()` (#63).
+
 # sgplot 0.4.0
 
 * `use_sgplot()` gains a `palette_type` argument to set default palette type 
