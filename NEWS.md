@@ -1,5 +1,7 @@
 # sgplot (development version)
 
+* Set minimum version of ggplot (>= 3.5.0) (#62).
+
 * Fix bug where `use_sgplot()` could not handle passing multiple arguments of
 different types to `theme_sg()` (#63).
 
