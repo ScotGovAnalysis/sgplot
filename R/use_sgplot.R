@@ -85,7 +85,7 @@ use_sgplot <- function(palette_type = "sg",
   default <- formals(theme_sg)
 
   # Update default values with those passed to use_sgplot
-  new_values <- c(...)
+  new_values <- list(...)
   for (i in seq_along(new_values)) {
     default <- replace(default,
                        which(names(default) == names(new_values)[i]),
