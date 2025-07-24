@@ -90,8 +90,8 @@ gapminder |>
   ggplot() +
   geom_col(aes(x = reorder(country, -pop), y = pop)) +
   scale_y_continuous(
-        labels = scales::label_number(scale = 1E-6),
-        expand = c(0, 0)
+    labels = scales::label_number(scale = 1E-6),
+    expand = c(0, 0)
   ) +
   labs(
     x = NULL,
@@ -115,13 +115,13 @@ gapminder |>
   ggplot() +
   geom_col(aes(x = reorder(country, -pop), y = pop)) +
   scale_y_continuous(
-        labels = scales::label_number(scale = 1E-6),
-        expand = c(0, 0)
+    labels = scales::label_number(scale = 1E-6),
+    expand = c(0, 0)
   ) +
   labs(
     x = NULL,
     y = NULL,
-    title = "The United States is the most populous country in the Americas",
+    title = "The United States is the most populous country \nin the Americas",
     subtitle = "Population of countries in the Americas (millions), 2007",
     caption = "Source: Gapminder"
   )
