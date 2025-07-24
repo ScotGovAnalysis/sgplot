@@ -85,17 +85,22 @@ Annotations may also be used to add value labels to a bar chart. Note that `geom
 ```{r annotations-3}
 #| fig.alt = "A bar chart with white text labels at the end of each bar."
 
-ggplot(bar_data, aes(x = reorder(country, -lifeExp), y = lifeExp)) +
+ggplot(bar_data, aes(x = reorder(country, -pop), y = pop)) +
   geom_col(fill = sg_colour_values["dark-blue"]) +
-  geom_text(aes(label = round(lifeExp, 1)),
-            nudge_y = -5, colour = "white") +
+  geom_text(aes(label = format(pop, big.mark = ",")),
+            nudge_y = -max(bar_data$pop) * 0.05, 
+            colour = "white") +
   theme_sg() +
-  scale_y_continuous(expand = c(0, 0)) +
+  scale_y_continuous(
+    labels = scales::label_number(scale = 1E-6),
+    limits = c(0, max(bar_data$pop) * 1.02),
+    expand = c(0, 0)
+  ) +
   labs(
     x = NULL,
     y = NULL,
-    title = "Iceland has the highest life expectancy in Europe",
-    subtitle = "Life expectancy in European countries, 2007",
+    title = "The United States is the most populous country \nin the Americas",
+    subtitle = "Population of countries in the Americas (millions), 2007",
     caption = "Source: Gapminder"
   )
 ```

@@ -10,7 +10,7 @@ To control the order of bars in a chart, wrap the variable you want to arrange w
 #| fig.alt = "A bar chart using sgplot theme and dark blue colour with bars sorted in decreasing order by life expectancy."
 
 bar_data |>
-  ggplot(aes(x = lifeExp, y = reorder(country, lifeExp))) +
+  ggplot(aes(x = pop, y = reorder(country, pop))) +
   geom_col(fill = sg_colour_values["dark-blue"]) +
   theme_sg(axis = "y", grid = "x")
 ```
@@ -29,8 +29,8 @@ last_plot() +
   labs(
     x = NULL,
     y = NULL,
-    title = "Iceland has the highest life expectancy in Europe",
-    subtitle = "Life expectancy in European countries, 2007",
+    title = "The United States is the most populous country \nin the Americas",
+    subtitle = "Population of countries in the Americas (millions), 2007",
     caption = "Source: Gapminder"
   )
 ```
@@ -58,9 +58,9 @@ Axis limits, breaks and labels for continuous variables can be controlled using 
 
 last_plot() +
   scale_x_continuous(expand = c(0, 0),
-                     limits = c(0, 85),
-                     breaks = seq(0, 80, 20),
-                     labels = c(seq(0, 70, 20), "80 years"))
+                     limits = c(0, 3e8 * 1.1),
+                     breaks = seq(0, 3e8, 5e7),
+                     labels = c(seq(0, 250, 50), "300 million"))
 ```
 
 Note that further calls to `scale_x/y_continuous` will overwrite previous calls, hence why `expand = c(0, 0)` has been included again in this example.
@@ -138,21 +138,24 @@ If text is too long, it may be cut off or distort the dimensions of the chart.
 #| fig.alt = "A bar chart with end of main title text not visible and long y axis title skewing the dimensions of the chart."
 
 plot <-
-  ggplot(bar_data, aes(x = reorder(country, -lifeExp), y = lifeExp)) +
+  ggplot(bar_data, aes(x = reorder(country, -pop), y = pop)) +
   geom_col(fill = sg_colour_values["dark-blue"]) +
   theme_sg() +
-  scale_y_continuous(expand = c(0, 0)) +
+  scale_y_continuous(
+    labels = scales::label_number(scale = 1E-6),
+    limits = c(0, max(bar_data$pop) * 1.02),
+    expand = c(0, 0)
+  ) +
   labs(
     x = NULL,
-    subtitle = "Life expectancy in European countries, 2007",
+    subtitle = "Population of countries in the Americas (millions), 2007",
     caption = "Source: Gapminder"
   )
 
 plot +
   labs(
-    y = "Percentage of countries",
-    title = paste("Iceland has the highest life expectancy in Europe",
-                  "followed closely by Switzerland")
+    y = "Population of countries",
+    title = "The United States is the most populous country in the Americas",
   )
 ```
 
@@ -163,10 +166,9 @@ There are two suggested ways to solve this issue; Insert `\n` within a string to
 
 plot +
   labs(
-    y = "Percentage\nof countries",
+    y = "Population\nof countries",
     title = stringr::str_wrap(
-      paste("Iceland has the highest life expectancy in Europe",
-            "followed closely by Switzerland"),
+      "The United States is the most populous country in the Americas",
       width = 50
     )
   )
@@ -180,17 +182,21 @@ If you find you need to adjust theme elements for your chart, this can be done u
 ```{r adjust-theme}
 #| fig.alt = "A bar chart using sgplot theme and dark blue colour, with axis lines and ticks coloured black."
 
-ggplot(bar_data, aes(x = reorder(country, -lifeExp), y = lifeExp)) +
+ggplot(bar_data, aes(x = reorder(country, -pop), y = pop)) +
   geom_col(fill = sg_colour_values["dark-blue"]) +
   theme_sg(axis = "xy") +
   theme(axis.line = element_line(colour = "black"),
         axis.ticks = element_line(colour = "black")) +
-  scale_y_continuous(expand = c(0, 0)) +
+  scale_y_continuous(
+    labels = scales::label_number(scale = 1E-6),
+    limits = c(0, max(bar_data$pop) * 1.02),
+    expand = c(0, 0)
+  ) +
   labs(
     x = NULL,
     y = NULL,
-    title = "Iceland has the highest life expectancy in Europe",
-    subtitle = "Life expectancy in European countries, 2007",
+    title = "The United States is the most populous country \nin the Americas",
+    subtitle = "Population of countries in the Americas (millions), 2007",
     caption = "Source: Gapminder"
   )
 ```
