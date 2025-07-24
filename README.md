@@ -79,21 +79,25 @@ colour palettes and use `theme_sg()`.
 #### Example 1: Plot with one colour using ggplot2 defaults
 
 ``` r
+library(sgplot)
 library(ggplot2)
 library(dplyr)
 library(gapminder)
 
 gapminder |> 
-  filter(year == 2007 & continent == "Europe") |>
-  slice_max(order_by = lifeExp, n = 5) |>
+  filter(year == 2007 & continent == "Americas") |>
+  slice_max(order_by = pop, n = 5) |>
   ggplot() +
-  geom_col(aes(x = reorder(country, -lifeExp), y = lifeExp)) +
-  scale_y_continuous(expand = c(0, 0)) +
+  geom_col(aes(x = reorder(country, -pop), y = pop)) +
+  scale_y_continuous(
+        labels = scales::label_number(scale = 1E-6),
+        expand = c(0, 0)
+  ) +
   labs(
     x = NULL,
     y = NULL,
-    title = "Iceland has the highest life expectancy in Europe",
-    subtitle = "Life expectancy in European countries, 2007",
+    title = "The United States is the most populous country in the Americas",
+    subtitle = "Population of countries in the Americas (millions), 2007",
     caption = "Source: Gapminder"
   )
 ```
@@ -106,16 +110,19 @@ gapminder |>
 sgplot::use_sgplot()
 
 gapminder |> 
-  filter(year == 2007 & continent == "Europe") |>
-  slice_max(order_by = lifeExp, n = 5) |>
+  filter(year == 2007 & continent == "Americas") |>
+  slice_max(order_by = pop, n = 5) |>
   ggplot() +
-  geom_col(aes(x = reorder(country, -lifeExp), y = lifeExp)) +
-  scale_y_continuous(expand = c(0, 0)) +
+  geom_col(aes(x = reorder(country, -pop), y = pop)) +
+  scale_y_continuous(
+        labels = scales::label_number(scale = 1E-6),
+        expand = c(0, 0)
+  ) +
   labs(
     x = NULL,
     y = NULL,
-    title = "Iceland has the highest life expectancy in Europe",
-    subtitle = "Life expectancy in European countries, 2007",
+    title = "The United States is the most populous country in the Americas",
+    subtitle = "Population of countries in the Americas (millions), 2007",
     caption = "Source: Gapminder"
   )
 ```
