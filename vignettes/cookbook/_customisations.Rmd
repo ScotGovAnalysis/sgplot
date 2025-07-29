@@ -142,8 +142,8 @@ plot <-
   geom_col(fill = sg_colour_values["dark-blue"]) +
   theme_sg() +
   scale_y_continuous(
-    labels = scales::label_number(scale = 1E-6),
-    limits = c(0, max(bar_data$pop) * 1.02),
+    labels = \(x) x / 1e6,
+    limits = c(0, 3e8 * 1.02),
     expand = c(0, 0)
   ) +
   labs(
@@ -188,8 +188,8 @@ ggplot(bar_data, aes(x = reorder(country, -pop), y = pop)) +
   theme(axis.line = element_line(colour = "black"),
         axis.ticks = element_line(colour = "black")) +
   scale_y_continuous(
-    labels = scales::label_number(scale = 1E-6),
-    limits = c(0, max(bar_data$pop) * 1.02),
+    labels = \(x) x / 1e6,
+    limits = c(0, 3e8 * 1.02),
     expand = c(0, 0)
   ) +
   labs(
