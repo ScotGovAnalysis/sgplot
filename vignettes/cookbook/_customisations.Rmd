@@ -51,7 +51,7 @@ The equivalent adjustment can be made for the y axis using `scale_y_continuous`.
 
 ### Changing axis limits, breaks and labels
 
-Axis limits, breaks and labels for continuous variables can be controlled using `scale_x/y_continuous()`. For discrete variables, labels can be changes using `scale_x/y_discrete()` or alternatively by recoding the variable in the data before creating a chart.
+Axis limits, breaks and labels for continuous variables can be controlled using `scale_x/y_continuous()`. For discrete variables, labels can be changed using `scale_x/y_discrete()` or alternatively by recoding the variable in the data before creating a chart.
 
 ```{r axis-limits-breaks-labels}
 #| fig.alt = "A bar chart with fewer x axis breaks and edited labels."
