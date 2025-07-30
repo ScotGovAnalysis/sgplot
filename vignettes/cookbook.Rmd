@@ -22,11 +22,9 @@ This cookbook provides examples of the code used to produce various chart types 
 
 If there is a chart type or task which you think would be useful to include here, please [submit a suggestion](https://github.com/scotgovanalysis/sgplot/issues/new?assignees=alice-hannah&labels=documentation&title=Cookbook+suggestion).
 
-**use_sgplot** <br>
-The examples in this cookbook use the sgplot theme and colour functions explicitly, however it may be easier to make use of the `use_sgplot()` function if your charts all require a similar style. More information on `use_sgplot` can be found on the [homepage](https://scotgovanalysis.github.io/sgplot/#use-sgplot-as-default).
+## Getting started
 
-**Note on use of titles, subtitles and captions** <br>
-Titles, subtitles and captions have been embedded in the charts in this cookbook for demonstration purposes. However, for accessibility reasons, it is usually preferable to provide titles in the body of the page rather than embedded within the image of the plot.
+### Required packages
 
 The following packages are required to produce the example charts in this cookbook:
 
@@ -38,6 +36,14 @@ library(dplyr)
 # Use gapminder data for cookbook charts
 library(gapminder)
 ```
+
+### Use of titles, subtitles and captions
+
+Titles, subtitles and captions have been embedded in the charts in this cookbook for demonstration purposes. However, for accessibility reasons, it is usually preferable to provide titles in the body of the page rather than embedded within the image of the plot.
+
+### use_sgplot
+
+The examples in this cookbook use the sgplot theme and colour functions explicitly, however it may be easier to make use of the `use_sgplot()` function if your charts all require a similar style. More information on `use_sgplot` can be found on the [sgplot homepage](https://scotgovanalysis.github.io/sgplot/#use-sgplot-as-default).
 
 
 ```{r chart-types, child = "cookbook/_chart-types.Rmd"} 
