@@ -1,5 +1,9 @@
 # sgplot (development version)
 
+* Vignettes are converted to articles. Vignettes are now not available to view 
+locally and only via the 
+[pkgdown site](https://scotgovanalysis.github.io/sgplot/) (#66).
+
 * Set minimum version of ggplot (>= 3.5.0) (#62).
 
 * Fix bug where `use_sgplot()` could not handle passing multiple arguments of
