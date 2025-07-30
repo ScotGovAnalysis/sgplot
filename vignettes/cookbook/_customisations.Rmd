@@ -148,13 +148,13 @@ plot <-
   ) +
   labs(
     x = NULL,
-    subtitle = "Population of countries in the Americas (millions), 2007",
+    subtitle = "Population of countries in the Americas, 2007",
     caption = "Source: Gapminder"
   )
 
 plot +
   labs(
-    y = "Population of countries",
+    y = "Population (millions)",
     title = "The United States is the most populous country in the Americas",
   )
 ```
@@ -166,7 +166,7 @@ There are two suggested ways to solve this issue; Insert `\n` within a string to
 
 plot +
   labs(
-    y = "Population\nof countries",
+    y = "Population\n(millions)",
     title = stringr::str_wrap(
       "The United States is the most populous country in the Americas",
       width = 50
