@@ -197,7 +197,7 @@ gapminder |>
 
 gapminder |>
   filter(year == 2007) |>
-  ggplot(aes(x = gdpPercap, y = lifeExp, size = pop)) +
+  ggplot(aes(x = gdpPercap, y = lifeExp)) +
   geom_point(colour = sg_colour_values["dark-blue"]) +
   theme_sg(axis = "none", grid = "xy") +
   scale_x_continuous(
@@ -207,7 +207,6 @@ gapminder |>
   labs(
     x = "GDP",
     y = "Life\nExpectancy",
-    size = "Population",
     title = stringr::str_wrap(
       "The relationship between GDP and Life Expectancy is complex", 40
     ),
