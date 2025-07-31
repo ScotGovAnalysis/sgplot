@@ -48,7 +48,7 @@ gapminder |>
   )
 ```
 
-An example with line labels and no legend can be found in the [Adding annotations](#adding-annotations) section.
+An example with line labels and no legend can be found in the [Annotations](#annotations) section.
 
 
 ## Bar charts
