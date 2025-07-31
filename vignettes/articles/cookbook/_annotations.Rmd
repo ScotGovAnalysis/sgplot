@@ -21,13 +21,11 @@ ann_data |>
                      breaks = seq(0, 80, 20),
                      expand = c(0, 0)) +
   scale_x_continuous(limits = c(1952, 2017),
-                     breaks = seq(1952, 2017, 5)) +
+                     breaks = seq(1952, 2007, 5)) +
   annotate(geom = "label", x = 2008, y = 73, label = "China",
-           colour = sg_colour_values[1],
            label.size = NA,
            hjust = 0, vjust = 0.5) +
   annotate(geom = "label", x = 2008, y = 79.4, label = "United Kingdom",
-           colour = sg_colour_values[2],
            label.size = NA,
            hjust = 0, vjust = 0.5) +
   labs(
@@ -56,17 +54,17 @@ ann_labs <- ann_data |>
   ungroup()
 
 ann_data |>
-  ggplot(aes(x = year, y = lifeExp, colour = country)) +
-  geom_line(linewidth = 1) +
+  ggplot() +
+  geom_line(aes(x = year, y = lifeExp, colour = country), linewidth = 1) +
   theme_sg(legend = "none") +
   scale_colour_discrete_sg() +
   scale_y_continuous(limits = c(0, 82),
                      breaks = seq(0, 80, 20),
                      expand = c(0, 0)) +
   scale_x_continuous(limits = c(1952, 2017),
-                     breaks = seq(1952, 2017, 5)) +
+                     breaks = seq(1952, 2007, 5)) +
   geom_label(data = ann_labs,
-             aes(x = year, y = lifeExp, label = country, colour = country),
+             aes(x = year, y = lifeExp, label = country),
              hjust = 0,
              vjust = 0.5,
              nudge_x = 0.5,
