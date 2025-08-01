@@ -106,7 +106,7 @@ The `grey` in this palette does not meet the required colour contrast with an of
 
 ### Social Security Scotland {#sss}
 
-To use a Social Security Scotland palette, set `palette_type = "sss"` when using any of the `scale_` [colour functions](https://scotgovanalysis.github.io/sgplot/reference/index.html#colour-scales).
+To use a Social Security Scotland palette, set `palette_type = "sss"` when using any of the `scale_` [colour functions](../reference/index.html#colour-scales).
 
 If you have any questions about these palettes, please contact the [Social Security Scotland statistics mailbox](mailto:MI@socialsecurity.gov.scot).
 
@@ -157,7 +157,7 @@ sgplot:::colour_table(sgplot::sss_colour_palettes$focus)
 
 ### Government Analysis Function {#af}
 
-The Government Analysis Function guidance also contains [suggested colour palettes](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/#section-4). These are also provided in sgplot, however the Scottish Government palettes are used by default. To use an Analysis Function palette, set `palette_type = "af"` when using any of the `scale_` [colour functions](https://scotgovanalysis.github.io/sgplot/reference/index.html#colour-scales).
+The Government Analysis Function guidance also contains [suggested colour palettes](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/#section-4). These are also provided in sgplot, however the Scottish Government palettes are used by default. To use an Analysis Function palette, set `palette_type = "af"` when using any of the `scale_` [colour functions](../reference/index.html#colour-scales).
 
 
 #### Main palette
@@ -224,8 +224,8 @@ There may be instances where you'd like to use a different colour palette.
 If so, this should be carefully considered to ensure it meets accessibility requirements. 
 The Analysis Function guidance outlines [appropriate steps for choosing your own accessible colour palette](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/#section-9) and should be used.
 
-An example of how to use an alternative colour palette is provided in the [cookbook](https://scotgovanalysis.github.io/sgplot/articles/cookbook.html#using-your-own-colour-palette).
-However, if you use a different palette regularly and feel it would be useful for this to be added to sgplot, please make a suggestion as per the [contributing guidance](https://scotgovanalysis.github.io/sgplot/CONTRIBUTING.html).
+An example of how to use an alternative colour palette is provided in the [cookbook](cookbook.html#using-your-own-colour-palette).
+However, if you use a different palette regularly and feel it would be useful for this to be added to sgplot, please make a suggestion as per the [contributing guidance](../CONTRIBUTING.html).
 
 
 ## Viewing palettes in R
@@ -249,4 +249,4 @@ sgplot::sss_colour_palettes
 sgplot::af_colour_palettes
 ```
 
-Examples of how to apply these palettes to ggplot2 charts are available in both the [cookbook](https://scotgovanalysis.github.io/sgplot/articles/cookbook.html) and the reference files for `scale_` [colour functions](https://scotgovanalysis.github.io/sgplot/reference/index.html#colour-scales).
+Examples of how to apply these palettes to ggplot2 charts are available in both the [cookbook](cookbook.html) and the reference files for `scale_` [colour functions](../reference/index.html#colour-scales).

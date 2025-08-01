@@ -43,7 +43,7 @@ Titles, subtitles and captions have been embedded in the charts in this cookbook
 
 ### use_sgplot
 
-The examples in this cookbook use the sgplot theme and colour functions explicitly, however it may be easier to make use of the `use_sgplot()` function if your charts all require a similar style. More information on `use_sgplot` can be found on the [sgplot homepage](https://scotgovanalysis.github.io/sgplot/#use-sgplot-as-default).
+The examples in this cookbook use the sgplot theme and colour functions explicitly, however it may be easier to make use of the `use_sgplot()` function if your charts all require a similar style. More information on `use_sgplot` can be found on the [sgplot homepage](../index.html#use-sgplot-as-default).
 
 
 ```{r chart-types, child = "cookbook/_chart-types.Rmd"} 

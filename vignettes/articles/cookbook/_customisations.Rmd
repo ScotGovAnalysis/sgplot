@@ -2,7 +2,7 @@
 
 The following section demonstrates some common customisations made to `{ggplot2}` charts. Each example builds on the previous one.
 
-Note that `theme_sg()` has arguments to control the legend position and appearance of grid lines, axis lines and axis ticks. More information on accepted values can be found in the [help file](https://scotgovanalysis.github.io/sgplot/reference/theme_sg.html).
+Note that `theme_sg()` has arguments to control the legend position and appearance of grid lines, axis lines and axis ticks. More information on accepted values can be found in the [help file](../reference/theme_sg.html).
 
 Customisations will be made to the following basic horizontal bar chart:
 
