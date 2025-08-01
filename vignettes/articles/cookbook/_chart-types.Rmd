@@ -152,7 +152,7 @@ stacked_bar_data <-
 ggplot(stacked_bar_data,
        aes(x = continent, y = n_countries, fill = lifeExpGrouped)) +
   geom_bar(stat = "identity", position = "fill") +
-  theme_sg(legend = "bottom") +
+  theme_sg(legend = "right") +
   scale_y_continuous(expand = c(0, 0), labels = scales::percent) +
   coord_cartesian(clip = "off") +
   scale_fill_discrete_sg() +
