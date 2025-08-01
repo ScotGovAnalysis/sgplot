@@ -111,9 +111,12 @@ To add a horizontal or vertical line across the whole plot, use `geom_hline()` o
 gapminder |>
   filter(country == "United Kingdom") |>
   ggplot(aes(x = year, y = lifeExp)) +
-  geom_line(linewidth = 1, colour = sg_colour_values[1]) +
-  geom_hline(yintercept = 75, colour = sg_colour_values[2],
-             linewidth = 1, linetype = "dashed") +
+  geom_hline(yintercept = 75, 
+             colour = sg_colour_values["grey"],
+             linewidth = 1, 
+             linetype = "longdash") +
+  geom_line(linewidth = 1, 
+            colour = sg_colour_values["dark-blue"]) +
   annotate(geom = "text", x = 2007, y = 70, label = "Age 70") +
   theme_sg() +
   scale_y_continuous(limits = c(0, 82),
