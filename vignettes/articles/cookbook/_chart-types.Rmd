@@ -80,7 +80,7 @@ ggplot(bar_data, aes(x = reorder(country, -pop), y = pop)) +
   )
 ```
 
-A bar chart can sometimes look better with horizontal bars. This can also be a good option if your bar labels are long and difficult to display horizontally on the x axis. To produce a horizontal bar chart, swap the variables defined for x and y in `aes()` and make a few tweaks to `theme_sg()`; draw grid lines for the x axis only by setting the `grid` argument, and draw an axis line for the y axis only by setting the `axis` argument.
+A bar chart can sometimes look better with horizontal bars. This can also be a good option if your bar labels are long and difficult to display horizontally on the x-axis. To produce a horizontal bar chart, swap the variables defined for x and y in `aes()` and make a few tweaks to `theme_sg()`; draw grid lines for the x-axis only by setting the `grid` argument, and draw an axis line for the y-axis only by setting the `axis` argument.
 
 ```{r bar-chart-2}
 #| fig.alt = "A horizontal bar chart using sgplot theme and dark blue colour."
