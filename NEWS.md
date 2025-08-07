@@ -1,5 +1,8 @@
 # sgplot (development version)
 
+* Add `quietly` argument to `use_sgplot()` to allow messages to be suppressed 
+(#67).
+
 * Set minimum version of ggplot (>= 3.5.0) (#62).
 
 * Fix bug where `use_sgplot()` could not handle passing multiple arguments of
