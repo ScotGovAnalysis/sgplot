@@ -4,11 +4,20 @@
 \alias{use_sgplot}
 \title{Use sgplot defaults.}
 \usage{
-use_sgplot(palette_type = "sg", ..., default_colour = deprecated())
+use_sgplot(
+  palette_type = "sg",
+  quietly = FALSE,
+  ...,
+  default_colour = deprecated()
+)
 }
 \arguments{
 \item{palette_type}{Name of palette type to use. Defaults to "sg". For all
 available palette types, run \code{available_palette_types()}.}
+
+\item{quietly}{Should the function run quietly? By default, \code{use_sgplot()}
+prints information messages to the console. Set \code{quietly = TRUE} to suppress
+these.}
 
 \item{...}{Arguments passed to \code{sgplot::theme_sg()}.}
 
