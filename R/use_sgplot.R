@@ -5,6 +5,9 @@
 #'
 #' @param palette_type Name of palette type to use. Defaults to "sg". For all
 #' available palette types, run `available_palette_types()`.
+#' @param quietly Should the function run quietly? By default, `use_sgplot()`
+#' prints information messages to the console. Set `quietly = TRUE` to suppress
+#' these.
 #' @param ... Arguments passed to \code{sgplot::theme_sg()}.
 #' @param default_colour `r lifecycle::badge("deprecated")` Use the
 #' `palette_type` argument instead.
@@ -35,6 +38,7 @@
 
 
 use_sgplot <- function(palette_type = "sg",
+                       quietly = FALSE,
                        ...,
                        default_colour = deprecated()) {
 
@@ -56,8 +60,9 @@ use_sgplot <- function(palette_type = "sg",
 
   ggplot2::theme_set(theme_sg(...))
 
-  cli::cli_alert_info("Default ggplot2 theme set to `theme_sg`.")
-
+  if (!quietly) {
+    cli::cli_alert_info("Default ggplot2 theme set to `theme_sg`.")
+  }
 
   # Use sgplot colour palette ----
 
@@ -76,8 +81,11 @@ use_sgplot <- function(palette_type = "sg",
     }
   )
 
-  cli::cli_alert_info("Default colours set to {.str {palette_type}} palettes.")
-
+  if (!quietly) {
+    cli::cli_alert_info(
+      "Default colours set to {.str {palette_type}} palettes."
+    )
+  }
 
   # Set default geom characteristics ----
 
@@ -148,6 +156,8 @@ use_sgplot <- function(palette_type = "sg",
                size   = base_size / 8)
   )
 
-  cli::cli_alert_info("Default geom aesthetics set.")
+  if (!quietly) {
+    cli::cli_alert_info("Default geom aesthetics set.")
+  }
 
 }
