@@ -22,9 +22,16 @@ Imports:
 Suggests:
     dplyr,
     gapminder,
+    glue,
     gt,
+    knitr,
+    plotly,
+    purrr,
+    rmarkdown,
+    stringr,
     testthat (>= 2.1.0),
-    tibble
+    tibble,
+    tidyr
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
