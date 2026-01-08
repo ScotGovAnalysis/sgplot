@@ -131,8 +131,15 @@ gapminder |>
   )
 ```
 
-**Note on use of titles, subtitles and captions** <br>
+#### Note on use of titles, subtitles and captions
+
 Titles, subtitles and captions have been embedded in these example charts for demonstration purposes. However, for accessibility reasons, it is usually preferable to provide titles in the body of the page rather than embedded within the image of the plot. More information is available in the [accessibility article](https://ScotGovAnalysis.github.io/sgplot/articles/accessibility.html#other-accessibility-considerations).
+
+## Related package
+
+sgplot is the basis for the [afcharts](https://best-practice-and-impact.github.io/afcharts) package, developed by the [Government Analysis Function](https://analysisfunction.civilservice.gov.uk/). The packages remain similar, with both following the [Analysis Function Data Visualisation guidance](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/), however sgplot also uses guidance from the [Scottish Government Design System](https://designsystem.gov.scot/guidance/charts/data-visualisation-colour-palettes). 
+
+Scottish Government analysts should continue to use sgplot, rather than afcharts.
 
 ## Licence
 
