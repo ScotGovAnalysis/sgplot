@@ -1,0 +1,58 @@
+# Scottish Government theme for ggplot2 charts.
+
+ggplot2 theme for Scottish Government plots.
+
+## Usage
+
+``` r
+theme_sg(
+  base_size = 12,
+  base_line_size = base_size/24,
+  base_rect_size = base_size/24,
+  grid = c("y", "x", "xy", "none"),
+  axis = c("x", "y", "xy", "none"),
+  ticks = c("xy", "x", "y", "none"),
+  legend = c("right", "left", "top", "bottom", "none")
+)
+```
+
+## Arguments
+
+- base_size:
+
+  base font size, given in pts.
+
+- base_line_size:
+
+  base size for line elements.
+
+- base_rect_size:
+
+  base size for rect elements.
+
+- grid, axis, ticks:
+
+  'x', 'y', 'xy' or 'none' to determine for which axes the attribute
+  should be drawn. Grid defaults to 'y', axis to 'x', and ticks to 'xy'.
+
+- legend:
+
+  'right', 'left', 'top', 'bottom', or 'none' to determine the position
+  of the legend. Defaults to 'right'.
+
+## Value
+
+ggplot2 theme
+
+## Examples
+
+``` r
+library(ggplot2)
+
+p <- ggplot(mpg, aes(x = class)) + geom_bar()
+
+p
+
+p + theme_sg()
+
+```
