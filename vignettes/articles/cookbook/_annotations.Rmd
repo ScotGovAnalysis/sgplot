@@ -1,0 +1,104 @@
+## Annotations
+
+Labelling your chart is often preferable to using a legend, as often this relies on a user matching the legend to the data using colour alone. The legend can be removed from a chart by setting `legend = "none"` in `theme_sg()`.
+
+Either `geom_label()` or `geom_text()` can be used to annotate a chart. The main difference is that `geom_label()` draws a rectangle behind the text (white by default) and a border the same colour as the text (`label.size = NA` can be used to remove the border). `geom_text()` does not include a background and so text can be harder to read if it overlaps with other chart elements.
+
+The easiest way to add an annotation is to manually define the co-ordinates of the required position.
+
+```{r annotations-data}
+ann_data <- gapminder |>
+  filter(country %in% c("United Kingdom", "China"))
+```
+
+```{r annotations-1}
+#| fig.alt = "A multiple line chart  using sgplot theme and main2 palette with lines labelled."
+
+ann_data |>
+  ggplot() +
+  geom_line(aes(x = year, y = lifeExp, colour = country), linewidth = 1) +
+  theme_sg(legend = "none") +
+  scale_colour_discrete_sg() +
+  scale_y_continuous(limits = c(0, 82),
+                     breaks = seq(0, 80, 20),
+                     expand = c(0, 0)) +
+  scale_x_continuous(limits = c(1952, 2017),
+                     breaks = seq(1952, 2007, 5)) +
+  geom_label(x = 2008, y = 73, label = "China",
+             hjust = 0,
+             vjust = 0.5,
+             label.size = NA) +
+  geom_label(x = 2008, y = 79.4, label = "United Kingdom",
+             hjust = 0,
+             vjust = 0.5,
+             label.size = NA) +
+  labs(
+    x = "Year",
+    y = NULL,
+    title = "Living Longer",
+    subtitle = "Life Expectancy in the United Kingdom and China 1952-2007",
+    caption = "Source: Gapminder"
+  )
+```
+
+However, this makes the code difficult to reuse as values are hard coded and not automatically generated from the data. Automating the position of annotations is possible, but more fiddly. 
+
+One way to automate this is to create a supplementary data frame with desired co-ordinates of the labels (see `ann_labs` in the example below). `nudge` arguments can be used to displace text to improve the positioning.
+
+```{r annotations-2}
+#| fig.alt = "A multiple line chart  using sgplot theme and main2 palette with lines labelled."
+
+ann_labs <- ann_data |>
+  group_by(country) |>
+  filter(year == max(year)) |>
+  ungroup()
+
+ann_data |>
+  ggplot() +
+  geom_line(aes(x = year, y = lifeExp, colour = country), linewidth = 1) +
+  theme_sg(legend = "none") +
+  scale_colour_discrete_sg() +
+  scale_y_continuous(limits = c(0, 82),
+                     breaks = seq(0, 80, 20),
+                     expand = c(0, 0)) +
+  scale_x_continuous(limits = c(1952, 2017),
+                     breaks = seq(1952, 2007, 5)) +
+  geom_label(data = ann_labs,
+             aes(x = year, y = lifeExp, label = country),
+             hjust = 0,
+             vjust = 0.5,
+             nudge_x = 0.5,
+             label.size = NA) +
+  labs(
+    x = "Year",
+    y = NULL,
+    title = "Living Longer",
+    subtitle = "Life Expectancy in the United Kingdom and China 1952-2007",
+    caption = "Source: Gapminder"
+  )
+```
+
+Annotations may also be used to add value labels to a bar chart. Note that `geom_text()` is used here as a background is not required.
+
+```{r annotations-3}
+#| fig.alt = "A bar chart with white text labels at the end of each bar."
+
+ggplot(bar_data, aes(x = reorder(country, -pop), y = pop)) +
+  geom_col(fill = sg_colour_values["dark-blue"]) +
+  geom_text(aes(label = format(pop, big.mark = ",")),
+            nudge_y = -max(bar_data$pop) * 0.05,
+            colour = "white") +
+  theme_sg() +
+  scale_y_continuous(
+    labels = \(x) x / 1e6,
+    limits = c(0, 3e8 * 1.02),
+    expand = c(0, 0)
+  ) +
+  labs(
+    x = NULL,
+    y = NULL,
+    title = "The United States is the most populous country \nin the Americas",
+    subtitle = "Population of countries in the Americas (millions), 2007",
+    caption = "Source: Gapminder"
+  )
+```

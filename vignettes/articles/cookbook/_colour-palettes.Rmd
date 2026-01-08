@@ -3,9 +3,9 @@
 sgplot provides colour palettes as set out by the [Scottish Government Design System](https://designsystem.gov.scot/guidance/charts/data-visualisation-colour-palettes). 
 These palettes have been developed to meet the [Web Content Accessibility Guidelines 2.1 for graphical objects](https://www.w3.org/WAI/WCAG21/Understanding/non-text-contrast.html).
 
-The [main palette](https://scotgovanalysis.github.io/sgplot/articles/colours.html#sg-main) is the default for discrete colour/fill functions, and the [sequential palette](https://scotgovanalysis.github.io/sgplot/articles/colours.html#sg-sequential) for continuous colour/fill functions.
+The [main palette](colours.html#sg-main) is the default for discrete colour/fill functions, and the [sequential palette](colours.html#sg-sequential) for continuous colour/fill functions.
 
-The Scottish Government palettes are used by default, however palettes are also available for [Social Security Scotland](https://scotgovanalysis.github.io/sgplot/articles/colours.html#sss) and the [Government Analysis Function](https://scotgovanalysis.github.io/sgplot/articles/colours.html#af).
+The Scottish Government palettes are used by default, however palettes are also available for [Social Security Scotland](colours.html#sss) and the [Government Analysis Function](colours.html#af).
 
 More information on the colours used in sgplot can be found at `vignette("colours")`.
 
@@ -43,7 +43,7 @@ gapminder |>
 
 Note: This chart is for demonstration purposes only. Accessibility guidance recommends using a maximum of four colours to avoid clutter.
 
-To use an Analysis Function palette, set `palette_type = "af"` when using any of the `scale_` [colour functions](https://scotgovanalysis.github.io/sgplot/reference/index.html#colour-scales). 
+To use an Analysis Function palette, set `palette_type = "af"` when using any of the `scale_` [colour functions](../reference/index.html#colour-scales). 
 For example, to use the Analysis Function `main2` palette:
 
 ```{r af-palette, fig.height = 5}
@@ -125,4 +125,4 @@ gapminder |>
 
 #### Adding a new colour palette to sgplot
 
-If you use a different palette regularly and feel it would be useful for this to be added to sgplot, please make a suggestion as per the [contributing guidance](https://scotgovanalysis.github.io/sgplot/CONTRIBUTING.html).
+If you use a different palette regularly and feel it would be useful for this to be added to sgplot, please make a suggestion as per the [contributing guidance](../CONTRIBUTING.html).

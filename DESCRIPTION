@@ -19,7 +19,7 @@ Imports:
     lifecycle,
     rlang,
     scales
-Suggests: 
+Suggests:
     dplyr,
     gapminder,
     glue,
@@ -32,9 +32,8 @@ Suggests:
     testthat (>= 2.1.0),
     tibble,
     tidyr
-VignetteBuilder: 
-    knitr
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
+Config/Needs/website: rmarkdown

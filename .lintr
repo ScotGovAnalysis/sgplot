@@ -1,3 +1,5 @@
-linters: linters_with_defaults() # see vignette("lintr")
+linters: linters_with_defaults(
+    pipe_consistency_linter(pipe = "auto")
+  )
 exclude: "^#| fig.alt = "
 encoding: "UTF-8"

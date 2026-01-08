@@ -48,7 +48,7 @@ gapminder |>
   )
 ```
 
-An example with line labels and no legend can be found in the [Adding annotations](#adding-annotations) section.
+An example with line labels and no legend can be found in the [Annotations](#annotations) section.
 
 
 ## Bar charts
@@ -56,40 +56,48 @@ An example with line labels and no legend can be found in the [Adding annotation
 ```{r bar-data}
 bar_data <-
   gapminder |>
-  filter(year == 2007 & continent == "Europe") |>
-  slice_max(order_by = lifeExp, n = 5)
+  filter(year == 2007 & continent == "Americas") |>
+  slice_max(order_by = pop, n = 5)
 ```
 
 ```{r bar-chart-1}
 #| fig.alt = "A bar chart using sgplot theme and dark blue colour."
 
-ggplot(bar_data, aes(x = reorder(country, -lifeExp), y = lifeExp)) +
+ggplot(bar_data, aes(x = reorder(country, -pop), y = pop)) +
   geom_col(fill = sg_colour_values["dark-blue"]) +
   theme_sg() +
-  scale_y_continuous(expand = c(0, 0)) +
+  scale_y_continuous(
+    labels = \(x) x / 1e6,
+    limits = c(0, 3e8 * 1.02),
+    expand = c(0, 0)
+  ) +
   labs(
     x = NULL,
     y = NULL,
-    title = "Iceland has the highest life expectancy in Europe",
-    subtitle = "Life expectancy in European countries, 2007",
+    title = "The United States is the most populous country \nin the Americas",
+    subtitle = "Population of countries in the Americas (millions), 2007",
     caption = "Source: Gapminder"
   )
 ```
 
-A bar chart can sometimes look better with horizontal bars. This can also be a good option if your bar labels are long and difficult to display horizontally on the x axis. To produce a horizontal bar chart, swap the variables defined for x and y in `aes()` and make a few tweaks to `theme_sg()`; draw grid lines for the x axis only by setting the `grid` argument, and draw an axis line for the y axis only by setting the `axis` argument.
+A bar chart can sometimes look better with horizontal bars. This can also be a good option if your bar labels are long and difficult to display horizontally on the x-axis. To produce a horizontal bar chart, swap the variables defined for x and y in `aes()` and make a few tweaks to `theme_sg()`; draw grid lines for the x-axis only by setting the `grid` argument, and draw an axis line for the y-axis only by setting the `axis` argument.
 
 ```{r bar-chart-2}
 #| fig.alt = "A horizontal bar chart using sgplot theme and dark blue colour."
 
-ggplot(bar_data, aes(x = lifeExp, y = reorder(country, lifeExp))) +
+ggplot(bar_data, aes(x = pop, y = reorder(country, pop))) +
   geom_col(fill = sg_colour_values["dark-blue"]) +
   theme_sg(grid = "x", axis = "y") +
-  scale_x_continuous(expand = c(0, 0)) +
+  scale_x_continuous(
+    labels = \(x) x / 1e6,
+    limits = c(0, 3e8 * 1.02),
+    expand = c(0, 0)
+  ) +
   labs(
     x = NULL,
     y = NULL,
-    title = "Iceland has the highest life expectancy in Europe",
-    subtitle = "Life expectancy in European countries, 2007",
+    title = "The United States is the most populous country \nin the Americas",
+    subtitle = "Population of countries in the Americas (millions), 2007",
     caption = "Source: Gapminder"
   )
 ```
@@ -144,7 +152,7 @@ stacked_bar_data <-
 ggplot(stacked_bar_data,
        aes(x = continent, y = n_countries, fill = lifeExpGrouped)) +
   geom_bar(stat = "identity", position = "fill") +
-  theme_sg(legend = "bottom") +
+  theme_sg(legend = "right") +
   scale_y_continuous(expand = c(0, 0), labels = scales::percent) +
   coord_cartesian(clip = "off") +
   scale_fill_discrete_sg() +
@@ -189,7 +197,7 @@ gapminder |>
 
 gapminder |>
   filter(year == 2007) |>
-  ggplot(aes(x = gdpPercap, y = lifeExp, size = pop)) +
+  ggplot(aes(x = gdpPercap, y = lifeExp)) +
   geom_point(colour = sg_colour_values["dark-blue"]) +
   theme_sg(axis = "none", grid = "xy") +
   scale_x_continuous(
@@ -199,7 +207,6 @@ gapminder |>
   labs(
     x = "GDP",
     y = "Life\nExpectancy",
-    size = "Population",
     title = stringr::str_wrap(
       "The relationship between GDP and Life Expectancy is complex", 40
     ),
@@ -265,22 +272,26 @@ stacked_bar_data |>
 ## Focus charts
 
 ```{r focus-chart}
-#| fig.alt = "A bar chart with the bar for Sweden highlighted in dark blue and other bars in grey."
+#| fig.alt = "A bar chart with the bar for Brazil highlighted in dark blue and other bars in grey."
 
 bar_data |>
   ggplot(
-    aes(x = reorder(country, -lifeExp), y = lifeExp,
-        fill = country == "Sweden")
+    aes(x = reorder(country, -pop), y = pop,
+        fill = country == "Brazil")
   ) +
   geom_col() +
   theme_sg(legend = "none") +
-  scale_y_continuous(expand = c(0, 0)) +
+  scale_y_continuous(
+    labels = \(x) x / 1e6,
+    limits = c(0, 3e8 * 1.02),
+    expand = c(0, 0)
+  ) +
   scale_fill_discrete_sg("focus", reverse = TRUE) +
   labs(
     x = NULL,
     y = NULL,
-    title = "Sweden has the fourth highest life expectancy in Europe",
-    subtitle = "Life expectancy in European countries, 2007",
+    title = "Brazil has the second highest population in the Americas",
+    subtitle = "Population of countries in the Americas (millions), 2007",
     caption = "Source: Gapminder"
   )
 ```
@@ -302,13 +313,17 @@ p <-
   # Format text for tooltips
   mutate(tooltip = paste0(
     "Country: ", country, "\n",
-    "Life Expectancy: ", round(lifeExp, 1)
+    "Population: ", format(pop, big.mark = ",")
   )) |>
-  ggplot(aes(x = reorder(country, -lifeExp), y = lifeExp, text = tooltip)) +
+  ggplot(aes(x = reorder(country, -pop), y = pop, text = tooltip)) +
   geom_col(fill = sg_colour_values["dark-blue"]) +
   theme_sg(ticks = "x") +
   theme(text = element_text(family = "")) +
-  scale_y_continuous(expand = c(0, 0)) +
+  scale_y_continuous(
+    labels = \(x) x / 1e6,
+    limits = c(0, 3e8 * 1.02),
+    expand = c(0, 0)
+  ) +
   labs(
     x = NULL,
     y = NULL

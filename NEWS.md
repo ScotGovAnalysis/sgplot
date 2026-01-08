@@ -1,5 +1,9 @@
 # sgplot (development version)
 
+* Vignettes are converted to articles. Vignettes are now not available to view 
+locally and only via the 
+[pkgdown site](https://scotgovanalysis.github.io/sgplot/) (#66).
+
 * Add `quietly` argument to `use_sgplot()` to allow messages to be suppressed 
 (#67).
 
