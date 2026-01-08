@@ -21,6 +21,7 @@ Imports:
     scales
 Suggests:
     dplyr,
+    gapminder,
     gt,
     testthat (>= 2.1.0),
     tibble
