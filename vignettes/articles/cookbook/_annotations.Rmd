@@ -25,11 +25,11 @@ ann_data |>
   scale_x_continuous(limits = c(1952, 2017),
                      breaks = seq(1952, 2007, 5)) +
   geom_label(x = 2008, y = 73, label = "China",
-             hjust = 0, 
+             hjust = 0,
              vjust = 0.5,
              label.size = NA) +
   geom_label(x = 2008, y = 79.4, label = "United Kingdom",
-             hjust = 0, 
+             hjust = 0,
              vjust = 0.5,
              label.size = NA) +
   labs(
@@ -86,7 +86,7 @@ Annotations may also be used to add value labels to a bar chart. Note that `geom
 ggplot(bar_data, aes(x = reorder(country, -pop), y = pop)) +
   geom_col(fill = sg_colour_values["dark-blue"]) +
   geom_text(aes(label = format(pop, big.mark = ",")),
-            nudge_y = -max(bar_data$pop) * 0.05, 
+            nudge_y = -max(bar_data$pop) * 0.05,
             colour = "white") +
   theme_sg() +
   scale_y_continuous(

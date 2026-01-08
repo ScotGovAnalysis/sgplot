@@ -84,7 +84,7 @@ By default, a bar chart will have a gap between the bottom of the bars and the a
 ```{r expand}
 #| fig.alt = "A bar chart with no space between bottom of bars and x-axis."
 
-last_plot() + 
+last_plot() +
   scale_x_continuous(expand = c(0, 0))
 ```
 
@@ -161,7 +161,7 @@ This can be corrected as follows:
 ```{r clip-2, fig.height = 5.5}
 #| fig.alt = "A stacked bar chart with top gridline the same width as adjoining tick mark and other grid lines."
 
-last_plot() + 
+last_plot() +
   coord_cartesian(clip = "off")
 ```
 
@@ -176,11 +176,11 @@ To add a horizontal or vertical line across the whole plot, use `geom_hline()` o
 gapminder |>
   filter(country == "United Kingdom") |>
   ggplot(aes(x = year, y = lifeExp)) +
-  geom_hline(yintercept = 75, 
+  geom_hline(yintercept = 75,
              colour = sg_colour_values["grey"],
-             linewidth = 1, 
+             linewidth = 1,
              linetype = "longdash") +
-  geom_line(linewidth = 1, 
+  geom_line(linewidth = 1,
             colour = sg_colour_values["dark-blue"]) +
   annotate(geom = "text", x = 2007, y = 70, label = "Age 70") +
   theme_sg() +
