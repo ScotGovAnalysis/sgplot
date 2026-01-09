@@ -11,7 +11,8 @@ scale_colour_continuous_sg(
   reverse = FALSE,
   na.value = "grey50",
   guide = "colourbar",
-  ...
+  ...,
+  na_colour = deprecated()
 )
 
 scale_fill_continuous_sg(
@@ -20,7 +21,8 @@ scale_fill_continuous_sg(
   reverse = FALSE,
   na.value = "grey50",
   guide = "colourbar",
-  ...
+  ...,
+  na_colour = deprecated()
 )
 }
 \arguments{
@@ -38,6 +40,8 @@ reversed.}
 \item{guide}{A name or function used to create guide. Default is "colourbar".}
 
 \item{...}{Additional arguments passed to scale type.}
+
+\item{na_colour}{\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}} Use \code{na.value} instead.}
 }
 \value{
 ggplot2 continuous colour/fill scale
