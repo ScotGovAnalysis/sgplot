@@ -9,7 +9,7 @@ scale_colour_continuous_sg(
   palette = "sequential",
   palette_type = "sg",
   reverse = FALSE,
-  na_colour = "grey50",
+  na.value = "grey50",
   guide = "colourbar",
   ...
 )
@@ -18,7 +18,7 @@ scale_fill_continuous_sg(
   palette = "sequential",
   palette_type = "sg",
   reverse = FALSE,
-  na_colour = "grey50",
+  na.value = "grey50",
   guide = "colourbar",
   ...
 )
@@ -33,7 +33,7 @@ available palette types, run \code{available_palette_types()}.}
 \item{reverse}{Boolean value to indicate whether the palette should be
 reversed.}
 
-\item{na_colour}{Colour to set for missing values.}
+\item{na.value}{Colour to set for missing values.}
 
 \item{guide}{A name or function used to create guide. Default is "colourbar".}
 

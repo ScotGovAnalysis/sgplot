@@ -67,17 +67,17 @@ use_sgplot <- function(palette_type = "sg",
   # Use sgplot colour palette ----
 
   options(
-    ggplot2.continuous.fill = function() {
-      scale_fill_continuous_sg(palette_type = palette_type)
+    ggplot2.continuous.fill = function(...) {
+      scale_fill_continuous_sg(palette_type = palette_type, ...)
     },
-    ggplot2.continuous.colour = function() {
-      scale_colour_continuous_sg(palette_type = palette_type)
+    ggplot2.continuous.colour = function(...) {
+      scale_colour_continuous_sg(palette_type = palette_type, ...)
     },
-    ggplot2.discrete.fill = function() {
-      scale_fill_discrete_sg(palette_type = palette_type)
+    ggplot2.discrete.fill = function(...) {
+      scale_fill_discrete_sg(palette_type = palette_type, ...)
     },
-    ggplot2.discrete.colour = function() {
-      scale_colour_discrete_sg(palette_type = palette_type)
+    ggplot2.discrete.colour = function(...) {
+      scale_colour_discrete_sg(palette_type = palette_type, ...)
     }
   )
 
