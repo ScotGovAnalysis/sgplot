@@ -9,7 +9,7 @@
 
 colour_table <- function(pal) {
 
-  `%>%` <- dplyr::`%>%`
+  `%>%` <- dplyr::`%>%` # nolint: object_name_linter.
 
   tibble::enframe(pal) %>%
     dplyr::mutate(example = "") %>%

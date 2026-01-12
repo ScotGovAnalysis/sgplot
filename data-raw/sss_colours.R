@@ -1,4 +1,4 @@
-# Social Security Scotland (SSS) colours and palettes ----
+#' Social Security Scotland (SSS) colours and palettes
 
 sss_colour_values <- c(
   `navy` = "#201751",

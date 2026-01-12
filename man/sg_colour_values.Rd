@@ -11,7 +11,7 @@ An object of class \code{character} of length 11.
 An object of class \code{list} of length 4.
 }
 \source{
-\href{https://designsystem.gov.scot/guidance/charts/data-visualisation-colour-palettes}{Scottish Government Design System}
+\href{https://designsystem.gov.scot/guidance/charts/data-visualisation-colour-palettes}{Scottish Government Design System} # nolint: line_length_linter.
 }
 \usage{
 sg_colour_values
@@ -20,8 +20,8 @@ sg_colour_palettes
 }
 \description{
 \itemize{
-\item \code{sg_colour_values} is a vector containing colour names and their corresponding
-hex codes.
+\item \code{sg_colour_values} is a vector containing colour names and their
+corresponding hex codes.
 \item \code{sg_colour_palettes} is a list grouping colours into palettes.
 }
 }

@@ -11,7 +11,7 @@ An object of class \code{character} of length 12.
 An object of class \code{list} of length 4.
 }
 \source{
-Contact the \href{mailto:MI@socialsecurity.gov.scot}{Social Security Scotland Statistics mailbox}
+Contact the \href{mailto:MI@socialsecurity.gov.scot}{Social Security Scotland Statistics mailbox} # nolint: line_length_linter.
 with any queries about these colours and palettes.
 }
 \usage{
@@ -21,8 +21,8 @@ sss_colour_palettes
 }
 \description{
 \itemize{
-\item \code{sss_colour_values} is a vector containing colour names and their corresponding
-hex codes.
+\item \code{sss_colour_values} is a vector containing colour names and their
+corresponding hex codes.
 \item \code{sss_colour_palettes} is a list grouping colours into palettes.
 }
 }
