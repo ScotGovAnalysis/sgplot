@@ -1,5 +1,6 @@
 linters: linters_with_defaults(
-    pipe_consistency_linter(pipe = "auto")
+    pipe_consistency_linter(pipe = "auto"),
+    object_name_linter(styles = "snake_case", regexes = c("na\\.value"))
   )
 exclude: "^#| fig.alt = "
 encoding: "UTF-8"

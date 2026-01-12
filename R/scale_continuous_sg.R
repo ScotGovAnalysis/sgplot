@@ -2,9 +2,10 @@
 #'
 #' @param palette Name of palette to use; e.g. "main", "sequential", "focus".
 #' Default value is "sequential".
-#' @param na_colour Colour to set for missing values.
+#' @param na.value Colour to set for missing values.
 #' @param guide A name or function used to create guide. Default is "colourbar".
 #' @inheritParams scale_colour_discrete_sg
+#' @param na_colour `r lifecycle::badge('deprecated')` Use `na.value` instead.
 #'
 #' @returns ggplot2 continuous colour/fill scale
 #'
@@ -24,9 +25,19 @@
 scale_colour_continuous_sg <- function(palette = "sequential",
                                        palette_type = "sg",
                                        reverse = FALSE,
-                                       na_colour = "grey50",
+                                       na.value = "grey50",
                                        guide = "colourbar",
-                                       ...) {
+                                       ...,
+                                       na_colour = deprecated()) {
+
+  if (lifecycle::is_present(na_colour)) {
+    lifecycle::deprecate_warn(
+      when = "0.4.0",
+      what = "scale_colour_continuous_sg(na_colour)",
+      with = "scale_colour_continuous_sg(na.value)"
+    )
+    na.value <- na_colour
+  }
 
   colours <-
     sg_palette(palette = palette,
@@ -36,7 +47,7 @@ scale_colour_continuous_sg <- function(palette = "sequential",
   ggplot2::continuous_scale(
     aesthetics = "colour",
     palette    = scales::gradient_n_pal(colours, values = NULL, "Lab"),
-    na.value   = na_colour,
+    na.value   = na.value,
     guide      = guide,
     ...
   )
@@ -49,9 +60,19 @@ scale_colour_continuous_sg <- function(palette = "sequential",
 scale_fill_continuous_sg <- function(palette = "sequential",
                                      palette_type = "sg",
                                      reverse = FALSE,
-                                     na_colour = "grey50",
+                                     na.value = "grey50",
                                      guide = "colourbar",
-                                     ...) {
+                                     ...,
+                                     na_colour = deprecated()) {
+
+  if (lifecycle::is_present(na_colour)) {
+    lifecycle::deprecate_warn(
+      when = "0.4.0",
+      what = "scale_fill_continuous_sg(na_colour)",
+      with = "scale_fill_continuous_sg(na.value)"
+    )
+    na.value <- na_colour
+  }
 
   colours <-
     sg_palette(palette = palette,
@@ -61,7 +82,7 @@ scale_fill_continuous_sg <- function(palette = "sequential",
   ggplot2::continuous_scale(
     aesthetics = "fill",
     palette    = scales::gradient_n_pal(colours, values = NULL, "Lab"),
-    na.value   = na_colour,
+    na.value   = na.value,
     guide      = guide,
     ...
   )

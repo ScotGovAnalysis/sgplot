@@ -9,18 +9,20 @@ scale_colour_continuous_sg(
   palette = "sequential",
   palette_type = "sg",
   reverse = FALSE,
-  na_colour = "grey50",
+  na.value = "grey50",
   guide = "colourbar",
-  ...
+  ...,
+  na_colour = deprecated()
 )
 
 scale_fill_continuous_sg(
   palette = "sequential",
   palette_type = "sg",
   reverse = FALSE,
-  na_colour = "grey50",
+  na.value = "grey50",
   guide = "colourbar",
-  ...
+  ...,
+  na_colour = deprecated()
 )
 }
 \arguments{
@@ -33,11 +35,13 @@ available palette types, run \code{available_palette_types()}.}
 \item{reverse}{Boolean value to indicate whether the palette should be
 reversed.}
 
-\item{na_colour}{Colour to set for missing values.}
+\item{na.value}{Colour to set for missing values.}
 
 \item{guide}{A name or function used to create guide. Default is "colourbar".}
 
 \item{...}{Additional arguments passed to scale type.}
+
+\item{na_colour}{\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}} Use \code{na.value} instead.}
 }
 \value{
 ggplot2 continuous colour/fill scale
