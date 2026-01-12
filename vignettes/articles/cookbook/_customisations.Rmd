@@ -6,9 +6,7 @@ Note that `theme_sg()` has arguments to control the legend position and appearan
 
 Customisations will be made to the following basic horizontal bar chart:
 
-```{r before-customisation}
-#| fig.alt = "A horizontal bar chart using sgplot theme and dark blue colour."
-
+```{r before-customisation, fig.alt = "A horizontal bar chart using sgplot theme and dark blue colour."}
 bar_data |>
   ggplot(aes(x = pop, y = country)) +
   geom_col(fill = sg_colour_values["dark-blue"]) +
@@ -20,9 +18,7 @@ bar_data |>
 
 To control the order of bars in a chart, wrap the variable you want to arrange with `reorder()` and specify what variable you want to sort by. The following example sorts bars in ascending order of life expectancy. To sort in descending order, you would change this to `reorder(country, desc(lifeExp))`.
 
-```{r sorting}
-#| fig.alt = "A horizontal bar chart using sgplot theme and dark blue colour with bars sorted in decreasing order by population."
-
+```{r sorting, fig.alt = "A horizontal bar chart using sgplot theme and dark blue colour with bars sorted in decreasing order by population."}
 bar_data |>
   ggplot(aes(x = pop, y = reorder(country, pop))) +
   geom_col(fill = sg_colour_values["dark-blue"]) +
@@ -36,9 +32,7 @@ Chart titles such as the main title, subtitle, caption, axis titles and legend t
 
 Remember that it is [best practice to provide chart titles and subtitles in the main body of text](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/#section-5), rather than embedded in the chart. 
 
-```{r chart-titles}
-#| fig.alt = "A bar chart with title, subtitle and caption. The axis titles have been removed. The main title is too long and the end is cut off."
-
+```{r chart-titles, fig.alt = "A bar chart with title, subtitle and caption. The axis titles have been removed. The main title is too long and the end is cut off."}
 last_plot() +
   labs(
     x = NULL,
@@ -53,9 +47,7 @@ If text is too long, it may be cut off or distort the dimensions of the chart. T
 
 Insert `\n` within a string to force a line break:
 
-```{r text-wrap-1}
-#| fig.alt = "A bar chart with main title and y-axis title text wrapped onto two lines."
-
+```{r text-wrap-1, fig.alt = "A bar chart with main title and y-axis title text wrapped onto two lines."}
 last_plot() +
   labs(
     title = "The United States is the most populous country \nin the Americas"
@@ -64,9 +56,7 @@ last_plot() +
 
 Use `stringr::str_wrap()` to set a maximum character width of the string:
 
-```{r text-wrap-2}
-#| fig.alt = "A bar chart with main title and y-axis title text wrapped onto two lines."
-
+```{r text-wrap-2, fig.alt = "A bar chart with main title and y-axis title text wrapped onto two lines."}
 last_plot() +
   labs(
     title = stringr::str_wrap(
@@ -81,9 +71,7 @@ last_plot() +
 
 By default, a bar chart will have a gap between the bottom of the bars and the axis. This can be removed as follows:
 
-```{r expand}
-#| fig.alt = "A bar chart with no space between bottom of bars and x-axis."
-
+```{r expand, fig.alt = "A bar chart with no space between bottom of bars and x-axis."}
 last_plot() +
   scale_x_continuous(expand = c(0, 0))
 ```
@@ -97,9 +85,7 @@ Axis limits, breaks and labels for continuous variables can be controlled using 
 
 Note that further calls to `scale_x/y_continuous` will overwrite previous calls, hence why `expand = c(0, 0)` has been included again in these examples.
 
-```{r axis-limits-breaks-labels}
-#| fig.alt = "A bar chart with more x-axis breaks and formatted labels. The last label is suffixed with 'million'."
-
+```{r axis-limits-breaks-labels, fig.alt = "A bar chart with more x-axis breaks and formatted labels. The last label is suffixed with 'million'."}
 last_plot() +
   scale_x_continuous(expand = c(0, 0),
                      limits = c(0, 3e8 * 1.1),
@@ -109,9 +95,7 @@ last_plot() +
 
 Labels can also be formatted using a function. The `{scales}` package provides many convenient functions for this, and can handle percentages, currency and thousands separators. 
 
-```{r scales-pkg}
-#| fig.alt = "A bar chart with fewer x-axis breaks and labels formatted with comma thousands separators."
-
+```{r scales-pkg, fig.alt = "A bar chart with fewer x-axis breaks and labels formatted with comma thousands separators."}
 last_plot() +
   scale_x_continuous(expand = c(0, 0),
                      limits = c(0, 3e8 * 1.1),
@@ -124,9 +108,7 @@ last_plot() +
 
 If you find you need to adjust theme elements for your chart, this can be done using `theme()`. Note that this should be done after the call to `theme_sg()`, otherwise `theme_sg()` may overwrite the specifications you've made.
 
-```{r adjust-theme}
-#| fig.alt = "A bar chart using sgplot theme and dark blue colour, with y-axis lines and ticks coloured black."
-
+```{r adjust-theme, fig.alt = "A bar chart using sgplot theme and dark blue colour, with y-axis lines and ticks coloured black."}
 last_plot() +
   theme(axis.line.y = element_line(colour = "black"),
         axis.ticks.y = element_line(colour = "black"))
@@ -137,9 +119,7 @@ last_plot() +
 
 Axis lines and grid lines can sometimes appear 'cut off' if they are drawn at the limits of the chart range. You can see in the following example that the top grid line is slightly narrower than the adjacent tick mark on the y-axis. This is because the y-axis limit is 100%. As the grid line is centred at 100%, the top half of the line is 'cut off'.
 
-```{r clip-1, fig.height = 5.5}
-#| fig.alt = "A stacked bar chart with top gridline is half the width of the adjoining tick mark and other grid lines."
-
+```{r clip-1, fig.height = 5.5, fig.alt = "A stacked bar chart with top gridline is half the width of the adjoining tick mark and other grid lines."}
 stacked_bar_data |>
   ggplot(aes(x = continent, y = n_countries, fill = lifeExpGrouped)) +
   geom_bar(stat = "identity", position = "fill") +
@@ -158,9 +138,7 @@ stacked_bar_data |>
 
 This can be corrected as follows:
 
-```{r clip-2, fig.height = 5.5}
-#| fig.alt = "A stacked bar chart with top gridline the same width as adjoining tick mark and other grid lines."
-
+```{r clip-2, fig.height = 5.5, fig.alt = "A stacked bar chart with top gridline the same width as adjoining tick mark and other grid lines."}
 last_plot() +
   coord_cartesian(clip = "off")
 ```
@@ -170,9 +148,7 @@ last_plot() +
 
 To add a horizontal or vertical line across the whole plot, use `geom_hline()` or `geom_vline()`. This can be useful to highlight a threshold or average level.
 
-```{r add-a-line}
-#| fig.alt = "A line chart with dashed, grey horizontal line at age 75."
-
+```{r add-a-line, fig.alt = "A line chart with dashed, grey horizontal line at age 75."}
 gapminder |>
   filter(country == "United Kingdom") |>
   ggplot(aes(x = year, y = lifeExp)) +

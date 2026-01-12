@@ -11,9 +11,7 @@ ann_data <- gapminder |>
   filter(country %in% c("United Kingdom", "China"))
 ```
 
-```{r annotations-1}
-#| fig.alt = "A multiple line chart  using sgplot theme and main2 palette with lines labelled."
-
+```{r annotations-1, fig.alt = "A multiple line chart using sgplot theme and main2 palette with lines labelled."}
 ann_data |>
   ggplot() +
   geom_line(aes(x = year, y = lifeExp, colour = country), linewidth = 1) +
@@ -45,9 +43,7 @@ However, this makes the code difficult to reuse as values are hard coded and not
 
 One way to automate this is to create a supplementary data frame with desired co-ordinates of the labels (see `ann_labs` in the example below). `nudge` arguments can be used to displace text to improve the positioning.
 
-```{r annotations-2}
-#| fig.alt = "A multiple line chart  using sgplot theme and main2 palette with lines labelled."
-
+```{r annotations-2, fig.alt = "A multiple line chart using sgplot theme and main2 palette with lines labelled."}
 ann_labs <- ann_data |>
   group_by(country) |>
   filter(year == max(year)) |>
@@ -80,9 +76,7 @@ ann_data |>
 
 Annotations may also be used to add value labels to a bar chart. Note that `geom_text()` is used here as a background is not required.
 
-```{r annotations-3}
-#| fig.alt = "A bar chart with white text labels at the end of each bar."
-
+```{r annotations-3, fig.alt = "A bar chart with white text labels at the end of each bar."}
 ggplot(bar_data, aes(x = reorder(country, -pop), y = pop)) +
   geom_col(fill = sg_colour_values["dark-blue"]) +
   geom_text(aes(label = format(pop, big.mark = ",")),

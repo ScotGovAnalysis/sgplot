@@ -17,9 +17,7 @@ The full list of available palettes can be found by running either `sgplot::sg_c
 
 To use the Scottish Government `main-extended` palette:
 
-```{r main-extended, fig.height = 5}
-#| fig.alt = "A multiple line chart using sgplot theme and SG main-extended colour palette."
-
+```{r main-extended, fig.height = 5, fig.alt = "A multiple line chart using sgplot theme and SG main-extended colour palette."}
 gapminder |>
   filter(country %in% c("United Kingdom", "China", "India",
                         "Sweden", "Namibia", "Brazil")) |>
@@ -46,9 +44,7 @@ Note: This chart is for demonstration purposes only. Accessibility guidance reco
 To use an Analysis Function palette, set `palette_type = "af"` when using any of the `scale_` [colour functions](../reference/index.html#colour-scales). 
 For example, to use the Analysis Function `main2` palette:
 
-```{r af-palette, fig.height = 5}
-#| fig.alt = "A multiple line chart using sgplot theme and AF main colour palette."
-
+```{r af-palette, fig.height = 5, fig.alt = "A multiple line chart using sgplot theme and AF main colour palette."}
 gapminder |>
   filter(country %in% c("United Kingdom", "China")) |>
   ggplot(aes(x = year, y = lifeExp, colour = country)) +
@@ -76,9 +72,7 @@ There may be instances where you'd like to use a colour palette that is not avai
 If so, this should be carefully considered to ensure it meets accessibility requirements. 
 The Analysis Function guidance outlines [appropriate steps for choosing your own accessible colour palette](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/#section-9) and should be used.
 
-```{r different-colour-palette-1}
-#| fig.alt = "A line chart using sgplot theme and first colour from custom palette."
-
+```{r different-colour-palette-1, fig.alt = "A line chart using sgplot theme and first colour from custom palette."}
 my_palette <- c("#0F820D", "#000000")
 
 gapminder |>
@@ -99,9 +93,7 @@ gapminder |>
   )
 ```
 
-```{r different-colour-palette-2, fig.height = 5.5}
-#| fig.alt = "A multiple line chart using sgplot theme and colours from custom palette."
-
+```{r different-colour-palette-2, fig.height = 5.5, fig.alt = "A multiple line chart using sgplot theme and colours from custom palette."}
 gapminder |>
   filter(country %in% c("United Kingdom", "China")) |>
   ggplot(aes(x = year, y = lifeExp, colour = country)) +

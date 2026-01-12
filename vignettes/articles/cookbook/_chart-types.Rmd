@@ -2,9 +2,7 @@
 
 ### Line chart with one line
 
-```{r line-charts-1}
-#| fig.alt = "A line chart using sgplot theme and dark blue colour."
-
+```{r line-charts-1, fig.alt = "A line chart using sgplot theme and dark blue colour."}
 gapminder |>
   filter(country == "United Kingdom") |>
   ggplot(aes(x = year, y = lifeExp)) +
@@ -25,9 +23,7 @@ gapminder |>
 
 ### Line chart with multiple lines
 
-```{r line-charts-2, fig.height = 5}
-#| fig.alt = "A multiple line chart using sgplot theme and main colour palette."
-
+```{r line-charts-2, fig.height = 5, fig.alt = "A multiple line chart using sgplot theme and main colour palette."}
 gapminder |>
   filter(country %in% c("United Kingdom", "China")) |>
   ggplot(aes(x = year, y = lifeExp, colour = country)) +
@@ -60,9 +56,7 @@ bar_data <-
   slice_max(order_by = pop, n = 5)
 ```
 
-```{r bar-chart-1}
-#| fig.alt = "A bar chart using sgplot theme and dark blue colour."
-
+```{r bar-chart-1, fig.alt = "A bar chart using sgplot theme and dark blue colour."}
 ggplot(bar_data, aes(x = reorder(country, -pop), y = pop)) +
   geom_col(fill = sg_colour_values["dark-blue"]) +
   theme_sg() +
@@ -82,9 +76,7 @@ ggplot(bar_data, aes(x = reorder(country, -pop), y = pop)) +
 
 A bar chart can sometimes look better with horizontal bars. This can also be a good option if your bar labels are long and difficult to display horizontally on the x-axis. To produce a horizontal bar chart, swap the variables defined for x and y in `aes()` and make a few tweaks to `theme_sg()`; draw grid lines for the x-axis only by setting the `grid` argument, and draw an axis line for the y-axis only by setting the `axis` argument.
 
-```{r bar-chart-2}
-#| fig.alt = "A horizontal bar chart using sgplot theme and dark blue colour."
-
+```{r bar-chart-2, fig.alt = "A horizontal bar chart using sgplot theme and dark blue colour."}
 ggplot(bar_data, aes(x = pop, y = reorder(country, pop))) +
   geom_col(fill = sg_colour_values["dark-blue"]) +
   theme_sg(grid = "x", axis = "y") +
@@ -107,9 +99,7 @@ ggplot(bar_data, aes(x = pop, y = reorder(country, pop))) +
 
 To create a grouped bar chart, set `stat = "identity"` and `position = "dodge"` in the call to `geom_bar()`. Also assign a variable to `fill` within `aes()` to determine what variable is used to create bars within groups. The `legend` argument in `theme_sg()` can be used to set the position of the legend.
 
-```{r grouped-bar-chart, fig.height = 5.5}
-#| fig.alt = "A grouped bar chart using sgplot theme and colours from main palette"
-
+```{r grouped-bar-chart, fig.height = 5.5, fig.alt = "A grouped bar chart using sgplot theme and colours from main palette"}
 grouped_bar_data <-
   gapminder |>
   filter(year %in% c(1967, 2007) &
@@ -137,9 +127,7 @@ To create a stacked bar chart, set `stat = "identity` and `position = "fill"` in
 
 Caution should be taken when producing stacked bar charts. They can quickly become difficult to interpret if plotting non part-to-whole data, and/or if plotting more than two categories per stack. First and last categories in the stack will always be easier to compare across bars than those in the middle. Think carefully about the story you are trying to tell with your chart.
 
-```{r stacked-bar-chart, fig.height = 5.5}
-#| fig.alt = "A stacked bar chart using sgplot theme and colours from main palette"
-
+```{r stacked-bar-chart, fig.height = 5.5, fig.alt = "A stacked bar chart using sgplot theme and colours from main palette."}
 stacked_bar_data <-
   gapminder |>
   filter(year == 2007) |>
@@ -169,9 +157,7 @@ ggplot(stacked_bar_data,
 
 ## Histograms
 
-```{r histogram}
-#| fig.alt = "A histogram with sgplot theme and dark blue colour."
-
+```{r histogram, fig.alt = "A histogram with sgplot theme and dark blue colour."}
 gapminder |>
   filter(year == 2007) |>
   ggplot(aes(x = lifeExp)) +
@@ -192,9 +178,7 @@ gapminder |>
 
 ## Scatterplots
 
-```{r scatterplot, fig.height = 5}
-#| fig.alt = "A scatterplot using sgplot theme and dark blue colour."
-
+```{r scatterplot, fig.height = 5, fig.alt = "A scatterplot using sgplot theme and dark blue colour."}
 gapminder |>
   filter(year == 2007) |>
   ggplot(aes(x = gdpPercap, y = lifeExp)) +
@@ -218,9 +202,7 @@ gapminder |>
 
 ## Small multiples
 
-```{r small-multiples, fig.height = 5.5}
-#| fig.alt = "A small multiples area chart using sgplot theme and main colour palette."
-
+```{r small-multiples, fig.height = 5.5, fig.alt = "A small multiples area chart using sgplot theme and main colour palette."}
 gapminder |>
   filter(continent != "Oceania") |>
   group_by(continent, year) |>
@@ -246,9 +228,7 @@ gapminder |>
 
 ## Pie charts
 
-```{r pie-chart}
-#| fig.alt = "A pie chart using sgplot theme and main palette."
-
+```{r pie-chart, fig.alt = "A pie chart using sgplot theme and main palette."}
 stacked_bar_data |>
   filter(continent == "Europe") |>
   ggplot(aes(x = "", y = n_countries, fill = lifeExpGrouped)) +
@@ -271,9 +251,7 @@ stacked_bar_data |>
 
 ## Focus charts
 
-```{r focus-chart}
-#| fig.alt = "A bar chart with the bar for Brazil highlighted in dark blue and other bars in grey."
-
+```{r focus-chart, fig.alt = "A bar chart with the bar for Brazil highlighted in dark blue and other bars in grey."}
 bar_data |>
   ggplot(
     aes(x = reorder(country, -pop), y = pop,
@@ -305,9 +283,7 @@ To make a `ggplot2` chart interactive, use `ggplotly()` from the `plotly` packag
 
 * Subtitles and captions are not supported in `ggplotly()`. As stated elsewhere in this guidance, titles and subtitles should ideally be included in the body of text surrounding a chart rather than embedded in the chart itself, and so this is hopefully not a big issue. This example therefore has no title, subtitle or caption.
 
-```{r interactive-charts}
-#| fig.alt = "An interactive bar chart using sgplot theme and dark blue colour. A tooltip appears when hovering over each bar."
-
+```{r interactive-charts, fig.alt = "An interactive bar chart using sgplot theme and dark blue colour. A tooltip appears when hovering over each bar."}
 p <-
   bar_data |>
   # Format text for tooltips
