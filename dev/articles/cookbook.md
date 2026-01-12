@@ -238,7 +238,7 @@ ggplot(stacked_bar_data,
 ```
 
 ![A stacked bar chart using sgplot theme and colours from main
-palette](cookbook_files/figure-html/stacked-bar-chart-1.svg)
+palette.](cookbook_files/figure-html/stacked-bar-chart-1.svg)
 
 ## Histograms
 

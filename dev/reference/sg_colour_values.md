@@ -23,3 +23,4 @@ An object of class `list` of length 4.
 
 [Scottish Government Design
 System](https://designsystem.gov.scot/guidance/charts/data-visualisation-colour-palettes)
+\# nolint: line_length_linter.

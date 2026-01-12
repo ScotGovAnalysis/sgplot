@@ -22,5 +22,5 @@ An object of class `list` of length 4.
 ## Source
 
 Contact the [Social Security Scotland Statistics
-mailbox](mailto:MI@socialsecurity.gov.scot) with any queries about these
-colours and palettes.
+mailbox](mailto:MI@socialsecurity.gov.scot) \# nolint:
+line_length_linter. with any queries about these colours and palettes.

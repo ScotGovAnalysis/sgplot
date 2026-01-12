@@ -23,3 +23,4 @@ An object of class `list` of length 5.
 
 [Government Analysis Function Colours
 Guidance](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/)
+\# nolint: line_length_linter.
