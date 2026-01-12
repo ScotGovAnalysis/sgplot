@@ -2,6 +2,12 @@
 
 ## sgplot (development version)
 
+- Deprecate `na_colour` arguments in
+  [`scale_fill_continuous_sg()`](https://ScotGovAnalysis.github.io/sgplot/dev/reference/scale_colour_continuous_sg.md)/
+  [`scale_colour_continuous_sg()`](https://ScotGovAnalysis.github.io/sgplot/dev/reference/scale_colour_continuous_sg.md)
+  functions in favour of new argument, `na.value`
+  ([\#73](https://github.com/ScotGovAnalysis/sgplot/issues/73)).
+
 - Vignettes are converted to articles. Vignettes are now not available
   to view locally and only via the [pkgdown
   site](https://scotgovanalysis.github.io/sgplot/)

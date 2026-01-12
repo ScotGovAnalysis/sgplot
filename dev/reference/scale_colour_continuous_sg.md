@@ -9,18 +9,20 @@ scale_colour_continuous_sg(
   palette = "sequential",
   palette_type = "sg",
   reverse = FALSE,
-  na_colour = "grey50",
+  na.value = "grey50",
   guide = "colourbar",
-  ...
+  ...,
+  na_colour = deprecated()
 )
 
 scale_fill_continuous_sg(
   palette = "sequential",
   palette_type = "sg",
   reverse = FALSE,
-  na_colour = "grey50",
+  na.value = "grey50",
   guide = "colourbar",
-  ...
+  ...,
+  na_colour = deprecated()
 )
 ```
 
@@ -41,7 +43,7 @@ scale_fill_continuous_sg(
 
   Boolean value to indicate whether the palette should be reversed.
 
-- na_colour:
+- na.value:
 
   Colour to set for missing values.
 
@@ -52,6 +54,10 @@ scale_fill_continuous_sg(
 - ...:
 
   Additional arguments passed to scale type.
+
+- na_colour:
+
+  **\[deprecated\]** Use `na.value` instead.
 
 ## Value
 
