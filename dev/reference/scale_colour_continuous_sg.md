@@ -57,7 +57,7 @@ scale_fill_continuous_sg(
 
 - na_colour:
 
-  **\[deprecated\]** Use `na.value` instead.
+  **\[deprecated\]** Use the `na.value` argument instead.
 
 ## Value
 
