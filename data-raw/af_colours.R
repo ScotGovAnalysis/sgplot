@@ -1,6 +1,5 @@
-# Government Analysis Function (AF) colours and palettes
-# Source: https://analysisfunction.civilservice.gov.uk/policy-store/
-#   data-visualisation-colours-in-charts/
+#' Government Analysis Function (AF) colours and palettes
+#' Source: https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/ # nolint: line_length_linter.
 
 af_colour_values <- c(
   `dark-blue`    = "#12436D",
