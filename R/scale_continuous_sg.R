@@ -5,7 +5,8 @@
 #' @param na.value Colour to set for missing values.
 #' @param guide A name or function used to create guide. Default is "colourbar".
 #' @inheritParams scale_colour_discrete_sg
-#' @param na_colour `r lifecycle::badge('deprecated')` Use `na.value` instead.
+#' @param na_colour `r lifecycle::badge('deprecated')` Use the `na.value`
+#'  argument instead.
 #'
 #' @returns ggplot2 continuous colour/fill scale
 #'
@@ -32,7 +33,7 @@ scale_colour_continuous_sg <- function(palette = "sequential",
 
   if (lifecycle::is_present(na_colour)) {
     lifecycle::deprecate_warn(
-      when = "0.4.0",
+      when = "0.5.0",
       what = "scale_colour_continuous_sg(na_colour)",
       with = "scale_colour_continuous_sg(na.value)"
     )
@@ -67,7 +68,7 @@ scale_fill_continuous_sg <- function(palette = "sequential",
 
   if (lifecycle::is_present(na_colour)) {
     lifecycle::deprecate_warn(
-      when = "0.4.0",
+      when = "0.5.0",
       what = "scale_fill_continuous_sg(na_colour)",
       with = "scale_fill_continuous_sg(na.value)"
     )

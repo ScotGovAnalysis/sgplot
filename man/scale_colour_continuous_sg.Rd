@@ -41,7 +41,8 @@ reversed.}
 
 \item{...}{Additional arguments passed to scale type.}
 
-\item{na_colour}{\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}} Use \code{na.value} instead.}
+\item{na_colour}{\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}} Use the \code{na.value}
+argument instead.}
 }
 \value{
 ggplot2 continuous colour/fill scale
