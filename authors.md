@@ -15,7 +15,7 @@
 ## Citation
 
 Source:
-[`DESCRIPTION`](https://github.com/ScotGovAnalysis/sgplot/blob/main/DESCRIPTION)
+[`DESCRIPTION`](https://github.com/ScotGovAnalysis/sgplot/blob/v0.5.0/DESCRIPTION)
 
 Hannah A (2026). *sgplot: Graphic Styles and Colours for Scottish
 Government Plots*. R package version 0.5.0,
