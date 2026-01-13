@@ -1,20 +1,18 @@
-# sgplot (development version)
+# sgplot 0.5.0
 
-* Deprecate `na_colour` arguments in `scale_fill_continuous_sg()`/
-`scale_colour_continuous_sg()` functions in favour of new argument, `na.value` 
+* `use_sgplot()` gains a `quietly` argument to allow messages to be suppressed 
+(#67).
+
+* `na_colour` arguments are deprecated in `scale_fill_continuous_sg()`/
+`scale_colour_continuous_sg()` in favour of new argument, `na.value` 
 (#73).
+
+* Fixed bug where `use_sgplot()` could not handle passing multiple arguments of
+different types to `theme_sg()` (#63).
 
 * Vignettes are converted to articles. Vignettes are now not available to view 
 locally and only via the 
 [pkgdown site](https://scotgovanalysis.github.io/sgplot/) (#66).
-
-* Add `quietly` argument to `use_sgplot()` to allow messages to be suppressed 
-(#67).
-
-* Set minimum version of ggplot (>= 3.5.0) (#62).
-
-* Fix bug where `use_sgplot()` could not handle passing multiple arguments of
-different types to `theme_sg()` (#63).
 
 # sgplot 0.4.0
 
