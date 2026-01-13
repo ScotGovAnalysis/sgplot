@@ -30,7 +30,7 @@
 
     <a class="navbar-brand me-2" href="index.html">sgplot</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">0.4.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">0.5.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -70,7 +70,6 @@
 </div>
 <!-- badges: start -->
 
-<!-- badges: end -->
 <p>sgplot is an R package for creating accessible plots in the Scottish Government. Currently, functions are available for styling ggplot2 plots.</p>
 <p>The package has been developed using the <a href="https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/" class="external-link">Government Analysis Function Data Visualisation guidance</a> and uses accessible colour palettes from the <a href="https://designsystem.gov.scot/guidance/charts/data-visualisation-colour-palettes" class="external-link">Scottish Government Design System</a>. sgplot should be used in conjunction with these guidance documents.</p>
 <p>More information about the package and its functions can be found on the <a href="https://ScotGovAnalysis.github.io/sgplot/">sgplot website</a>. In particular, the <a href="https://ScotGovAnalysis.github.io/sgplot/articles/cookbook.html">cookbook</a> contains lots of examples. Slides are also available for an internal <a href="https://alice-hannah.github.io/presentations-and-blogs/2023-06-19_sgplot/slides.html" class="external-link">presentation given to statisticians and analysts</a>.</p>
@@ -95,7 +94,7 @@
 </h2>
 <p>Once installed, sgplot can be loaded using the <code><a href="https://rdrr.io/r/base/library.html" class="external-link">library()</a></code> function:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ScotGovAnalysis/sgplot/" class="external-link">sgplot</a></span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ScotGovAnalysis.github.io/sgplot/">sgplot</a></span><span class="op">)</span></span></code></pre></div>
 <p>Help files for each function in the package can be found on the <a href="https://ScotGovAnalysis.github.io/sgplot/reference/">References</a> page of the package website. Alternatively, type <code>?function_name</code> into the RStudio console. For example:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="op">?</span><span class="fu"><a href="reference/theme_sg.html">theme_sg</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
@@ -107,21 +106,25 @@
 <h4 id="example-1-plot-with-one-colour-using-ggplot2-defaults">Example 1: Plot with one colour using ggplot2 defaults<a class="anchor" aria-label="anchor" href="#example-1-plot-with-one-colour-using-ggplot2-defaults"></a>
 </h4>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ScotGovAnalysis.github.io/sgplot/">sgplot</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jennybc/gapminder" class="external-link">gapminder</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="fl">2007</span> <span class="op">&amp;</span> <span class="va">continent</span> <span class="op">==</span> <span class="st">"Europe"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html" class="external-link">slice_max</a></span><span class="op">(</span>order_by <span class="op">=</span> <span class="va">lifeExp</span>, n <span class="op">=</span> <span class="fl">5</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="fl">2007</span> <span class="op">&amp;</span> <span class="va">continent</span> <span class="op">==</span> <span class="st">"Americas"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html" class="external-link">slice_max</a></span><span class="op">(</span>order_by <span class="op">=</span> <span class="va">pop</span>, n <span class="op">=</span> <span class="fl">5</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html" class="external-link">geom_col</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/reorder.factor.html" class="external-link">reorder</a></span><span class="op">(</span><span class="va">country</span>, <span class="op">-</span><span class="va">lifeExp</span><span class="op">)</span>, y <span class="op">=</span> <span class="va">lifeExp</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html" class="external-link">scale_y_continuous</a></span><span class="op">(</span>expand <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">0</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html" class="external-link">geom_col</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/reorder.factor.html" class="external-link">reorder</a></span><span class="op">(</span><span class="va">country</span>, <span class="op">-</span><span class="va">pop</span><span class="op">)</span>, y <span class="op">=</span> <span class="va">pop</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html" class="external-link">scale_y_continuous</a></span><span class="op">(</span></span>
+<span>    labels <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org/reference/label_number.html" class="external-link">label_number</a></span><span class="op">(</span>scale <span class="op">=</span> <span class="fl">1E-6</span><span class="op">)</span>,</span>
+<span>    expand <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">0</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span></span>
 <span>    x <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>    y <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>    title <span class="op">=</span> <span class="st">"Iceland has the highest life expectancy in Europe"</span>,</span>
-<span>    subtitle <span class="op">=</span> <span class="st">"Life expectancy in European countries, 2007"</span>,</span>
+<span>    title <span class="op">=</span> <span class="st">"The United States is the most populous country in the Americas"</span>,</span>
+<span>    subtitle <span class="op">=</span> <span class="st">"Population of countries in the Americas (millions), 2007"</span>,</span>
 <span>    caption <span class="op">=</span> <span class="st">"Source: Gapminder"</span></span>
 <span>  <span class="op">)</span></span></code></pre></div>
 <p><img src="reference/figures/README-ex1-1.svg" alt="A bar chart with grey background, white grid lines and dark grey bars."></p>
@@ -133,22 +136,35 @@
 <code class="sourceCode R"><span><span class="fu">sgplot</span><span class="fu">::</span><span class="fu"><a href="reference/use_sgplot.html">use_sgplot</a></span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="fl">2007</span> <span class="op">&amp;</span> <span class="va">continent</span> <span class="op">==</span> <span class="st">"Europe"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html" class="external-link">slice_max</a></span><span class="op">(</span>order_by <span class="op">=</span> <span class="va">lifeExp</span>, n <span class="op">=</span> <span class="fl">5</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="fl">2007</span> <span class="op">&amp;</span> <span class="va">continent</span> <span class="op">==</span> <span class="st">"Americas"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html" class="external-link">slice_max</a></span><span class="op">(</span>order_by <span class="op">=</span> <span class="va">pop</span>, n <span class="op">=</span> <span class="fl">5</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html" class="external-link">geom_col</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/reorder.factor.html" class="external-link">reorder</a></span><span class="op">(</span><span class="va">country</span>, <span class="op">-</span><span class="va">lifeExp</span><span class="op">)</span>, y <span class="op">=</span> <span class="va">lifeExp</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html" class="external-link">scale_y_continuous</a></span><span class="op">(</span>expand <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">0</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html" class="external-link">geom_col</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/reorder.factor.html" class="external-link">reorder</a></span><span class="op">(</span><span class="va">country</span>, <span class="op">-</span><span class="va">pop</span><span class="op">)</span>, y <span class="op">=</span> <span class="va">pop</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html" class="external-link">scale_y_continuous</a></span><span class="op">(</span></span>
+<span>    labels <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org/reference/label_number.html" class="external-link">label_number</a></span><span class="op">(</span>scale <span class="op">=</span> <span class="fl">1E-6</span><span class="op">)</span>,</span>
+<span>    expand <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">0</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span></span>
 <span>    x <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>    y <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>    title <span class="op">=</span> <span class="st">"Iceland has the highest life expectancy in Europe"</span>,</span>
-<span>    subtitle <span class="op">=</span> <span class="st">"Life expectancy in European countries, 2007"</span>,</span>
+<span>    title <span class="op">=</span> <span class="st">"The United States is the most populous country \nin the Americas"</span>,</span>
+<span>    subtitle <span class="op">=</span> <span class="st">"Population of countries in the Americas (millions), 2007"</span>,</span>
 <span>    caption <span class="op">=</span> <span class="st">"Source: Gapminder"</span></span>
 <span>  <span class="op">)</span></span></code></pre></div>
 <p><img src="reference/figures/README-ex2-1.svg" alt="A bar chart with white background, light grey horizontal grid lines dark blue bars."></p>
-<p><strong>Note on use of titles, subtitles and captions</strong> <br> Titles, subtitles and captions have been embedded in these example charts for demonstration purposes. However, for accessibility reasons, it is usually preferable to provide titles in the body of the page rather than embedded within the image of the plot. More information is available in the <a href="https://ScotGovAnalysis.github.io/sgplot/articles/accessibility.html#other-accessibility-considerations">accessibility article</a>.</p>
+</div>
+<div class="section level4">
+<h4 id="note-on-use-of-titles-subtitles-and-captions">Note on use of titles, subtitles and captions<a class="anchor" aria-label="anchor" href="#note-on-use-of-titles-subtitles-and-captions"></a>
+</h4>
+<p>Titles, subtitles and captions have been embedded in these example charts for demonstration purposes. However, for accessibility reasons, it is usually preferable to provide titles in the body of the page rather than embedded within the image of the plot. More information is available in the <a href="https://ScotGovAnalysis.github.io/sgplot/articles/accessibility.html#other-accessibility-considerations">accessibility article</a>.</p>
 </div>
 </div>
+</div>
+<div class="section level2">
+<h2 id="related-package">Related package<a class="anchor" aria-label="anchor" href="#related-package"></a>
+</h2>
+<p>sgplot is the basis for the <a href="https://best-practice-and-impact.github.io/afcharts/" class="external-link">afcharts</a> package, developed by the <a href="https://analysisfunction.civilservice.gov.uk/" class="external-link">Government Analysis Function</a>. The packages remain similar, with both following the <a href="https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/" class="external-link">Analysis Function Data Visualisation guidance</a>, however sgplot also uses guidance from the <a href="https://designsystem.gov.scot/guidance/charts/data-visualisation-colour-palettes" class="external-link">Scottish Government Design System</a>.</p>
+<p>Scottish Government analysts should continue to use sgplot, rather than afcharts.</p>
 </div>
 <div class="section level2">
 <h2 id="licence">Licence<a class="anchor" aria-label="anchor" href="#licence"></a>
@@ -192,7 +208,7 @@
 <div class="developers">
 <h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
-<li>Alice Hannah  <a href="mailto:alice.hannah@gov.scot"><i class="fas fa-envelope" aria-hidden="true"></i><span class="visually-hidden">Email Alice Hannah&gt;</span></a>  <a href="https://github.com/alice-hannah" class="external-link"><i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">Alice Hannah GitHub profile&gt;</span></a> <br><small class="roles"> Author, maintainer </small>   </li>
+<li>Alice Hannah  <a href="mailto:alice.hannah@gov.scot"><i class="fa-solid fa-envelope" aria-hidden="true"></i><span class="visually-hidden">Email Alice Hannah&gt;</span></a>  <a href="https://github.com/alice-hannah" class="external-link"><i class="fa-brands fa-github" aria-hidden="true"></i><span class="visually-hidden">Alice Hannah GitHub profile&gt;</span></a> <br><small class="roles"> Author, maintainer </small>   </li>
 <li><a href="authors.html">More about authors...</a></li>
 </ul>
 </div>
@@ -204,11 +220,11 @@
 
 
     <footer><div class="pkgdown-footer-left">
-  <p>Developed by the Scottish Government  <a href="mailto:statistics.enquiries@gov.scot"><i class="fas fa-envelope" aria-hidden="true"></i><span class="visually-hidden">Email Scottish Government&gt;</span></a>  <a href="https://github.com/scotgovanalysis" class="external-link"><i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">Scottish Government GitHub profile&gt;</span></a>.</p>
+  <p>Developed by the Scottish Government  <a href="https://www.gov.scot" class="external-link"><i class="fa-solid fa-arrow-pointer" aria-hidden="true"></i><span class="visually-hidden">Scottish Government Website&gt;</span></a>  <a href="mailto:statistics.enquiries@gov.scot"><i class="fa-solid fa-envelope" aria-hidden="true"></i><span class="visually-hidden">Email Scottish Government&gt;</span></a>  <a href="https://github.com/scotgovanalysis" class="external-link"><i class="fa-brands fa-github" aria-hidden="true"></i><span class="visually-hidden">Scottish Government GitHub profile&gt;</span></a>.</p>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.3.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
 </div>
 
     </footer>
