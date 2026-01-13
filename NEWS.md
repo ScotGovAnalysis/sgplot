@@ -1,3 +1,5 @@
+# sgplot (development version)
+
 # sgplot 0.5.0
 
 * `use_sgplot()` gains a `quietly` argument to allow messages to be suppressed 
