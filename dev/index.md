@@ -135,8 +135,8 @@ article](https://ScotGovAnalysis.github.io/sgplot/articles/accessibility.html#ot
 ## Related package
 
 sgplot is the basis for the
-[afcharts](https://best-practice-and-impact.github.io/afcharts) package,
-developed by the [Government Analysis
+[afcharts](https://best-practice-and-impact.github.io/afcharts/)
+package, developed by the [Government Analysis
 Function](https://analysisfunction.civilservice.gov.uk/). The packages
 remain similar, with both following the [Analysis Function Data
 Visualisation

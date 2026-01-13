@@ -2,30 +2,30 @@
 
 ## sgplot (development version)
 
-- Deprecate `na_colour` arguments in
+## sgplot 0.5.0
+
+CRAN release: 2026-01-13
+
+- [`use_sgplot()`](https://ScotGovAnalysis.github.io/sgplot/dev/reference/use_sgplot.md)
+  gains a `quietly` argument to allow messages to be suppressed
+  ([\#67](https://github.com/ScotGovAnalysis/sgplot/issues/67)).
+
+- `na_colour` arguments are deprecated in
   [`scale_fill_continuous_sg()`](https://ScotGovAnalysis.github.io/sgplot/dev/reference/scale_colour_continuous_sg.md)/
   [`scale_colour_continuous_sg()`](https://ScotGovAnalysis.github.io/sgplot/dev/reference/scale_colour_continuous_sg.md)
-  functions in favour of new argument, `na.value`
+  in favour of new argument, `na.value`
   ([\#73](https://github.com/ScotGovAnalysis/sgplot/issues/73)).
+
+- Fixed bug where
+  [`use_sgplot()`](https://ScotGovAnalysis.github.io/sgplot/dev/reference/use_sgplot.md)
+  could not handle passing multiple arguments of different types to
+  [`theme_sg()`](https://ScotGovAnalysis.github.io/sgplot/dev/reference/theme_sg.md)
+  ([\#63](https://github.com/ScotGovAnalysis/sgplot/issues/63)).
 
 - Vignettes are converted to articles. Vignettes are now not available
   to view locally and only via the [pkgdown
   site](https://scotgovanalysis.github.io/sgplot/)
   ([\#66](https://github.com/ScotGovAnalysis/sgplot/issues/66)).
-
-- Add `quietly` argument to
-  [`use_sgplot()`](https://ScotGovAnalysis.github.io/sgplot/dev/reference/use_sgplot.md)
-  to allow messages to be suppressed
-  ([\#67](https://github.com/ScotGovAnalysis/sgplot/issues/67)).
-
-- Set minimum version of ggplot (\>= 3.5.0)
-  ([\#62](https://github.com/ScotGovAnalysis/sgplot/issues/62)).
-
-- Fix bug where
-  [`use_sgplot()`](https://ScotGovAnalysis.github.io/sgplot/dev/reference/use_sgplot.md)
-  could not handle passing multiple arguments of different types to
-  [`theme_sg()`](https://ScotGovAnalysis.github.io/sgplot/dev/reference/theme_sg.md)
-  ([\#63](https://github.com/ScotGovAnalysis/sgplot/issues/63)).
 
 ## sgplot 0.4.0
 

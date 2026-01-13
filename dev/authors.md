@@ -18,13 +18,13 @@ Source:
 [`DESCRIPTION`](https://github.com/ScotGovAnalysis/sgplot/blob/main/DESCRIPTION)
 
 Hannah A (2026). *sgplot: Graphic Styles and Colours for Scottish
-Government Plots*. R package version 0.4.0.9000,
-<https://github.com/ScotGovAnalysis/sgplot/>.
+Government Plots*. R package version 0.5.0.9000,
+<https://ScotGovAnalysis.github.io/sgplot/>.
 
     @Manual{,
       title = {sgplot: Graphic Styles and Colours for Scottish Government Plots},
       author = {Alice Hannah},
       year = {2026},
-      note = {R package version 0.4.0.9000},
-      url = {https://github.com/ScotGovAnalysis/sgplot/},
+      note = {R package version 0.5.0.9000},
+      url = {https://ScotGovAnalysis.github.io/sgplot/},
     }

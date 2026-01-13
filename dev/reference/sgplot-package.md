@@ -7,9 +7,9 @@ visualisations in the Scottish Government.
 
 Useful links:
 
-- <https://github.com/ScotGovAnalysis/sgplot/>
-
 - <https://ScotGovAnalysis.github.io/sgplot/>
+
+- <https://github.com/ScotGovAnalysis/sgplot>
 
 - Report bugs at <https://github.com/ScotGovAnalysis/sgplot/issues>
 
