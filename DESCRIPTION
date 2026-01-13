@@ -1,6 +1,6 @@
 Package: sgplot
 Title: Graphic Styles and Colours for Scottish Government Plots
-Version: 0.4.0.9000
+Version: 0.5.0
 Authors@R: c(
     person("Scottish Government", , , "statistics.enquiries@gov.scot", role = c("cph", "fnd")),
     person("Alice", "Hannah", , "alice.hannah@gov.scot", role = c("aut", "cre"))
@@ -8,8 +8,7 @@ Authors@R: c(
 Description: A 'ggplot2' theme and colour palettes to create accessible
     data visualisations in the Scottish Government.
 License: MIT + file LICENSE
-URL: https://github.com/ScotGovAnalysis/sgplot/,
-    https://ScotGovAnalysis.github.io/sgplot/
+URL: https://ScotGovAnalysis.github.io/sgplot/, https://github.com/ScotGovAnalysis/sgplot
 BugReports: https://github.com/ScotGovAnalysis/sgplot/issues
 Depends:
     R (>= 2.10)
