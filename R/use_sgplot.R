@@ -44,7 +44,7 @@ use_sgplot <- function(palette_type = "sg",
 
   if (lifecycle::is_present(default_colour)) {
     lifecycle::deprecate_warn(
-      when = "0.5.0",
+      when = "0.4.0",
       what = "use_sgplot(default_colour)",
       with = "use_sgplot(palette_type)",
       details = "The `default colour` argument supplied will not be used."
